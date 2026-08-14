@@ -1,0 +1,40 @@
+# Hourly refresh: fetch → validate → commit snapshot → build → deploy.
+# Fixture mode until the first production source lands (week 1).
+name: refresh
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run pipeline
+        run: python3 -m pipeline.refresh
+
+      - name: Run tests
+        run: python3 -m unittest discover -s tests
+
+      - name: Commit snapshot + changelog
+        run: |
+          git config user.name "foundry-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "data: refresh $(date -u +%F-%H%M)"
+          git push
+
+      # After good data is committed: fail the job if any source was degraded,
+      # so the sentinel opens an issue without blocking the publish.
+      - name: Fail if degraded
+        run: python3 -m pipeline.refresh --check-health
+
+      # Deploy: swap in Cloudflare Pages (wrangler pages deploy site/) or
+      # actions/deploy-pages once the surface is real. Stub until week 2.
+      - name: Deploy (stub)
+        run: echo "deploy site/ -> pages (configure in week 2)"

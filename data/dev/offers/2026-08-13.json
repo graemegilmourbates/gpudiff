@@ -1,0 +1,92 @@
+[
+  {
+    "id": "examplecloud:gx-100-80gb:us-east:on_demand",
+    "provider": "examplecloud",
+    "sku": "gx-100-80gb",
+    "price": 2.45,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "us-east",
+    "attrs": {
+      "gpu_model": "gx-100",
+      "vram_gb": 80
+    },
+    "provenance": {
+      "url": "https://fixtures.invalid/examplecloud/pricing",
+      "observed_at": "2026-08-13T00:00:00Z"
+    },
+    "fixture": true
+  },
+  {
+    "id": "examplecloud:gx-100-80gb:us-east:spot",
+    "provider": "examplecloud",
+    "sku": "gx-100-80gb",
+    "price": 1.7,
+    "unit": "usd_per_hour",
+    "pricing_type": "spot",
+    "region": "us-east",
+    "attrs": {
+      "gpu_model": "gx-100",
+      "vram_gb": 80
+    },
+    "provenance": {
+      "url": "https://fixtures.invalid/examplecloud/pricing",
+      "observed_at": "2026-08-13T00:00:00Z"
+    },
+    "fixture": true
+  },
+  {
+    "id": "examplecloud:gx-200-141gb:us-east:on_demand",
+    "provider": "examplecloud",
+    "sku": "gx-200-141gb",
+    "price": 3.97,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "us-east",
+    "attrs": {
+      "gpu_model": "gx-200",
+      "vram_gb": 141
+    },
+    "provenance": {
+      "url": "https://fixtures.invalid/examplecloud/pricing",
+      "observed_at": "2026-08-13T00:00:00Z"
+    },
+    "fixture": true
+  },
+  {
+    "id": "samplecompute:gx-100-80gb:eu-west:on_demand",
+    "provider": "samplecompute",
+    "sku": "gx-100-80gb",
+    "price": 2.13,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "eu-west",
+    "attrs": {
+      "gpu_model": "gx-100",
+      "vram_gb": 80
+    },
+    "provenance": {
+      "url": "https://fixtures.invalid/samplecompute/pricing",
+      "observed_at": "2026-08-13T00:00:00Z"
+    },
+    "fixture": true
+  },
+  {
+    "id": "samplecompute:rtx-demo-24gb:eu-west:spot",
+    "provider": "samplecompute",
+    "sku": "rtx-demo-24gb",
+    "price": 0.33,
+    "unit": "usd_per_hour",
+    "pricing_type": "spot",
+    "region": "eu-west",
+    "attrs": {
+      "gpu_model": "rtx-demo",
+      "vram_gb": 24
+    },
+    "provenance": {
+      "url": "https://fixtures.invalid/samplecompute/pricing",
+      "observed_at": "2026-08-13T00:00:00Z"
+    },
+    "fixture": true
+  }
+]

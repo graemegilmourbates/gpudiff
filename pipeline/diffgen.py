@@ -1,0 +1,54 @@
+"""Diff engine: two snapshots in, changelog entries out. The diff IS the
+product — the site table is just the latest snapshot rendered."""
+
+import json
+from pathlib import Path
+
+
+def diff_snapshots(prev_offers, curr_offers, date):
+    prev = {o["id"]: o for o in prev_offers}
+    curr = {o["id"]: o for o in curr_offers}
+    entries = []
+
+    for oid in sorted(curr.keys() - prev.keys()):
+        o = curr[oid]
+        entries.append({
+            "date": date, "kind": "added", "id": oid,
+            "provider": o["provider"], "sku": o["sku"],
+            "price": o["price"], "unit": o["unit"],
+            "summary": f"{o['provider']} listed {o['sku']} at {o['price']} {o['unit']}",
+        })
+
+    for oid in sorted(prev.keys() - curr.keys()):
+        o = prev[oid]
+        entries.append({
+            "date": date, "kind": "removed", "id": oid,
+            "provider": o["provider"], "sku": o["sku"],
+            "summary": f"{o['provider']} delisted {o['sku']}",
+        })
+
+    for oid in sorted(curr.keys() & prev.keys()):
+        old, new = prev[oid]["price"], curr[oid]["price"]
+        if old != new:
+            pct = round((new - old) / old * 100, 1)
+            direction = "cut" if new < old else "raised"
+            entries.append({
+                "date": date, "kind": "price_change", "id": oid,
+                "provider": curr[oid]["provider"], "sku": curr[oid]["sku"],
+                "old_price": old, "new_price": new, "pct": pct,
+                "summary": (f"{curr[oid]['provider']} {direction} {curr[oid]['sku']} "
+                            f"{abs(pct)}%: {old} → {new} {curr[oid]['unit']}"),
+            })
+    return entries
+
+
+def append_changelog(changelog_path, entries):
+    path = Path(changelog_path)
+    existing = json.loads(path.read_text()) if path.exists() else []
+    # A rerun for the same date replaces that date's entries instead of duplicating.
+    dates = {e["date"] for e in entries}
+    existing = [e for e in existing if e["date"] not in dates]
+    merged = existing + entries
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(merged, indent=2) + "\n")
+    return merged

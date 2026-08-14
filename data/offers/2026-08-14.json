@@ -1,0 +1,1769 @@
+[
+  {
+    "id": "vast:h200:global:on-demand",
+    "provider": "vast",
+    "sku": "h200",
+    "price": 4.0792,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "global",
+    "attrs": {
+      "gpu_model": "H200",
+      "sample_size": 5,
+      "metric": "p25_per_gpu_dph_verified"
+    },
+    "provenance": {
+      "url": "https://vast.ai/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "vast:rtx-4090:global:on-demand",
+    "provider": "vast",
+    "sku": "rtx-4090",
+    "price": 0.3496,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "global",
+    "attrs": {
+      "gpu_model": "RTX 4090",
+      "sample_size": 5,
+      "metric": "p25_per_gpu_dph_verified"
+    },
+    "provenance": {
+      "url": "https://vast.ai/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "vast:rtx-5090:global:on-demand",
+    "provider": "vast",
+    "sku": "rtx-5090",
+    "price": 0.337,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "global",
+    "attrs": {
+      "gpu_model": "RTX 5090",
+      "sample_size": 5,
+      "metric": "p25_per_gpu_dph_verified"
+    },
+    "provenance": {
+      "url": "https://vast.ai/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "vast:rtx-pro-6000-s:global:on-demand",
+    "provider": "vast",
+    "sku": "rtx-pro-6000-s",
+    "price": 1.6011,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "global",
+    "attrs": {
+      "gpu_model": "RTX PRO 6000 S",
+      "sample_size": 5,
+      "metric": "p25_per_gpu_dph_verified"
+    },
+    "provenance": {
+      "url": "https://vast.ai/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "vast:rtx-pro-6000-ws:global:on-demand",
+    "provider": "vast",
+    "sku": "rtx-pro-6000-ws",
+    "price": 1.2443,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "global",
+    "attrs": {
+      "gpu_model": "RTX PRO 6000 WS",
+      "sample_size": 6,
+      "metric": "p25_per_gpu_dph_verified"
+    },
+    "provenance": {
+      "url": "https://vast.ai/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:mi300x-192gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "mi300x-192gb",
+    "price": 2.39,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "MI300X",
+      "vram_gb": 192,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:mi300x-192gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "mi300x-192gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "MI300X",
+      "vram_gb": 192,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:a100-pcie-80gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a100-pcie-80gb",
+    "price": 1.39,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "A100 PCIe",
+      "vram_gb": 80,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:a100-pcie-80gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a100-pcie-80gb",
+    "price": 1.19,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "A100 PCIe",
+      "vram_gb": 80,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:a100-sxm-40gb-40gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a100-sxm-40gb-40gb",
+    "price": 1.0,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "A100 SXM 40GB",
+      "vram_gb": 40,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:a100-sxm-80gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a100-sxm-80gb",
+    "price": 1.59,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "A100 SXM",
+      "vram_gb": 80,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:a100-sxm-80gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a100-sxm-80gb",
+    "price": 1.39,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "A100 SXM",
+      "vram_gb": 80,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:a40-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a40-48gb",
+    "price": 0.44,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "A40",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:a40-48gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a40-48gb",
+    "price": 0.35,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "A40",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:b200-180gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "b200-180gb",
+    "price": 6.79,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "B200",
+      "vram_gb": 180,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:b200-180gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "b200-180gb",
+    "price": 5.98,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "B200",
+      "vram_gb": 180,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:b300-288gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "b300-288gb",
+    "price": 7.89,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "B300",
+      "vram_gb": 288,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:b300-288gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "b300-288gb",
+    "price": 6.94,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "B300",
+      "vram_gb": 288,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-3070-8gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3070-8gb",
+    "price": 0.13,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 3070",
+      "vram_gb": 8,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-3080-10gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3080-10gb",
+    "price": 0.17,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 3080",
+      "vram_gb": 10,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-3080-ti-12gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3080-ti-12gb",
+    "price": 0.18,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 3080 Ti",
+      "vram_gb": 12,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-3090-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3090-24gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 3090",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-3090-24gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3090-24gb",
+    "price": 0.22,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 3090",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-3090-ti-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3090-ti-24gb",
+    "price": 0.46,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 3090 Ti",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-3090-ti-24gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3090-ti-24gb",
+    "price": 0.27,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 3090 Ti",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4070-ti-12gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4070-ti-12gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4070 Ti",
+      "vram_gb": 12,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4070-ti-12gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4070-ti-12gb",
+    "price": 0.19,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4070 Ti",
+      "vram_gb": 12,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4080-16gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4080-16gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4080",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4080-16gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4080-16gb",
+    "price": 0.27,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4080",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4080-super-16gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4080-super-16gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4080 SUPER",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4080-super-16gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4080-super-16gb",
+    "price": 0.28,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4080 SUPER",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4090-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4090-24gb",
+    "price": 0.74,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4090",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4090-24gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4090-24gb",
+    "price": 0.34,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4090",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-5080-16gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-5080-16gb",
+    "price": 0.59,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 5080",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-5080-16gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-5080-16gb",
+    "price": 0.39,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 5080",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-5090-32gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-5090-32gb",
+    "price": 0.99,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 5090",
+      "vram_gb": 32,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-5090-32gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-5090-32gb",
+    "price": 0.69,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 5090",
+      "vram_gb": 32,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h100-sxm-80gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h100-sxm-80gb",
+    "price": 3.29,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "H100 SXM",
+      "vram_gb": 80,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h100-sxm-80gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h100-sxm-80gb",
+    "price": 2.69,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "H100 SXM",
+      "vram_gb": 80,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h100-nvl-94gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h100-nvl-94gb",
+    "price": 3.19,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "H100 NVL",
+      "vram_gb": 94,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h100-nvl-94gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h100-nvl-94gb",
+    "price": 2.59,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "H100 NVL",
+      "vram_gb": 94,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h100-pcie-80gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h100-pcie-80gb",
+    "price": 2.89,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "H100 PCIe",
+      "vram_gb": 80,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h100-pcie-80gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h100-pcie-80gb",
+    "price": 1.99,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "H100 PCIe",
+      "vram_gb": 80,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h200-sxm-141gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h200-sxm-141gb",
+    "price": 4.59,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "H200 SXM",
+      "vram_gb": 141,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h200-sxm-141gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h200-sxm-141gb",
+    "price": 3.59,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "H200 SXM",
+      "vram_gb": 141,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h200-nvl-143gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h200-nvl-143gb",
+    "price": 3.79,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "H200 NVL",
+      "vram_gb": 143,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:h200-nvl-143gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h200-nvl-143gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "H200 NVL",
+      "vram_gb": 143,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:l4-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "l4-24gb",
+    "price": 0.49,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "L4",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:l4-24gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "l4-24gb",
+    "price": 0.44,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "L4",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:l40-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "l40-48gb",
+    "price": 0.82,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "L40",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:l40-48gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "l40-48gb",
+    "price": 0.69,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "L40",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:l40s-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "l40s-48gb",
+    "price": 0.99,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "L40S",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:l40s-48gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "l40s-48gb",
+    "price": 0.79,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "L40S",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-2000-ada-16gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-2000-ada-16gb",
+    "price": 0.24,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 2000 Ada",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-2000-ada-16gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-2000-ada-16gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 2000 Ada",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4000-ada-20gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4000-ada-20gb",
+    "price": 0.28,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4000 Ada",
+      "vram_gb": 20,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4000-ada-20gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4000-ada-20gb",
+    "price": 0.2,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4000 Ada",
+      "vram_gb": 20,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4000-ada-sff-20gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4000-ada-sff-20gb",
+    "price": 0.44,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4000 Ada SFF",
+      "vram_gb": 20,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-4000-ada-sff-20gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-4000-ada-sff-20gb",
+    "price": 0.18,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 4000 Ada SFF",
+      "vram_gb": 20,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-5000-ada-32gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-5000-ada-32gb",
+    "price": 0.83,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 5000 Ada",
+      "vram_gb": 32,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-5000-ada-32gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-5000-ada-32gb",
+    "price": 0.49,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 5000 Ada",
+      "vram_gb": 32,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-6000-ada-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-6000-ada-48gb",
+    "price": 0.84,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX 6000 Ada",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-6000-ada-48gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-6000-ada-48gb",
+    "price": 0.74,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX 6000 Ada",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a2000-6gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a2000-6gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX A2000",
+      "vram_gb": 6,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a2000-6gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a2000-6gb",
+    "price": 0.12,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX A2000",
+      "vram_gb": 6,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a4000-16gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a4000-16gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX A4000",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a4000-16gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a4000-16gb",
+    "price": 0.17,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX A4000",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a4500-20gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a4500-20gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX A4500",
+      "vram_gb": 20,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a4500-20gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a4500-20gb",
+    "price": 0.19,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX A4500",
+      "vram_gb": 20,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a5000-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a5000-24gb",
+    "price": 0.27,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX A5000",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a5000-24gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a5000-24gb",
+    "price": 0.16,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX A5000",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a6000-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a6000-48gb",
+    "price": 0.53,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX A6000",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-a6000-48gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a6000-48gb",
+    "price": 0.33,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX A6000",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-4000-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-4000-24gb",
+    "price": 0.57,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 4000",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-4000-24gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-4000-24gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 4000",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-4500-32gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-4500-32gb",
+    "price": 0.72,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 4500",
+      "vram_gb": 32,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-4500-32gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-4500-32gb",
+    "price": 0.34,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 4500",
+      "vram_gb": 32,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-4500-se-32gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-4500-se-32gb",
+    "price": 0.72,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 4500 SE",
+      "vram_gb": 32,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-4500-se-32gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-4500-se-32gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 4500 SE",
+      "vram_gb": 32,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-5000-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-5000-48gb",
+    "price": 0.96,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 5000",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-5000-48gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-5000-48gb",
+    "price": 0.82,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 5000",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-6000-maxq-96gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-maxq-96gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 6000 MaxQ",
+      "vram_gb": 96,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-6000-maxq-96gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-maxq-96gb",
+    "price": 1.64,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 6000 MaxQ",
+      "vram_gb": 96,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-6000-96gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-96gb",
+    "price": 2.09,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 6000",
+      "vram_gb": 96,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-6000-96gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-96gb",
+    "price": 1.69,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 6000",
+      "vram_gb": 96,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:pro-6000-mig-24gb-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "pro-6000-mig-24gb-24gb",
+    "price": 0.59,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "PRO 6000 MIG 24GB",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:pro-6000-mig-24gb-24gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "pro-6000-mig-24gb-24gb",
+    "price": 0.5,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "PRO 6000 MIG 24GB",
+      "vram_gb": 24,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:pro-6000-mig-48gb-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "pro-6000-mig-48gb-48gb",
+    "price": 1.09,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "PRO 6000 MIG 48GB",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:pro-6000-mig-48gb-48gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "pro-6000-mig-48gb-48gb",
+    "price": 1.0,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "PRO 6000 MIG 48GB",
+      "vram_gb": 48,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-6000-wk-96gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-wk-96gb",
+    "price": 1.89,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "secure-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 6000 WK",
+      "vram_gb": 96,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:rtx-pro-6000-wk-96gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-wk-96gb",
+    "price": 1.69,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "RTX PRO 6000 WK",
+      "vram_gb": 96,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:tesla-v100-16gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "tesla-v100-16gb",
+    "price": 0.19,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "Tesla V100",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "runpod:v100-sxm2-16gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "v100-sxm2-16gb",
+    "price": 0.23,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "community-cloud",
+    "attrs": {
+      "gpu_model": "V100 SXM2",
+      "vram_gb": 16,
+      "metric": "list_price"
+    },
+    "provenance": {
+      "url": "https://www.runpod.io/pricing",
+      "observed_at": "2026-08-14T16:54:50Z"
+    },
+    "fixture": false
+  }
+]

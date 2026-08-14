@@ -1,0 +1,45 @@
+# Weekly digest: an agent drafts "what changed this week" from the changelog
+# and opens a PR. A human merge sends it (first 90 days); after that the
+# approval label can gate auto-send instead.
+name: digest
+on:
+  schedule:
+    - cron: "0 14 * * 1" # Mondays 14:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Draft digest from changelog
+        run: |
+          python3 - <<'EOF'
+          import json, datetime, pathlib
+          log = json.loads(pathlib.Path("data/changelog.json").read_text()) if pathlib.Path("data/changelog.json").exists() else []
+          cutoff = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+          recent = [e for e in log if e["date"] >= cutoff]
+          lines = [f"# Week of {datetime.date.today().isoformat()}", ""]
+          lines += [f"- {e['summary']}" for e in recent] or ["- Quiet week: no recorded changes."]
+          out = pathlib.Path("digests"); out.mkdir(exist_ok=True)
+          (out / f"{datetime.date.today().isoformat()}.md").write_text("\n".join(lines) + "\n")
+          EOF
+
+      - name: Open PR
+        run: |
+          git config user.name "foundry-bot"
+          git config user.email "bot@users.noreply.github.com"
+          BRANCH="digest/$(date -u +%F)"
+          git checkout -b "$BRANCH"
+          git add digests/
+          git diff --cached --quiet && exit 0
+          git commit -m "digest: week of $(date -u +%F)"
+          git push -u origin "$BRANCH"
+          gh pr create --fill --label digest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
