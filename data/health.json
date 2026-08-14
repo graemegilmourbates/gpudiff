@@ -1,6 +1,6 @@
 {
   "date": "2026-08-14",
-  "observed_at": "2026-08-14T19:44:04Z",
+  "observed_at": "2026-08-14T19:45:04Z",
   "sources": [
     {
       "source": "vast",
@@ -15,12 +15,14 @@
     {
       "source": "aws",
       "ok": true,
-      "offers": 9
+      "offers": 9,
+      "carried": true
     },
     {
       "source": "azure",
       "ok": true,
-      "offers": 12
+      "offers": 12,
+      "carried": true
     },
     {
       "source": "openrouter",
@@ -30,7 +32,8 @@
     {
       "source": "saaspages",
       "ok": true,
-      "offers": 34
+      "offers": 34,
+      "carried": true
     }
   ],
   "valid": 1015,
