@@ -655,24 +655,25 @@ FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
 </svg>"""
 
 
+def _favicon_px(x, y, size):
+    """One pixel of the mark — a diff hunk: green added line over red removed
+    line on the dark ground. RGBA."""
+    bg, green, red = (26, 29, 39, 255), (63, 191, 127, 255), (224, 82, 82, 255)
+    fx, fy = x / size, y / size
+    if 0.19 <= fx <= 0.81 and 0.22 <= fy <= 0.41:
+        return green
+    if 0.19 <= fx <= 0.81 and 0.59 <= fy <= 0.78:
+        return red
+    return bg
+
+
 def render_favicon_png(size):
-    """The favicon as a real PNG, encoded by hand — a diff hunk: green added
-    line over red removed line. Stdlib only (struct + zlib)."""
+    """The favicon as a real PNG, encoded by hand. Stdlib only (struct + zlib)."""
     import struct
     import zlib
 
-    bg, green, red = (26, 29, 39, 255), (63, 191, 127, 255), (224, 82, 82, 255)
-
-    def px(x, y):
-        fx, fy = x / size, y / size
-        if 0.19 <= fx <= 0.81 and 0.22 <= fy <= 0.41:
-            return green
-        if 0.19 <= fx <= 0.81 and 0.59 <= fy <= 0.78:
-            return red
-        return bg
-
     raw = b"".join(
-        b"\x00" + b"".join(bytes(px(x, y)) for x in range(size))
+        b"\x00" + b"".join(bytes(_favicon_px(x, y, size)) for x in range(size))
         for y in range(size)
     )
 
@@ -826,14 +827,23 @@ def build_site(offers, changelog, date):
 
     # Favicons: SVG for modern browsers, hand-encoded PNG for the rest, and a
     # /favicon.ico because Safari requests that path directly regardless of
-    # link tags (ICO container with a PNG payload — valid everywhere modern).
+    # link tags. Safari rejects PNG payloads inside 32px ICOs, so the ICO
+    # carries a classic BMP: BITMAPINFOHEADER (doubled height), bottom-up
+    # BGRA rows, then an all-zero AND mask.
     import struct as _struct
-    png32 = render_favicon_png(32)
+    size = 32
+    rows = [b"".join(bytes((b, g, r, a)) for x in range(size)
+                     for r, g, b, a in (_favicon_px(x, y, size),))
+            for y in range(size)]
+    xor = b"".join(reversed(rows))
+    mask = (b"\x00" * ((size + 31) // 32 * 4)) * size
+    dib = _struct.pack("<IiiHHIIiiII", 40, size, size * 2, 1, 32, 0,
+                       len(xor) + len(mask), 0, 0, 0, 0) + xor + mask
     ico = (_struct.pack("<HHH", 0, 1, 1)
-           + _struct.pack("<BBBBHHII", 32, 32, 0, 0, 1, 32, len(png32), 22)
-           + png32)
+           + _struct.pack("<BBBBHHII", size, size, 0, 0, 1, 32, len(dib), 22)
+           + dib)
     (SITE / "favicon.svg").write_text(FAVICON_SVG)
-    (SITE / "favicon.png").write_bytes(png32)
+    (SITE / "favicon.png").write_bytes(render_favicon_png(32))
     (SITE / "favicon.ico").write_bytes(ico)
     (SITE / "apple-touch-icon.png").write_bytes(render_favicon_png(180))
 
