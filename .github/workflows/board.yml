@@ -1,0 +1,56 @@
+# Monthly board meeting: a cron job the humans attend with coffee.
+# Aggregates the analyst metrics, evaluates the gates, and prompts the owner
+# for the two numbers automation can't see (referral dashboards).
+name: board
+on:
+  schedule:
+    - cron: "0 14 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  meeting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Draft board packet
+        run: |
+          python3 - <<'EOF'
+          import json, datetime, pathlib
+          mdir = pathlib.Path("data/metrics")
+          snaps = sorted(mdir.glob("*.json")) if mdir.exists() else []
+          latest = json.loads(snaps[-1].read_text()) if snaps else {}
+          month = datetime.date.today().strftime("%B %Y")
+          v = latest.get("changelog_7d", {})
+          lines = [
+              f"# Board report — {month}", "",
+              "## Leading indicators (latest analyst snapshot)",
+              f"- Visits: {latest.get('uniques_total', 'n/a')}",
+              f"- HN mentions: {latest.get('hn_mentions', 0)}",
+              f"- Repo stars: {(latest.get('repo') or {}).get('stars', '?')}",
+              f"- Changelog velocity (7d): {v.get('total', 0)} entries",
+              f"- Offers tracked: {latest.get('offers', '?')}", "",
+              "## Owner input needed (reply to this issue)",
+              "- [ ] Vast referrals: signups ___ / earnings $___",
+              "- [ ] RunPod referrals: signups ___ / earnings $___",
+              "- [ ] Any sponsor inquiries? ___", "",
+              "## Gates (day-90 from Aug 14 launch: Nov 12)",
+              "- 1,000 uniques/mo OR 150 subscribers OR $50 MRR → keep investing",
+              "- Miss all three → one surface pivot; miss again → hibernate, next asset enters", "",
+              "## Costs this month",
+              "- Infra: $0 (Pages/Actions free tier) · Domain amortized: ~$0.92",
+              "Full ledger: BUDGET.md. Books: this repo's git history.",
+          ]
+          pathlib.Path("/tmp/board.md").write_text("\n".join(lines) + "\n")
+          EOF
+
+      - name: Open board issue
+        run: |
+          gh issue create --title "Board report — $(date -u +%Y-%m)" \
+            --body-file /tmp/board.md --label board || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

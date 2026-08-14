@@ -1,0 +1,35 @@
+# Weekly analyst: leading indicators → committed metrics + an issue the
+# humans read with coffee. Mondays 13:00 UTC.
+name: analyst
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Gather metrics
+        run: python3 -m pipeline.analyst --write
+
+      - name: Commit metrics
+        run: |
+          git config user.name "foundry-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/metrics/
+          git diff --cached --quiet || git commit -m "metrics: analyst $(date -u +%F)"
+          git push
+
+      - name: Open report issue
+        run: |
+          gh issue create --title "Analyst report — $(date -u +%F)" \
+            --body-file data/metrics/latest.md --label analyst || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
