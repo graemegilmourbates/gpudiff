@@ -44,18 +44,20 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
         from sources.azure import AzureSource
         from sources.openrouter import OpenRouterSource
         from sources.runpod import RunpodSource
+        from sources.saaspages import SaasPagesSource
         from sources.vast import VastSource
         registry = [VastSource(), RunpodSource(), AwsSource(), AzureSource(),
-                    OpenRouterSource()]
+                    OpenRouterSource(), SaasPagesSource()]
 
     hour = dt.datetime.now(dt.timezone.utc).hour
     offers, statuses = [], []
     for source in registry:
         cadence = getattr(source, "cadence", "hourly")
-        present = any(o["provider"] == source.name for o in carry_pool)
+        emits = getattr(source, "emits", {source.name})
+        present = any(o["provider"] in emits for o in carry_pool)
         due = force_all or cadence == "hourly" or hour == 6 or not present
         if not due:
-            carried = [o for o in carry_pool if o["provider"] == source.name]
+            carried = [o for o in carry_pool if o["provider"] in emits]
             offers.extend(carried)
             statuses.append({"source": source.name, "ok": True,
                              "offers": len(carried), "carried": True})

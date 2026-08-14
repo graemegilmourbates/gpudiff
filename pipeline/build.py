@@ -161,7 +161,9 @@ def metric_badge(offer):
     label = {"list_price": "list",
              "p25_per_gpu_dph_verified": f"p25 ×{n}" if n else "p25",
              "p25_min_bid_per_gpu": f"p25 bid ×{n}" if n else "p25 bid",
-             "instance_list_per_gpu": "instance-bundled"}.get(metric, "list")
+             "instance_list_per_gpu": "instance-bundled",
+             "page_scan": "page scan",
+             "openrouter_list": "list"}.get(metric, "list")
     return f'<span class="badge" title="How this number is measured">{esc(label)}</span>'
 
 
@@ -184,8 +186,13 @@ def sparkline(points, width=120, height=26):
 
 
 def chg_html(e, aliases):
-    provider = e["id"].split(":")[0]
-    href = "/llm/" if provider == "openrouter" else f"/gpu/{esc(family_of(e['id'].split(':')[1], aliases))}.html"
+    provider, sku = e["id"].split(":")[0], e["id"].split(":")[1]
+    if provider == "openrouter":
+        href = "/llm/"
+    elif sku.startswith("pricing-"):
+        href = "/saas/"
+    else:
+        href = f"/gpu/{esc(family_of(sku, aliases))}.html"
     cls = ""
     if e["kind"] == "price_change":
         cls = "cut" if e["new_price"] < e["old_price"] else "raise"
@@ -209,6 +216,7 @@ def subscribe_block(monetize):
 
 def page(title, body, monetize, desc="", jsonld="", path="/"):
     nav = ('<nav class="site"><a href="/">gpus</a><a href="/llm/">llm apis</a>'
+           '<a href="/saas/">saas</a>'
            '<a href="/changelog.html">changelog</a>'
            '<a href="/methodology.html">methodology</a>'
            '<a href="/api/">api</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
@@ -420,6 +428,42 @@ snapshotted hourly. {len(models)} models tracked. Official provider list pages
                 path="/llm/")
 
 
+def render_saas_index(saas_offers, changelog, monetize):
+    companies = {}
+    for o in saas_offers:
+        c = companies.setdefault(o["provider"], {"url": o["provenance"]["url"],
+                                                 "points": (o.get("attrs") or {}).get("point_count")})
+        c[o["sku"]] = o["price"]
+    rows = []
+    for co, c in sorted(companies.items()):
+        entry = f"${c['pricing-entry']:.0f}" if "pricing-entry" in c else "—"
+        top = f"${c['pricing-top']:.0f}" if "pricing-top" in c else "—"
+        rows.append(f"<tr><td><strong>{esc(co)}</strong></td>"
+                    f"<td class='n'>{entry}</td><td class='n'>{top}</td>"
+                    f"<td class='n'>{c.get('points') or '—'}</td>"
+                    f"<td><a href='{esc(c['url'])}' rel='noopener'>pricing page</a></td></tr>")
+    recent = [e for e in changelog if e["id"].split(":")[1].startswith("pricing-")][-15:]
+    aliases = alias_index(load_specs())
+    log = "\n".join(chg_html(e, aliases) for e in reversed(recent)) or \
+          '<li class="mut">Tracking began today — entries appear when a pricing page moves.</li>'
+    body = f"""
+<h1>SaaS pricing changelog <span class="badge">beta</span></h1>
+<p class="mut">Who raised prices this week. V1 method: we scan each vendor's public
+pricing page daily and record the lowest and highest USD amounts present — a
+page-level signal, not a plan-mapped price (see <a href="/methodology.html">methodology</a>).
+{len(companies)} companies tracked. Amounts shown are as detected on the page.</p>
+<h2>What changed</h2>
+<ul class="chg">{log}</ul>
+<h2>Current signals</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Company</th><th class="n">Entry price seen</th><th class="n">Top price seen</th><th class="n">Price points</th><th>Provenance</th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table></div>
+<p><a href="/api/v1/saas/companies.json">Companies JSON →</a></p>"""
+    return page("SaaS pricing changelog — gpudiff", body, monetize,
+                "Daily scans of SaaS pricing pages: who raised prices, who cut them, with provenance.",
+                path="/saas/")
+
+
 def render_methodology(monetize):
     body = """
 <h1>Methodology</h1>
@@ -445,6 +489,14 @@ instance per GPU family, us-east-1, divided by GPU count. AWS sells bundles
 (CPUs + RAM attached), so rows are badged instance-bundled.</td><td>daily</td></tr>
 <tr><td>Azure</td><td>Retail Prices API, eastus, Linux consumption rates ÷ GPU
 count; on-demand and spot. Instance-bundled like AWS.</td><td>daily</td></tr>
+<tr><td>OpenRouter (LLM)</td><td>Public model catalog; input and output prices
+per million tokens, tracked as separate series per model. This is the resale
+layer of LLM pricing; official provider list pages join as slower sources.</td><td>hourly</td></tr>
+<tr><td>SaaS pages</td><td>Page-level price signature: the set of USD amounts
+($2–$2000) present on each vendor's public pricing page; we publish the lowest
+and highest and diff those. Not plan-mapped — a movement signal with a
+provenance link, not a quote. Companies whose pages block or yield nothing are
+absent rather than guessed.</td><td>daily</td></tr>
 </tbody></table></div>
 <h2>Validation — missing beats wrong</h2>
 <p>Every offer is schema-validated; anything failing is dropped and flagged,
@@ -490,15 +542,28 @@ def build_site(offers, changelog, date):
     aliases = alias_index(specs)
     monetize = load_monetize()
     history = load_history()
-    # Sections: per-token offers are the LLM surface; everything else is GPUs.
+    # Sections by unit: per-token = LLM, per-unit page scans = SaaS, rest = GPUs.
     llm_offers = [o for o in offers if o["unit"] == "usd_per_mtok"]
-    gpu_offers = [o for o in offers if o["unit"] != "usd_per_mtok"]
+    saas_offers = [o for o in offers if o["unit"] == "usd_per_unit"]
+    gpu_offers = [o for o in offers if o["unit"] not in ("usd_per_mtok", "usd_per_unit")]
     fams = group_families(gpu_offers, specs, aliases)
 
     (SITE / "gpu").mkdir(parents=True, exist_ok=True)
     (SITE / "llm").mkdir(parents=True, exist_ok=True)
+    (SITE / "saas").mkdir(parents=True, exist_ok=True)
     (SITE / "api" / "v1" / "history").mkdir(parents=True, exist_ok=True)
     (SITE / "api" / "v1" / "llm").mkdir(parents=True, exist_ok=True)
+    (SITE / "api" / "v1" / "saas").mkdir(parents=True, exist_ok=True)
+
+    (SITE / "saas" / "index.html").write_text(render_saas_index(saas_offers, changelog, monetize))
+    saas_companies = {}
+    for o in saas_offers:
+        c = saas_companies.setdefault(o["provider"], {"company": o["provider"],
+                                                      "provenance": o["provenance"]["url"],
+                                                      "price_points": (o.get("attrs") or {}).get("price_points")})
+        c[o["sku"].replace("-", "_")] = o["price"]
+    (SITE / "api" / "v1" / "saas" / "companies.json").write_text(
+        json.dumps(sorted(saas_companies.values(), key=lambda c: c["company"]), indent=2) + "\n")
 
     (SITE / "llm" / "index.html").write_text(render_llm_index(llm_offers, changelog, monetize))
     llm_models = {}
@@ -548,7 +613,8 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "offers.json").write_text(json.dumps(offers, indent=2) + "\n")
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
-    urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/changelog.html",
+    urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/saas/",
+            f"{BASE_URL}/changelog.html",
             f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/"] + \
            [f"{BASE_URL}/gpu/{fam}.html" for fam in sorted(fams)]
     (SITE / "sitemap.xml").write_text(

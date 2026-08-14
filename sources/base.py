@@ -26,5 +26,11 @@ class Source:
     name = "unnamed"
     cadence = "hourly"
 
+    @property
+    def emits(self):
+        """Provider names this source produces offers under (for cadence
+        carry-forward). Defaults to the source's own name."""
+        return {self.name}
+
     def fetch(self, observed_at):
         raise NotImplementedError
