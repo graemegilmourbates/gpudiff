@@ -12,6 +12,10 @@ the fund except the domain.
 | Domain renewals, years 2–5    |   ~$44 | Reserved. Survival is pre-paid for half a decade. |
 | Contingency                   |   ~$45 | Email-tier bridge, a second asset's domain, surprises. |
 
+**Zero-touch renewals:** load a prepaid card with the renewal reserve, attach
+it at the registrar as the payment method, turn on auto-renew. The one
+mandatory payment then happens by itself for years — no human, no agent.
+
 Mandatory burn ≈ **$0.92/month**. The fund alone keeps the business alive for
 8+ years at zero revenue. **Profitability bar: ~$1/month** — roughly one
 referral signup per year.
