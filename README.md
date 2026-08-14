@@ -1,7 +1,7 @@
 # gpudiff · Nightshift Foundry
 
-**Live:** https://graemegilmourbates.github.io/gpudiff/ — the GPU Price
-Changelog: the public record of change in GPU cloud pricing.
+**Live:** https://gpudiff.com — the GPU Price Changelog: the public record of
+change in GPU cloud pricing.
 
 This repo is the shared pipeline behind Nightshift Foundry: a portfolio of
 small, agent-run data assets. One dataset in, three surfaces out (site, API, digest), with
