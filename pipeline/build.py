@@ -383,7 +383,11 @@ def render_api_docs(monetize):
 <tr><td>/api/v1/history/&lt;gpu&gt;.json</td><td>Per-offer price series for one GPU family</td></tr>
 </tbody></table></div>
 <p class="mut">Paths are versioned and stable. A keyed tier (webhooks, alerts,
-bulk history, SLA) ships when demand shows up — watch the <a href="/rss.xml">feed</a>.</p>"""
+bulk history, SLA) ships when demand shows up — watch the <a href="/rss.xml">feed</a>.</p>
+<h2>Feeds &amp; badges</h2>
+<p>RSS: <a href="/rss.xml">everything</a> · <a href="/gpu.xml">GPUs</a> ·
+<a href="/llm/rss.xml">LLM APIs</a> · <a href="/saas/rss.xml">SaaS</a>.
+Live price badges for your README: <a href="/badges.html">badges</a>.</p>"""
     return page("API — gpudiff", body, monetize,
                 "Free JSON API for GPU cloud prices, history, and the changelog. CC BY 4.0.",
                 path="/api/")
@@ -517,9 +521,23 @@ pipeline is open source, so you can check.</p>"""
                 path="/methodology.html")
 
 
-def render_rss(changelog):
+SECTION_OF = {"usd_per_mtok": "llm", "usd_per_unit": "saas"}
+
+
+def entry_section(e):
+    if e["id"].startswith("openrouter:"):
+        return "llm"
+    if e["id"].split(":")[1].startswith("pricing-"):
+        return "saas"
+    return "gpu"
+
+
+def render_rss(changelog, title, description, section=None):
+    pool = [e for e in changelog if e["kind"] in ("price_change", "added")]
+    if section:
+        pool = [e for e in pool if entry_section(e) == section]
     items = []
-    for e in [e for e in changelog if e["kind"] == "price_change"][-50:][::-1]:
+    for e in pool[-50:][::-1]:
         items.append(f"""<item>
 <title>{esc(e['summary'])}</title>
 <link>{BASE_URL}/changelog.html</link>
@@ -528,11 +546,60 @@ def render_rss(changelog):
 </item>""")
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>
-<title>gpudiff — GPU cloud price changelog</title>
+<title>{esc(title)}</title>
 <link>{BASE_URL}</link>
-<description>Every recorded change in GPU cloud pricing.</description>
+<description>{esc(description)}</description>
 {''.join(items)}
 </channel></rss>"""
+
+
+# ------------------------------------------------------------------- badges
+
+BADGE_L_BG = "#35427E"
+BADGE_R_BG = "#2F7D4F"
+
+
+def render_badge(label, value):
+    """Shields-style flat SVG with fixed colors — badges live on other
+    people's pages, so no CSS variables, no theme dependence."""
+    lw = round(len(label) * 6.4 + 14)
+    vw = round(len(value) * 6.4 + 14)
+    w = lw + vw
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20" role="img" aria-label="{esc(label)}: {esc(value)}">
+<linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient>
+<clipPath id="r"><rect width="{w}" height="20" rx="3" fill="#fff"/></clipPath>
+<g clip-path="url(#r)">
+<rect width="{lw}" height="20" fill="{BADGE_L_BG}"/>
+<rect x="{lw}" width="{vw}" height="20" fill="{BADGE_R_BG}"/>
+<rect width="{w}" height="20" fill="url(#s)"/>
+</g>
+<g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" font-size="11">
+<text x="{lw / 2}" y="14">{esc(label)}</text>
+<text x="{lw + vw / 2}" y="14">{esc(value)}</text>
+</g>
+</svg>"""
+
+
+def render_badges_page(badge_rows, monetize):
+    cards = []
+    for fname, label, value, page_path in badge_rows:
+        md = f"[![{label}: {value}](https://gpudiff.com/badge/{fname})](https://gpudiff.com{page_path})"
+        cards.append(
+            f"<tr><td><img src='/badge/{esc(fname)}' alt='{esc(label)}: {esc(value)}' height='20'></td>"
+            f"<td><code style='font-size:12px'>{esc(md)}</code></td></tr>")
+    body = f"""
+<h1>Live badges</h1>
+<p>Embed a live price in your README, blog, or docs. Badges regenerate with
+every refresh, so the number stays current; the image is a plain SVG served
+from this site — no scripts, no tracking.</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Badge</th><th>Markdown</th></tr></thead>
+<tbody>{''.join(cards)}</tbody></table></div>
+<p class="mut">HTML variant: swap the Markdown for
+<code>&lt;a href="…"&gt;&lt;img src="…svg"&gt;&lt;/a&gt;</code>. CC BY 4.0 — a link is the attribution.</p>"""
+    return page("Badges — gpudiff", body, monetize,
+                "Embeddable live GPU price badges: current prices in your README or blog, updated hourly.",
+                path="/badges.html")
 
 
 # -------------------------------------------------------------------- build
@@ -582,7 +649,46 @@ def build_site(offers, changelog, date):
     (SITE / "changelog.html").write_text(render_changelog(changelog, monetize, aliases))
     (SITE / "methodology.html").write_text(render_methodology(monetize))
     (SITE / "api" / "index.html").write_text(render_api_docs(monetize))
-    (SITE / "rss.xml").write_text(render_rss(changelog))
+
+    (SITE / "rss.xml").write_text(render_rss(
+        changelog, "gpudiff — all price changes",
+        "Every recorded change across GPU cloud, LLM API, and SaaS pricing."))
+    (SITE / "gpu.xml").write_text(render_rss(
+        changelog, "gpudiff — GPU cloud price changes",
+        "Every recorded change in GPU cloud pricing.", section="gpu"))
+    (SITE / "llm" / "rss.xml").write_text(render_rss(
+        changelog, "gpudiff — LLM API price changes",
+        "Every recorded LLM API price change and model listing.", section="llm"))
+    (SITE / "saas" / "rss.xml").write_text(render_rss(
+        changelog, "gpudiff — SaaS pricing changes",
+        "Who raised prices this week: SaaS pricing page changes.", section="saas"))
+
+    # Badges: one per GPU family plus section-level counters.
+    (SITE / "badge").mkdir(parents=True, exist_ok=True)
+    badge_rows = []
+    n_models = len({(o.get("attrs") or {}).get("model_id") for o in llm_offers})
+    n_saas = len({o["provider"] for o in saas_offers})
+    overall = [("gpudiff.svg", "gpudiff", f"{len(offers)} prices · hourly diffs", "/"),
+               ("llm.svg", "llm api prices", f"{n_models} models tracked", "/llm/"),
+               ("saas.svg", "saas pricing", f"{n_saas} pages watched", "/saas/")]
+    for fname, label, value, ppath in overall:
+        (SITE / "badge" / fname).write_text(render_badge(label, value))
+        badge_rows.append((fname, label, value, ppath))
+    for fam, entry in sorted(fams.items()):
+        od = [o for o in entry["offers"] if o["pricing_type"] == "on_demand"]
+        if not od:
+            continue
+        label = fam_display(fam, entry)
+        value = f"from ${od[0]['price']:.2f}/hr"
+        fname = f"{fam}.svg"
+        (SITE / "badge" / fname).write_text(render_badge(label, value))
+        badge_rows.append((fname, label, value, f"/gpu/{fam}.html"))
+    (SITE / "badges.html").write_text(render_badges_page(badge_rows, monetize))
+
+    # IndexNow verification key file
+    ik = monetize.get("indexnow_key", "")
+    if ik:
+        (SITE / f"{ik}.txt").write_text(ik + "\n")
 
     fam_summaries = []
     for fam, entry in fams.items():
@@ -614,7 +720,7 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
     urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/saas/",
-            f"{BASE_URL}/changelog.html",
+            f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",
             f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/"] + \
            [f"{BASE_URL}/gpu/{fam}.html" for fam in sorted(fams)]
     (SITE / "sitemap.xml").write_text(

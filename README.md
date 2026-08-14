@@ -1,7 +1,15 @@
 # gpudiff · Nightshift Foundry
 
-**Live:** https://gpudiff.com — the GPU Price Changelog: the public record of
-change in GPU cloud pricing.
+[![gpudiff](https://gpudiff.com/badge/gpudiff.svg)](https://gpudiff.com)
+[![H100 SXM](https://gpudiff.com/badge/h100-sxm-80gb.svg)](https://gpudiff.com/gpu/h100-sxm-80gb.html)
+[![LLM APIs](https://gpudiff.com/badge/llm.svg)](https://gpudiff.com/llm/)
+
+**Live:** https://gpudiff.com — the public record of change in AI compute and
+software pricing: [GPU clouds](https://gpudiff.com), [LLM APIs](https://gpudiff.com/llm/),
+and [SaaS pricing pages](https://gpudiff.com/saas/), snapshotted hourly with
+provenance, changelogs, [RSS feeds](https://gpudiff.com/api/), a free CC BY
+[JSON API](https://gpudiff.com/api/), and
+[embeddable live badges](https://gpudiff.com/badges.html).
 
 This repo is the shared pipeline behind Nightshift Foundry: a portfolio of
 small, agent-run data assets. One dataset in, three surfaces out (site, API, digest), with

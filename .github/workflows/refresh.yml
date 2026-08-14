@@ -53,6 +53,15 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      # Tell search engines what changed (IndexNow is a public protocol; the
+      # key file is served by the site). Once daily to stay polite.
+      - name: IndexNow ping (daily)
+        run: |
+          [ "$(date -u +%H)" = "06" ] || exit 0
+          curl -s -m 30 -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d '{"host":"gpudiff.com","key":"f3a92c47d8b14e0aa65b7c3d91e2f086","keyLocation":"https://gpudiff.com/f3a92c47d8b14e0aa65b7c3d91e2f086.txt","urlList":["https://gpudiff.com/","https://gpudiff.com/llm/","https://gpudiff.com/saas/","https://gpudiff.com/changelog.html","https://gpudiff.com/badges.html","https://gpudiff.com/rss.xml"]}' || true
+
       # After good data is committed and the site shipped: fail the job if any
       # source was degraded, so the sentinel pages humans without blocking publish.
       - name: Fail if degraded
