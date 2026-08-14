@@ -30,7 +30,10 @@ class RunpodSource(Source):
             mem = gpu.get("memoryInGb")
             if not display:
                 continue
-            sku = slug(f"{display}-{mem}gb" if mem else display)
+            base = slug(display)
+            # Memory config is identity — but don't double-suffix names that
+            # already carry it ("A100 SXM 40GB" must not become ...-40gb-40gb).
+            sku = base if (not mem or base.endswith(f"-{mem}gb")) else f"{base}-{mem}gb"
             for field, region in (("securePrice", "secure-cloud"), ("communityPrice", "community-cloud")):
                 price = gpu.get(field)
                 if not isinstance(price, (int, float)) or price <= 0:
