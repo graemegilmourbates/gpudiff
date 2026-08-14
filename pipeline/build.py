@@ -824,9 +824,17 @@ def build_site(offers, changelog, date):
     if ik:
         (SITE / f"{ik}.txt").write_text(ik + "\n")
 
-    # Favicons: SVG for modern browsers, hand-encoded PNG for the rest.
+    # Favicons: SVG for modern browsers, hand-encoded PNG for the rest, and a
+    # /favicon.ico because Safari requests that path directly regardless of
+    # link tags (ICO container with a PNG payload — valid everywhere modern).
+    import struct as _struct
+    png32 = render_favicon_png(32)
+    ico = (_struct.pack("<HHH", 0, 1, 1)
+           + _struct.pack("<BBBBHHII", 32, 32, 0, 0, 1, 32, len(png32), 22)
+           + png32)
     (SITE / "favicon.svg").write_text(FAVICON_SVG)
-    (SITE / "favicon.png").write_bytes(render_favicon_png(32))
+    (SITE / "favicon.png").write_bytes(png32)
+    (SITE / "favicon.ico").write_bytes(ico)
     (SITE / "apple-touch-icon.png").write_bytes(render_favicon_png(180))
 
     fam_summaries = []
