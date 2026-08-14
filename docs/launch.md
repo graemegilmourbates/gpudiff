@@ -55,6 +55,6 @@ an ask: "which providers should be next?"
 
 - [ ] ≥5 days of changelog entries visible
 - [ ] Enforce HTTPS ticked (STILL pending)
-- [ ] GoatCounter wired (`goatcounter_code` in monetize.json) so launch traffic is measured
+- [x] GoatCounter wired (`graemebates`, 2026-08-14) — dashboard: https://graemebates.goatcounter.com
 - [ ] Buttondown created if email capture wanted for launch (optional; RSS works)
 - [ ] Owner reads methodology page top to bottom (you will be quizzed by HN)
