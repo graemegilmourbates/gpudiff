@@ -1,25 +1,29 @@
 {
   "date": "2026-08-14",
-  "observed_at": "2026-08-14T18:15:11Z",
+  "observed_at": "2026-08-14T18:22:42Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 3
+      "offers": 6
     },
     {
       "source": "runpod",
       "ok": true,
-      "offers": 88
+      "offers": 176
     },
     {
       "source": "aws",
       "ok": true,
-      "offers": 9,
-      "carried": true
+      "offers": 9
+    },
+    {
+      "source": "azure",
+      "ok": true,
+      "offers": 12
     }
   ],
-  "valid": 100,
+  "valid": 203,
   "rejected": 0,
   "quarantined": 0,
   "healthy": true

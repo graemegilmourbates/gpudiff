@@ -158,7 +158,10 @@ def outbound(offer, monetize):
 def metric_badge(offer):
     metric = (offer.get("attrs") or {}).get("metric", "list")
     n = (offer.get("attrs") or {}).get("sample_size")
-    label = {"list_price": "list", "p25_per_gpu_dph_verified": f"p25 ×{n}" if n else "p25"}.get(metric, "list")
+    label = {"list_price": "list",
+             "p25_per_gpu_dph_verified": f"p25 ×{n}" if n else "p25",
+             "p25_min_bid_per_gpu": f"p25 bid ×{n}" if n else "p25 bid",
+             "instance_list_per_gpu": "instance-bundled"}.get(metric, "list")
     return f'<span class="badge" title="How this number is measured">{esc(label)}</span>'
 
 
@@ -203,9 +206,13 @@ def subscribe_block(monetize):
             f'<a href="{esc(monetize.get("sponsor_url", "#"))}">Sponsor this site</a> {email}</div>')
 
 
-def page(title, body, monetize, desc="", jsonld=""):
+def page(title, body, monetize, desc="", jsonld="", path="/"):
     nav = ('<nav class="site"><a href="/">prices</a><a href="/changelog.html">changelog</a>'
+           '<a href="/methodology.html">methodology</a>'
            '<a href="/api/">api</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
+    gc = monetize.get("goatcounter_code", "")
+    analytics = (f'<script data-goatcounter="https://{esc(gc)}.goatcounter.com/count" '
+                 f'async src="https://gc.zgo.at/count.js"></script>') if gc else ""
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -213,8 +220,15 @@ def page(title, body, monetize, desc="", jsonld=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(desc or title)}">
+<meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc or title)}">
+<meta property="og:url" content="{BASE_URL}{esc(path)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="gpudiff">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="{BASE_URL}{esc(path)}">
 <link rel="alternate" type="application/rss+xml" title="gpudiff changelog" href="/rss.xml">
-<style>{CSS}</style>{jsonld}
+<style>{CSS}</style>{jsonld}{analytics}
 </head>
 <body><div class="wrap">
 <header class="site"><a class="brand" href="/">gpu<b>diff</b></a>
@@ -238,15 +252,19 @@ def render_index(fams, changelog, date, monetize):
         fam, entry = item
         return (-(fam_vram(fam, entry) or 0), fam)
     for fam, entry in sorted(fams.items(), key=sort_key):
-        best = entry["offers"][0]
+        od = [o for o in entry["offers"] if o["pricing_type"] == "on_demand"]
+        spot = [o for o in entry["offers"] if o["pricing_type"] == "spot"]
+        best = od[0] if od else entry["offers"][0]
         url, rel = outbound(best, monetize)
         vram = fam_vram(fam, entry)
         per_gb = f"${best['price'] / vram:.3f}" if vram else "—"
+        spot_cell = f"${spot[0]['price']:.2f}" if spot else "—"
         rows.append(
             f"<tr><td><a href='/gpu/{esc(fam)}.html'><strong>{esc(fam_display(fam, entry))}</strong></a></td>"
             f"<td class='n'>{vram or '—'}</td>"
             f"<td class='n'><strong>${best['price']:.2f}</strong>/hr</td>"
             f"<td>{esc(best['provider'])} · {esc(best.get('region', ''))} {metric_badge(best)}</td>"
+            f"<td class='n'>{spot_cell}</td>"
             f"<td class='n'>{per_gb}</td>"
             f"<td class='n'>{len(entry['offers'])}</td>"
             f"<td><a href='{esc(url)}'{rel}>rent</a></td></tr>")
@@ -271,8 +289,8 @@ def render_index(fams, changelog, date, monetize):
 <p class="mut">Grouped by memory configuration — an H100 NVL 94GB and an H100 PCIe 80GB are
 different products, so they never share a row. Prices refresh hourly; snapshot {esc(date)}.</p>
 <div class="tablewrap"><table>
-<thead><tr><th>GPU</th><th class="n">VRAM GB</th><th class="n">Best $/hr</th><th>Where</th>
-<th class="n">$/GB·hr</th><th class="n">Offers</th><th></th></tr></thead>
+<thead><tr><th>GPU</th><th class="n">VRAM GB</th><th class="n">On-demand $/hr</th><th>Where</th>
+<th class="n">Spot from</th><th class="n">$/GB·hr</th><th class="n">Offers</th><th></th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div>
 <small class="mut">$/GB·hr = hourly price per gigabyte of nameplate VRAM — a screening lens,
 not a verdict; interconnect, cloud tier, and real throughput still matter.</small>"""
@@ -320,7 +338,8 @@ def render_family(fam, entry, history, changelog, monetize, aliases):
 <ul class="chg">{log}</ul>
 <p><a href="/api/v1/history/{esc(fam)}.json">History JSON for this GPU →</a></p>"""
     return page(f"{name} cloud price — gpudiff", body, monetize,
-                f"Current {name} rental prices across clouds, with price history, provenance, and a changelog of every change.")
+                f"Current {name} rental prices across clouds, with price history, provenance, and a changelog of every change.",
+                path=f"/gpu/{fam}.html")
 
 
 def render_changelog(changelog, monetize, aliases):
@@ -334,7 +353,8 @@ def render_changelog(changelog, monetize, aliases):
     body = "<h1>Changelog</h1>" + ("".join(sections) or
            "<p class='mut'>Tracking began today. The record grows with every price move.</p>")
     return page("Changelog — gpudiff", body, monetize,
-                "Every recorded change in GPU cloud pricing, in order.")
+                "Every recorded change in GPU cloud pricing, in order.",
+                path="/changelog.html")
 
 
 def render_api_docs(monetize):
@@ -354,7 +374,53 @@ def render_api_docs(monetize):
 <p class="mut">Paths are versioned and stable. A keyed tier (webhooks, alerts,
 bulk history, SLA) ships when demand shows up — watch the <a href="/rss.xml">feed</a>.</p>"""
     return page("API — gpudiff", body, monetize,
-                "Free JSON API for GPU cloud prices, history, and the changelog. CC BY 4.0.")
+                "Free JSON API for GPU cloud prices, history, and the changelog. CC BY 4.0.",
+                path="/api/")
+
+
+def render_methodology(monetize):
+    body = """
+<h1>Methodology</h1>
+<p>gpudiff records the price of renting GPUs in the cloud, hourly, with a
+changelog of every move. Here is exactly how the numbers are made.</p>
+<h2>Identity: a GPU memory configuration is a product</h2>
+<p>An H100 PCIe 80GB, an H100 NVL 94GB, and an H100 SXM 80GB never share a row
+or a page. Comparison and history only happen inside one of these families;
+cross-family context comes from lenses like $/GB-VRAM-hr, clearly labeled as a
+screening tool, not a verdict.</p>
+<h2>Per-source metrics</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Provider</th><th>What we record</th><th>Cadence</th></tr></thead>
+<tbody>
+<tr><td>Vast.ai</td><td>25th percentile of verified marketplace listings, per GPU
+(dph ÷ GPU count); models with fewer than 5 listings are skipped. Spot = p25 of
+minimum bids. Marketplace listings vary in host quality — p25 is "what a careful
+buyer can actually get," not the single cheapest outlier.</td><td>hourly</td></tr>
+<tr><td>RunPod</td><td>Published list prices per GPU type, secure and community
+cloud, on-demand and spot. Community tiers can be availability-limited.</td><td>hourly</td></tr>
+<tr><td>AWS</td><td>On-demand Linux/shared list price of the smallest qualifying
+instance per GPU family, us-east-1, divided by GPU count. AWS sells bundles
+(CPUs + RAM attached), so rows are badged instance-bundled.</td><td>daily</td></tr>
+<tr><td>Azure</td><td>Retail Prices API, eastus, Linux consumption rates ÷ GPU
+count; on-demand and spot. Instance-bundled like AWS.</td><td>daily</td></tr>
+</tbody></table></div>
+<h2>Validation — missing beats wrong</h2>
+<p>Every offer is schema-validated; anything failing is dropped and flagged,
+never published. A price moving more than 40% in a day is quarantined for human
+review instead of shipped. Every datum stores the URL it was observed at and
+its timestamp, and every snapshot is committed to public git history — the
+archive cannot be quietly rewritten.</p>
+<h2>What we don't claim</h2>
+<p>Specs shown are vendor nameplate figures with links to the spec sheet — not
+measured throughput. Availability is not verified. Enterprise negotiated
+pricing is invisible to everyone, including us.</p>
+<h2>Money</h2>
+<p>Outbound provider links may carry referral codes (disclosed, rel=sponsored).
+They never influence which numbers are shown or how they're computed — the
+pipeline is open source, so you can check.</p>"""
+    return page("Methodology — gpudiff", body, monetize,
+                "How gpudiff computes GPU cloud prices: per-source metrics, validation gates, provenance, and what we deliberately don't claim.",
+                path="/methodology.html")
 
 
 def render_rss(changelog):
@@ -389,6 +455,7 @@ def build_site(offers, changelog, date):
 
     (SITE / "index.html").write_text(render_index(fams, changelog, date, monetize))
     (SITE / "changelog.html").write_text(render_changelog(changelog, monetize, aliases))
+    (SITE / "methodology.html").write_text(render_methodology(monetize))
     (SITE / "api" / "index.html").write_text(render_api_docs(monetize))
     (SITE / "rss.xml").write_text(render_rss(changelog))
 
@@ -399,13 +466,16 @@ def build_site(offers, changelog, date):
         fam_hist = {o["id"]: history.get(o["id"], []) for o in entry["offers"]}
         (SITE / "api" / "v1" / "history" / f"{fam}.json").write_text(
             json.dumps({"family": fam, "series": fam_hist}, indent=2) + "\n")
-        best = entry["offers"][0]
+        od = [o for o in entry["offers"] if o["pricing_type"] == "on_demand"]
+        spot = [o for o in entry["offers"] if o["pricing_type"] == "spot"]
+        best = od[0] if od else entry["offers"][0]
         spec = entry.get("spec") or {}
         fam_summaries.append({
             "family": fam, "display": fam_display(fam, entry),
             "vram_gb": fam_vram(fam, entry), "mem_bw_gbs": spec.get("mem_bw_gbs"),
             "best": {"price": best["price"], "provider": best["provider"],
                      "region": best.get("region"), "unit": best["unit"]},
+            "spot_from": spot[0]["price"] if spot else None,
             "offers": len(entry["offers"]),
         })
 
@@ -418,7 +488,8 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "offers.json").write_text(json.dumps(offers, indent=2) + "\n")
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
-    urls = [f"{BASE_URL}/", f"{BASE_URL}/changelog.html", f"{BASE_URL}/api/"] + \
+    urls = [f"{BASE_URL}/", f"{BASE_URL}/changelog.html", f"{BASE_URL}/methodology.html",
+            f"{BASE_URL}/api/"] + \
            [f"{BASE_URL}/gpu/{fam}.html" for fam in sorted(fams)]
     (SITE / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'

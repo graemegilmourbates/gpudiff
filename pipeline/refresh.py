@@ -41,9 +41,10 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
         registry = [FixtureSource(date)]
     else:
         from sources.aws import AwsSource
+        from sources.azure import AzureSource
         from sources.runpod import RunpodSource
         from sources.vast import VastSource
-        registry = [VastSource(), RunpodSource(), AwsSource()]
+        registry = [VastSource(), RunpodSource(), AwsSource(), AzureSource()]
 
     hour = dt.datetime.now(dt.timezone.utc).hour
     offers, statuses = [], []

@@ -21,6 +21,14 @@ lands with the owner; the agent never holds money or credentials).
 - Steps: create a runpod.io account → referral section → copy link → paste
   into `monetize.json` → `referral_links.runpod`.
 
+## Analytics (needed before launch — the day-90 gate is unmeasurable without it)
+
+- **GoatCounter** (free, privacy-friendly, no cookies): create an account at
+  goatcounter.com (~2 min), pick a code (e.g. `gpudiff`), put it in
+  `monetize.json` → `goatcounter_code`. The counter script appears sitewide on
+  the next deploy. GitHub Pages has no server logs — without this, launch
+  traffic is invisible.
+
 ## Later (traffic-gated, ignore until ~100 subscribers / sponsor interest)
 
 - **Buttondown** (free ≤100 subs): create account, set

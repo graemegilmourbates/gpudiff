@@ -33,34 +33,40 @@ class VastSource(Source):
         with urllib.request.urlopen(req, timeout=30) as resp:
             payload = json.load(resp)
 
-        by_model = {}
+        by_model, by_model_bid = {}, {}
         for listing in payload.get("offers", []):
             gpu = listing.get("gpu_name")
             price = listing.get("dph_total")
+            bid = listing.get("min_bid")
             n = listing.get("num_gpus") or 1
-            if not gpu or not isinstance(price, (int, float)) or price <= 0:
+            if not gpu:
                 continue
-            by_model.setdefault(gpu, []).append(price / n)
+            if isinstance(price, (int, float)) and price > 0:
+                by_model.setdefault(gpu, []).append(price / n)
+            if isinstance(bid, (int, float)) and bid > 0:
+                by_model_bid.setdefault(gpu, []).append(bid / n)
 
         offers = []
-        for gpu, prices in sorted(by_model.items()):
-            if len(prices) < MIN_SAMPLE:
-                continue
-            sku = slug(gpu)
-            offers.append({
-                "id": make_id("vast", sku, "global", "on_demand"),
-                "provider": "vast",
-                "sku": sku,
-                "price": _p25(prices),
-                "unit": "usd_per_hour",
-                "pricing_type": "on_demand",
-                "region": "global",
-                "attrs": {
-                    "gpu_model": gpu,
-                    "sample_size": len(prices),
-                    "metric": "p25_per_gpu_dph_verified",
-                },
-                "provenance": {"url": "https://vast.ai/pricing", "observed_at": observed_at},
-                "fixture": False,
-            })
+        for ptype, pool, metric in (("on_demand", by_model, "p25_per_gpu_dph_verified"),
+                                    ("spot", by_model_bid, "p25_min_bid_per_gpu")):
+            for gpu, prices in sorted(pool.items()):
+                if len(prices) < MIN_SAMPLE:
+                    continue
+                sku = slug(gpu)
+                offers.append({
+                    "id": make_id("vast", sku, "global", ptype),
+                    "provider": "vast",
+                    "sku": sku,
+                    "price": _p25(prices),
+                    "unit": "usd_per_hour",
+                    "pricing_type": ptype,
+                    "region": "global",
+                    "attrs": {
+                        "gpu_model": gpu,
+                        "sample_size": len(prices),
+                        "metric": metric,
+                    },
+                    "provenance": {"url": "https://vast.ai/pricing", "observed_at": observed_at},
+                    "fixture": False,
+                })
         return offers
