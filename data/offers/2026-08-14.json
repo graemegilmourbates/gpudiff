@@ -1,20 +1,39 @@
 [
   {
-    "id": "vast:h200:global:on-demand",
+    "id": "vast:rtx-4090:global:on-demand",
     "provider": "vast",
-    "sku": "h200",
-    "price": 3.9357,
+    "sku": "rtx-4090",
+    "price": 0.3419,
     "unit": "usd_per_hour",
     "pricing_type": "on_demand",
     "region": "global",
     "attrs": {
-      "gpu_model": "H200",
+      "gpu_model": "RTX 4090",
       "sample_size": 5,
       "metric": "p25_per_gpu_dph_verified"
     },
     "provenance": {
       "url": "https://vast.ai/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "vast:rtx-5090:global:on-demand",
+    "provider": "vast",
+    "sku": "rtx-5090",
+    "price": 0.337,
+    "unit": "usd_per_hour",
+    "pricing_type": "on_demand",
+    "region": "global",
+    "attrs": {
+      "gpu_model": "RTX 5090",
+      "sample_size": 5,
+      "metric": "p25_per_gpu_dph_verified"
+    },
+    "provenance": {
+      "url": "https://vast.ai/pricing",
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -33,7 +52,7 @@
     },
     "provenance": {
       "url": "https://vast.ai/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -41,7 +60,7 @@
     "id": "vast:rtx-pro-6000-s:global:on-demand",
     "provider": "vast",
     "sku": "rtx-pro-6000-s",
-    "price": 1.6011,
+    "price": 1.6022,
     "unit": "usd_per_hour",
     "pricing_type": "on_demand",
     "region": "global",
@@ -52,26 +71,45 @@
     },
     "provenance": {
       "url": "https://vast.ai/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
   {
-    "id": "vast:h200:global:spot",
+    "id": "vast:rtx-4090:global:spot",
     "provider": "vast",
-    "sku": "h200",
-    "price": 3.4842,
+    "sku": "rtx-4090",
+    "price": 0.4,
     "unit": "usd_per_hour",
     "pricing_type": "spot",
     "region": "global",
     "attrs": {
-      "gpu_model": "H200",
+      "gpu_model": "RTX 4090",
       "sample_size": 5,
       "metric": "p25_min_bid_per_gpu"
     },
     "provenance": {
       "url": "https://vast.ai/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
+    },
+    "fixture": false
+  },
+  {
+    "id": "vast:rtx-5090:global:spot",
+    "provider": "vast",
+    "sku": "rtx-5090",
+    "price": 0.3,
+    "unit": "usd_per_hour",
+    "pricing_type": "spot",
+    "region": "global",
+    "attrs": {
+      "gpu_model": "RTX 5090",
+      "sample_size": 5,
+      "metric": "p25_min_bid_per_gpu"
+    },
+    "provenance": {
+      "url": "https://vast.ai/pricing",
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -79,7 +117,7 @@
     "id": "vast:rtx-pro-5000:global:spot",
     "provider": "vast",
     "sku": "rtx-pro-5000",
-    "price": 0.2,
+    "price": 0.16,
     "unit": "usd_per_hour",
     "pricing_type": "spot",
     "region": "global",
@@ -90,7 +128,7 @@
     },
     "provenance": {
       "url": "https://vast.ai/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -98,7 +136,7 @@
     "id": "vast:rtx-pro-6000-s:global:spot",
     "provider": "vast",
     "sku": "rtx-pro-6000-s",
-    "price": 1.0667,
+    "price": 1.0,
     "unit": "usd_per_hour",
     "pricing_type": "spot",
     "region": "global",
@@ -109,7 +147,7 @@
     },
     "provenance": {
       "url": "https://vast.ai/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -128,7 +166,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -147,7 +185,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -166,7 +204,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -185,7 +223,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -204,7 +242,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -223,7 +261,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -242,7 +280,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -261,7 +299,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -280,7 +318,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -299,7 +337,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -318,7 +356,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -337,7 +375,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -356,7 +394,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -375,7 +413,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -394,7 +432,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -413,7 +451,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -432,7 +470,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -451,7 +489,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -470,7 +508,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -489,7 +527,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -508,7 +546,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -527,7 +565,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -546,7 +584,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -565,7 +603,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -584,7 +622,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -603,7 +641,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -622,7 +660,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -641,7 +679,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -660,7 +698,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -679,7 +717,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -698,7 +736,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -717,7 +755,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -736,7 +774,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -755,7 +793,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -774,7 +812,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -793,7 +831,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -812,7 +850,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -831,7 +869,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -850,7 +888,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -869,7 +907,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -888,7 +926,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -907,7 +945,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -926,7 +964,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -945,7 +983,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -964,7 +1002,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -983,7 +1021,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1002,7 +1040,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1021,7 +1059,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1040,7 +1078,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1059,7 +1097,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1078,7 +1116,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1097,7 +1135,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1116,7 +1154,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1135,7 +1173,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1154,7 +1192,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1173,7 +1211,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1192,7 +1230,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1211,7 +1249,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1230,7 +1268,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1249,7 +1287,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1268,7 +1306,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1287,7 +1325,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1306,7 +1344,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1325,7 +1363,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1344,7 +1382,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1363,7 +1401,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1382,7 +1420,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1401,7 +1439,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1420,7 +1458,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1439,7 +1477,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1458,7 +1496,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1477,7 +1515,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1496,7 +1534,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1515,7 +1553,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1534,7 +1572,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1553,7 +1591,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1572,7 +1610,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1591,7 +1629,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1610,7 +1648,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1629,7 +1667,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1648,7 +1686,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1667,7 +1705,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1686,7 +1724,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1705,7 +1743,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1724,7 +1762,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1743,7 +1781,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1762,7 +1800,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1781,7 +1819,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1800,7 +1838,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1819,7 +1857,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1838,7 +1876,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1857,7 +1895,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1876,7 +1914,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1895,7 +1933,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1914,7 +1952,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1933,7 +1971,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1952,7 +1990,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1971,7 +2009,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -1990,7 +2028,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2009,7 +2047,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2028,7 +2066,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2047,7 +2085,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2066,7 +2104,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2085,7 +2123,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2104,7 +2142,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2123,7 +2161,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2142,7 +2180,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2161,7 +2199,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2180,7 +2218,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2199,7 +2237,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2218,7 +2256,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2237,7 +2275,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2256,7 +2294,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2275,7 +2313,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2294,7 +2332,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2313,7 +2351,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2332,7 +2370,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2351,7 +2389,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2370,7 +2408,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2389,7 +2427,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2408,7 +2446,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2427,7 +2465,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2446,7 +2484,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2465,7 +2503,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2484,7 +2522,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2503,7 +2541,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2522,7 +2560,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2541,7 +2579,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2560,7 +2598,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2579,7 +2617,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2598,7 +2636,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2617,7 +2655,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2636,7 +2674,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2655,7 +2693,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2674,7 +2712,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2693,7 +2731,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2712,7 +2750,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2731,7 +2769,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2750,7 +2788,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2769,7 +2807,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2788,7 +2826,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2807,7 +2845,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2826,7 +2864,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2845,7 +2883,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2864,7 +2902,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2883,7 +2921,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2902,7 +2940,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2921,7 +2959,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2940,7 +2978,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2959,7 +2997,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2978,7 +3016,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -2997,7 +3035,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3016,7 +3054,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3035,7 +3073,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3054,7 +3092,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3073,7 +3111,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3092,7 +3130,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3111,7 +3149,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3130,7 +3168,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3149,7 +3187,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3168,7 +3206,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3187,7 +3225,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3206,7 +3244,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3225,7 +3263,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3244,7 +3282,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3263,7 +3301,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3282,7 +3320,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3301,7 +3339,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3320,7 +3358,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3339,7 +3377,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3358,7 +3396,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3377,7 +3415,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3396,7 +3434,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3415,7 +3453,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3434,7 +3472,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
@@ -3453,7 +3491,7 @@
     },
     "provenance": {
       "url": "https://www.runpod.io/pricing",
-      "observed_at": "2026-08-14T18:22:42Z"
+      "observed_at": "2026-08-14T18:23:27Z"
     },
     "fixture": false
   },
