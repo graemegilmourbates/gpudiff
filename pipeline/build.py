@@ -237,6 +237,9 @@ def page(title, body, monetize, desc="", jsonld="", path="/"):
 <meta property="og:site_name" content="gpudiff">
 <meta name="twitter:card" content="summary">
 <link rel="canonical" href="{BASE_URL}{esc(path)}">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="gpudiff changelog" href="/rss.xml">
 <style>{CSS}</style>{jsonld}{analytics}
 </head>
@@ -643,6 +646,45 @@ def render_rss(changelog, title, description, section=None):
 </channel></rss>"""
 
 
+# ------------------------------------------------------------------ favicon
+
+FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<rect width="32" height="32" rx="6" fill="#1A1D27"/>
+<rect x="6" y="7" width="20" height="6" rx="2" fill="#3FBF7F"/>
+<rect x="6" y="19" width="20" height="6" rx="2" fill="#E05252"/>
+</svg>"""
+
+
+def render_favicon_png(size):
+    """The favicon as a real PNG, encoded by hand — a diff hunk: green added
+    line over red removed line. Stdlib only (struct + zlib)."""
+    import struct
+    import zlib
+
+    bg, green, red = (26, 29, 39, 255), (63, 191, 127, 255), (224, 82, 82, 255)
+
+    def px(x, y):
+        fx, fy = x / size, y / size
+        if 0.19 <= fx <= 0.81 and 0.22 <= fy <= 0.41:
+            return green
+        if 0.19 <= fx <= 0.81 and 0.59 <= fy <= 0.78:
+            return red
+        return bg
+
+    raw = b"".join(
+        b"\x00" + b"".join(bytes(px(x, y)) for x in range(size))
+        for y in range(size)
+    )
+
+    def chunk(tag, data):
+        return (struct.pack(">I", len(data)) + tag + data
+                + struct.pack(">I", zlib.crc32(tag + data) & 0xFFFFFFFF))
+
+    ihdr = struct.pack(">IIBBBBB", size, size, 8, 6, 0, 0, 0)
+    return (b"\x89PNG\r\n\x1a\n" + chunk(b"IHDR", ihdr)
+            + chunk(b"IDAT", zlib.compress(raw)) + chunk(b"IEND", b""))
+
+
 # ------------------------------------------------------------------- badges
 
 BADGE_L_BG = "#35427E"
@@ -781,6 +823,11 @@ def build_site(offers, changelog, date):
     ik = monetize.get("indexnow_key", "")
     if ik:
         (SITE / f"{ik}.txt").write_text(ik + "\n")
+
+    # Favicons: SVG for modern browsers, hand-encoded PNG for the rest.
+    (SITE / "favicon.svg").write_text(FAVICON_SVG)
+    (SITE / "favicon.png").write_bytes(render_favicon_png(32))
+    (SITE / "apple-touch-icon.png").write_bytes(render_favicon_png(180))
 
     fam_summaries = []
     for fam, entry in fams.items():
