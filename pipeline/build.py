@@ -216,7 +216,7 @@ def subscribe_block(monetize):
 
 def page(title, body, monetize, desc="", jsonld="", path="/"):
     nav = ('<nav class="site"><a href="/">gpus</a><a href="/llm/">llm apis</a>'
-           '<a href="/saas/">saas</a>'
+           '<a href="/saas/">saas</a><a href="/fit.html">fit</a>'
            '<a href="/changelog.html">changelog</a>'
            '<a href="/methodology.html">methodology</a>'
            '<a href="/api/">api</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
@@ -325,9 +325,11 @@ def render_family(fam, entry, history, changelog, monetize, aliases):
     for o in entry["offers"]:
         url, rel = outbound(o, monetize)
         series = history.get(o["id"], [])
+        stk = (o.get("attrs") or {}).get("stock")
+        stock_note = f" <span class='mut'>· {esc(stk)} stock</span>" if stk else ""
         rows.append(
             f"<tr><td>{esc(o['provider'])}</td><td>{esc(o.get('region', ''))}</td>"
-            f"<td>{esc(o['pricing_type'])} {metric_badge(o)}</td>"
+            f"<td>{esc(o['pricing_type'])} {metric_badge(o)}{stock_note}</td>"
             f"<td class='n'><strong>${o['price']:.2f}</strong>/hr</td>"
             f"<td>{sparkline(series)}</td>"
             f"<td><a href='{esc(o['provenance']['url'])}' rel='noopener'>source</a></td>"
@@ -466,6 +468,94 @@ page-level signal, not a plan-mapped price (see <a href="/methodology.html">meth
     return page("SaaS pricing changelog — gpudiff", body, monetize,
                 "Daily scans of SaaS pricing pages: who raised prices, who cut them, with provenance.",
                 path="/saas/")
+
+
+FIT_JS = """
+async function refit() {
+  const fams = await (await fetch('/api/v1/families.json')).json();
+  const b = parseFloat(document.getElementById('params').value) || 0;
+  const bytes = parseFloat(document.getElementById('prec').value);
+  const need = b * bytes * 1.2;
+  document.getElementById('need').textContent = need ? need.toFixed(0) + ' GB (incl. 20% overhead)' : '—';
+  const fit = fams.filter(f => f.vram_gb && f.vram_gb >= need && f.best)
+                  .sort((a, z) => a.best.price - z.best.price);
+  const rows = fit.map(f =>
+    `<tr><td><a href="/gpu/${f.family}.html"><strong>${f.display}</strong></a></td>` +
+    `<td class="n">${f.vram_gb}</td>` +
+    `<td class="n"><strong>$${f.best.price.toFixed(2)}</strong>/hr</td>` +
+    `<td>${f.best.provider} · ${f.best.region || ''}</td>` +
+    `<td class="n">${f.spot_from ? '$' + f.spot_from.toFixed(2) : '—'}</td></tr>`).join('');
+  document.getElementById('fitrows').innerHTML =
+    rows || '<tr><td colspan="5" class="mut">Nothing fits on a single GPU at that size — shard across multiple GPUs or drop precision.</td></tr>';
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('params').addEventListener('input', refit);
+  document.getElementById('prec').addEventListener('change', refit);
+  document.querySelectorAll('[data-b]').forEach(btn => btn.addEventListener('click', () => {
+    document.getElementById('params').value = btn.dataset.b; refit();
+  }));
+  refit();
+});
+"""
+
+
+def render_fit_page(monetize):
+    presets = "".join(f'<button class="em" data-b="{b}" type="button">{b}B</button>'
+                      for b in (7, 13, 34, 70, 123, 405))
+    body = f"""
+<h1>What's the cheapest GPU that fits my model?</h1>
+<p class="mut">Single-GPU fit: parameters × bytes-per-weight × 1.2 overhead, against
+nameplate VRAM and live prices. Rough by design — KV cache scales with context,
+and multi-GPU sharding changes everything. A screening tool, not a capacity plan.</p>
+<div class="sub">
+  <label>Model size (billions): <input class="em" id="params" type="number" value="70" min="0" step="1" style="min-width:90px"></label>
+  {presets}
+  <label>Precision:
+    <select class="em" id="prec">
+      <option value="2">fp16 / bf16 (2 B/param)</option>
+      <option value="1">int8 (1 B/param)</option>
+      <option value="0.5">int4 (0.5 B/param)</option>
+    </select></label>
+  <span>Needs: <strong id="need">—</strong></span>
+</div>
+<div class="tablewrap"><table>
+<thead><tr><th>GPU</th><th class="n">VRAM GB</th><th class="n">On-demand $/hr</th><th>Where</th><th class="n">Spot from</th></tr></thead>
+<tbody id="fitrows"></tbody></table></div>
+<script>{FIT_JS}</script>"""
+    return page("Cheapest GPU that fits — gpudiff", body, monetize,
+                "Pick a model size and precision; see the cheapest cloud GPUs it actually fits on, at live prices.",
+                path="/fit.html")
+
+
+def render_digest_pages(monetize):
+    """Render merged weekly digests (digests/*.md, committed by digest.yml)
+    into dated site pages — the compounding content archive."""
+    src = ROOT / "digests"
+    out_dir = SITE / "digest"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    stems = []
+    for md in sorted(src.glob("*.md")) if src.exists() else []:
+        lines_html = []
+        for raw in md.read_text().splitlines():
+            if raw.startswith("# "):
+                lines_html.append(f"<h1>{esc(raw[2:])}</h1>")
+            elif raw.startswith("- "):
+                lines_html.append(f"<li>{esc(raw[2:])}</li>")
+            elif raw.strip():
+                lines_html.append(f"<p>{esc(raw)}</p>")
+        body = "\n".join(lines_html).replace("<li>", "<ul class='chg'><li>", 1)
+        if "<li>" in body:
+            body += "</ul>"
+        (out_dir / f"{md.stem}.html").write_text(
+            page(f"Digest {md.stem} — gpudiff", body, monetize,
+                 f"Weekly pricing digest for {md.stem}.", path=f"/digest/{md.stem}.html"))
+        stems.append(md.stem)
+    items = "\n".join(f'<li><a href="/digest/{s}.html">Week of {s}</a></li>' for s in reversed(stems)) \
+            or '<li class="mut">First digest lands Monday.</li>'
+    (out_dir / "index.html").write_text(
+        page("Weekly digests — gpudiff", f"<h1>Weekly digests</h1><ul class='chg'>{items}</ul>",
+             monetize, "The weekly what-changed digest archive.", path="/digest/"))
+    return stems
 
 
 def render_methodology(monetize):
@@ -648,6 +738,8 @@ def build_site(offers, changelog, date):
     (SITE / "index.html").write_text(render_index(fams, changelog, date, monetize))
     (SITE / "changelog.html").write_text(render_changelog(changelog, monetize, aliases))
     (SITE / "methodology.html").write_text(render_methodology(monetize))
+    (SITE / "fit.html").write_text(render_fit_page(monetize))
+    digest_stems = render_digest_pages(monetize)
     (SITE / "api" / "index.html").write_text(render_api_docs(monetize))
 
     (SITE / "rss.xml").write_text(render_rss(
@@ -719,9 +811,10 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "offers.json").write_text(json.dumps(offers, indent=2) + "\n")
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
-    urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/saas/",
+    urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/saas/", f"{BASE_URL}/fit.html",
             f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",
-            f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/"] + \
+            f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/", f"{BASE_URL}/digest/"] + \
+           [f"{BASE_URL}/digest/{s}.html" for s in digest_stems] + \
            [f"{BASE_URL}/gpu/{fam}.html" for fam in sorted(fams)]
     (SITE / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
