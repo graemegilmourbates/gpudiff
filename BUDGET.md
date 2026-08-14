@@ -16,6 +16,15 @@ the fund except the domain.
 it at the registrar as the payment method, turn on auto-renew. The one
 mandatory payment then happens by itself for years — no human, no agent.
 
+## Ledger
+
+| Date       | Item                                   | Out    | Fund remaining |
+| ---------- | -------------------------------------- | -----: | -------------: |
+| 2026-08-14 | Seed                                   |     —  |        $100.00 |
+| 2026-08-14 | gpudiff.com, 2-year term (Porkbun)     |  ~$22  |          ~$78  |
+
+Registered through 2028-08-14. Renewal reserve now covers 2028–2031.
+
 Mandatory burn ≈ **$0.92/month**. The fund alone keeps the business alive for
 8+ years at zero revenue. **Profitability bar: ~$1/month** — roughly one
 referral signup per year.
