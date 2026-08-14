@@ -126,6 +126,21 @@ def fam_display(fam, entry):
     return entry["spec"]["display"] if entry.get("spec") else fam.replace("-", " ").upper()
 
 
+def fam_vram(fam, entry):
+    """VRAM fallback chain: spec table -> the slug itself (rtx-3070-8gb) ->
+    provider-reported attrs. The GB is identity, so surface it wherever known."""
+    spec = entry.get("spec") or {}
+    if spec.get("vram_gb"):
+        return spec["vram_gb"]
+    import re
+    m = re.search(r"-(\d+)gb$", fam)
+    if m:
+        return int(m.group(1))
+    reported = [o.get("attrs", {}).get("vram_gb") for o in entry["offers"]]
+    reported = [v for v in reported if isinstance(v, (int, float))]
+    return int(max(reported)) if reported else None
+
+
 # ------------------------------------------------------------------- pieces
 
 def esc(s):
@@ -221,13 +236,11 @@ def render_index(fams, changelog, date, monetize):
     rows = []
     def sort_key(item):
         fam, entry = item
-        spec = entry.get("spec") or {}
-        return (-(spec.get("vram_gb") or 0), fam)
+        return (-(fam_vram(fam, entry) or 0), fam)
     for fam, entry in sorted(fams.items(), key=sort_key):
-        spec = entry.get("spec") or {}
         best = entry["offers"][0]
         url, rel = outbound(best, monetize)
-        vram = spec.get("vram_gb")
+        vram = fam_vram(fam, entry)
         per_gb = f"${best['price'] / vram:.3f}" if vram else "—"
         rows.append(
             f"<tr><td><a href='/gpu/{esc(fam)}.html'><strong>{esc(fam_display(fam, entry))}</strong></a></td>"
@@ -390,7 +403,7 @@ def build_site(offers, changelog, date):
         spec = entry.get("spec") or {}
         fam_summaries.append({
             "family": fam, "display": fam_display(fam, entry),
-            "vram_gb": spec.get("vram_gb"), "mem_bw_gbs": spec.get("mem_bw_gbs"),
+            "vram_gb": fam_vram(fam, entry), "mem_bw_gbs": spec.get("mem_bw_gbs"),
             "best": {"price": best["price"], "provider": best["provider"],
                      "region": best.get("region"), "unit": best["unit"]},
             "offers": len(entry["offers"]),

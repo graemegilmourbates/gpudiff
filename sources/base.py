@@ -17,9 +17,14 @@ def make_id(provider, sku, region, pricing_type):
 
 
 class Source:
-    """Interface: subclasses implement fetch(observed_at) -> list[dict]."""
+    """Interface: subclasses implement fetch(observed_at) -> list[dict].
+
+    cadence: "hourly" fetches every run; "daily" fetches on the 06:xx UTC run
+    (or when the provider is missing from the carry pool) and is carried
+    forward unchanged in between — for bulky sources whose prices move slowly."""
 
     name = "unnamed"
+    cadence = "hourly"
 
     def fetch(self, observed_at):
         raise NotImplementedError

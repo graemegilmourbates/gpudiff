@@ -30,18 +30,33 @@ def previous_snapshot(offers_dir, before_date):
     return snaps[-1] if snaps else None
 
 
-def gather(date, use_fixtures, observed_at):
-    """Returns (offers, statuses): per-source isolation, failures recorded."""
+def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
+    """Returns (offers, statuses): per-source isolation, failures recorded.
+
+    Daily-cadence sources fetch on the 06:xx UTC run (or when absent from the
+    carry pool); between fetches their previous offers are carried forward
+    unchanged so hourly snapshots never drop them."""
     if use_fixtures:
         from sources.fixtures import FixtureSource
         registry = [FixtureSource(date)]
     else:
+        from sources.aws import AwsSource
         from sources.runpod import RunpodSource
         from sources.vast import VastSource
-        registry = [VastSource(), RunpodSource()]
+        registry = [VastSource(), RunpodSource(), AwsSource()]
 
+    hour = dt.datetime.now(dt.timezone.utc).hour
     offers, statuses = [], []
     for source in registry:
+        cadence = getattr(source, "cadence", "hourly")
+        present = any(o["provider"] == source.name for o in carry_pool)
+        due = force_all or cadence == "hourly" or hour == 6 or not present
+        if not due:
+            carried = [o for o in carry_pool if o["provider"] == source.name]
+            offers.extend(carried)
+            statuses.append({"source": source.name, "ok": True,
+                             "offers": len(carried), "carried": True})
+            continue
         try:
             fetched = source.fetch(observed_at)
             offers.extend(fetched)
@@ -56,10 +71,9 @@ def gather(date, use_fixtures, observed_at):
     return offers, statuses
 
 
-def run(date, use_fixtures):
+def run(date, use_fixtures, force_all=False):
     now = dt.datetime.now(dt.timezone.utc)
     observed_at = now.strftime("%Y-%m-%dT%H:%M:%SZ")
-    raw, statuses = gather(date, use_fixtures, observed_at)
 
     base = data_root(use_fixtures)
     offers_dir = base / "offers"
@@ -67,6 +81,12 @@ def run(date, use_fixtures):
 
     prev_path = previous_snapshot(offers_dir, date)
     prev_offers = _load(prev_path) if prev_path else []
+    # Carry pool for slow-cadence sources: today's snapshot if one exists
+    # (keeps this morning's fetch), else the previous day's.
+    today_path = offers_dir / f"{date}.json"
+    carry_pool = _load(today_path) if today_path.exists() else prev_offers
+
+    raw, statuses = gather(date, use_fixtures, observed_at, carry_pool, force_all)
     schema = _load(SCHEMA_PATH)
     valid, rejected, quarantined = split_offers(raw, {o["id"]: o for o in prev_offers}, schema)
 
@@ -82,6 +102,8 @@ def run(date, use_fixtures):
     for s in statuses:
         mark = "ok " if s["ok"] else "FAIL"
         detail = f"{s.get('offers', 0)} offers" if s["ok"] else s["error"]
+        if s.get("carried"):
+            detail += " (carried)"
         print(f"  source {s['source']}: {mark} {detail}")
 
     if not ok_sources or not valid:
@@ -129,11 +151,12 @@ def main():
     ap = argparse.ArgumentParser(description="Run one full refresh")
     ap.add_argument("--date", default=dt.date.today().isoformat())
     ap.add_argument("--fixtures", action="store_true", help="use fixture sources (writes under data/dev/)")
+    ap.add_argument("--all-sources", action="store_true", help="fetch every source regardless of cadence")
     ap.add_argument("--check-health", action="store_true", help="exit nonzero if last run was degraded")
     args = ap.parse_args()
     if args.check_health:
         sys.exit(check_health(args.fixtures))
-    sys.exit(run(args.date, args.fixtures))
+    sys.exit(run(args.date, args.fixtures, args.all_sources))
 
 
 if __name__ == "__main__":
