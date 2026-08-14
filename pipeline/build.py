@@ -184,12 +184,13 @@ def sparkline(points, width=120, height=26):
 
 
 def chg_html(e, aliases):
-    fam = family_of(e["id"].split(":")[1], aliases)
+    provider = e["id"].split(":")[0]
+    href = "/llm/" if provider == "openrouter" else f"/gpu/{esc(family_of(e['id'].split(':')[1], aliases))}.html"
     cls = ""
     if e["kind"] == "price_change":
         cls = "cut" if e["new_price"] < e["old_price"] else "raise"
     return (f'<li><time>{esc(e["date"])}</time> '
-            f'<a href="/gpu/{esc(fam)}.html" class="{cls}">{esc(e["summary"])}</a></li>')
+            f'<a href="{href}" class="{cls}">{esc(e["summary"])}</a></li>')
 
 
 def subscribe_block(monetize):
@@ -207,7 +208,8 @@ def subscribe_block(monetize):
 
 
 def page(title, body, monetize, desc="", jsonld="", path="/"):
-    nav = ('<nav class="site"><a href="/">prices</a><a href="/changelog.html">changelog</a>'
+    nav = ('<nav class="site"><a href="/">gpus</a><a href="/llm/">llm apis</a>'
+           '<a href="/changelog.html">changelog</a>'
            '<a href="/methodology.html">methodology</a>'
            '<a href="/api/">api</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
     gc = monetize.get("goatcounter_code", "")
@@ -282,6 +284,7 @@ def render_index(fams, changelog, date, monetize):
                           "contentUrl": f"{BASE_URL}/api/v1/offers.json"}],
     }) + '</script>')
     body = f"""
+<p class="mut">Now also tracking <a href="/llm/">LLM API prices per token</a> (beta).</p>
 <h1>What changed in GPU cloud pricing</h1>
 <ul class="chg">{log}</ul>
 <p><a href="/changelog.html">Full changelog →</a></p>
@@ -378,6 +381,45 @@ bulk history, SLA) ships when demand shows up — watch the <a href="/rss.xml">f
                 path="/api/")
 
 
+def render_llm_index(llm_offers, changelog, monetize):
+    models = {}
+    for o in llm_offers:
+        a = o.get("attrs") or {}
+        mid = a.get("model_id") or o["sku"]
+        m = models.setdefault(mid, {"name": a.get("model_name") or mid,
+                                    "ctx": a.get("context_length"),
+                                    "url": o["provenance"]["url"]})
+        m[a.get("direction", "input")] = o["price"]
+    rows = []
+    for mid, m in sorted(models.items(), key=lambda kv: kv[1]["name"].lower()):
+        ctx = f"{m['ctx']:,}" if m.get("ctx") else "—"
+        fin = f"${m['input']:.2f}" if m.get("input") is not None else "—"
+        fout = f"${m['output']:.2f}" if m.get("output") is not None else "—"
+        rows.append(f"<tr><td><strong>{esc(m['name'])}</strong><br>"
+                    f"<span class='mut'>{esc(mid)}</span></td>"
+                    f"<td class='n'>{ctx}</td><td class='n'>{fin}</td><td class='n'>{fout}</td>"
+                    f"<td><a href='{esc(m['url'])}' rel='noopener'>source</a></td></tr>")
+    recent = [e for e in changelog if e["id"].startswith("openrouter:")][-15:]
+    aliases = alias_index(load_specs())
+    log = "\n".join(chg_html(e, aliases) for e in reversed(recent)) or \
+          '<li class="mut">Tracking began today — diffs appear with the next price move or model listing.</li>'
+    body = f"""
+<h1>LLM API pricing — the changelog <span class="badge">beta</span></h1>
+<p class="mut">Per-million-token list prices as published on OpenRouter's public catalog,
+snapshotted hourly. {len(models)} models tracked. Official provider list pages
+(Anthropic, OpenAI, Google) join as slower-moving sources next.</p>
+<h2>What changed</h2>
+<ul class="chg">{log}</ul>
+<h2>Current prices</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Model</th><th class="n">Context</th><th class="n">$ in /MTok</th><th class="n">$ out /MTok</th><th>Provenance</th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table></div>
+<p><a href="/api/v1/llm/models.json">Models JSON →</a></p>"""
+    return page("LLM API price changelog — gpudiff", body, monetize,
+                "Per-token LLM API prices with an hourly-updated changelog: every model listing, delisting, and price change.",
+                path="/llm/")
+
+
 def render_methodology(monetize):
     body = """
 <h1>Methodology</h1>
@@ -448,10 +490,28 @@ def build_site(offers, changelog, date):
     aliases = alias_index(specs)
     monetize = load_monetize()
     history = load_history()
-    fams = group_families(offers, specs, aliases)
+    # Sections: per-token offers are the LLM surface; everything else is GPUs.
+    llm_offers = [o for o in offers if o["unit"] == "usd_per_mtok"]
+    gpu_offers = [o for o in offers if o["unit"] != "usd_per_mtok"]
+    fams = group_families(gpu_offers, specs, aliases)
 
     (SITE / "gpu").mkdir(parents=True, exist_ok=True)
+    (SITE / "llm").mkdir(parents=True, exist_ok=True)
     (SITE / "api" / "v1" / "history").mkdir(parents=True, exist_ok=True)
+    (SITE / "api" / "v1" / "llm").mkdir(parents=True, exist_ok=True)
+
+    (SITE / "llm" / "index.html").write_text(render_llm_index(llm_offers, changelog, monetize))
+    llm_models = {}
+    for o in llm_offers:
+        a = o.get("attrs") or {}
+        mid = a.get("model_id") or o["sku"]
+        m = llm_models.setdefault(mid, {"model": mid, "name": a.get("model_name"),
+                                        "context_length": a.get("context_length"),
+                                        "unit": "usd_per_mtok",
+                                        "provenance": o["provenance"]["url"]})
+        m[f"{a.get('direction', 'input')}_per_mtok"] = o["price"]
+    (SITE / "api" / "v1" / "llm" / "models.json").write_text(
+        json.dumps(sorted(llm_models.values(), key=lambda m: m["model"]), indent=2) + "\n")
 
     (SITE / "index.html").write_text(render_index(fams, changelog, date, monetize))
     (SITE / "changelog.html").write_text(render_changelog(changelog, monetize, aliases))
@@ -488,8 +548,8 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "offers.json").write_text(json.dumps(offers, indent=2) + "\n")
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
-    urls = [f"{BASE_URL}/", f"{BASE_URL}/changelog.html", f"{BASE_URL}/methodology.html",
-            f"{BASE_URL}/api/"] + \
+    urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/changelog.html",
+            f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/"] + \
            [f"{BASE_URL}/gpu/{fam}.html" for fam in sorted(fams)]
     (SITE / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'

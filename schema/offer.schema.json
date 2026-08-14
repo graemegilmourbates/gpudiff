@@ -13,7 +13,7 @@
     "provider": { "type": "string", "minLength": 1 },
     "sku": { "type": "string", "minLength": 1 },
     "price": { "type": "number", "exclusiveMinimum": 0, "maximum": 100000 },
-    "unit": { "type": "string", "enum": ["usd_per_hour", "usd_per_month", "usd_per_unit"] },
+    "unit": { "type": "string", "enum": ["usd_per_hour", "usd_per_month", "usd_per_unit", "usd_per_mtok"] },
     "pricing_type": { "type": "string", "enum": ["on_demand", "spot", "reserved", "list"] },
     "region": { "type": "string" },
     "attrs": {

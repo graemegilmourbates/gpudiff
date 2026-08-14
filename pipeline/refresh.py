@@ -42,9 +42,11 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
     else:
         from sources.aws import AwsSource
         from sources.azure import AzureSource
+        from sources.openrouter import OpenRouterSource
         from sources.runpod import RunpodSource
         from sources.vast import VastSource
-        registry = [VastSource(), RunpodSource(), AwsSource(), AzureSource()]
+        registry = [VastSource(), RunpodSource(), AwsSource(), AzureSource(),
+                    OpenRouterSource()]
 
     hour = dt.datetime.now(dt.timezone.utc).hour
     offers, statuses = [], []
