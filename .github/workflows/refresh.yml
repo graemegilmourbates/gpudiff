@@ -1,17 +1,27 @@
-# Hourly refresh: fetch → validate → commit snapshot → build → deploy.
-# Fixture mode until the first production source lands (week 1).
+# Hourly refresh: fetch → validate → commit snapshot → deploy site → health gate.
 name: refresh
 on:
   schedule:
     - cron: "17 * * * *"
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
 
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -29,12 +39,16 @@ jobs:
           git diff --cached --quiet || git commit -m "data: refresh $(date -u +%F-%H%M)"
           git push
 
-      # After good data is committed: fail the job if any source was degraded,
-      # so the sentinel opens an issue without blocking the publish.
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      # After good data is committed and the site shipped: fail the job if any
+      # source was degraded, so the sentinel pages humans without blocking publish.
       - name: Fail if degraded
         run: python3 -m pipeline.refresh --check-health
-
-      # Deploy: swap in Cloudflare Pages (wrangler pages deploy site/) or
-      # actions/deploy-pages once the surface is real. Stub until week 2.
-      - name: Deploy (stub)
-        run: echo "deploy site/ -> pages (configure in week 2)"
