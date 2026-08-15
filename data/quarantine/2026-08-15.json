@@ -1,6 +1,30 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-pro-5000:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-5000",
+      "price": 0.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 5000",
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-15T18:46:39Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.16,
+    "delta_pct": 150.0,
+    "reason": "price moved 150.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:z-ai-glm-5.2-input:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-5.2-input",
@@ -17,7 +41,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T17:34:19Z"
+        "observed_at": "2026-08-15T18:46:39Z"
       },
       "fixture": false
     },
@@ -43,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T17:34:19Z"
+        "observed_at": "2026-08-15T18:46:39Z"
       },
       "fixture": false
     },
@@ -69,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T17:34:19Z"
+        "observed_at": "2026-08-15T18:46:39Z"
       },
       "fixture": false
     },
@@ -95,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T17:34:19Z"
+        "observed_at": "2026-08-15T18:46:39Z"
       },
       "fixture": false
     },
@@ -121,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3-preview",
-        "observed_at": "2026-08-15T17:34:19Z"
+        "observed_at": "2026-08-15T18:46:39Z"
       },
       "fixture": false
     },
@@ -147,7 +171,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3-preview",
-        "observed_at": "2026-08-15T17:34:19Z"
+        "observed_at": "2026-08-15T18:46:39Z"
       },
       "fixture": false
     },
