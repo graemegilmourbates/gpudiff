@@ -1,10 +1,34 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-pro-6000-ws:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-ws",
+      "price": 0.4667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 6000 WS",
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-15T12:57:58Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.9333,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:z-ai-glm-5.2-input:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-5.2-input",
-      "price": 0.49,
+      "price": 0.462,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -17,20 +41,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T11:33:34Z"
+        "observed_at": "2026-08-15T12:57:58Z"
       },
       "fixture": false
     },
     "previous_price": 1.19,
-    "delta_pct": 58.8,
-    "reason": "price moved 58.8% (> 40% limit)"
+    "delta_pct": 61.2,
+    "reason": "price moved 61.2% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:z-ai-glm-5.2-output:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-5.2-output",
-      "price": 1.54,
+      "price": 1.452,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -43,20 +67,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T11:33:34Z"
+        "observed_at": "2026-08-15T12:57:58Z"
       },
       "fixture": false
     },
     "previous_price": 3.74,
-    "delta_pct": 58.8,
-    "reason": "price moved 58.8% (> 40% limit)"
+    "delta_pct": 61.2,
+    "reason": "price moved 61.2% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-input",
-      "price": 0.0671,
+      "price": 0.0657,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -69,20 +93,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T11:33:34Z"
+        "observed_at": "2026-08-15T12:57:58Z"
       },
       "fixture": false
     },
     "previous_price": 0.14,
-    "delta_pct": 52.1,
-    "reason": "price moved 52.1% (> 40% limit)"
+    "delta_pct": 53.1,
+    "reason": "price moved 53.1% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-output",
-      "price": 0.1341,
+      "price": 0.1313,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -95,13 +119,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T11:33:34Z"
+        "observed_at": "2026-08-15T12:57:58Z"
       },
       "fixture": false
     },
     "previous_price": 0.28,
-    "delta_pct": 52.1,
-    "reason": "price moved 52.1% (> 40% limit)"
+    "delta_pct": 53.1,
+    "reason": "price moved 53.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -121,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3-preview",
-        "observed_at": "2026-08-15T11:33:34Z"
+        "observed_at": "2026-08-15T12:57:58Z"
       },
       "fixture": false
     },
@@ -147,7 +171,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3-preview",
-        "observed_at": "2026-08-15T11:33:34Z"
+        "observed_at": "2026-08-15T12:57:58Z"
       },
       "fixture": false
     },
