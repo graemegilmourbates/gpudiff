@@ -1,6 +1,30 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-pro-6000-ws:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-ws",
+      "price": 1.3333,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 6000 WS",
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-15T05:40:07Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.9333,
+    "delta_pct": 42.9,
+    "reason": "price moved 42.9% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:z-ai-glm-5.2-input:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-5.2-input",
@@ -17,7 +41,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T04:46:13Z"
+        "observed_at": "2026-08-15T05:40:07Z"
       },
       "fixture": false
     },
@@ -43,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T04:46:13Z"
+        "observed_at": "2026-08-15T05:40:07Z"
       },
       "fixture": false
     },
@@ -56,7 +80,7 @@
       "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-input",
-      "price": 0.0783,
+      "price": 0.0769,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -69,20 +93,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T04:46:13Z"
+        "observed_at": "2026-08-15T05:40:07Z"
       },
       "fixture": false
     },
     "previous_price": 0.14,
-    "delta_pct": 44.1,
-    "reason": "price moved 44.1% (> 40% limit)"
+    "delta_pct": 45.1,
+    "reason": "price moved 45.1% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-output",
-      "price": 0.1565,
+      "price": 0.1537,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -95,13 +119,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T04:46:13Z"
+        "observed_at": "2026-08-15T05:40:07Z"
       },
       "fixture": false
     },
     "previous_price": 0.28,
-    "delta_pct": 44.1,
-    "reason": "price moved 44.1% (> 40% limit)"
+    "delta_pct": 45.1,
+    "reason": "price moved 45.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -121,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-15T04:46:13Z"
+        "observed_at": "2026-08-15T05:40:07Z"
       },
       "fixture": false
     },
