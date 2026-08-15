@@ -1,6 +1,30 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-5090:global:spot",
+      "provider": "vast",
+      "sku": "rtx-5090",
+      "price": 0.5333,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 5090",
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-15T03:53:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3,
+    "delta_pct": 77.8,
+    "reason": "price moved 77.8% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:z-ai-glm-5.2-input:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-5.2-input",
@@ -17,7 +41,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T03:03:57Z"
+        "observed_at": "2026-08-15T03:53:24Z"
       },
       "fixture": false
     },
@@ -43,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T03:03:57Z"
+        "observed_at": "2026-08-15T03:53:24Z"
       },
       "fixture": false
     },
@@ -69,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T03:03:57Z"
+        "observed_at": "2026-08-15T03:53:24Z"
       },
       "fixture": false
     },
@@ -95,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T03:03:57Z"
+        "observed_at": "2026-08-15T03:53:24Z"
       },
       "fixture": false
     },
@@ -121,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-15T03:03:57Z"
+        "observed_at": "2026-08-15T03:53:24Z"
       },
       "fixture": false
     },
