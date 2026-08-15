@@ -1,28 +1,26 @@
 {
   "date": "2026-08-15",
-  "observed_at": "2026-08-15T05:40:07Z",
+  "observed_at": "2026-08-15T06:57:07Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 8
+      "offers": 6
     },
     {
       "source": "runpod",
       "ok": true,
-      "offers": 102
+      "offers": 92
     },
     {
       "source": "aws",
       "ok": true,
-      "offers": 9,
-      "carried": true
+      "offers": 9
     },
     {
       "source": "azure",
       "ok": true,
-      "offers": 12,
-      "carried": true
+      "offers": 12
     },
     {
       "source": "openrouter",
@@ -32,12 +30,11 @@
     {
       "source": "saaspages",
       "ok": true,
-      "offers": 36,
-      "carried": true
+      "offers": 34
     }
   ],
-  "valid": 939,
+  "valid": 924,
   "rejected": 0,
-  "quarantined": 6,
+  "quarantined": 7,
   "healthy": true
 }
