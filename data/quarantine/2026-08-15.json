@@ -1,6 +1,54 @@
 [
   {
     "offer": {
+      "id": "vast:h200:global:spot",
+      "provider": "vast",
+      "sku": "h200",
+      "price": 1.9342,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200",
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-15T07:43:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 3.4842,
+    "delta_pct": 44.5,
+    "reason": "price moved 44.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-5090:global:spot",
+      "provider": "vast",
+      "sku": "rtx-5090",
+      "price": 0.56,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 5090",
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-15T07:43:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3,
+    "delta_pct": 86.7,
+    "reason": "price moved 86.7% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:z-ai-glm-5.2-input:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-5.2-input",
@@ -17,7 +65,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T06:57:07Z"
+        "observed_at": "2026-08-15T07:43:24Z"
       },
       "fixture": false
     },
@@ -43,7 +91,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T06:57:07Z"
+        "observed_at": "2026-08-15T07:43:24Z"
       },
       "fixture": false
     },
@@ -56,7 +104,7 @@
       "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-input",
-      "price": 0.0755,
+      "price": 0.0741,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -69,20 +117,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T06:57:07Z"
+        "observed_at": "2026-08-15T07:43:24Z"
       },
       "fixture": false
     },
     "previous_price": 0.14,
-    "delta_pct": 46.1,
-    "reason": "price moved 46.1% (> 40% limit)"
+    "delta_pct": 47.1,
+    "reason": "price moved 47.1% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-output",
-      "price": 0.1509,
+      "price": 0.1481,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -95,13 +143,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T06:57:07Z"
+        "observed_at": "2026-08-15T07:43:24Z"
       },
       "fixture": false
     },
     "previous_price": 0.28,
-    "delta_pct": 46.1,
-    "reason": "price moved 46.1% (> 40% limit)"
+    "delta_pct": 47.1,
+    "reason": "price moved 47.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -121,7 +169,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3-preview",
-        "observed_at": "2026-08-15T06:57:07Z"
+        "observed_at": "2026-08-15T07:43:24Z"
       },
       "fixture": false
     },
@@ -147,7 +195,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3-preview",
-        "observed_at": "2026-08-15T06:57:07Z"
+        "observed_at": "2026-08-15T07:43:24Z"
       },
       "fixture": false
     },
@@ -173,7 +221,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-15T06:57:07Z"
+        "observed_at": "2026-08-15T07:43:24Z"
       },
       "fixture": false
     },
