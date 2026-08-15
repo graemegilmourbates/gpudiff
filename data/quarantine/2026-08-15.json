@@ -1,27 +1,51 @@
 [
   {
     "offer": {
-      "id": "vast:rtx-pro-5000:global:spot",
+      "id": "vast:rtx-5090:global:on-demand",
       "provider": "vast",
-      "sku": "rtx-pro-5000",
-      "price": 0.4,
+      "sku": "rtx-5090",
+      "price": 0.4726,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 5090",
+        "sample_size": 6,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-15T21:34:17Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.337,
+    "delta_pct": 40.2,
+    "reason": "price moved 40.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-5090:global:spot",
+      "provider": "vast",
+      "sku": "rtx-5090",
+      "price": 0.48,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX PRO 5000",
-        "sample_size": 5,
+        "gpu_model": "RTX 5090",
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-15T20:37:51Z"
+        "observed_at": "2026-08-15T21:34:17Z"
       },
       "fixture": false
     },
-    "previous_price": 0.16,
-    "delta_pct": 150.0,
-    "reason": "price moved 150.0% (> 40% limit)"
+    "previous_price": 0.3,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -41,7 +65,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T20:37:51Z"
+        "observed_at": "2026-08-15T21:34:17Z"
       },
       "fixture": false
     },
@@ -67,7 +91,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-15T20:37:51Z"
+        "observed_at": "2026-08-15T21:34:17Z"
       },
       "fixture": false
     },
@@ -93,7 +117,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T20:37:51Z"
+        "observed_at": "2026-08-15T21:34:17Z"
       },
       "fixture": false
     },
@@ -119,7 +143,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-15T20:37:51Z"
+        "observed_at": "2026-08-15T21:34:17Z"
       },
       "fixture": false
     },
@@ -145,7 +169,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3-preview",
-        "observed_at": "2026-08-15T20:37:51Z"
+        "observed_at": "2026-08-15T21:34:17Z"
       },
       "fixture": false
     },
@@ -171,7 +195,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3-preview",
-        "observed_at": "2026-08-15T20:37:51Z"
+        "observed_at": "2026-08-15T21:34:17Z"
       },
       "fixture": false
     },
