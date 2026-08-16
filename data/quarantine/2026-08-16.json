@@ -17,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-08-16T18:46:01Z"
+        "observed_at": "2026-08-16T19:32:29Z"
       },
       "fixture": false
     },
@@ -43,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-08-16T18:46:01Z"
+        "observed_at": "2026-08-16T19:32:29Z"
       },
       "fixture": false
     },
@@ -69,7 +69,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T18:46:01Z"
+        "observed_at": "2026-08-16T19:32:29Z"
       },
       "fixture": false
     },
@@ -95,38 +95,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T18:46:01Z"
+        "observed_at": "2026-08-16T19:32:29Z"
       },
       "fixture": false
     },
     "previous_price": 3.6,
     "delta_pct": 44.4,
     "reason": "price moved 44.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen2.5-vl-72b-instruct-input:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen2.5-vl-72b-instruct-input",
-      "price": 0.8,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen2.5-vl-72b-instruct",
-        "model_name": "Qwen: Qwen2.5 VL 72B Instruct",
-        "context_length": 128000,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen2.5-vl-72b-instruct",
-        "observed_at": "2026-08-16T18:46:01Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.25,
-    "delta_pct": 220.0,
-    "reason": "price moved 220.0% (> 40% limit)"
   }
 ]
