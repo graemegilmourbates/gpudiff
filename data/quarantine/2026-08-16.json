@@ -1,58 +1,6 @@
 [
   {
     "offer": {
-      "id": "openrouter:qwen-qwen3.6-27b-input:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3.6-27b-input",
-      "price": 0.3,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3.6-27b",
-        "model_name": "Qwen: Qwen3.6 27B",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T01:56:58Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3.6-27b-output:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3.6-27b-output",
-      "price": 2.0,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3.6-27b",
-        "model_name": "Qwen: Qwen3.6 27B",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T01:56:58Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 3.6,
-    "delta_pct": 44.4,
-    "reason": "price moved 44.4% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:moonshotai-kimi-k2.6-output:global:list",
       "provider": "openrouter",
       "sku": "moonshotai-kimi-k2.6-output",
@@ -69,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-16T01:56:58Z"
+        "observed_at": "2026-08-16T03:12:09Z"
       },
       "fixture": false
     },
