@@ -1,54 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:rtx-pro-6000-s:global:on-demand",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-s",
-      "price": 1.0131,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 6000 S",
-        "sample_size": 6,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-16T06:57:36Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.7341,
-    "delta_pct": 41.6,
-    "reason": "price moved 41.6% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-pro-6000-s:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-s",
-      "price": 0.5096,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 6000 S",
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-16T06:57:36Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.0667,
-    "delta_pct": 52.2,
-    "reason": "price moved 52.2% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:qwen-qwen3.6-27b-input:global:list",
       "provider": "openrouter",
       "sku": "qwen-qwen3.6-27b-input",
@@ -65,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T06:57:36Z"
+        "observed_at": "2026-08-16T07:44:34Z"
       },
       "fixture": false
     },
@@ -91,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T06:57:36Z"
+        "observed_at": "2026-08-16T07:44:34Z"
       },
       "fixture": false
     },
