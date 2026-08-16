@@ -1,6 +1,54 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-pro-6000-s:global:on-demand",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-s",
+      "price": 1.0131,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 6000 S",
+        "sample_size": 6,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-16T06:57:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.7341,
+    "delta_pct": 41.6,
+    "reason": "price moved 41.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-6000-s:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-s",
+      "price": 0.5096,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 6000 S",
+        "sample_size": 6,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-16T06:57:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.0667,
+    "delta_pct": 52.2,
+    "reason": "price moved 52.2% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:qwen-qwen3.6-27b-input:global:list",
       "provider": "openrouter",
       "sku": "qwen-qwen3.6-27b-input",
@@ -17,7 +65,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T05:41:33Z"
+        "observed_at": "2026-08-16T06:57:36Z"
       },
       "fixture": false
     },
@@ -43,38 +91,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T05:41:33Z"
+        "observed_at": "2026-08-16T06:57:36Z"
       },
       "fixture": false
     },
     "previous_price": 3.6,
     "delta_pct": 44.4,
     "reason": "price moved 44.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:moonshotai-kimi-k2.6-output:global:list",
-      "provider": "openrouter",
-      "sku": "moonshotai-kimi-k2.6-output",
-      "price": 3.41,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "moonshotai/kimi-k2.6",
-        "model_name": "MoonshotAI: Kimi K2.6",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-16T05:41:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.28,
-    "delta_pct": 49.6,
-    "reason": "price moved 49.6% (> 40% limit)"
   }
 ]
