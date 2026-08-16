@@ -301,19 +301,32 @@ def render_index(fams, changelog, date, monetize):
 <p><a href="/changelog.html">Full changelog →</a></p>
 <h2>Cheapest current price by GPU</h2>
 <p class="mut">Grouped by memory configuration — an H100 NVL 94GB and an H100 PCIe 80GB are
-different products, so they never share a row. Prices refresh hourly; snapshot {esc(date)}.</p>
+different products, so they never share a row. Prices refresh hourly; snapshot {esc(date)}.
+By provider: <a href="/provider/vast.html">Vast.ai</a> · <a href="/provider/runpod.html">RunPod</a> ·
+<a href="/provider/aws.html">AWS</a> · <a href="/provider/azure.html">Azure</a>. Head-to-head:
+<a href="/compare/h100-sxm-80gb-vs-h200-sxm-141gb.html">H100 vs H200</a> ·
+<a href="/compare/a100-sxm4-80gb-vs-h100-sxm-80gb.html">A100 vs H100</a> ·
+<a href="/compare/rtx-4090-24gb-vs-rtx-5090-32gb.html">4090 vs 5090</a>.</p>
 <div class="tablewrap"><table>
 <thead><tr><th>GPU</th><th class="n">VRAM GB</th><th class="n">On-demand $/hr</th><th>Where</th>
 <th class="n">Spot from</th><th class="n">$/GB·hr</th><th class="n">Offers</th><th></th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div>
 <small class="mut">$/GB·hr = hourly price per gigabyte of nameplate VRAM — a screening lens,
 not a verdict; interconnect, cloud tier, and real throughput still matter.</small>"""
-    return page("gpudiff — GPU cloud price changelog", body, monetize,
-                "Live GPU cloud prices with history, provenance, and a changelog of every change. H100, H200, B200, A100, RTX 4090/5090 and more.",
+    return page("GPU Cloud Pricing Compared — H100, H200, B200, A100, RTX 4090 rental prices, updated hourly | gpudiff",
+                body, monetize,
+                "Compare GPU cloud rental prices across Vast.ai, RunPod, AWS, and Azure — on-demand and spot, updated hourly, with price history and a changelog of every change.",
                 jsonld)
 
 
-def render_family(fam, entry, history, changelog, monetize, aliases):
+def related_families(fam, entry, fams, n=6):
+    """Nearest families by VRAM (the axis buyers actually shop along)."""
+    v = fam_vram(fam, entry) or 0
+    others = [(abs((fam_vram(f, e) or 0) - v), f, e) for f, e in fams.items() if f != fam]
+    return [(f, e) for _, f, e in sorted(others, key=lambda t: (t[0], t[1]))[:n]]
+
+
+def render_family(fam, entry, history, changelog, monetize, aliases, fams=None):
     spec = entry.get("spec")
     specbox = ""
     if spec:
@@ -342,8 +355,50 @@ def render_family(fam, entry, history, changelog, monetize, aliases):
     log = "\n".join(chg_html(e, aliases) for e in reversed(fam_entries)) or \
           '<li class="mut">No recorded changes yet for this GPU.</li>'
     name = fam_display(fam, entry)
+    od = [o for o in entry["offers"] if o["pricing_type"] == "on_demand"]
+    spot = [o for o in entry["offers"] if o["pricing_type"] == "spot"]
+    best = od[0] if od else entry["offers"][0]
+    providers = sorted({o["provider"] for o in entry["offers"]})
+    n_prov = len(providers)
+    hi = max(o["price"] for o in od) if od else best["price"]
+    vram = fam_vram(fam, entry)
+
+    # FAQ: written for the answer box, every number live from the snapshot.
+    faqs = [
+        (f"How much does an {name} cost to rent per hour?",
+         f"As of the latest snapshot, {name} on-demand rental starts at ${best['price']:.2f}/hr "
+         f"({best['provider']}, {best.get('region', 'global')}) and ranges up to ${hi:.2f}/hr across "
+         f"{n_prov} tracked provider{'s' if n_prov != 1 else ''}. Prices refresh hourly."),
+        (f"What is the cheapest {name} cloud provider right now?",
+         f"{best['provider']} currently lists the lowest on-demand {name} price we track, at "
+         f"${best['price']:.2f}/hr. Every number links to the page it was observed on."),
+    ]
+    if spot:
+        faqs.append((f"Is there a cheaper spot or interruptible {name} price?",
+                     f"Yes — spot/interruptible {name} capacity starts at ${spot[0]['price']:.2f}/hr "
+                     f"({spot[0]['provider']}), versus ${best['price']:.2f}/hr on-demand. Spot can be "
+                     f"reclaimed by the provider; use it for fault-tolerant work."))
+    if vram:
+        faqs.append((f"How much VRAM does the {name} have and what fits?",
+                     f"{vram} GB. At fp16 that fits roughly a {int(vram / 2.4)}B-parameter model on a "
+                     f"single GPU; use the fit calculator for other precisions."))
+    faq_html = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in faqs)
+    faq_ld = ('<script type="application/ld+json">' + json.dumps({
+        "@context": "https://schema.org", "@type": "FAQPage",
+        "mainEntity": [{"@type": "Question", "name": q,
+                        "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs],
+    }) + '</script>')
+
+    related = ""
+    if fams:
+        links = " · ".join(f'<a href="/gpu/{esc(f)}.html">{esc(fam_display(f, e))}</a>'
+                           for f, e in related_families(fam, entry, fams))
+        related = f"<h2>Similar GPUs by memory</h2><p>{links}</p>"
+
+    prov_links = " · ".join(f'<a href="/provider/{esc(p)}.html">{esc(p)}</a>' for p in providers)
     body = f"""
-<h1>{esc(name)} — cloud rental prices</h1>
+<h1>{esc(name)} cloud rental price — {n_prov} provider{'s' if n_prov != 1 else ''} compared, updated hourly</h1>
+<p class="mut">On-demand from <strong>${best['price']:.2f}/hr</strong>{f" · spot from ${spot[0]['price']:.2f}/hr" if spot else ""} · providers: {prov_links}</p>
 {specbox}
 <h2>Current offers</h2>
 <div class="tablewrap"><table>
@@ -352,10 +407,110 @@ def render_family(fam, entry, history, changelog, monetize, aliases):
 <tbody>{''.join(rows)}</tbody></table></div>
 <h2>Changelog</h2>
 <ul class="chg">{log}</ul>
-<p><a href="/api/v1/history/{esc(fam)}.json">History JSON for this GPU →</a></p>"""
-    return page(f"{name} cloud price — gpudiff", body, monetize,
-                f"Current {name} rental prices across clouds, with price history, provenance, and a changelog of every change.",
-                path=f"/gpu/{fam}.html")
+<p><a href="/api/v1/history/{esc(fam)}.json">History JSON for this GPU →</a> · <a href="/fit.html">Will my model fit?</a></p>
+<h2>{esc(name)} pricing FAQ</h2>
+{faq_html}
+{related}"""
+    return page(f"{name} Cloud Rental Price — from ${best['price']:.2f}/hr, {n_prov} providers compared | gpudiff",
+                body, monetize,
+                f"{name} cloud rental prices: on-demand from ${best['price']:.2f}/hr across {n_prov} providers, "
+                f"spot prices, price history, and a changelog of every change. Updated hourly with provenance.",
+                jsonld=faq_ld, path=f"/gpu/{fam}.html")
+
+
+PROVIDER_BLURB = {
+    "vast": ("Vast.ai", "a peer-to-peer GPU marketplace: many independent hosts, verified listings, "
+             "on-demand and interruptible bids. Prices shown are the 25th percentile of verified "
+             "listings per GPU — what a careful buyer can actually get."),
+    "runpod": ("RunPod", "a GPU cloud with two tiers: Secure Cloud (data-center hosts) and Community "
+               "Cloud (vetted third-party hosts, cheaper). Prices are RunPod's published list prices; "
+               "we only show tiers with stock available."),
+    "aws": ("AWS EC2", "the largest hyperscaler. GPUs come bundled into fixed instances (CPUs, RAM, "
+            "storage attached); prices shown are on-demand Linux us-east-1 list ÷ GPU count."),
+    "azure": ("Microsoft Azure", "a hyperscaler with GPU VM families (NC, ND). Prices are eastus "
+              "consumption rates from the public Retail Prices API ÷ GPU count; spot rates included."),
+}
+
+
+def render_provider_page(provider, offers, fams, monetize, aliases):
+    display, blurb = PROVIDER_BLURB.get(provider, (provider, "a tracked GPU cloud provider."))
+    od = sorted([o for o in offers if o["pricing_type"] == "on_demand"], key=lambda o: o["price"])
+    rows = []
+    for o in od:
+        fam = family_of(o["sku"], aliases)
+        entry = fams.get(fam, {"spec": None, "offers": [o]})
+        url, rel = outbound(o, monetize)
+        rows.append(f"<tr><td><a href='/gpu/{esc(fam)}.html'><strong>{esc(fam_display(fam, entry))}</strong></a></td>"
+                    f"<td>{esc(o.get('region', ''))} {metric_badge(o)}</td>"
+                    f"<td class='n'><strong>${o['price']:.2f}</strong>/hr</td>"
+                    f"<td><a href='{esc(url)}'{rel}>rent</a></td></tr>")
+    cheapest = od[0] if od else None
+    faqs = [(f"How much do {display} GPUs cost?",
+             (f"{display} GPU pricing starts at ${cheapest['price']:.2f}/hr on-demand "
+              f"({fam_display(family_of(cheapest['sku'], aliases), fams.get(family_of(cheapest['sku'], aliases), {'spec': None}))}) "
+              f"across {len(od)} tracked configurations, updated hourly.") if cheapest else "No offers tracked right now."),
+            (f"Is {display} cheaper than other GPU clouds?",
+             f"It depends on the GPU — compare any card across every provider we track on its GPU page. "
+             f"gpudiff records every price change, so you can also see whether {display} is trending up or down.")]
+    faq_ld = ('<script type="application/ld+json">' + json.dumps({
+        "@context": "https://schema.org", "@type": "FAQPage",
+        "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                       for q, a in faqs]}) + '</script>')
+    faq_html = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in faqs)
+    body = f"""
+<h1>{esc(display)} GPU pricing — every tracked GPU, updated hourly</h1>
+<p>{esc(display)} is {esc(blurb)}</p>
+<div class="tablewrap"><table>
+<thead><tr><th>GPU</th><th>Region / tier</th><th class="n">On-demand $/hr</th><th></th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table></div>
+<h2>{esc(display)} pricing FAQ</h2>
+{faq_html}
+<p class="mut">Other providers: {" · ".join(f'<a href="/provider/{esc(p)}.html">{esc(PROVIDER_BLURB.get(p, (p,))[0])}</a>' for p in PROVIDER_BLURB if p != provider)}</p>"""
+    return page(f"{display} GPU Pricing ({len(od)} GPUs compared, updated hourly) | gpudiff", body, monetize,
+                f"{display} GPU rental prices for every tracked GPU, with price history and a changelog of changes. Compare against other clouds.",
+                jsonld=faq_ld, path=f"/provider/{provider}.html")
+
+
+COMPARE_PAIRS = [
+    ("h100-sxm-80gb", "h200-sxm-141gb"), ("h100-pcie-80gb", "h100-sxm-80gb"),
+    ("a100-sxm4-80gb", "h100-sxm-80gb"), ("h100-sxm-80gb", "b200-180gb"),
+    ("rtx-4090-24gb", "rtx-5090-32gb"), ("rtx-4090-24gb", "a100-pcie-80gb"),
+    ("l40s-48gb", "a100-pcie-80gb"), ("h200-sxm-141gb", "b200-180gb"),
+    ("mi300x-192gb", "h100-sxm-80gb"), ("rtx-pro-6000-96gb", "h100-pcie-80gb"),
+]
+
+
+def render_compare_page(a, b, fams, monetize):
+    ea, eb = fams[a], fams[b]
+    na, nb = fam_display(a, ea), fam_display(b, eb)
+    def best(e):
+        od = [o for o in e["offers"] if o["pricing_type"] == "on_demand"]
+        return od[0] if od else e["offers"][0]
+    ba, bb = best(ea), best(eb)
+    va, vb = fam_vram(a, ea), fam_vram(b, eb)
+    sa, sb = (ea.get("spec") or {}), (eb.get("spec") or {})
+    def row(label, x, y):
+        return f"<tr><td>{esc(label)}</td><td class='n'>{x}</td><td class='n'>{y}</td></tr>"
+    ratio = bb["price"] / ba["price"] if ba["price"] else 0
+    verdict = (f"{nb} currently costs {ratio:.1f}× the {na} at the cheapest on-demand price we track "
+               f"(${bb['price']:.2f} vs ${ba['price']:.2f}/hr).") if ratio else ""
+    body = f"""
+<h1>{esc(na)} vs {esc(nb)}: cloud rental price comparison</h1>
+<p>{esc(verdict)} Both numbers refresh hourly and link to their source.</p>
+<div class="tablewrap"><table>
+<thead><tr><th></th><th class="n"><a href="/gpu/{esc(a)}.html">{esc(na)}</a></th><th class="n"><a href="/gpu/{esc(b)}.html">{esc(nb)}</a></th></tr></thead>
+<tbody>
+{row("Cheapest on-demand $/hr", f"${ba['price']:.2f} ({esc(ba['provider'])})", f"${bb['price']:.2f} ({esc(bb['provider'])})")}
+{row("VRAM", f"{va or '—'} GB", f"{vb or '—'} GB")}
+{row("Memory bandwidth", f"{sa.get('mem_bw_gbs') or '—'} GB/s", f"{sb.get('mem_bw_gbs') or '—'} GB/s")}
+{row("$ per GB VRAM per hour", f"${ba['price'] / va:.3f}" if va else "—", f"${bb['price'] / vb:.3f}" if vb else "—")}
+{row("Providers tracked", len({o['provider'] for o in ea['offers']}), len({o['provider'] for o in eb['offers']}))}
+</tbody></table></div>
+<p class="mut">Nameplate specs are vendor claims, not measured throughput. See each GPU's page for
+every offer, spot prices, and history. Other comparisons: {" · ".join(f'<a href="/compare/{x}-vs-{y}.html">{esc(fam_display(x, fams[x]))} vs {esc(fam_display(y, fams[y]))}</a>' for x, y in COMPARE_PAIRS if (x, y) != (a, b) and x in fams and y in fams)}</p>"""
+    return page(f"{na} vs {nb} Price: Cloud Rental Cost Compared (hourly) | gpudiff", body, monetize,
+                f"{na} vs {nb}: cheapest cloud rental prices, VRAM, bandwidth, and price-per-GB compared, updated hourly.",
+                path=f"/compare/{a}-vs-{b}.html")
 
 
 def render_changelog(changelog, monetize, aliases):
@@ -847,10 +1002,23 @@ def build_site(offers, changelog, date):
     (SITE / "favicon.ico").write_bytes(ico)
     (SITE / "apple-touch-icon.png").write_bytes(render_favicon_png(180))
 
+    # Provider + comparison pages (commercial-intent search surfaces).
+    (SITE / "provider").mkdir(parents=True, exist_ok=True)
+    (SITE / "compare").mkdir(parents=True, exist_ok=True)
+    provider_names = sorted({o["provider"] for o in gpu_offers})
+    for p in provider_names:
+        (SITE / "provider" / f"{p}.html").write_text(
+            render_provider_page(p, [o for o in gpu_offers if o["provider"] == p], fams, monetize, aliases))
+    compare_built = []
+    for a, b in COMPARE_PAIRS:
+        if a in fams and b in fams:
+            (SITE / "compare" / f"{a}-vs-{b}.html").write_text(render_compare_page(a, b, fams, monetize))
+            compare_built.append((a, b))
+
     fam_summaries = []
     for fam, entry in fams.items():
         (SITE / "gpu" / f"{fam}.html").write_text(
-            render_family(fam, entry, history, changelog, monetize, aliases))
+            render_family(fam, entry, history, changelog, monetize, aliases, fams))
         fam_hist = {o["id"]: history.get(o["id"], []) for o in entry["offers"]}
         (SITE / "api" / "v1" / "history" / f"{fam}.json").write_text(
             json.dumps({"family": fam, "series": fam_hist}, indent=2) + "\n")
@@ -880,6 +1048,8 @@ def build_site(offers, changelog, date):
             f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",
             f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/", f"{BASE_URL}/digest/"] + \
            [f"{BASE_URL}/digest/{s}.html" for s in digest_stems] + \
+           [f"{BASE_URL}/provider/{p}.html" for p in provider_names] + \
+           [f"{BASE_URL}/compare/{a}-vs-{b}.html" for a, b in compare_built] + \
            [f"{BASE_URL}/gpu/{fam}.html" for fam in sorted(fams)]
     (SITE / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
