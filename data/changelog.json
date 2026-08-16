@@ -417,9 +417,9 @@
     "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-input",
-    "price": 0.0601,
+    "price": 0.0643,
     "unit": "usd_per_mtok",
-    "summary": "openrouter listed deepseek-deepseek-v4-flash-input at 0.0601 usd_per_mtok"
+    "summary": "openrouter listed deepseek-deepseek-v4-flash-input at 0.0643 usd_per_mtok"
   },
   {
     "date": "2026-08-16",
@@ -427,9 +427,9 @@
     "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-output",
-    "price": 0.1201,
+    "price": 0.1285,
     "unit": "usd_per_mtok",
-    "summary": "openrouter listed deepseek-deepseek-v4-flash-output at 0.1201 usd_per_mtok"
+    "summary": "openrouter listed deepseek-deepseek-v4-flash-output at 0.1285 usd_per_mtok"
   },
   {
     "date": "2026-08-16",
@@ -457,9 +457,9 @@
     "id": "openrouter:z-ai-glm-5.2-input:global:list",
     "provider": "openrouter",
     "sku": "z-ai-glm-5.2-input",
-    "price": 0.308,
+    "price": 0.462,
     "unit": "usd_per_mtok",
-    "summary": "openrouter listed z-ai-glm-5.2-input at 0.308 usd_per_mtok"
+    "summary": "openrouter listed z-ai-glm-5.2-input at 0.462 usd_per_mtok"
   },
   {
     "date": "2026-08-16",
@@ -467,9 +467,9 @@
     "id": "openrouter:z-ai-glm-5.2-output:global:list",
     "provider": "openrouter",
     "sku": "z-ai-glm-5.2-output",
-    "price": 0.968,
+    "price": 1.452,
     "unit": "usd_per_mtok",
-    "summary": "openrouter listed z-ai-glm-5.2-output at 0.968 usd_per_mtok"
+    "summary": "openrouter listed z-ai-glm-5.2-output at 1.452 usd_per_mtok"
   },
   {
     "date": "2026-08-16",
@@ -554,22 +554,22 @@
   {
     "date": "2026-08-16",
     "kind": "added",
-    "id": "runpod:rtx-a4000-16gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-a4000-16gb",
-    "price": 0.17,
+    "id": "vast:b200:global:on-demand",
+    "provider": "vast",
+    "sku": "b200",
+    "price": 5.3146,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-a4000-16gb at 0.17 usd_per_hour"
+    "summary": "vast listed b200 at 5.3146 usd_per_hour"
   },
   {
     "date": "2026-08-16",
     "kind": "added",
-    "id": "runpod:rtx-a4000-16gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-a4000-16gb",
-    "price": 0.17,
+    "id": "vast:b200:global:spot",
+    "provider": "vast",
+    "sku": "b200",
+    "price": 5.0,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-a4000-16gb at 0.17 usd_per_hour"
+    "summary": "vast listed b200 at 5.0 usd_per_hour"
   },
   {
     "date": "2026-08-16",
@@ -577,9 +577,9 @@
     "id": "vast:rtx-pro-5000:global:on-demand",
     "provider": "vast",
     "sku": "rtx-pro-5000",
-    "price": 0.5611,
+    "price": 0.6293,
     "unit": "usd_per_hour",
-    "summary": "vast listed rtx-pro-5000 at 0.5611 usd_per_hour"
+    "summary": "vast listed rtx-pro-5000 at 0.6293 usd_per_hour"
   },
   {
     "date": "2026-08-16",
@@ -587,25 +587,9 @@
     "id": "vast:rtx-pro-5000:global:spot",
     "provider": "vast",
     "sku": "rtx-pro-5000",
-    "price": 0.2,
+    "price": 0.1333,
     "unit": "usd_per_hour",
-    "summary": "vast listed rtx-pro-5000 at 0.2 usd_per_hour"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "removed",
-    "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
-    "provider": "openrouter",
-    "sku": "deepseek-deepseek-v4-pro-0813-input",
-    "summary": "openrouter delisted deepseek-deepseek-v4-pro-0813-input"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "removed",
-    "id": "openrouter:deepseek-deepseek-v4-pro-0813-output:global:list",
-    "provider": "openrouter",
-    "sku": "deepseek-deepseek-v4-pro-0813-output",
-    "summary": "openrouter delisted deepseek-deepseek-v4-pro-0813-output"
+    "summary": "vast listed rtx-pro-5000 at 0.1333 usd_per_hour"
   },
   {
     "date": "2026-08-16",
@@ -634,14 +618,6 @@
   {
     "date": "2026-08-16",
     "kind": "removed",
-    "id": "openrouter:qwen-qwen3.6-27b-output:global:list",
-    "provider": "openrouter",
-    "sku": "qwen-qwen3.6-27b-output",
-    "summary": "openrouter delisted qwen-qwen3.6-27b-output"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "removed",
     "id": "runpod:b300-288gb:secure-cloud:on-demand",
     "provider": "runpod",
     "sku": "b300-288gb",
@@ -654,38 +630,6 @@
     "provider": "runpod",
     "sku": "b300-288gb",
     "summary": "runpod delisted b300-288gb"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "removed",
-    "id": "runpod:l40-48gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "l40-48gb",
-    "summary": "runpod delisted l40-48gb"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "removed",
-    "id": "runpod:l40-48gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "l40-48gb",
-    "summary": "runpod delisted l40-48gb"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "removed",
-    "id": "runpod:mi300x-192gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "mi300x-192gb",
-    "summary": "runpod delisted mi300x-192gb"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "removed",
-    "id": "runpod:mi300x-192gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "mi300x-192gb",
-    "summary": "runpod delisted mi300x-192gb"
   },
   {
     "date": "2026-08-16",
@@ -722,18 +666,18 @@
   {
     "date": "2026-08-16",
     "kind": "removed",
-    "id": "runpod:rtx-a4500-20gb:community-cloud:on-demand",
+    "id": "runpod:rtx-6000-ada-48gb:secure-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-a4500-20gb",
-    "summary": "runpod delisted rtx-a4500-20gb"
+    "sku": "rtx-6000-ada-48gb",
+    "summary": "runpod delisted rtx-6000-ada-48gb"
   },
   {
     "date": "2026-08-16",
     "kind": "removed",
-    "id": "runpod:rtx-a4500-20gb:community-cloud:spot",
+    "id": "runpod:rtx-6000-ada-48gb:secure-cloud:spot",
     "provider": "runpod",
-    "sku": "rtx-a4500-20gb",
-    "summary": "runpod delisted rtx-a4500-20gb"
+    "sku": "rtx-6000-ada-48gb",
+    "summary": "runpod delisted rtx-6000-ada-48gb"
   },
   {
     "date": "2026-08-16",
@@ -770,6 +714,22 @@
   {
     "date": "2026-08-16",
     "kind": "removed",
+    "id": "runpod:rtx-pro-6000-wk-96gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-wk-96gb",
+    "summary": "runpod delisted rtx-pro-6000-wk-96gb"
+  },
+  {
+    "date": "2026-08-16",
+    "kind": "removed",
+    "id": "runpod:rtx-pro-6000-wk-96gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-wk-96gb",
+    "summary": "runpod delisted rtx-pro-6000-wk-96gb"
+  },
+  {
+    "date": "2026-08-16",
+    "kind": "removed",
     "id": "vast:rtx-5090:global:on-demand",
     "provider": "vast",
     "sku": "rtx-5090",
@@ -782,28 +742,6 @@
     "provider": "vast",
     "sku": "rtx-5090",
     "summary": "vast delisted rtx-5090"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "price_change",
-    "id": "openrouter:deepseek-deepseek-v4-flash-latest-input:global:list",
-    "provider": "openrouter",
-    "sku": "deepseek-deepseek-v4-flash-latest-input",
-    "old_price": 0.0675,
-    "new_price": 0.0603,
-    "pct": -10.7,
-    "summary": "openrouter cut deepseek-deepseek-v4-flash-latest-input 10.7%: 0.0675 \u2192 0.0603 usd_per_mtok"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "price_change",
-    "id": "openrouter:deepseek-deepseek-v4-flash-latest-output:global:list",
-    "provider": "openrouter",
-    "sku": "deepseek-deepseek-v4-flash-latest-output",
-    "old_price": 0.135,
-    "new_price": 0.1206,
-    "pct": -10.7,
-    "summary": "openrouter cut deepseek-deepseek-v4-flash-latest-output 10.7%: 0.135 \u2192 0.1206 usd_per_mtok"
   },
   {
     "date": "2026-08-16",
@@ -874,6 +812,17 @@
   {
     "date": "2026-08-16",
     "kind": "price_change",
+    "id": "openrouter:qwen-qwen3.6-27b-output:global:list",
+    "provider": "openrouter",
+    "sku": "qwen-qwen3.6-27b-output",
+    "old_price": 3.6,
+    "new_price": 2.4,
+    "pct": -33.3,
+    "summary": "openrouter cut qwen-qwen3.6-27b-output 33.3%: 3.6 \u2192 2.4 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-16",
+    "kind": "price_change",
     "id": "openrouter:qwen-qwen3.6-35b-a3b-input:global:list",
     "provider": "openrouter",
     "sku": "qwen-qwen3.6-35b-a3b-input",
@@ -889,20 +838,9 @@
     "provider": "vast",
     "sku": "rtx-pro-6000-s",
     "old_price": 1.7341,
-    "new_price": 1.3348,
-    "pct": -23.0,
-    "summary": "vast cut rtx-pro-6000-s 23.0%: 1.7341 \u2192 1.3348 usd_per_hour"
-  },
-  {
-    "date": "2026-08-16",
-    "kind": "price_change",
-    "id": "vast:rtx-pro-6000-s:global:spot",
-    "provider": "vast",
-    "sku": "rtx-pro-6000-s",
-    "old_price": 1.0667,
-    "new_price": 0.8,
-    "pct": -25.0,
-    "summary": "vast cut rtx-pro-6000-s 25.0%: 1.0667 \u2192 0.8 usd_per_hour"
+    "new_price": 1.6011,
+    "pct": -7.7,
+    "summary": "vast cut rtx-pro-6000-s 7.7%: 1.7341 \u2192 1.6011 usd_per_hour"
   },
   {
     "date": "2026-08-16",
@@ -911,8 +849,8 @@
     "provider": "vast",
     "sku": "rtx-pro-6000-ws",
     "old_price": 1.2037,
-    "new_price": 1.1606,
-    "pct": -3.6,
-    "summary": "vast cut rtx-pro-6000-ws 3.6%: 1.2037 \u2192 1.1606 usd_per_hour"
+    "new_price": 1.1611,
+    "pct": -3.5,
+    "summary": "vast cut rtx-pro-6000-ws 3.5%: 1.2037 \u2192 1.1611 usd_per_hour"
   }
 ]

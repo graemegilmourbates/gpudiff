@@ -1,62 +1,10 @@
 [
   {
     "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-pro-0813-input",
-      "price": 0.66,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "deepseek/deepseek-v4-pro-0813",
-        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-08-16T22:35:40Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.435,
-    "delta_pct": 51.7,
-    "reason": "price moved 51.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-pro-0813-output:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-pro-0813-output",
-      "price": 1.98,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "deepseek/deepseek-v4-pro-0813",
-        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-08-16T22:35:40Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.87,
-    "delta_pct": 127.6,
-    "reason": "price moved 127.6% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:qwen-qwen3.6-27b-input:global:list",
       "provider": "openrouter",
       "sku": "qwen-qwen3.6-27b-input",
-      "price": 0.3,
+      "price": 0.289,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -69,39 +17,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T22:35:40Z"
+        "observed_at": "2026-08-16T23:33:05Z"
       },
       "fixture": false
     },
     "previous_price": 0.6,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3.6-27b-output:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3.6-27b-output",
-      "price": 2.0,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3.6-27b",
-        "model_name": "Qwen: Qwen3.6 27B",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-16T22:35:40Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 3.6,
-    "delta_pct": 44.4,
-    "reason": "price moved 44.4% (> 40% limit)"
+    "delta_pct": 51.8,
+    "reason": "price moved 51.8% (> 40% limit)"
   },
   {
     "offer": {
@@ -121,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
-        "observed_at": "2026-08-16T22:35:40Z"
+        "observed_at": "2026-08-16T23:33:05Z"
       },
       "fixture": false
     },
@@ -147,7 +69,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen2.5-vl-72b-instruct",
-        "observed_at": "2026-08-16T22:35:40Z"
+        "observed_at": "2026-08-16T23:33:05Z"
       },
       "fixture": false
     },
