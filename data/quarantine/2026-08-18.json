@@ -1,50 +1,314 @@
 [
   {
     "offer": {
-      "id": "vast:rtx-5060-ti:global:on-demand",
-      "provider": "vast",
-      "sku": "rtx-5060-ti",
-      "price": 0.1152,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
+      "id": "openrouter:thinkingmachines-inkling-batch-input:global:list",
+      "provider": "openrouter",
+      "sku": "thinkingmachines-inkling-batch-input",
+      "price": 1.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX 5060 Ti",
-        "sample_size": 5,
-        "metric": "p25_per_gpu_dph_verified"
+        "model_id": "thinkingmachines/inkling:batch",
+        "model_name": "Thinking Machines: Inkling (batch)",
+        "context_length": 524288,
+        "direction": "input",
+        "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-18T16:47:49Z"
+        "url": "https://openrouter.ai/thinkingmachines/inkling:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
       },
       "fixture": false
     },
-    "previous_price": 0.0756,
-    "delta_pct": 52.4,
-    "reason": "price moved 52.4% (> 40% limit)"
+    "previous_price": 0.5,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "vast:rtx-pro-6000-s:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-s",
-      "price": 1.0667,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "id": "openrouter:thinkingmachines-inkling-batch-output:global:list",
+      "provider": "openrouter",
+      "sku": "thinkingmachines-inkling-batch-output",
+      "price": 4.05,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX PRO 6000 S",
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
+        "model_id": "thinkingmachines/inkling:batch",
+        "model_name": "Thinking Machines: Inkling (batch)",
+        "context_length": 524288,
+        "direction": "output",
+        "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-18T16:47:49Z"
+        "url": "https://openrouter.ai/thinkingmachines/inkling:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
       },
       "fixture": false
     },
-    "previous_price": 0.7467,
-    "delta_pct": 42.9,
-    "reason": "price moved 42.9% (> 40% limit)"
+    "previous_price": 2.025,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.2-input:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.2-input",
+      "price": 1.19,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.2",
+        "model_name": "Z.ai: GLM 5.2",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.2",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.462,
+    "delta_pct": 157.6,
+    "reason": "price moved 157.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.2-output:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.2-output",
+      "price": 3.74,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.2",
+        "model_name": "Z.ai: GLM 5.2",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.2",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.452,
+    "delta_pct": 157.6,
+    "reason": "price moved 157.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.2-batch-input:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.2-batch-input",
+      "price": 1.4,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.2:batch",
+        "model_name": "Z.ai: GLM 5.2 (batch)",
+        "context_length": 512000,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.2:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.7,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.2-batch-output:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.2-batch-output",
+      "price": 4.4,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.2:batch",
+        "model_name": "Z.ai: GLM 5.2 (batch)",
+        "context_length": 512000,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.2:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.2,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k2.7-code-batch-input:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k2.7-code-batch-input",
+      "price": 0.95,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k2.7-code:batch",
+        "model_name": "MoonshotAI: Kimi K2.7 Code (batch)",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.475,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k2.7-code-batch-output:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k2.7-code-batch-output",
+      "price": 4.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k2.7-code:batch",
+        "model_name": "MoonshotAI: Kimi K2.7 Code (batch)",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k2.7-code:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:nvidia-nemotron-3-ultra-550b-a55b-batch-input:global:list",
+      "provider": "openrouter",
+      "sku": "nvidia-nemotron-3-ultra-550b-a55b-batch-input",
+      "price": 0.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "nvidia/nemotron-3-ultra-550b-a55b:batch",
+        "model_name": "NVIDIA: Nemotron 3 Ultra (batch)",
+        "context_length": 512288,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:nvidia-nemotron-3-ultra-550b-a55b-batch-output:global:list",
+      "provider": "openrouter",
+      "sku": "nvidia-nemotron-3-ultra-550b-a55b-batch-output",
+      "price": 3.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "nvidia/nemotron-3-ultra-550b-a55b:batch",
+        "model_name": "NVIDIA: Nemotron 3 Ultra (batch)",
+        "context_length": 512288,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.8,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:minimax-minimax-m3-batch-input:global:list",
+      "provider": "openrouter",
+      "sku": "minimax-minimax-m3-batch-input",
+      "price": 0.3,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "minimax/minimax-m3:batch",
+        "model_name": "MiniMax: MiniMax M3 (batch)",
+        "context_length": 524288,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/minimax/minimax-m3:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.15,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:minimax-minimax-m3-batch-output:global:list",
+      "provider": "openrouter",
+      "sku": "minimax-minimax-m3-batch-output",
+      "price": 1.2,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "minimax/minimax-m3:batch",
+        "model_name": "MiniMax: MiniMax M3 (batch)",
+        "context_length": 524288,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/minimax/minimax-m3:batch",
+        "observed_at": "2026-08-18T20:39:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.6,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
   }
 ]
