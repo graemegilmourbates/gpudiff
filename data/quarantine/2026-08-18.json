@@ -15,64 +15,12 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-18T13:06:36Z"
+        "observed_at": "2026-08-18T15:45:07Z"
       },
       "fixture": false
     },
     "previous_price": 0.7467,
     "delta_pct": 42.9,
     "reason": "price moved 42.9% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:z-ai-glm-5.2-input:global:list",
-      "provider": "openrouter",
-      "sku": "z-ai-glm-5.2-input",
-      "price": 1.19,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "z-ai/glm-5.2",
-        "model_name": "Z.ai: GLM 5.2",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-18T13:06:36Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.462,
-    "delta_pct": 157.6,
-    "reason": "price moved 157.6% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:z-ai-glm-5.2-output:global:list",
-      "provider": "openrouter",
-      "sku": "z-ai-glm-5.2-output",
-      "price": 3.74,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "z-ai/glm-5.2",
-        "model_name": "Z.ai: GLM 5.2",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-18T13:06:36Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.452,
-    "delta_pct": 157.6,
-    "reason": "price moved 157.6% (> 40% limit)"
   }
 ]
