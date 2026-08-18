@@ -1,6 +1,30 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-5060-ti:global:on-demand",
+      "provider": "vast",
+      "sku": "rtx-5060-ti",
+      "price": 0.1152,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 5060 Ti",
+        "sample_size": 5,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-18T16:47:49Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0756,
+    "delta_pct": 52.4,
+    "reason": "price moved 52.4% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:rtx-pro-6000-s:global:spot",
       "provider": "vast",
       "sku": "rtx-pro-6000-s",
@@ -10,12 +34,12 @@
       "region": "global",
       "attrs": {
         "gpu_model": "RTX PRO 6000 S",
-        "sample_size": 5,
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-18T15:45:07Z"
+        "observed_at": "2026-08-18T16:47:49Z"
       },
       "fixture": false
     },
