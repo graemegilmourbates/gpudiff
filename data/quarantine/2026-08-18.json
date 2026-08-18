@@ -15,7 +15,7 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-18T11:38:55Z"
+        "observed_at": "2026-08-18T13:06:36Z"
       },
       "fixture": false
     },
@@ -41,7 +41,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-18T11:38:55Z"
+        "observed_at": "2026-08-18T13:06:36Z"
       },
       "fixture": false
     },
@@ -67,64 +67,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-08-18T11:38:55Z"
+        "observed_at": "2026-08-18T13:06:36Z"
       },
       "fixture": false
     },
     "previous_price": 1.452,
     "delta_pct": 157.6,
     "reason": "price moved 157.6% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:moonshotai-kimi-k2.6-input:global:list",
-      "provider": "openrouter",
-      "sku": "moonshotai-kimi-k2.6-input",
-      "price": 0.95,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "moonshotai/kimi-k2.6",
-        "model_name": "MoonshotAI: Kimi K2.6",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-18T11:38:55Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.5605,
-    "delta_pct": 69.5,
-    "reason": "price moved 69.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:moonshotai-kimi-k2.6-output:global:list",
-      "provider": "openrouter",
-      "sku": "moonshotai-kimi-k2.6-output",
-      "price": 4.0,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "moonshotai/kimi-k2.6",
-        "model_name": "MoonshotAI: Kimi K2.6",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-18T11:38:55Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.36,
-    "delta_pct": 69.5,
-    "reason": "price moved 69.5% (> 40% limit)"
   }
 ]
