@@ -1743,6 +1743,66 @@
   {
     "date": "2026-08-18",
     "kind": "added",
+    "id": "runpod:h100-pcie-80gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h100-pcie-80gb",
+    "price": 2.89,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "added",
+    "id": "runpod:h100-pcie-80gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "h100-pcie-80gb",
+    "price": 2.89,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "added",
+    "id": "runpod:rtx-a4500-20gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a4500-20gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a4500-20gb at 0.25 usd_per_hour"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "added",
+    "id": "runpod:rtx-a4500-20gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-a4500-20gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a4500-20gb at 0.25 usd_per_hour"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "added",
+    "id": "runpod:rtx-pro-6000-maxq-96gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-maxq-96gb",
+    "price": 1.64,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-pro-6000-maxq-96gb at 1.64 usd_per_hour"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "added",
+    "id": "runpod:rtx-pro-6000-maxq-96gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-maxq-96gb",
+    "price": 1.64,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-pro-6000-maxq-96gb at 1.64 usd_per_hour"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "added",
     "id": "runpod:rtx-pro-6000-wk-96gb:secure-cloud:on-demand",
     "provider": "runpod",
     "sku": "rtx-pro-6000-wk-96gb",
@@ -1786,9 +1846,9 @@
     "id": "vast:rtx-5090:global:on-demand",
     "provider": "vast",
     "sku": "rtx-5090",
-    "price": 0.4563,
+    "price": 0.337,
     "unit": "usd_per_hour",
-    "summary": "vast listed rtx-5090 at 0.4563 usd_per_hour"
+    "summary": "vast listed rtx-5090 at 0.337 usd_per_hour"
   },
   {
     "date": "2026-08-18",
@@ -1796,9 +1856,9 @@
     "id": "vast:rtx-5090:global:spot",
     "provider": "vast",
     "sku": "rtx-5090",
-    "price": 0.4,
+    "price": 0.48,
     "unit": "usd_per_hour",
-    "summary": "vast listed rtx-5090 at 0.4 usd_per_hour"
+    "summary": "vast listed rtx-5090 at 0.48 usd_per_hour"
   },
   {
     "date": "2026-08-18",
@@ -1899,54 +1959,6 @@
   {
     "date": "2026-08-18",
     "kind": "removed",
-    "id": "runpod:a100-pcie-80gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "a100-pcie-80gb",
-    "summary": "runpod delisted a100-pcie-80gb"
-  },
-  {
-    "date": "2026-08-18",
-    "kind": "removed",
-    "id": "runpod:a100-pcie-80gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "a100-pcie-80gb",
-    "summary": "runpod delisted a100-pcie-80gb"
-  },
-  {
-    "date": "2026-08-18",
-    "kind": "removed",
-    "id": "runpod:b200-180gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "b200-180gb",
-    "summary": "runpod delisted b200-180gb"
-  },
-  {
-    "date": "2026-08-18",
-    "kind": "removed",
-    "id": "runpod:b200-180gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "b200-180gb",
-    "summary": "runpod delisted b200-180gb"
-  },
-  {
-    "date": "2026-08-18",
-    "kind": "removed",
-    "id": "runpod:b300-288gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "b300-288gb",
-    "summary": "runpod delisted b300-288gb"
-  },
-  {
-    "date": "2026-08-18",
-    "kind": "removed",
-    "id": "runpod:b300-288gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "b300-288gb",
-    "summary": "runpod delisted b300-288gb"
-  },
-  {
-    "date": "2026-08-18",
-    "kind": "removed",
     "id": "runpod:h200-nvl-143gb:secure-cloud:on-demand",
     "provider": "runpod",
     "sku": "h200-nvl-143gb",
@@ -1963,7 +1975,23 @@
   {
     "date": "2026-08-18",
     "kind": "removed",
-    "id": "runpod:l40s-48gb:secure-cloud:on-demand",
+    "id": "runpod:h200-sxm-141gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h200-sxm-141gb",
+    "summary": "runpod delisted h200-sxm-141gb"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "removed",
+    "id": "runpod:h200-sxm-141gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "h200-sxm-141gb",
+    "summary": "runpod delisted h200-sxm-141gb"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "removed",
+    "id": "runpod:l40s-48gb:community-cloud:on-demand",
     "provider": "runpod",
     "sku": "l40s-48gb",
     "summary": "runpod delisted l40s-48gb"
@@ -1971,7 +1999,7 @@
   {
     "date": "2026-08-18",
     "kind": "removed",
-    "id": "runpod:l40s-48gb:secure-cloud:spot",
+    "id": "runpod:l40s-48gb:community-cloud:spot",
     "provider": "runpod",
     "sku": "l40s-48gb",
     "summary": "runpod delisted l40s-48gb"
@@ -2011,6 +2039,22 @@
   {
     "date": "2026-08-18",
     "kind": "removed",
+    "id": "runpod:rtx-5000-ada-32gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-5000-ada-32gb",
+    "summary": "runpod delisted rtx-5000-ada-32gb"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "removed",
+    "id": "runpod:rtx-5000-ada-32gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-5000-ada-32gb",
+    "summary": "runpod delisted rtx-5000-ada-32gb"
+  },
+  {
+    "date": "2026-08-18",
+    "kind": "removed",
     "id": "runpod:rtx-a4000-16gb:community-cloud:on-demand",
     "provider": "runpod",
     "sku": "rtx-a4000-16gb",
@@ -2043,18 +2087,18 @@
   {
     "date": "2026-08-18",
     "kind": "removed",
-    "id": "runpod:rtx-pro-6000-wk-96gb:community-cloud:on-demand",
+    "id": "runpod:tesla-v100-16gb:community-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-pro-6000-wk-96gb",
-    "summary": "runpod delisted rtx-pro-6000-wk-96gb"
+    "sku": "tesla-v100-16gb",
+    "summary": "runpod delisted tesla-v100-16gb"
   },
   {
     "date": "2026-08-18",
     "kind": "removed",
-    "id": "runpod:rtx-pro-6000-wk-96gb:community-cloud:spot",
+    "id": "runpod:tesla-v100-16gb:community-cloud:spot",
     "provider": "runpod",
-    "sku": "rtx-pro-6000-wk-96gb",
-    "summary": "runpod delisted rtx-pro-6000-wk-96gb"
+    "sku": "tesla-v100-16gb",
+    "summary": "runpod delisted tesla-v100-16gb"
   },
   {
     "date": "2026-08-18",
@@ -2090,9 +2134,9 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-latest-input",
     "old_price": 0.0783,
-    "new_price": 0.077,
-    "pct": -1.7,
-    "summary": "openrouter cut deepseek-deepseek-v4-flash-latest-input 1.7%: 0.0783 \u2192 0.077 usd_per_mtok"
+    "new_price": 0.0765,
+    "pct": -2.3,
+    "summary": "openrouter cut deepseek-deepseek-v4-flash-latest-input 2.3%: 0.0783 \u2192 0.0765 usd_per_mtok"
   },
   {
     "date": "2026-08-18",
@@ -2101,9 +2145,9 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-latest-output",
     "old_price": 0.1566,
-    "new_price": 0.154,
-    "pct": -1.7,
-    "summary": "openrouter cut deepseek-deepseek-v4-flash-latest-output 1.7%: 0.1566 \u2192 0.154 usd_per_mtok"
+    "new_price": 0.153,
+    "pct": -2.3,
+    "summary": "openrouter cut deepseek-deepseek-v4-flash-latest-output 2.3%: 0.1566 \u2192 0.153 usd_per_mtok"
   },
   {
     "date": "2026-08-18",
@@ -2115,17 +2159,6 @@
     "new_price": 0.1484,
     "pct": 8.2,
     "summary": "openrouter raised deepseek-deepseek-v4-flash-output 8.2%: 0.1372 \u2192 0.1484 usd_per_mtok"
-  },
-  {
-    "date": "2026-08-18",
-    "kind": "price_change",
-    "id": "vast:rtx-pro-6000-s:global:on-demand",
-    "provider": "vast",
-    "sku": "rtx-pro-6000-s",
-    "old_price": 1.3341,
-    "new_price": 1.3363,
-    "pct": 0.2,
-    "summary": "vast raised rtx-pro-6000-s 0.2%: 1.3341 \u2192 1.3363 usd_per_hour"
   },
   {
     "date": "2026-08-18",
