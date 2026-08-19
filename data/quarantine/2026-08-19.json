@@ -17,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-19T13:56:38Z"
+        "observed_at": "2026-08-19T14:52:21Z"
       },
       "fixture": false
     },
@@ -43,64 +43,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-19T13:56:38Z"
+        "observed_at": "2026-08-19T14:52:21Z"
       },
       "fixture": false
     },
     "previous_price": 1.98,
     "delta_pct": 45.5,
     "reason": "price moved 45.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:moonshotai-kimi-k2.6-input:global:list",
-      "provider": "openrouter",
-      "sku": "moonshotai-kimi-k2.6-input",
-      "price": 0.95,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "moonshotai/kimi-k2.6",
-        "model_name": "MoonshotAI: Kimi K2.6",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-19T13:56:38Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.5605,
-    "delta_pct": 69.5,
-    "reason": "price moved 69.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:moonshotai-kimi-k2.6-output:global:list",
-      "provider": "openrouter",
-      "sku": "moonshotai-kimi-k2.6-output",
-      "price": 4.0,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "moonshotai/kimi-k2.6",
-        "model_name": "MoonshotAI: Kimi K2.6",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-19T13:56:38Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.36,
-    "delta_pct": 69.5,
-    "reason": "price moved 69.5% (> 40% limit)"
   }
 ]
