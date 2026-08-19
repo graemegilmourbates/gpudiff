@@ -1,54 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:rtx-5090:global:on-demand",
-      "provider": "vast",
-      "sku": "rtx-5090",
-      "price": 0.5778,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX 5090",
-        "sample_size": 6,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-19T18:52:24Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.337,
-    "delta_pct": 71.5,
-    "reason": "price moved 71.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-5090:global:spot",
-      "provider": "vast",
-      "sku": "rtx-5090",
-      "price": 0.2667,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX 5090",
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-19T18:52:24Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.48,
-    "delta_pct": 44.4,
-    "reason": "price moved 44.4% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-input",
@@ -65,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-19T18:52:24Z"
+        "observed_at": "2026-08-19T19:37:50Z"
       },
       "fixture": false
     },
@@ -91,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-19T18:52:24Z"
+        "observed_at": "2026-08-19T19:37:50Z"
       },
       "fixture": false
     },
