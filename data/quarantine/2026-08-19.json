@@ -4,24 +4,24 @@
       "id": "vast:rtx-5090:global:spot",
       "provider": "vast",
       "sku": "rtx-5090",
-      "price": 0.2667,
+      "price": 0.28,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX 5090",
-        "sample_size": 8,
+        "sample_size": 5,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-19T04:50:58Z"
+        "observed_at": "2026-08-19T05:45:52Z"
       },
       "fixture": false
     },
     "previous_price": 0.48,
-    "delta_pct": 44.4,
-    "reason": "price moved 44.4% (> 40% limit)"
+    "delta_pct": 41.7,
+    "reason": "price moved 41.7% (> 40% limit)"
   },
   {
     "offer": {
@@ -41,7 +41,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-19T04:50:58Z"
+        "observed_at": "2026-08-19T05:45:52Z"
       },
       "fixture": false
     },
@@ -67,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-19T04:50:58Z"
+        "observed_at": "2026-08-19T05:45:52Z"
       },
       "fixture": false
     },
