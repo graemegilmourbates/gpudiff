@@ -51,32 +51,6 @@ def diff_snapshots(prev_offers, curr_offers, date):
     return entries
 
 
-CATALOG_LABEL = {"ramp": "Ramp Router"}
-
-
-def diff_catalog(prev_items, curr_items, date):
-    """Availability diffs: what a gateway started or stopped carrying. Same
-    entry shape as price diffs so the changelog, feeds, and pages need no
-    special cases."""
-    prev = {(i["provider"], i["item"]) for i in prev_items}
-    curr = {(i["provider"], i["item"]) for i in curr_items}
-    prev_providers = {p for p, _ in prev}
-    curr_providers = {p for p, _ in curr}
-    entries = []
-    for kind, verb, delta in (("added", "added", curr - prev), ("removed", "dropped", prev - curr)):
-        for provider, item in sorted(delta):
-            # Same rule as prices: a gateway appearing or vanishing is plumbing.
-            if provider not in (prev_providers if kind == "added" else curr_providers):
-                continue
-            label = CATALOG_LABEL.get(provider, provider)
-            entries.append({
-                "date": date, "kind": kind, "id": f"{provider}:{item}:global:catalog",
-                "provider": provider, "sku": item,
-                "summary": f"{label} {verb} {item}",
-            })
-    return entries
-
-
 def append_changelog(changelog_path, entries):
     path = Path(changelog_path)
     existing = json.loads(path.read_text()) if path.exists() else []

@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from pipeline.diffgen import diff_catalog, diff_snapshots
+from pipeline.diffgen import diff_snapshots
 
 
 def offer(oid, price, provider="examplecloud", sku="gx-100-80gb"):
@@ -52,22 +52,14 @@ class TestDiff(unittest.TestCase):
         self.assertEqual(kinds, ["added", "removed"])
 
 
-class TestCatalogDiff(unittest.TestCase):
-    def item(self, provider, name):
-        return {"provider": provider, "item": name}
-
-    def test_added_and_dropped(self):
-        prev = [self.item("ramp", "kimi-k3"), self.item("ramp", "gpt-5.4")]
-        curr = [self.item("ramp", "kimi-k3"), self.item("ramp", "claude-opus-5")]
-        entries = diff_catalog(prev, curr, "2026-08-18")
-        summaries = sorted(e["summary"] for e in entries)
-        self.assertEqual(summaries, ["Ramp Router added claude-opus-5",
-                                     "Ramp Router dropped gpt-5.4"])
-
-    def test_new_gateway_is_not_news(self):
-        prev = [self.item("ramp", "kimi-k3")]
-        curr = prev + [self.item("othergw", "kimi-k3")]
-        self.assertEqual(diff_catalog(prev, curr, "2026-08-18"), [])
+class TestRampParsing(unittest.TestCase):
+    def test_naming_normalized_into_shared_namespace(self):
+        from sources.ramp import normalize
+        self.assertEqual(normalize("kimi-k2p6"), "kimi-k2.6")
+        self.assertEqual(normalize("glm-5p2"), "glm-5.2")
+        self.assertEqual(normalize("opus-5"), "claude-opus-5")
+        self.assertEqual(normalize("fable-5"), "claude-fable-5")
+        self.assertEqual(normalize("gpt-5.6-sol"), "gpt-5.6-sol")
 
 
 if __name__ == "__main__":

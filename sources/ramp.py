@@ -1,51 +1,52 @@
-"""Ramp Router — availability catalog, not prices.
+"""Ramp Router — the LLM gateway Ramp opened to the public in July 2026.
 
-Ramp opened its internal LLM gateway to the public in July 2026: free through
-2026, "you pay list price for the tokens you use." No public price endpoint
-and no markup to record, so the trackable fact is *which models it carries*.
-That still diffs into news nobody else publishes — "Ramp Router added kimi-k3"
-— and the watchlist uses it as an availability column.
+Its docs publish a full model table: input and output price per million tokens,
+context window, and fast-mode availability. Ramp states it bills tokens at
+provider list price and charges no gateway fee through 2026, which makes it the
+cleanest available proxy for "what does this model cost at list" — and the
+reason a Ramp-vs-router comparison is worth publishing.
 
-Extraction is whitelist-based: only tokens matching known model-family
-prefixes are accepted, and a page yielding fewer than MIN_MODELS is treated as
-broken rather than as a mass delisting."""
+Two naming quirks are normalized into the shared namespace so one model is one
+row site-wide: decimals written as "p" (kimi-k2p6 = Kimi K2.6) and Anthropic
+models listed without the claude- prefix (opus-5 = claude-opus-5)."""
 
 import re
 import urllib.request
 
-from .base import Source
+from .base import Source, make_id, slug
 
 URL = "https://docs.router.com/supported-models"
 UA = "Mozilla/5.0 (compatible; FoundryBot/0.1; +https://gpudiff.com/methodology.html)"
-MIN_MODELS = 5
+MIN_MODELS = 10
 
-FAMILIES = (
-    r"gpt-[45][\w.\-]*", r"claude-[\w.\-]+", r"gemini-[\w.\-]+", r"kimi-[\w.\-]+",
-    r"o[34]-[\w.\-]+", r"deepseek-[\w.\-]+", r"llama-[\w.\-]+", r"qwen[\w.\-]+",
-    r"glm-[\w.\-]+", r"mistral-[\w.\-]+", r"grok-[\w.\-]+",
-    # Ramp lists Anthropic models bare, without the claude- prefix.
-    r"(?:sonnet|opus|haiku|fable)-[\w.\-]+",
-)
-PATTERN = re.compile(r"\b(" + "|".join(FAMILIES) + r")\b", re.I)
-# Doc prose picks up stray words after a model name; keep the token itself only.
-TRAILING_JUNK = re.compile(r"-(?:and|or|the|for|with|is|are|models?|supported)$", re.I)
-# Ramp writes decimal points as "p" (kimi-k2p6 = Kimi K2.6, glm-5p2 = GLM 5.2).
+ROW = re.compile(r"<tr>(.*?)</tr>", re.S)
+CODE = re.compile(r"<code>([^<]+)</code>")
+MONEY = re.compile(r"\$([\d.,]+)")
+CREATOR = re.compile(r'data-model-creator="([^"]+)"')
+BIGNUM = re.compile(r">([\d,]{4,})<")
+
 VERSION_P = re.compile(r"(\d)p(\d)")
 ANTHROPIC_BARE = re.compile(r"^(sonnet|opus|haiku|fable)-")
 
 
 def normalize(name):
-    """Ramp's spelling -> the canonical name other routers use, so one model is
-    one row across the whole site."""
-    name = VERSION_P.sub(r"\1.\2", name)
+    """Ramp's spelling -> the canonical name the other routers use."""
+    name = VERSION_P.sub(r"\1.\2", name.strip().lower())
     if ANTHROPIC_BARE.match(name):
         name = "claude-" + name
     return name
 
 
-class RampCatalogSource(Source):
+def _money(text):
+    try:
+        v = float(text.replace(",", ""))
+    except ValueError:
+        return None
+    return v if v > 0 else None
+
+
+class RampSource(Source):
     name = "ramp"
-    kind = "catalog"
     cadence = "daily"
 
     def fetch(self, observed_at):
@@ -53,18 +54,46 @@ class RampCatalogSource(Source):
         with urllib.request.urlopen(req, timeout=30) as resp:
             html = resp.read(4_000_000).decode("utf-8", errors="replace")
 
-        names = set()
-        for m in PATTERN.finditer(html):
-            name = TRAILING_JUNK.sub("", m.group(1).lower()).strip("-.")
-            if 3 <= len(name) <= 48:
-                names.add(normalize(name))
+        offers, seen = [], set()
+        for row in ROW.findall(html):
+            code = CODE.search(row)
+            if not code:
+                continue
+            canonical = normalize(code.group(1))
+            if not canonical or canonical in seen:
+                continue
+            prices = MONEY.findall(row)
+            if len(prices) < 2:
+                continue  # a row without both directions tells us nothing
+            price_in, price_out = _money(prices[0]), _money(prices[1])
+            if not price_in or not price_out:
+                continue
+            seen.add(canonical)
 
-        if len(names) < MIN_MODELS:
-            raise RuntimeError(f"only {len(names)} models parsed from {URL} — page shape changed")
+            nums = [int(n.replace(",", "")) for n in BIGNUM.findall(row)]
+            creator = CREATOR.search(row)
+            for direction, price in (("input", price_in), ("output", price_out)):
+                sku = f"{slug(canonical)}-{direction}"
+                offers.append({
+                    "id": make_id("ramp", sku, "global", "list"),
+                    "provider": "ramp",
+                    "sku": sku,
+                    "price": round(price, 4),
+                    "unit": "usd_per_mtok",
+                    "pricing_type": "list",
+                    "region": "global",
+                    "attrs": {
+                        "model_id": code.group(1),
+                        "canonical": canonical,
+                        "direction": direction,
+                        "context_length": nums[0] if nums else None,
+                        "lab": creator.group(1) if creator else None,
+                        "metric": "gateway_list",
+                    },
+                    "provenance": {"url": URL, "observed_at": observed_at},
+                    "fixture": False,
+                })
 
-        return [{
-            "provider": "ramp",
-            "item": name,
-            "attrs": {"gateway": "Ramp Router", "pricing_policy": "list price passthrough"},
-            "provenance": {"url": URL, "observed_at": observed_at},
-        } for name in sorted(names)]
+        if len(seen) < MIN_MODELS:
+            raise RuntimeError(f"only {len(seen)} models parsed from {URL} — page shape changed")
+        return offers

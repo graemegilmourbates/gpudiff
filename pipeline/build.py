@@ -89,13 +89,6 @@ def load_watchlist():
     return _load(ROOT / "specs" / "llm_watchlist.json", {"models": {}})["models"]
 
 
-def load_catalog():
-    """Latest availability snapshot (what each gateway carries)."""
-    cat_dir = ROOT / "data" / "catalog"
-    snaps = sorted(cat_dir.glob("*.json")) if cat_dir.exists() else []
-    return json.loads(snaps[-1].read_text()) if snaps else []
-
-
 def canon_model(model_id):
     """Canonical model name shared across routers — mirrors sources/routers.py."""
     import re
@@ -104,7 +97,19 @@ def canon_model(model_id):
 
 
 ROUTER_LABEL = {"openrouter": "OpenRouter", "requesty": "Requesty", "glama": "Glama",
-                "novita": "Novita", "deepinfra": "DeepInfra"}
+                "novita": "Novita", "deepinfra": "DeepInfra", "ramp": "Ramp Router"}
+
+# Gateway fees, quoted from each gateway's own docs. Token prices are only half
+# the bill: two gateways can charge the same per token and still differ on what
+# it costs to put money in.
+ROUTER_FEES = {
+    "openrouter": ("No markup on token prices (provider pass-through), but credit "
+                   "purchases cost 5.5% via card ($0.80 minimum) or 5% via crypto; "
+                   "BYOK usage above the monthly allowance is charged 5%.",
+                   "https://openrouter.ai/docs/faq"),
+    "ramp": ("Free through 2026 — no gateway fee, tokens billed at provider list "
+             "price, first $26 of credit free.", "https://router.com/"),
+}
 
 
 def alias_index(specs):
@@ -590,6 +595,7 @@ def llm_model_index(llm_offers):
             o["provider"], {"model_id": a.get("model_id"), "ctx": a.get("context_length")})
         if r.get(direction) is None or o["price"] < r[direction]:
             r[direction] = o["price"]
+            r[f"{direction}_id"] = o["id"]  # lets the model page draw its history
         if not r.get("ctx") and a.get("context_length"):
             r["ctx"] = a.get("context_length")
     return idx
@@ -604,131 +610,283 @@ def _cheapest(routes, direction):
     return min(vals) if vals else (None, None)
 
 
-def render_llm_index(llm_offers, changelog, monetize, catalog):
-    idx = llm_model_index(llm_offers)
-    watchlist = load_watchlist()
-    ramp_models = {c["item"] for c in catalog if c.get("provider") == "ramp"}
-    routers_live = sorted({o["provider"] for o in llm_offers})
+def _spread_of(routes):
+    ins = [r["input"] for r in routes.values() if isinstance(r.get("input"), (int, float))]
+    if len(ins) > 1 and min(ins):
+        return max(ins) / min(ins)
+    return None
 
-    # --- watchlist: the models people actually shop for, priced across routers
-    wl_rows, wl_details = [], []
-    for key, meta in watchlist.items():
-        routes = {}
-        for alias in meta.get("aliases", [key]):
-            for router, r in (idx.get(alias) or {}).items():
-                cur = routes.get(router)
-                if cur is None or (isinstance(r.get("input"), (int, float))
-                                   and isinstance(cur.get("input"), (int, float))
-                                   and r["input"] < cur["input"]):
-                    routes[router] = r
-        on_ramp = any(a in ramp_models for a in meta.get("aliases", [key]))
-        if not routes and not on_ramp:
-            continue
-        lo_in, lo_router = _cheapest(routes, "input")
-        lo_out, _ = _cheapest(routes, "output")
-        ins = [r["input"] for r in routes.values() if isinstance(r.get("input"), (int, float))]
-        spread = f"{max(ins) / min(ins):.1f}×" if len(ins) > 1 and min(ins) else "—"
-        wl_rows.append(
-            f"<tr><td><strong>{esc(meta['display'])}</strong><br>"
-            f"<span class='mut'>{esc(meta.get('lab', ''))}</span></td>"
+
+def _model_link(canonical, label=None):
+    return f"<a href='/llm/model/{esc(canonical)}.html'>{esc(label or canonical)}</a>"
+
+
+def _model_row(canonical, routes, label=None, sub=None):
+    lo_in, lo_router = _cheapest(routes, "input")
+    lo_out, _ = _cheapest(routes, "output")
+    sp = _spread_of(routes)
+    name = f"<strong>{_model_link(canonical, label)}</strong>"
+    if sub:
+        name += f"<br><span class='mut'>{esc(sub)}</span>"
+    return (f"<tr><td>{name}</td>"
             f"<td class='n'>{_price_cell(lo_in)}</td><td class='n'>{_price_cell(lo_out)}</td>"
             f"<td>{esc(ROUTER_LABEL.get(lo_router, lo_router or '—'))}</td>"
-            f"<td class='n'>{spread}</td><td class='n'>{len(routes)}</td>"
-            f"<td class='n'>{'✓' if on_ramp else '—'}</td></tr>")
+            f"<td class='n'>{f'{sp:.1f}×' if sp else '—'}</td>"
+            f"<td class='n'>{len(routes)}</td></tr>")
 
+
+TABLE_HEAD = ("<thead><tr><th>Model</th><th class='n'>$ in /MTok</th>"
+              "<th class='n'>$ out /MTok</th><th>Cheapest via</th>"
+              "<th class='n'>Spread</th><th class='n'>Gateways</th></tr></thead>")
+
+
+def watchlist_routes(idx, meta, key):
+    """Collapse a watchlist entry's aliases into one route table."""
+    routes = {}
+    for alias in meta.get("aliases", [key]):
+        for router, r in (idx.get(alias) or {}).items():
+            cur = routes.get(router)
+            if cur is None or (isinstance(r.get("input"), (int, float))
+                               and not isinstance(cur.get("input"), (int, float))) or (
+                    isinstance(r.get("input"), (int, float))
+                    and isinstance(cur.get("input"), (int, float))
+                    and r["input"] < cur["input"]):
+                routes[router] = r
+    return routes
+
+
+def render_llm_index(llm_offers, changelog, monetize):
+    idx = llm_model_index(llm_offers)
+    watchlist = load_watchlist()
+    routers_live = sorted({o["provider"] for o in llm_offers})
+
+    wl_rows = []
+    for key, meta in watchlist.items():
+        routes = watchlist_routes(idx, meta, key)
         if routes:
-            detail_rows = []
-            for rt, r in sorted(routes.items(),
-                                key=lambda kv: kv[1].get("input") if isinstance(kv[1].get("input"), (int, float)) else 9e9):
-                ctx = f"{r['ctx']:,}" if isinstance(r.get("ctx"), int) else "—"
-                detail_rows.append(
-                    f"<tr><td>{esc(ROUTER_LABEL.get(rt, rt))}</td>"
-                    f"<td class='n'>{_price_cell(r.get('input'))}</td>"
-                    f"<td class='n'>{_price_cell(r.get('output'))}</td>"
-                    f"<td class='n'>{ctx}</td>"
-                    f"<td><span class='mut'>{esc(r.get('model_id') or '')}</span></td></tr>")
-            detail = "".join(detail_rows)
-            wl_details.append(
-                f"<details><summary><strong>{esc(meta['display'])}</strong> — "
-                f"{len(routes)} router{'s' if len(routes) != 1 else ''}"
-                f"{f', {spread} spread' if spread != '—' else ''}"
-                f"{' · on Ramp Router' if on_ramp else ''}</summary>"
-                f"<div class='tablewrap'><table><thead><tr><th>Router</th>"
-                f"<th class='n'>$ in /MTok</th><th class='n'>$ out /MTok</th>"
-                f"<th class='n'>Context</th><th>Model ID</th></tr></thead>"
-                f"<tbody>{detail}</tbody></table></div></details>")
+            wl_rows.append(_model_row(key, routes, meta.get("display"), meta.get("lab")))
 
-    # --- full catalog: models carried by more than one router (comparable ones)
     multi = {c: r for c, r in idx.items() if len(r) > 1}
-    cat_rows = []
-    for canonical in sorted(multi):
-        routes = multi[canonical]
-        lo_in, lo_router = _cheapest(routes, "input")
-        lo_out, _ = _cheapest(routes, "output")
-        ins = [r["input"] for r in routes.values() if isinstance(r.get("input"), (int, float))]
-        spread = f"{max(ins) / min(ins):.1f}×" if len(ins) > 1 and min(ins) else "—"
-        cat_rows.append(
-            f"<tr><td>{esc(canonical)}</td><td class='n'>{_price_cell(lo_in)}</td>"
-            f"<td class='n'>{_price_cell(lo_out)}</td>"
-            f"<td>{esc(ROUTER_LABEL.get(lo_router, lo_router or '—'))}</td>"
-            f"<td class='n'>{spread}</td><td class='n'>{len(routes)}</td>"
-            f"<td class='n'>{'✓' if canonical in ramp_models else '—'}</td></tr>")
+    cat_rows = [_model_row(c, multi[c]) for c in sorted(multi)]
 
     recent = [e for e in changelog if entry_section(e) == "llm"][-15:]
     aliases = alias_index(load_specs())
     log = "\n".join(chg_html(e, aliases) for e in reversed(recent)) or \
-          '<li class="mut">Tracking began today — diffs appear with the next price move or model listing.</li>'
+          '<li class="mut">Tracking began today — diffs appear with the next price move.</li>'
 
-    ramp_recent = [e for e in changelog if e["id"].startswith("ramp:")][-6:]
-    ramp_log = "".join(f"<li>{esc(e['summary'])}</li>" for e in reversed(ramp_recent)) or \
-               '<li class="mut">No availability changes recorded yet.</li>'
+    # Head-to-head links for the pairs people actually search for.
+    pair_links = " · ".join(
+        f'<a href="/llm/compare/{a}-vs-{b}.html">{esc(ROUTER_LABEL[a])} vs {esc(ROUTER_LABEL[b])}</a>'
+        for a, b in COMPARE_ROUTER_PAIRS if a in routers_live and b in routers_live)
 
     body = f"""
-<h1>LLM API pricing across {len(routers_live)} routers <span class="badge">beta</span></h1>
+<h1>LLM API pricing across {len(routers_live)} gateways <span class="badge">beta</span></h1>
 <p class="mut">The same model costs different amounts depending on which gateway you buy it
 through. We snapshot {", ".join(esc(ROUTER_LABEL.get(r, r)) for r in routers_live)} hourly,
 normalize everything to USD per million tokens, and diff it. {len(idx)} models tracked,
-{len(multi)} of them carried by more than one router.</p>
+{len(multi)} of them carried by more than one gateway. Click any model for its prices
+everywhere plus its own changelog.</p>
 
 <h2>What changed</h2>
 <ul class="chg">{log}</ul>
 
+<h2>Head to head</h2>
+<p>{pair_links}</p>
+
 <h2>Watchlist</h2>
-<p class="mut">Flagship models, cheapest route per router. "Spread" is the most expensive
-router divided by the cheapest — buying the same tokens through the wrong gateway is a
-silent tax.</p>
-<div class="tablewrap"><table>
-<thead><tr><th>Model</th><th class="n">$ in /MTok</th><th class="n">$ out /MTok</th>
-<th>Cheapest via</th><th class="n">Spread</th><th class="n">Routers</th><th class="n">Ramp</th></tr></thead>
-<tbody>{''.join(wl_rows) or '<tr><td colspan="7" class="mut">No watchlist models priced yet.</td></tr>'}</tbody>
+<p class="mut">Flagship models. "Spread" is the most expensive gateway divided by the
+cheapest — paying it is a silent tax on identical tokens.</p>
+<div class="tablewrap"><table>{TABLE_HEAD}
+<tbody>{''.join(wl_rows) or '<tr><td colspan="6" class="mut">No watchlist models priced yet.</td></tr>'}</tbody>
 </table></div>
-<h3>Router-by-router breakdown</h3>
-{''.join(wl_details)}
 
-<h2>Ramp Router availability</h2>
-<p>Ramp opened its internal LLM gateway to the public in July 2026: free through 2026,
-with tokens billed at provider list price rather than a marked-up rate. It publishes no
-public price endpoint, so we track <strong>what it carries</strong> — {len(ramp_models)} models
-today — and diff that. Source:
-<a href="https://docs.router.com/supported-models" rel="noopener">Ramp's supported-models docs</a>.</p>
-<ul class="chg">{ramp_log}</ul>
-
-<h2>Every multi-router model</h2>
-<p class="mut">Models available from two or more routers, so the comparison means something.
-Single-router models are in the API.</p>
-<div class="tablewrap"><table>
-<thead><tr><th>Model</th><th class="n">$ in /MTok</th><th class="n">$ out /MTok</th>
-<th>Cheapest via</th><th class="n">Spread</th><th class="n">Routers</th><th class="n">Ramp</th></tr></thead>
+<h2>Every multi-gateway model</h2>
+<p class="mut">Models sold by two or more gateways, so the comparison means something.
+Single-gateway models are in the API.</p>
+<div class="tablewrap"><table>{TABLE_HEAD}
 <tbody>{''.join(cat_rows)}</tbody></table></div>
 <p><a href="/api/v1/llm/watchlist.json">Watchlist JSON →</a> ·
 <a href="/api/v1/llm/models.json">All models JSON →</a> ·
-<a href="/api/v1/llm/catalog.json">Ramp catalog JSON →</a> ·
 <a href="/llm/rss.xml">RSS</a></p>"""
-    return page(f"LLM API Prices Compared Across {len(routers_live)} Routers — per-token cost changelog | gpudiff",
+    return page(f"LLM API Prices Compared Across {len(routers_live)} Gateways — per-token cost changelog | gpudiff",
                 body, monetize,
-                "Compare LLM API prices per million tokens across OpenRouter, Requesty, Glama, Novita and DeepInfra, "
-                "with Ramp Router availability and a changelog of every price change.",
+                "Compare LLM API prices per million tokens across OpenRouter, Ramp Router, Requesty, Glama, "
+                "Novita and DeepInfra, with per-model history and a changelog of every price change.",
                 path="/llm/")
+
+
+def render_llm_model(canonical, routes, history, entries, monetize, meta=None):
+    """One model, every gateway that sells it, plus its own price history."""
+    display = (meta or {}).get("display") or canonical
+    lab = (meta or {}).get("lab")
+    lo_in, lo_router = _cheapest(routes, "input")
+    lo_out, lo_out_router = _cheapest(routes, "output")
+    sp = _spread_of(routes)
+
+    rows = []
+    for rt, r in sorted(routes.items(),
+                        key=lambda kv: kv[1].get("input") if isinstance(kv[1].get("input"), (int, float)) else 9e9):
+        ctx = f"{r['ctx']:,}" if isinstance(r.get("ctx"), int) else "—"
+        series = history.get(r.get("input_id"), [])
+        fee = ROUTER_FEES.get(rt)
+        fee_note = f" <span class='badge' title='{esc(fee[0])}'>fees</span>" if fee else ""
+        rows.append(
+            f"<tr><td><strong>{esc(ROUTER_LABEL.get(rt, rt))}</strong>{fee_note}</td>"
+            f"<td class='n'>{_price_cell(r.get('input'))}</td>"
+            f"<td class='n'>{_price_cell(r.get('output'))}</td>"
+            f"<td class='n'>{ctx}</td>"
+            f"<td>{sparkline(series)}</td>"
+            f"<td><span class='mut'>{esc(r.get('model_id') or '')}</span></td></tr>")
+
+    log = "\n".join(
+        f"<li><time>{esc(e['date'])}</time> "
+        f"<span class='{'cut' if e.get('new_price', 0) < e.get('old_price', 0) else 'raise'}'>"
+        f"{esc(e['summary'])}</span></li>"
+        if e["kind"] == "price_change" else
+        f"<li><time>{esc(e['date'])}</time> {esc(e['summary'])}</li>"
+        for e in reversed(entries[-25:])) or \
+        '<li class="mut">No changes recorded for this model yet — history starts the day we first saw it.</li>'
+
+    faqs = [
+        (f"How much does {display} cost per million tokens?",
+         f"The cheapest tracked gateway charges ${lo_in:.2f} per million input tokens and "
+         f"${lo_out:.2f} per million output tokens"
+         f"{f' ({ROUTER_LABEL.get(lo_router, lo_router)})' if lo_router else ''}. "
+         f"Prices refresh hourly." if lo_in and lo_out else "No current price is published."),
+        (f"Which gateway is cheapest for {display}?",
+         f"{ROUTER_LABEL.get(lo_router, lo_router)} for input tokens and "
+         f"{ROUTER_LABEL.get(lo_out_router, lo_out_router)} for output tokens, among the "
+         f"{len(routes)} gateways we track." if lo_router else "Not currently sold by a tracked gateway."),
+    ]
+    if sp and sp > 1.01:
+        faqs.append((f"Do {display} prices differ between gateways?",
+                     f"Yes — the most expensive tracked gateway charges {sp:.1f}× the cheapest for "
+                     f"input tokens. Identical model, identical tokens, different bill."))
+    else:
+        faqs.append((f"Do {display} prices differ between gateways?",
+                     "No — every tracked gateway currently charges the same per-token price, so the "
+                     "difference between them is fees and routing, not token cost."))
+    faq_html = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in faqs)
+    faq_ld = ('<script type="application/ld+json">' + json.dumps({
+        "@context": "https://schema.org", "@type": "FAQPage",
+        "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
+                       for q, a in faqs]}) + '</script>')
+
+    fee_rows = "".join(
+        f"<li><strong>{esc(ROUTER_LABEL.get(rt, rt))}</strong>: {esc(ROUTER_FEES[rt][0])} "
+        f"<a href='{esc(ROUTER_FEES[rt][1])}' rel='noopener'>source</a></li>"
+        for rt in routes if rt in ROUTER_FEES)
+    fees = f"<h2>Fees beyond the token price</h2><ul class='chg'>{fee_rows}</ul>" if fee_rows else ""
+
+    body = f"""
+<h1>{esc(display)} API price — {len(routes)} gateway{'s' if len(routes) != 1 else ''} compared</h1>
+<p class="mut">{esc(lab + ' · ') if lab else ''}from <strong>{_price_cell(lo_in)}</strong> per
+million input tokens{f' · {sp:.1f}× spread between gateways' if sp and sp > 1.01 else ' · same price on every gateway'}
+· updated hourly</p>
+<div class="tablewrap"><table>
+<thead><tr><th>Gateway</th><th class="n">$ in /MTok</th><th class="n">$ out /MTok</th>
+<th class="n">Context</th><th>Input price history</th><th>Model ID</th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table></div>
+{fees}
+<h2>Changelog for {esc(display)}</h2>
+<ul class="chg">{log}</ul>
+<h2>{esc(display)} pricing FAQ</h2>
+{faq_html}
+<p class="mut"><a href="/llm/">← All LLM prices</a> · <a href="/api/v1/llm/models.json">API</a></p>"""
+    return page(f"{display} API Price — {len(routes)} gateways compared, updated hourly | gpudiff",
+                body, monetize,
+                f"{display} API pricing per million tokens across {len(routes)} gateways, with price "
+                f"history and a changelog of every change.",
+                jsonld=faq_ld, path=f"/llm/model/{canonical}.html")
+
+
+COMPARE_ROUTER_PAIRS = [
+    ("ramp", "openrouter"), ("openrouter", "requesty"), ("openrouter", "glama"),
+    ("openrouter", "novita"), ("openrouter", "deepinfra"), ("ramp", "requesty"),
+    ("glama", "requesty"), ("novita", "deepinfra"),
+]
+
+
+def render_router_compare(a, b, idx, monetize):
+    la, lb = ROUTER_LABEL.get(a, a), ROUTER_LABEL.get(b, b)
+    shared = []
+    for canonical, routes in idx.items():
+        ra, rb = routes.get(a), routes.get(b)
+        if not ra or not rb:
+            continue
+        ai, bi = ra.get("input"), rb.get("input")
+        if isinstance(ai, (int, float)) and isinstance(bi, (int, float)):
+            shared.append((canonical, ra, rb, ai, bi))
+    shared.sort(key=lambda t: t[0])
+
+    a_cheaper = sum(1 for _, _, _, ai, bi in shared if ai < bi)
+    b_cheaper = sum(1 for _, _, _, ai, bi in shared if bi < ai)
+    same = len(shared) - a_cheaper - b_cheaper
+
+    rows = []
+    for canonical, ra, rb, ai, bi in shared:
+        delta = (bi - ai) / ai * 100 if ai else 0
+        if abs(delta) < 0.01:
+            verdict, cls = "same", "mut"
+        elif delta > 0:
+            verdict, cls = f"{la} −{abs(delta):.0f}%", "cut"
+        else:
+            verdict, cls = f"{lb} −{abs(delta):.0f}%", "cut"
+        rows.append(
+            f"<tr><td>{_model_link(canonical)}</td>"
+            f"<td class='n'>{_price_cell(ai)}</td><td class='n'>{_price_cell(bi)}</td>"
+            f"<td class='n'>{_price_cell(ra.get('output'))}</td>"
+            f"<td class='n'>{_price_cell(rb.get('output'))}</td>"
+            f"<td class='{cls}'>{esc(verdict)}</td></tr>")
+
+    if same == len(shared) and shared:
+        headline = (f"On token prices, {la} and {lb} are identical across all "
+                    f"{len(shared)} models both sell — both pass provider list pricing straight "
+                    f"through. The real difference is fees.")
+    else:
+        headline = (f"Across {len(shared)} models both gateways sell, {la} is cheaper on "
+                    f"{a_cheaper}, {lb} on {b_cheaper}, and {same} are priced identically.")
+
+    fee_rows = "".join(
+        f"<li><strong>{esc(ROUTER_LABEL.get(rt, rt))}</strong>: {esc(ROUTER_FEES[rt][0])} "
+        f"<a href='{esc(ROUTER_FEES[rt][1])}' rel='noopener'>source</a></li>"
+        for rt in (a, b) if rt in ROUTER_FEES)
+    fees = (f"<h2>Fees beyond the token price</h2><ul class='chg'>{fee_rows}</ul>"
+            f"<p class='mut'>Quoted from each gateway's own documentation — we track published "
+            f"token prices, not invoices, so treat fee terms as their claims, not our measurement.</p>"
+            if fee_rows else "")
+
+    # The question people actually ask is "which should I buy through", and the
+    # answer needs both halves of the bill.
+    bottom = ""
+    if shared and a in ROUTER_FEES and b in ROUTER_FEES:
+        token_winner = la if a_cheaper > b_cheaper else (lb if b_cheaper > a_cheaper else None)
+        bottom = (
+            f"<div class='callout'><p><strong>Bottom line.</strong> "
+            f"{f'On token prices alone, {esc(token_winner)} wins more often — cheaper on ' if token_winner else 'Token prices are a wash: '}"
+            f"{max(a_cheaper, b_cheaper)} of {len(shared)} shared models"
+            f"{f', while {esc(lb if token_winner == la else la)} leads on {min(a_cheaper, b_cheaper)}' if token_winner else ''}, "
+            f"and {same} are priced identically. On those identical models the token cost cannot "
+            f"decide it, so the fee terms below do — which is where the two gateways genuinely "
+            f"differ. Neither number is a quote: check your own volume and payment method.</p></div>")
+
+    body = f"""
+<h1>{esc(la)} vs {esc(lb)}: LLM API price comparison</h1>
+<p>{esc(headline)} Input prices are USD per million tokens, refreshed hourly; every model
+links to its full cross-gateway history.</p>
+{bottom}
+<div class="tablewrap"><table>
+<thead><tr><th>Model</th><th class="n">{esc(la)} in</th><th class="n">{esc(lb)} in</th>
+<th class="n">{esc(la)} out</th><th class="n">{esc(lb)} out</th><th>Cheaper</th></tr></thead>
+<tbody>{''.join(rows) or '<tr><td colspan="6" class="mut">No overlapping models right now.</td></tr>'}</tbody>
+</table></div>
+{fees}
+<p class="mut"><a href="/llm/">← All LLM prices</a></p>"""
+    return page(f"{la} vs {lb} Pricing — {len(shared)} models compared per token | gpudiff",
+                body, monetize,
+                f"{la} vs {lb}: per-million-token API prices compared across {len(shared)} shared models, "
+                f"plus the gateway fees each one charges. Updated hourly.",
+                path=f"/llm/compare/{a}-vs-{b}.html")
 
 
 def render_saas_index(saas_offers, changelog, monetize):
@@ -890,11 +1048,13 @@ route per model and record how many were collapsed. Models are joined across
 routers by canonical name — last path segment, region suffix stripped — so
 <code>vertex/claude-sonnet-5@eu</code> and <code>anthropic/claude-sonnet-5</code>
 are one row.</td><td>hourly</td></tr>
-<tr><td>Ramp Router (LLM)</td><td>Availability only, not prices: Ramp publishes no
-public price endpoint and bills tokens at provider list price, so we track which
-models its public docs list and diff that. Ramp writes decimal points as "p"
-(<code>kimi-k2p6</code>) and drops the <code>claude-</code> prefix
-(<code>opus-5</code>); both are normalized into the shared namespace.</td><td>daily</td></tr>
+<tr><td>Ramp Router (LLM)</td><td>The published model table from Ramp's public docs:
+input and output price per million tokens, context window. Ramp writes decimal
+points as "p" (<code>kimi-k2p6</code>) and lists Anthropic models without the
+<code>claude-</code> prefix (<code>opus-5</code>); both are normalized into the
+shared namespace so one model is one row. Ramp states it bills at provider list
+price with no gateway fee through 2026 — useful as a list-price reference, but
+it is their published rate, not an invoice we have seen.</td><td>daily</td></tr>
 <tr><td>SaaS pages</td><td>Page-level price signature: the set of USD amounts
 ($2–$2000) present on each vendor's public pricing page; we publish the lowest
 and highest and diff those. Not plan-mapped — a movement signal with a
@@ -1071,43 +1231,73 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "v1" / "saas" / "companies.json").write_text(
         json.dumps(sorted(saas_companies.values(), key=lambda c: c["company"]), indent=2) + "\n")
 
-    catalog = load_catalog()
+    (SITE / "llm" / "model").mkdir(parents=True, exist_ok=True)
+    (SITE / "llm" / "compare").mkdir(parents=True, exist_ok=True)
     (SITE / "llm" / "index.html").write_text(
-        render_llm_index(llm_offers, changelog, monetize, catalog))
+        render_llm_index(llm_offers, changelog, monetize))
 
     idx = llm_model_index(llm_offers)
-    ramp_models = {c["item"] for c in catalog if c.get("provider") == "ramp"}
+    wl = load_watchlist()
 
-    def model_record(canonical, routes):
+    def model_record(canonical, routes, meta=None):
         ins = [r["input"] for r in routes.values() if isinstance(r.get("input"), (int, float))]
-        return {
+        rec = {
             "model": canonical, "unit": "usd_per_mtok",
-            "routers": {rt: {"input_per_mtok": r.get("input"), "output_per_mtok": r.get("output"),
-                             "model_id": r.get("model_id"), "context_length": r.get("ctx")}
-                        for rt, r in sorted(routes.items())},
+            "gateways": {rt: {"input_per_mtok": r.get("input"), "output_per_mtok": r.get("output"),
+                              "model_id": r.get("model_id"), "context_length": r.get("ctx")}
+                         for rt, r in sorted(routes.items())},
             "cheapest_input_per_mtok": min(ins) if ins else None,
             "spread": round(max(ins) / min(ins), 2) if len(ins) > 1 and min(ins) else None,
-            "on_ramp_router": canonical in ramp_models,
+            "url": f"{BASE_URL}/llm/model/{canonical}.html",
         }
+        if meta:
+            rec.update({"display": meta.get("display"), "lab": meta.get("lab")})
+        return rec
 
     (SITE / "api" / "v1" / "llm" / "models.json").write_text(
         json.dumps([model_record(c, r) for c, r in sorted(idx.items())], indent=2) + "\n")
 
-    wl = load_watchlist()
-    wl_records = []
+    # Per-model pages: every model sold by 2+ gateways, plus the whole watchlist.
+    id_canon = {}
+    for o in llm_offers:
+        a = o.get("attrs") or {}
+        id_canon[o["id"]] = a.get("canonical") or canon_model(a.get("model_id") or o["sku"])
+    entries_by_model = {}
+    for e in changelog:
+        canonical = id_canon.get(e["id"])
+        if canonical:
+            entries_by_model.setdefault(canonical, []).append(e)
+
+    wl_records, page_models = [], {c for c, r in idx.items() if len(r) > 1}
     for key, meta in wl.items():
-        routes = {}
-        for alias in meta.get("aliases", [key]):
-            routes.update(idx.get(alias) or {})
-        if routes or any(a in ramp_models for a in meta.get("aliases", [key])):
-            rec = model_record(key, routes)
-            rec.update({"display": meta.get("display"), "lab": meta.get("lab")})
-            rec["on_ramp_router"] = any(a in ramp_models for a in meta.get("aliases", [key]))
-            wl_records.append(rec)
+        routes = watchlist_routes(idx, meta, key)
+        if routes:
+            wl_records.append(model_record(key, routes, meta))
+            page_models.add(key)
+            idx.setdefault(key, routes)
     (SITE / "api" / "v1" / "llm" / "watchlist.json").write_text(
         json.dumps(wl_records, indent=2) + "\n")
-    (SITE / "api" / "v1" / "llm" / "catalog.json").write_text(
-        json.dumps(catalog, indent=2) + "\n")
+
+    for canonical in sorted(page_models):
+        routes = idx.get(canonical) or {}
+        if not routes:
+            continue
+        meta = wl.get(canonical)
+        model_entries = entries_by_model.get(canonical, [])
+        if meta:  # a watchlist entry may span several alias spellings
+            for alias in meta.get("aliases", [canonical]):
+                model_entries += entries_by_model.get(alias, []) if alias != canonical else []
+            model_entries.sort(key=lambda e: e["date"])
+        (SITE / "llm" / "model" / f"{canonical}.html").write_text(
+            render_llm_model(canonical, routes, history, model_entries, monetize, meta))
+
+    llm_pairs = []
+    live_routers = {o["provider"] for o in llm_offers}
+    for a, b in COMPARE_ROUTER_PAIRS:
+        if a in live_routers and b in live_routers:
+            (SITE / "llm" / "compare" / f"{a}-vs-{b}.html").write_text(
+                render_router_compare(a, b, idx, monetize))
+            llm_pairs.append((a, b))
 
     (SITE / "index.html").write_text(render_index(fams, changelog, date, monetize))
     (SITE / "changelog.html").write_text(render_changelog(changelog, monetize, aliases))
@@ -1223,6 +1413,8 @@ def build_site(offers, changelog, date):
     urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/saas/", f"{BASE_URL}/fit.html",
             f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",
             f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/", f"{BASE_URL}/digest/"] + \
+           [f"{BASE_URL}/llm/model/{m}.html" for m in sorted(page_models)] + \
+           [f"{BASE_URL}/llm/compare/{a}-vs-{b}.html" for a, b in llm_pairs] + \
            [f"{BASE_URL}/digest/{s}.html" for s in digest_stems] + \
            [f"{BASE_URL}/provider/{p}.html" for p in provider_names] + \
            [f"{BASE_URL}/compare/{a}-vs-{b}.html" for a, b in compare_built] + \
