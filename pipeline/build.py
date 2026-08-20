@@ -250,6 +250,8 @@ def page(title, body, monetize, desc="", jsonld="", path="/"):
            '<a href="/changelog.html">changelog</a>'
            '<a href="/methodology.html">methodology</a>'
            '<a href="/api/">api</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
+    gsc = monetize.get("google_site_verification", "")
+    verify = f'<meta name="google-site-verification" content="{esc(gsc)}">' if gsc else ""
     gc = monetize.get("goatcounter_code", "")
     analytics = (f'<script data-goatcounter="https://{esc(gc)}.goatcounter.com/count" '
                  f'async src="https://gc.zgo.at/count.js"></script>') if gc else ""
@@ -259,7 +261,7 @@ def page(title, body, monetize, desc="", jsonld="", path="/"):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
-<meta name="description" content="{esc(desc or title)}">
+<meta name="description" content="{esc(desc or title)}">{verify}
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(desc or title)}">
 <meta property="og:url" content="{BASE_URL}{esc(path)}">
