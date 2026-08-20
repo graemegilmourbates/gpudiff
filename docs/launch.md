@@ -90,3 +90,85 @@ how do you make money, why trust an AI pipeline, feature requests).
 Paste new comments to the agent for drafted replies. Watch traffic at
 https://graemebates.goatcounter.com and HN mentions via
 https://hn.algolia.com/?query=gpudiff
+
+---
+
+# Blocked: "account too new" (2026-08-20)
+
+HN's spam heuristic gates submissions on account age + activity. It is not a
+Show HN rule and it lifts on its own, usually days to a couple of weeks.
+Do NOT create another account, ask anyone to post it for you, or buy karma —
+all three are bannable and would cost us the channel permanently.
+
+## 1. Email the mods (today, 2 minutes)
+
+To: hn@ycombinator.com
+Subject: Submission blocked — account too new
+
+> Hi — I tried to submit a Show HN for a project I built and got "account is
+> too new to submit". Username: <your username>. URL: https://gpudiff.com —
+> it's my own project (open source: github.com/graemegilmourbates/gpudiff),
+> an hourly price changelog for GPU clouds and LLM APIs. Attempted around
+> <date/time, timezone>. Happy to wait if that's the process — just wanted to
+> check whether anything is wrong with the account. Thanks.
+
+Mods usually reply within a day and often clear it.
+
+## 2. Age the account honestly (this week)
+
+Comment substantively on 2–3 HN threads in areas you actually know. Not
+"great post" filler — real answers. Karma accrues, the gate lifts, and you
+arrive at your own Show HN with a history rather than as a green account
+posting a link. Never mention gpudiff in those comments unless it is
+genuinely the best answer to someone's question.
+
+## 3. Launch the ungated channels NOW
+
+The HN delay is a scheduling problem, not a launch problem. These have no
+account-age gate and each one is a permanent backlink:
+
+**a. Hugging Face dataset** — card drafted in docs/distribution.md. Their
+audience is exactly ours. Publishes immediately.
+
+**b. Newsletter pitches** — the highest-ROI ungated channel: direct email to
+editors, no gatekeeper, and a citation is worth more than a mid-tier HN
+placement. Template and target list in docs/distribution.md. Send 5 today.
+
+**c. Reddit** — post the FINDINGS, not the link. Most subs remove link-only
+self-promo, and new Reddit accounts hit their own age gates, so check each
+sub's rules first.
+
+r/LocalLLaMA (best fit — they rent GPUs and buy tokens):
+
+> Title: The same LLM costs up to 10x more depending on which gateway you buy
+> it through — I diffed six of them
+>
+> I've been snapshotting per-token prices hourly across OpenRouter, Ramp
+> Router, Requesty, Glama, Novita and DeepInfra, and normalizing them so the
+> same model lines up across gateways. Two patterns that surprised me:
+>
+> Frontier models are priced identically everywhere. Claude Opus 5 is $5/$25
+> per Mtok on all five gateways that carry it — they pass provider list
+> pricing straight through, so there is nothing to shop for.
+>
+> Open-weight models are the opposite. Same model, same weights, up to 10x
+> spread depending on the gateway (ling-2.6-flash), 8.9x on Mistral Nemo.
+> DeepSeek V4 Flash is 37% cheaper on OpenRouter than on Ramp Router.
+>
+> On the GPU side the same thing holds: an H100 SXM is $3.29/hr on RunPod and
+> $12.29/hr on Azure on-demand.
+>
+> Data is CC BY, the API needs no key, and every number links to the page it
+> was scraped from: https://gpudiff.com/llm/ — happy to pull any cut you want.
+
+r/SideProject / r/IndieHackers: the $100-business angle instead — what it
+cost to build and run ($1/month infrastructure), what it tracks, what broke.
+
+**d. Lobsters** — invite-only. Do not beg for an invite; skip unless someone
+offers.
+
+## 4. Then Show HN, stronger
+
+By the time the gate lifts we will have another week of changelog entries,
+which makes the post better, not worse — "here's what changed in AI compute
+prices over the last two weeks" beats "here is a thing I built yesterday."
