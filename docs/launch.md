@@ -16,40 +16,45 @@ can't, wait for a morning when you can.
 1. `Show HN: Gpudiff – hourly price changelog for GPU clouds and LLM APIs`
 2. `Show HN: I diff GPU cloud and LLM API prices hourly and publish every change`
 
-**Body:**
+**Body** (rewritten 2026-08-20 after finding ComputePrices.com — see
+"Competitive correction" below; do NOT use the earlier draft that claimed
+nobody tracks price changes):
 
-> Every cloud pricing site shows you what things cost right now. None of them
-> keep the record of what changed. So I built gpudiff: it snapshots prices
-> hourly, validates them, commits every snapshot to a public git repo, and
-> publishes the diff as a changelog, per-model history, RSS, and a free API.
+> There are already good cloud price comparison sites — getdeploying,
+> gpuperhour, computeprices, gpufinder. Several track changes and some have
+> history. What I couldn't find was the raw archive: the actual snapshots,
+> openly licensed, with every number linking the page it was scraped from, so
+> you can audit the collection or run your own analysis instead of trusting
+> mine.
+>
+> So gpudiff commits every hourly snapshot to a public git repo. The site is
+> just a view over it: a changelog, per-model and per-GPU history, RSS, and a
+> JSON API with no key and no rate limit. Data is CC BY 4.0. The scrapers,
+> the validation rules, and the entire price archive are the repo.
 >
 > It covers GPU clouds (Vast.ai, RunPod, AWS, Azure — on-demand and spot),
-> LLM API gateways (OpenRouter, Ramp Router, Requesty, Glama, Novita,
-> DeepInfra), and a beta section that watches SaaS pricing pages.
+> LLM gateways (OpenRouter, Ramp Router, Requesty, Glama, Novita, DeepInfra),
+> and a beta section watching SaaS pricing pages.
 >
-> A few things it has already surfaced:
+> A few things it surfaced:
 >
 > - The same H100 SXM 80GB runs $3.29/hr on RunPod and $12.29/hr on Azure
 >   on-demand — 3.7x for identical silicon.
-> - Frontier LLM models cost exactly the same on every gateway (Claude Opus 5
->   is $5/$25 per Mtok on all five that carry it) because gateways pass list
+> - Frontier LLM models are priced identically on every gateway (Claude Opus 5
+>   is $5/$25 per Mtok on all five carrying it) because gateways pass list
 >   pricing through. Open-weight models are the opposite: up to 10x spread for
->   the same model depending on where you buy it.
-> - Ramp Router vs OpenRouter: 41 of 50 shared models are priced identically,
->   OpenRouter is cheaper on 9, and neither wins on tokens alone — the
->   difference is fees (OpenRouter takes 5.5% on card top-ups; Ramp charges no
->   gateway fee through 2026).
+>   the same weights depending on where you buy.
+> - Ramp Router vs OpenRouter: 41 of 50 shared models priced identically,
+>   OpenRouter cheaper on 9, so fees decide it rather than token price.
 >
-> Design notes: anything failing schema validation is dropped rather than
-> published, a >40% daily move is quarantined for human review instead of
-> shipped, every datum stores the URL it was observed at, and a provider
-> vanishing from a source never publishes phantom delistings. Missing beats
-> wrong — a price nobody can rent at is worse than no price.
+> The part I'd most like feedback on is the validation, because the failure
+> mode for a price tracker is publishing a confident wrong number: anything
+> failing schema validation is dropped rather than published, a >40% daily
+> move is quarantined for human review, a provider vanishing from a source
+> never emits phantom delistings, and prices with no stock behind them are
+> excluded. Missing beats wrong.
 >
-> Data is CC BY 4.0, the API needs no key, and the whole pipeline is a public
-> repo run by GitHub Actions on cron.
->
-> Methodology (including what it deliberately doesn't claim):
+> Methodology, including what it deliberately doesn't claim:
 > https://gpudiff.com/methodology.html
 >
 > Which providers should I add next?
@@ -172,3 +177,39 @@ offers.
 By the time the gate lifts we will have another week of changelog entries,
 which makes the post better, not worse — "here's what changed in AI compute
 prices over the last two weeks" beats "here is a thing I built yesterday."
+
+---
+
+# Competitive correction (2026-08-20) — READ BEFORE POSTING
+
+A `site:` check for indexing surfaced competitors the Aug 14 scan
+under-investigated. Verified:
+
+**ComputePrices.com** — 79 providers, ~304k prices/day, GPU *and* LLM
+sections, a "Biggest Drops This Week" panel, a weekly email of notable price
+changes, and a free API (750 req/day, hourly) with a paid tier extending
+history to 90 days. That is substantially our product at ~10x the coverage,
+already shipped, already monetized.
+
+**GPUFinder.dev** — 14-month price history charts, email alerts on price
+drops, head-to-head comparison pages, an API, and llms.txt.
+
+**Implication:** the claim "nobody publishes the record of change" is FALSE
+and would have been demolished in the first HN comment. The post body above
+was rewritten to lead with what is actually differentiated:
+
+1. The full archive is public, versioned git — not a UI over a private DB.
+2. CC BY 4.0 with no key and no rate limit, versus free tiers with quotas.
+3. Provenance URL on every single datum.
+4. The validation rules are published and the pipeline is open, so the
+   collection itself is auditable.
+5. Sections nobody else combines (SaaS page-scan alongside GPU and LLM).
+
+What is NOT differentiated: coverage (28 providers vs their 79), scale,
+polish, or freshness. Do not claim any of those.
+
+**Strategic read:** we are a small late entrant in a crowded niche. The
+day-90 gates matter more than they did a week ago. If traffic does not
+materialize, hibernating and moving the pipeline to a less contested dataset
+is the correct call, not a failure — that is exactly what the Foundry
+structure is for.
