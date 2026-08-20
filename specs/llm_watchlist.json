@@ -1,0 +1,24 @@
+{
+  "_comment": "Curated flagship models tracked across every router. Aliases are canonical names (last path segment, region suffix stripped, lowercased) as they appear in router catalogs — the same normalization Ramp's 'p'-for-dot spelling is mapped into. Add an entry here and it appears on /llm with a cross-router price spread; no code change.",
+  "models": {
+    "claude-opus-5": {"display": "Claude Opus 5", "lab": "Anthropic", "aliases": ["claude-opus-5"]},
+    "claude-fable-5": {"display": "Claude Fable 5", "lab": "Anthropic", "aliases": ["claude-fable-5"]},
+    "claude-sonnet-5": {"display": "Claude Sonnet 5", "lab": "Anthropic", "aliases": ["claude-sonnet-5"]},
+    "gpt-5.6-sol": {"display": "GPT-5.6 Sol", "lab": "OpenAI", "aliases": ["gpt-5.6-sol"]},
+    "gpt-5.6-luna": {"display": "GPT-5.6 Luna", "lab": "OpenAI", "aliases": ["gpt-5.6-luna"]},
+    "gpt-5.6-terra": {"display": "GPT-5.6 Terra", "lab": "OpenAI", "aliases": ["gpt-5.6-terra"]},
+    "gemini-3.7-flash": {"display": "Gemini 3.7 Flash", "lab": "Google", "aliases": ["gemini-3.7-flash"]},
+    "gemini-3.1-pro": {"display": "Gemini 3.1 Pro", "lab": "Google", "aliases": ["gemini-3.1-pro"]},
+    "kimi-k3": {"display": "Kimi K3", "lab": "Moonshot", "aliases": ["kimi-k3"]},
+    "deepseek-v4-pro": {"display": "DeepSeek V4 Pro", "lab": "DeepSeek", "aliases": ["deepseek-v4-pro"]},
+    "deepseek-v4-flash": {"display": "DeepSeek V4 Flash", "lab": "DeepSeek", "aliases": ["deepseek-v4-flash"]},
+    "qwen3.8-max": {"display": "Qwen 3.8 Max", "lab": "Alibaba", "aliases": ["qwen3.8-max"]},
+    "glm-5.2": {"display": "GLM 5.2", "lab": "Z.ai", "aliases": ["glm-5.2"]},
+    "grok-4.6": {"display": "Grok 4.6", "lab": "xAI", "aliases": ["grok-4.6"]},
+    "llama-4-maverick": {
+      "display": "Llama 4 Maverick", "lab": "Meta",
+      "aliases": ["llama-4-maverick", "llama-4-maverick-17b-128e-instruct-fp8",
+                  "llama-4-maverick-17b-128e-instruct-turbo", "llama-4-maverick-17b-128e-instruct"]
+    }
+  }
+}

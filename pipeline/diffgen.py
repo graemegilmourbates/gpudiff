@@ -8,10 +8,17 @@ from pathlib import Path
 def diff_snapshots(prev_offers, curr_offers, date):
     prev = {o["id"]: o for o in prev_offers}
     curr = {o["id"]: o for o in curr_offers}
+    # A provider arriving or disappearing wholesale is our plumbing, not the
+    # market: onboarding a source must not publish thousands of "added" rows,
+    # and a source outage must never publish phantom delistings.
+    prev_providers = {o["provider"] for o in prev_offers}
+    curr_providers = {o["provider"] for o in curr_offers}
     entries = []
 
     for oid in sorted(curr.keys() - prev.keys()):
         o = curr[oid]
+        if o["provider"] not in prev_providers:
+            continue
         entries.append({
             "date": date, "kind": "added", "id": oid,
             "provider": o["provider"], "sku": o["sku"],
@@ -21,6 +28,8 @@ def diff_snapshots(prev_offers, curr_offers, date):
 
     for oid in sorted(prev.keys() - curr.keys()):
         o = prev[oid]
+        if o["provider"] not in curr_providers:
+            continue
         entries.append({
             "date": date, "kind": "removed", "id": oid,
             "provider": o["provider"], "sku": o["sku"],
@@ -38,6 +47,32 @@ def diff_snapshots(prev_offers, curr_offers, date):
                 "old_price": old, "new_price": new, "pct": pct,
                 "summary": (f"{curr[oid]['provider']} {direction} {curr[oid]['sku']} "
                             f"{abs(pct)}%: {old} → {new} {curr[oid]['unit']}"),
+            })
+    return entries
+
+
+CATALOG_LABEL = {"ramp": "Ramp Router"}
+
+
+def diff_catalog(prev_items, curr_items, date):
+    """Availability diffs: what a gateway started or stopped carrying. Same
+    entry shape as price diffs so the changelog, feeds, and pages need no
+    special cases."""
+    prev = {(i["provider"], i["item"]) for i in prev_items}
+    curr = {(i["provider"], i["item"]) for i in curr_items}
+    prev_providers = {p for p, _ in prev}
+    curr_providers = {p for p, _ in curr}
+    entries = []
+    for kind, verb, delta in (("added", "added", curr - prev), ("removed", "dropped", prev - curr)):
+        for provider, item in sorted(delta):
+            # Same rule as prices: a gateway appearing or vanishing is plumbing.
+            if provider not in (prev_providers if kind == "added" else curr_providers):
+                continue
+            label = CATALOG_LABEL.get(provider, provider)
+            entries.append({
+                "date": date, "kind": kind, "id": f"{provider}:{item}:global:catalog",
+                "provider": provider, "sku": item,
+                "summary": f"{label} {verb} {item}",
             })
     return entries
 

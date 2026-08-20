@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 
 from .build import build_site
-from .diffgen import append_changelog, diff_snapshots
+from .diffgen import append_changelog, diff_catalog, diff_snapshots
 from .validate import SCHEMA_PATH, _load, split_offers
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -43,11 +43,12 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
         from sources.aws import AwsSource
         from sources.azure import AzureSource
         from sources.openrouter import OpenRouterSource
+        from sources.routers import RoutersSource
         from sources.runpod import RunpodSource
         from sources.saaspages import SaasPagesSource
         from sources.vast import VastSource
         registry = [VastSource(), RunpodSource(), AwsSource(), AzureSource(),
-                    OpenRouterSource(), SaasPagesSource()]
+                    OpenRouterSource(), RoutersSource(), SaasPagesSource()]
 
     hour = dt.datetime.now(dt.timezone.utc).hour
     offers, statuses = [], []
@@ -76,6 +77,24 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
     return offers, statuses
 
 
+def gather_catalog(use_fixtures, observed_at):
+    """Availability sources (what a gateway carries, not what it charges)."""
+    if use_fixtures:
+        return [], []
+    from sources.ramp import RampCatalogSource
+    items, statuses = [], []
+    for source in [RampCatalogSource()]:
+        try:
+            fetched = source.fetch(observed_at)
+            items.extend(fetched)
+            statuses.append({"source": source.name, "ok": len(fetched) > 0,
+                             "offers": len(fetched), "catalog": True})
+        except Exception as exc:  # noqa: BLE001
+            statuses.append({"source": source.name, "ok": False, "catalog": True,
+                             "error": f"{type(exc).__name__}: {exc}"})
+    return items, statuses
+
+
 def run(date, use_fixtures, force_all=False):
     now = dt.datetime.now(dt.timezone.utc)
     observed_at = now.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -92,6 +111,8 @@ def run(date, use_fixtures, force_all=False):
     carry_pool = _load(today_path) if today_path.exists() else prev_offers
 
     raw, statuses = gather(date, use_fixtures, observed_at, carry_pool, force_all)
+    catalog_items, catalog_statuses = gather_catalog(use_fixtures, observed_at)
+    statuses.extend(catalog_statuses)
     schema = _load(SCHEMA_PATH)
     valid, rejected, quarantined = split_offers(raw, {o["id"]: o for o in prev_offers}, schema)
 
@@ -123,7 +144,19 @@ def run(date, use_fixtures, force_all=False):
         qdir.mkdir(parents=True, exist_ok=True)
         (qdir / f"{date}.json").write_text(json.dumps(quarantined, indent=2) + "\n")
 
-    entries = diff_snapshots(prev_offers, valid, date) if prev_offers else []
+    # Catalog snapshot + availability diffs. An empty fetch is never treated as
+    # a mass delisting — the source raises instead, and we keep yesterday's.
+    cat_dir = base / "catalog"
+    prev_cat_path = previous_snapshot(cat_dir, date)
+    prev_cat = _load(prev_cat_path) if prev_cat_path else []
+    cat_entries = []
+    if catalog_items:
+        cat_dir.mkdir(parents=True, exist_ok=True)
+        (cat_dir / f"{date}.json").write_text(json.dumps(catalog_items, indent=2) + "\n")
+        if prev_cat:
+            cat_entries = diff_catalog(prev_cat, catalog_items, date)
+
+    entries = (diff_snapshots(prev_offers, valid, date) if prev_offers else []) + cat_entries
     changelog = append_changelog(changelog_path, entries) if entries else (
         json.loads(changelog_path.read_text()) if changelog_path.exists() else []
     )

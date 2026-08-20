@@ -25,6 +25,9 @@ class Source:
 
     name = "unnamed"
     cadence = "hourly"
+    # "offers" -> priced rows validated against the offer schema.
+    # "catalog" -> availability records (what a provider carries, not what it costs).
+    kind = "offers"
 
     @property
     def emits(self):
