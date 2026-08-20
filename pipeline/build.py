@@ -559,27 +559,62 @@ def render_changelog(changelog, monetize, aliases):
 
 
 def render_api_docs(monetize):
-    body = f"""
+    body = """
 <h1>Free API</h1>
-<p>Static JSON on a CDN — no keys, no rate limits worth worrying about. Data is
-<strong>CC BY 4.0</strong>: use it freely, cite <code>gpudiff.com</code>.</p>
+<p>Static JSON on a CDN — no keys, no sign-up, no rate limits worth worrying
+about. Data is <strong>CC BY 4.0</strong>: use it freely, cite
+<code>gpudiff.com</code>. Paths are versioned; <code>/api/v1/</code> endpoints
+keep their shape.</p>
+
+<h2>GPU cloud</h2>
 <div class="tablewrap"><table>
 <thead><tr><th>Endpoint</th><th>What it returns</th></tr></thead>
 <tbody>
-<tr><td><a href="/api/v1/offers.json">/api/v1/offers.json</a></td><td>All current offers with provenance</td></tr>
-<tr><td><a href="/api/v1/families.json">/api/v1/families.json</a></td><td>Per-GPU summary: specs + cheapest current offer</td></tr>
-<tr><td><a href="/api/v1/changelog.json">/api/v1/changelog.json</a></td><td>Every recorded change</td></tr>
-<tr><td><a href="/api/v1/specs.json">/api/v1/specs.json</a></td><td>Nameplate spec table with vendor provenance</td></tr>
-<tr><td>/api/v1/history/&lt;gpu&gt;.json</td><td>Per-offer price series for one GPU family</td></tr>
+<tr><td><a href="/api/v1/offers.json">/api/v1/offers.json</a></td><td>Every current priced row across all three sections, with provenance</td></tr>
+<tr><td><a href="/api/v1/families.json">/api/v1/families.json</a></td><td>Per-GPU summary: specs plus the cheapest current offer</td></tr>
+<tr><td><a href="/api/v1/specs.json">/api/v1/specs.json</a></td><td>Nameplate GPU spec table with vendor provenance</td></tr>
+<tr><td><a href="/api/v1/history/h100-sxm-80gb.json">/api/v1/history/&lt;gpu&gt;.json</a></td><td>Price series per offer for one GPU family</td></tr>
 </tbody></table></div>
-<p class="mut">Paths are versioned and stable. A keyed tier (webhooks, alerts,
-bulk history, SLA) ships when demand shows up — watch the <a href="/rss.xml">feed</a>.</p>
+
+<h2>LLM APIs</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Endpoint</th><th>What it returns</th></tr></thead>
+<tbody>
+<tr><td><a href="/api/v1/llm/models.json">/api/v1/llm/models.json</a></td><td>Every tracked model: per-gateway input/output price per million tokens, context, spread</td></tr>
+<tr><td><a href="/api/v1/llm/watchlist.json">/api/v1/llm/watchlist.json</a></td><td>Curated flagship models, same shape plus lab and display name</td></tr>
+<tr><td><a href="/api/v1/llm/history/claude-opus-5.json">/api/v1/llm/history/&lt;model&gt;.json</a></td><td>Price series per gateway and direction for one model</td></tr>
+</tbody></table></div>
+
+<h2>SaaS pricing</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Endpoint</th><th>What it returns</th></tr></thead>
+<tbody>
+<tr><td><a href="/api/v1/saas/companies.json">/api/v1/saas/companies.json</a></td><td>Entry and top price detected on each tracked pricing page</td></tr>
+</tbody></table></div>
+
+<h2>Changes</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Endpoint</th><th>What it returns</th></tr></thead>
+<tbody>
+<tr><td><a href="/api/v1/changelog.json">/api/v1/changelog.json</a></td><td>Every recorded change across all sections, dated</td></tr>
+</tbody></table></div>
+
+<h2>Example</h2>
+<pre><code>curl -s https://gpudiff.com/api/v1/llm/models.json \\
+  | jq \'.[] | select(.model=="kimi-k3") | .gateways\'</code></pre>
+
+<p class="mut">A keyed tier (webhooks, alerts, bulk history, an SLA) ships when
+demand shows up — watch the <a href="/rss.xml">feed</a>. Building something with
+this? Tell us in an <a href="https://github.com/graemegilmourbates/gpudiff/issues">issue</a>
+and we will avoid breaking you.</p>
+
 <h2>Feeds &amp; badges</h2>
 <p>RSS: <a href="/rss.xml">everything</a> · <a href="/gpu.xml">GPUs</a> ·
 <a href="/llm/rss.xml">LLM APIs</a> · <a href="/saas/rss.xml">SaaS</a>.
 Live price badges for your README: <a href="/badges.html">badges</a>.</p>"""
-    return page("API — gpudiff", body, monetize,
-                "Free JSON API for GPU cloud prices, history, and the changelog. CC BY 4.0.",
+    return page("Free API — GPU, LLM, and SaaS prices as JSON | gpudiff", body, monetize,
+                "Free CC BY JSON API for GPU cloud prices, LLM API per-token prices, SaaS pricing, "
+                "price history, and the full changelog. No key required.",
                 path="/api/")
 
 
@@ -1233,6 +1268,7 @@ def build_site(offers, changelog, date):
 
     (SITE / "llm" / "model").mkdir(parents=True, exist_ok=True)
     (SITE / "llm" / "compare").mkdir(parents=True, exist_ok=True)
+    (SITE / "api" / "v1" / "llm" / "history").mkdir(parents=True, exist_ok=True)
     (SITE / "llm" / "index.html").write_text(
         render_llm_index(llm_offers, changelog, monetize))
 
@@ -1290,6 +1326,18 @@ def build_site(offers, changelog, date):
             model_entries.sort(key=lambda e: e["date"])
         (SITE / "llm" / "model" / f"{canonical}.html").write_text(
             render_llm_model(canonical, routes, history, model_entries, monetize, meta))
+
+        # Per-model price series, one entry per gateway and direction — the
+        # question only our archive can answer: how has this model priced?
+        series = {}
+        for rt, r in routes.items():
+            for direction in ("input", "output"):
+                oid = r.get(f"{direction}_id")
+                if oid and history.get(oid):
+                    series[f"{rt}:{direction}"] = history[oid]
+        (SITE / "api" / "v1" / "llm" / "history" / f"{canonical}.json").write_text(
+            json.dumps({"model": canonical, "unit": "usd_per_mtok", "series": series},
+                       indent=2) + "\n")
 
     llm_pairs = []
     live_routers = {o["provider"] for o in llm_offers}
