@@ -1,6 +1,6 @@
 {
   "date": "2026-08-20",
-  "observed_at": "2026-08-20T01:50:29Z",
+  "observed_at": "2026-08-20T02:34:49Z",
   "sources": [
     {
       "source": "vast",
@@ -30,14 +30,25 @@
       "offers": 778
     },
     {
+      "source": "routers",
+      "ok": true,
+      "offers": 1594
+    },
+    {
       "source": "saaspages",
       "ok": true,
       "offers": 36,
       "carried": true
+    },
+    {
+      "source": "ramp",
+      "ok": true,
+      "offers": 55,
+      "catalog": true
     }
   ],
-  "valid": 944,
+  "valid": 2537,
   "rejected": 0,
-  "quarantined": 5,
+  "quarantined": 6,
   "healthy": true
 }
