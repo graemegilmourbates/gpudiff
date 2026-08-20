@@ -1,6 +1,30 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-pro-6000-ws:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-ws",
+      "price": 1.0667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 6000 WS",
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-20T14:53:57Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.7333,
+    "delta_pct": 45.5,
+    "reason": "price moved 45.5% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-0813-input",
@@ -17,7 +41,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-08-20T13:58:21Z"
+        "observed_at": "2026-08-20T14:53:57Z"
       },
       "fixture": false
     },
@@ -43,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-08-20T13:58:21Z"
+        "observed_at": "2026-08-20T14:53:57Z"
       },
       "fixture": false
     },
@@ -69,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-20T13:58:21Z"
+        "observed_at": "2026-08-20T14:53:57Z"
       },
       "fixture": false
     },
@@ -95,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-20T13:58:21Z"
+        "observed_at": "2026-08-20T14:53:57Z"
       },
       "fixture": false
     },
