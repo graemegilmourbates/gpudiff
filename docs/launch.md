@@ -1,61 +1,92 @@
-# Launch plan — needs owner approval before anything is posted
+# Launch plan — the owner posts, never the agent
 
-Nothing here gets posted by the agent. The owner posts under their own
-accounts, on their own judgment. Target: when the changelog has ≥5 days of
-visible diffs and sparklines have shape (est. week of Aug 31).
+Status: **ready**. Gate cleared (6 days of diffs, 345 changelog entries,
+2,652 prices, 28 providers, 407 indexed URLs).
 
-## Show HN draft
+## Timing
 
-**Title (pick one):**
-1. `Show HN: Gpudiff – a changelog for GPU cloud prices`
-2. `Show HN: I track every GPU cloud price change (4 providers, hourly, open data)`
+Tue–Thu, 8–10am US Eastern is the prime window. What matters more than the
+hour: be at the keyboard for the next 3 hours to answer comments. If you
+can't, wait for a morning when you can.
 
-**Post text:**
+## The post
 
-> Cloud GPU prices move constantly — marketplaces reprice hourly, providers
-> quietly cut list prices — but every comparison site only shows you *now*.
-> I wanted the record of *what changed*, so I built gpudiff.
+**Title** (pick one, no editorializing — HN dislikes hype in titles):
+
+1. `Show HN: Gpudiff – hourly price changelog for GPU clouds and LLM APIs`
+2. `Show HN: I diff GPU cloud and LLM API prices hourly and publish every change`
+
+**Body:**
+
+> Every cloud pricing site shows you what things cost right now. None of them
+> keep the record of what changed. So I built gpudiff: it snapshots prices
+> hourly, validates them, commits every snapshot to a public git repo, and
+> publishes the diff as a changelog, per-model history, RSS, and a free API.
 >
-> It snapshots prices hourly from Vast.ai, RunPod, AWS, and Azure into a public
-> git repo, validates them (anything failing checks is dropped, not published;
-> >40% daily moves get quarantined for human review), and publishes the diff:
-> a changelog, per-GPU history, RSS, and a free JSON API (CC BY 4.0).
+> It covers GPU clouds (Vast.ai, RunPod, AWS, Azure — on-demand and spot),
+> LLM API gateways (OpenRouter, Ramp Router, Requesty, Glama, Novita,
+> DeepInfra), and a beta section that watches SaaS pricing pages.
 >
-> Some things it surfaces already: identical H100 silicon spans a ~2.6× price
-> range depending on where you rent it; spot floors on marketplaces sit far
-> below list. Every number links the page it was observed on.
+> A few things it has already surfaced:
+>
+> - The same H100 SXM 80GB runs $3.29/hr on RunPod and $12.29/hr on Azure
+>   on-demand — 3.7x for identical silicon.
+> - Frontier LLM models cost exactly the same on every gateway (Claude Opus 5
+>   is $5/$25 per Mtok on all five that carry it) because gateways pass list
+>   pricing through. Open-weight models are the opposite: up to 10x spread for
+>   the same model depending on where you buy it.
+> - Ramp Router vs OpenRouter: 41 of 50 shared models are priced identically,
+>   OpenRouter is cheaper on 9, and neither wins on tokens alone — the
+>   difference is fees (OpenRouter takes 5.5% on card top-ups; Ramp charges no
+>   gateway fee through 2026).
+>
+> Design notes: anything failing schema validation is dropped rather than
+> published, a >40% daily move is quarantined for human review instead of
+> shipped, every datum stores the URL it was observed at, and a provider
+> vanishing from a source never publishes phantom delistings. Missing beats
+> wrong — a price nobody can rent at is worse than no price.
+>
+> Data is CC BY 4.0, the API needs no key, and the whole pipeline is a public
+> repo run by GitHub Actions on cron.
 >
 > Methodology (including what it deliberately doesn't claim):
 > https://gpudiff.com/methodology.html
 >
-> The whole pipeline is a public repo run by GitHub Actions on cron — happy to
-> answer anything about the scraping/validation design.
+> Which providers should I add next?
 
-**First comment (post immediately after):** short note on the family model —
-memory config = identity, and why cross-GPU "cheapest" rankings mislead — plus
-an ask: "which providers should be next?"
+**First comment (post immediately after, in your own words):**
 
-## Rules for the owner
+> Two implementation notes for anyone curious:
+>
+> Identity turned out to be the whole problem. A GPU memory configuration is a
+> product — H100 PCIe 80GB, NVL 94GB and SXM 80GB never share a row — and LLM
+> models needed a canonical join because every gateway spells them differently
+> (vertex/claude-sonnet-5@eu, anthropic/claude-sonnet-5, and Ramp's bare
+> "sonnet-5" are one model).
+>
+> Also: this is built and operated by an AI agent pipeline, which is exactly
+> why the validation gates are strict — the interesting engineering is in what
+> the system refuses to publish. Total infrastructure cost is about $1/month.
+> Repo: https://github.com/graemegilmourbates/gpudiff
 
-- Post from your account, morning US Eastern, Tue–Thu.
-- Never solicit upvotes anywhere, ever (HN bans this).
-- Reply to every substantive comment in the first 3 hours (the agent can draft
-  replies live if you paste comments in).
-- Referral links stay as they are — the footer + methodology disclose them.
-  If HN asks, answer plainly: yes, referral-funded, numbers unaffected, repo
-  public.
+## Rules
 
-## Cross-posts (staggered over the following week, owner's accounts)
+- Post from your own account. Never ask anyone for upvotes (instant ban).
+- Reply to every substantive comment in the first 3 hours; concede fair points
+  ("good catch — filed") rather than arguing.
+- Referral links stay disclosed in the footer and methodology. If asked: yes,
+  referral-funded, numbers unaffected, repo public, check it.
+- If it doesn't take off by hour 3, let it go. The LLM-gateway and SaaS
+  angles are separate posts for later weeks.
 
-- r/LocalLLaMA — angle: spot floors + $/GB lens for local-vs-cloud decisions
-- r/MachineLearning (rules permitting) — the open dataset angle
-- lobste.rs if a member invites; do not beg invites
+## Predicted questions
 
-## Pre-launch checklist
+See docs/hn-war-room.md — drafted answers for the seven questions HN reliably
+asks (isn't this just X, scraping ethics, p25 defense, negotiated pricing,
+how do you make money, why trust an AI pipeline, feature requests).
 
-- [ ] ≥5 days of changelog entries visible
-- [ ] Enforce HTTPS ticked (STILL pending)
-- [x] GoatCounter wired (`graemebates`, 2026-08-14) — dashboard: https://graemebates.goatcounter.com
-- [ ] GoatCounter Settings → enable **public counter** (30 sec) so the weekly analyst can read visit totals without your login
-- [ ] Buttondown created if email capture wanted for launch (optional; RSS works)
-- [ ] Owner reads methodology page top to bottom (you will be quizzed by HN)
+## After posting
+
+Paste new comments to the agent for drafted replies. Watch traffic at
+https://graemebates.goatcounter.com and HN mentions via
+https://hn.algolia.com/?query=gpudiff
