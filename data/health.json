@@ -1,6 +1,6 @@
 {
   "date": "2026-08-20",
-  "observed_at": "2026-08-20T02:34:49Z",
+  "observed_at": "2026-08-20T02:47:36Z",
   "sources": [
     {
       "source": "vast",
@@ -10,7 +10,7 @@
     {
       "source": "runpod",
       "ok": true,
-      "offers": 106
+      "offers": 112
     },
     {
       "source": "aws",
@@ -35,19 +35,18 @@
       "offers": 1594
     },
     {
+      "source": "ramp",
+      "ok": true,
+      "offers": 126
+    },
+    {
       "source": "saaspages",
       "ok": true,
       "offers": 36,
       "carried": true
-    },
-    {
-      "source": "ramp",
-      "ok": true,
-      "offers": 55,
-      "catalog": true
     }
   ],
-  "valid": 2537,
+  "valid": 2669,
   "rejected": 0,
   "quarantined": 6,
   "healthy": true
