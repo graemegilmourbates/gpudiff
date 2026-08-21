@@ -36,8 +36,18 @@ jobs:
           git config user.name "foundry-bot"
           git config user.email "bot@users.noreply.github.com"
           git add data/
-          git diff --cached --quiet || git commit -m "data: refresh $(date -u +%F-%H%M)"
-          git push
+          git diff --cached --quiet && echo "no data change" && exit 0
+          git commit -m "data: refresh $(date -u +%F-%H%M)"
+          # A human pushing while this run is in flight moves the remote and
+          # the push is rejected. Rebase onto it and retry; on a data conflict
+          # the fresher observation (this run's) wins.
+          for attempt in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "push rejected on attempt $attempt — remote moved; rebasing"
+            git pull --rebase -X theirs origin main || git rebase --abort
+          done
+          echo "could not push after 3 attempts"
+          exit 1
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -25,3 +25,34 @@ jobs:
               body: `Refresh run failed: ${context.payload.workflow_run.html_url}\n\nMissing beats wrong — nothing was published. Investigate, then re-run.`,
               labels: ["sentinel"],
             });
+
+  close-resolved:
+    # Nothing was closing these, so resolved incidents piled up. A green
+    # refresh is the definition of recovery, so let it clear its own alarms.
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close resolved sentinel issues
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'sentinel',
+            });
+            for (const issue of open.data) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: `Refresh is green again — closing automatically. Recovery run: ${context.payload.workflow_run.html_url}`,
+              });
+              await github.rest.issues.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                state: 'closed',
+              });
+            }
