@@ -29,6 +29,24 @@ lands with the owner; the agent never holds money or credentials).
   the next deploy. GitHub Pages has no server logs — without this, launch
   traffic is invisible.
 
+## LLM gateways (checked 2026-08-21)
+
+The LLM pages now send buyers to whichever gateway is cheapest for a model,
+and the link carries a referral code the moment one is pasted into
+`monetize.json` → `referral_links`. Who actually pays:
+
+- **Novita — the one worth doing.** 10% of each referred customer's spend for
+  180 days, no cap, paid via their affiliate console. Sign up at
+  https://affiliates.novita.ai/ (3 min), copy the link, paste into
+  `referral_links.novita`. Novita is the cheapest gateway on a meaningful share
+  of open-weight models, so its link gets real clicks.
+- **OpenRouter** — no public affiliate program. Account-level referral only:
+  $5 in *credits* (not cash) per referred user who spends $10+. If you have an
+  OpenRouter account the link is in your dashboard; worth pasting, but it is
+  credit, not income.
+- **Ramp Router, Requesty, Glama, DeepInfra** — no referral or affiliate
+  program found. Links stay plain until one appears.
+
 ## Later (traffic-gated, ignore until ~100 subscribers / sponsor interest)
 
 - **Buttondown** (free ≤100 subs): create account, set
