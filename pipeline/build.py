@@ -26,12 +26,20 @@ CSS = """
 body { margin:0; background:var(--bg); color:var(--ink);
        font:15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
 .wrap { max-width:1000px; margin:0 auto; padding:28px 18px 64px; }
-header.site { display:flex; flex-wrap:wrap; align-items:baseline; gap:10px 18px; margin-bottom:6px; }
+header.site { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px;
+              margin-bottom:16px; border-bottom:1px solid var(--line); }
 .brand { font-size:22px; font-weight:700; letter-spacing:-.01em; text-decoration:none; color:var(--ink); }
 .brand b { color:var(--acc); }
-.tag { color:var(--mut); }
-nav.site a { color:var(--mut); text-decoration:none; margin-right:14px; }
-nav.site a:hover { color:var(--ink); }
+.tag { color:var(--mut); font-size:13px; }
+/* Nav is always its own full-width row that scrolls sideways when tight, so the
+   header looks the same at every screen width instead of wrapping raggedly. */
+nav.site { flex-basis:100%; display:flex; gap:2px; margin-top:8px;
+           overflow-x:auto; white-space:nowrap; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+nav.site::-webkit-scrollbar { display:none; }
+nav.site a { color:var(--mut); text-decoration:none; padding:7px 11px; border-radius:6px 6px 0 0;
+             font-size:14px; flex:0 0 auto; }
+nav.site a:hover { color:var(--ink); background:var(--card); }
+@media (max-width:600px){ .tag { display:none; } }
 .sub { border:1px solid var(--line); background:var(--card); border-radius:6px;
        padding:10px 14px; margin:18px 0; display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; }
 .sub a { color:var(--acc); }
