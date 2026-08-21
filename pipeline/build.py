@@ -336,11 +336,11 @@ def sponsor_slot(path):
 
 
 def page(title, body, monetize, desc="", jsonld="", path="/"):
-    nav = ('<nav class="site"><a href="/">gpus</a><a href="/llm/">llm apis</a>'
-           '<a href="/movers.html">movers</a><a href="/gpu-guide.html">where to rent</a><a href="/llm/">llm apis</a><a href="/llm-guide.html">where to buy</a><a href="/saas/">saas</a><a href="/fit.html">fit</a>'
-           '<a href="/changelog.html">changelog</a>'
-           '<a href="/methodology.html">methodology</a>'
-           '<a href="/api/">api</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
+    nav = ('<nav class="site"><a href="/">GPUs</a><a href="/llm/">LLM APIs</a>'
+           '<a href="/rankings.html">rankings</a><a href="/movers.html">movers</a>'
+           '<a href="/saas/">SaaS</a><a href="/fit.html">fit</a>'
+           '<a href="/changelog.html">changelog</a><a href="/methodology.html">methodology</a>'
+           '<a href="/api/">API</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
     gsc = monetize.get("google_site_verification", "")
     verify = f'<meta name="google-site-verification" content="{esc(gsc)}">' if gsc else ""
     gc = monetize.get("goatcounter_code", "")
@@ -421,7 +421,7 @@ def render_index(fams, changelog, date, monetize):
     }) + '</script>')
     body = f"""
 <p class="mut">Now also tracking <a href="/llm/">LLM API prices per token</a> (beta).</p>
-<p><a href="/movers.html"><strong>Biggest price moves this week →</strong></a> · <a href="/gpu-guide.html">where should I rent?</a> the cheapest live pick per need.</p>
+<p><a href="/cheapest-gpu-cloud.html"><strong>Cheapest GPU cloud, ranked →</strong></a> · <a href="/movers.html">biggest moves this week</a> · <a href="/gpu-guide.html">where should I rent?</a></p>
 <h1>What changed in GPU cloud pricing</h1>
 <ul class="chg">{log}</ul>
 <p><a href="/changelog.html">Full changelog →</a></p>
@@ -1443,6 +1443,166 @@ See also <a href="/gpu-guide.html">where to rent a GPU</a> and
                 path="/movers.html")
 
 
+def rank_providers(item_to_prices, min_comparable=3):
+    """Fair value ranking. item_to_prices maps an item (a GPU family or an LLM
+    model) to {provider: cheapest_price_that_provider_offers}. We only score
+    items offered by two or more providers — you cannot be "cheaper" on
+    something nobody else sells — and normalize each provider's price to the
+    cheapest for that item, so the score is average premium over the cheapest,
+    not an artifact of which items a provider happens to carry."""
+    from collections import defaultdict
+    st = defaultdict(lambda: {"wins": 0, "comparable": 0, "premiums": [], "offered": 0})
+    for _, prices in item_to_prices.items():
+        for prov in prices:
+            st[prov]["offered"] += 1
+        if len(prices) < 2:
+            continue
+        cheapest = min(prices.values())
+        winner = min(prices, key=prices.get)
+        st[winner]["wins"] += 1
+        for prov, price in prices.items():
+            st[prov]["comparable"] += 1
+            if cheapest:
+                st[prov]["premiums"].append(price / cheapest)
+    rows = []
+    for prov, d in st.items():
+        avg = sum(d["premiums"]) / len(d["premiums"]) if d["premiums"] else None
+        rows.append({"provider": prov, "wins": d["wins"], "comparable": d["comparable"],
+                     "offered": d["offered"], "avg_premium": avg})
+    ranked = sorted([r for r in rows if r["comparable"] >= min_comparable and r["avg_premium"]],
+                    key=lambda r: r["avg_premium"])
+    thin = sorted([r for r in rows if r not in ranked], key=lambda r: -r["offered"])
+    return ranked, thin
+
+
+def _rank_table(ranked, thin, label_fn, link_fn):
+    def prem(r):
+        pct = (r["avg_premium"] - 1) * 100
+        return "cheapest overall" if pct < 1 else f"+{pct:.0f}% vs cheapest"
+    body = []
+    for i, r in enumerate(ranked, 1):
+        url, rel = link_fn(r["provider"])
+        medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(i, f"{i}")
+        cls = "cut" if i == 1 else ""
+        body.append(
+            f"<tr><td class='n'><strong>{medal}</strong></td>"
+            f"<td><strong>{esc(label_fn(r['provider']))}</strong></td>"
+            f"<td class='n {cls}'>{prem(r)}</td>"
+            f"<td class='n'>{r['wins']} of {r['comparable']}</td>"
+            f"<td class='n'>{r['offered']}</td>"
+            f"<td><a href='{esc(url)}'{rel}>visit →</a></td></tr>")
+    for r in thin:
+        url, rel = link_fn(r["provider"])
+        body.append(
+            f"<tr><td class='n mut'>—</td><td>{esc(label_fn(r['provider']))} "
+            f"<span class='mut'>(limited overlap)</span></td>"
+            f"<td class='n mut'>n/a</td><td class='n mut'>—</td>"
+            f"<td class='n'>{r['offered']}</td>"
+            f"<td><a href='{esc(url)}'{rel}>visit →</a></td></tr>")
+    return ("<div class='tablewrap'><table><thead><tr><th class='n'>Rank</th><th>Provider</th>"
+            "<th class='n'>Avg. price</th><th class='n'>Cheapest on</th><th class='n'>Offers</th>"
+            "<th></th></tr></thead><tbody>" + "".join(body) + "</tbody></table></div>")
+
+
+def render_gpu_ranking(fams, monetize):
+    item_to_prices = {}
+    for fam, e in fams.items():
+        od = [o for o in e["offers"] if o["pricing_type"] == "on_demand"]
+        by_prov = {}
+        for o in od:
+            by_prov[o["provider"]] = min(o["price"], by_prov.get(o["provider"], o["price"]))
+        if by_prov:
+            item_to_prices[fam] = by_prov
+    ranked, thin = rank_providers(item_to_prices)
+    label = lambda p: PROVIDER_BLURB.get(p, (p,))[0]
+    link = lambda p: outbound({"provider": p, "provenance": {"url": "#"}}, monetize)
+    verdict = ""
+    if ranked:
+        w = ranked[0]
+        verdict = (f'<p class="cta"><strong>Cheapest GPU cloud right now: '
+                   f'{esc(label(w["provider"]))}</strong> — lowest price on {w["wins"]} of '
+                   f'{w["comparable"]} comparable GPUs.</p>')
+    body = f"""
+<h1>Cheapest GPU cloud provider, ranked</h1>
+<p class="mut">Which cloud is actually cheapest for renting GPUs? We rank every provider we
+track by how its prices compare on the GPUs it shares with others — on-demand, updated hourly.
+A provider is only scored on cards at least one competitor also offers, so nobody wins by
+only listing cheap hardware.</p>
+{verdict}
+{_rank_table(ranked, thin, label, link)}
+<h2>How this ranking works</h2>
+<p>For every GPU sold by two or more providers we find the cheapest, then measure how much
+more each other provider charges. "Avg. price" is that premium averaged over the GPUs a
+provider offers — lower is cheaper. "Cheapest on" counts the GPUs where a provider is the
+single lowest. We rank on <strong>published on-demand price only</strong> — not speed,
+reliability, or support (<a href="/methodology.html">methodology</a>). Provider links may
+carry a referral code; the ranking is computed from prices and is unaffected.</p>
+<p class="mut">Looking for one specific card? <a href="/gpu-guide.html">Where to rent a GPU →</a>
+· Buying tokens instead? <a href="/cheapest-llm-api.html">Cheapest LLM API →</a></p>"""
+    return page("Cheapest GPU Cloud Provider — RunPod, Vast, AWS, Azure ranked by price | gpudiff",
+                body, monetize,
+                "The cheapest GPU cloud provider, ranked by real on-demand prices across the GPUs "
+                "each one offers. Updated hourly, compared like-for-like.",
+                path="/cheapest-gpu-cloud.html")
+
+
+def render_llm_ranking(llm_offers, monetize):
+    idx = llm_model_index(llm_offers)
+    item_to_prices = {}
+    for canonical, routes in idx.items():
+        by_g = {g: r["input"] for g, r in routes.items() if isinstance(r.get("input"), (int, float))}
+        if by_g:
+            item_to_prices[canonical] = by_g
+    ranked, thin = rank_providers(item_to_prices)
+    label = lambda g: ROUTER_LABEL.get(g, g)
+    link = lambda g: gateway_link(g, monetize)
+    verdict = ""
+    if ranked:
+        w = ranked[0]
+        verdict = (f'<p class="cta"><strong>Cheapest LLM gateway right now: '
+                   f'{esc(label(w["provider"]))}</strong> — lowest input price on {w["wins"]} of '
+                   f'{w["comparable"]} models it shares with other gateways.</p>')
+    body = f"""
+<h1>Cheapest LLM API gateway, ranked</h1>
+<p class="mut">Six gateways resell the same models at different prices. We rank them by input
+price across the models they share, updated hourly. Frontier models are usually identical
+everywhere (gateways pass list pricing through), so the ranking is decided by open-weight
+models — where the gap can be large.</p>
+{verdict}
+{_rank_table(ranked, thin, label, link)}
+<h2>How this ranking works</h2>
+<p>For every model sold by two or more gateways we find the cheapest input price, then measure
+each gateway's premium over it, averaged across the models it carries. "Cheapest on" counts
+outright wins. We rank on <strong>published per-token input price only</strong> — not latency,
+throughput, or uptime (<a href="/methodology.html">methodology</a>). Gateway links may carry a
+referral code; the ranking is computed from prices and is unaffected.</p>
+<p class="mut"><a href="/llm-guide.html">Where to buy tokens by tier →</a> ·
+<a href="/cheapest-gpu-cloud.html">Cheapest GPU cloud →</a></p>"""
+    return page("Cheapest LLM API Gateway — OpenRouter, Ramp, Novita & more ranked by price | gpudiff",
+                body, monetize,
+                "The cheapest LLM API gateway, ranked by real per-token prices across the models "
+                "each one offers. OpenRouter, Ramp Router, Requesty, Glama, Novita, DeepInfra.",
+                path="/cheapest-llm-api.html")
+
+
+def render_rankings_hub(fams, llm_offers, monetize):
+    body = """
+<h1>Price rankings: the cheapest GPU cloud and LLM API</h1>
+<p class="mut">Not "which option for this need" (that is the <a href="/gpu-guide.html">guides</a>)
+— this ranks the <em>providers themselves</em> by how cheap they are across everything they
+offer, compared like-for-like and updated hourly.</p>
+<div class="pick"><h3><a href="/cheapest-gpu-cloud.html">Cheapest GPU cloud provider →</a></h3>
+<div class="why">RunPod, Vast.ai, AWS, and Azure ranked by real on-demand prices across the
+GPUs they share.</div></div>
+<div class="pick"><h3><a href="/cheapest-llm-api.html">Cheapest LLM API gateway →</a></h3>
+<div class="why">OpenRouter, Ramp Router, Requesty, Glama, Novita, and DeepInfra ranked by
+per-token price across the models they share.</div></div>"""
+    return page("Cheapest GPU Cloud & LLM API — price rankings | gpudiff", body, monetize,
+                "Price rankings for AI compute: the cheapest GPU cloud provider and the cheapest "
+                "LLM API gateway, compared like-for-like and updated hourly.",
+                path="/rankings.html")
+
+
 def render_methodology(monetize):
     body = """
 <h1>Methodology</h1>
@@ -1751,6 +1911,9 @@ def build_site(offers, changelog, date):
     (SITE / "gpu-guide.html").write_text(render_gpu_guide(fams, history, monetize))
     (SITE / "llm-guide.html").write_text(render_llm_guide(llm_offers, history, monetize))
     (SITE / "movers.html").write_text(render_movers(changelog, monetize, aliases))
+    (SITE / "rankings.html").write_text(render_rankings_hub(fams, llm_offers, monetize))
+    (SITE / "cheapest-gpu-cloud.html").write_text(render_gpu_ranking(fams, monetize))
+    (SITE / "cheapest-llm-api.html").write_text(render_llm_ranking(llm_offers, monetize))
     sponsor_stats = {
         "offers": len(offers),
         "providers": len({o["provider"] for o in offers}),
@@ -1866,7 +2029,9 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "offers.json").write_text(json.dumps(offers, indent=2) + "\n")
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
-    urls = [f"{BASE_URL}/", f"{BASE_URL}/movers.html", f"{BASE_URL}/gpu-guide.html", f"{BASE_URL}/llm-guide.html",
+    urls = [f"{BASE_URL}/", f"{BASE_URL}/rankings.html", f"{BASE_URL}/cheapest-gpu-cloud.html",
+            f"{BASE_URL}/cheapest-llm-api.html", f"{BASE_URL}/movers.html",
+            f"{BASE_URL}/gpu-guide.html", f"{BASE_URL}/llm-guide.html",
             f"{BASE_URL}/llm/", f"{BASE_URL}/saas/", f"{BASE_URL}/fit.html",
             f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",
             f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/", f"{BASE_URL}/digest/",
