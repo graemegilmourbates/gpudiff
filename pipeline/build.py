@@ -56,6 +56,7 @@ a { color:var(--acc); }
          color:var(--mut); white-space:nowrap; }
 .spark { vertical-align:middle; }
 .tablewrap { overflow-x:auto; }
+.cta { border-left:3px solid var(--cut); padding:6px 12px; background:var(--card); }
 .sponsor { display:flex; align-items:center; gap:10px; min-height:38px; margin:14px 0 4px;
            padding:8px 12px; border:1px solid var(--line); border-radius:6px;
            background:var(--card); font-size:13.5px; }
@@ -201,6 +202,16 @@ def outbound(offer, monetize):
         return ref, ' rel="sponsored noopener"'
     home = (monetize.get("provider_home") or {}).get(offer["provider"])
     return home or offer["provenance"]["url"], ' rel="noopener"'
+
+
+def gateway_link(router, monetize):
+    """Outbound link to a gateway — the referral URL when we have one, else its
+    home page. rel=sponsored whenever a code is attached."""
+    ref = (monetize.get("referral_links") or {}).get(router, "")
+    if ref:
+        return ref, ' rel="sponsored noopener"'
+    home = (monetize.get("provider_home") or {}).get(router) or ROUTER_FEES.get(router, ("", "#"))[1]
+    return home or "#", ' rel="noopener"'
 
 
 def metric_badge(offer):
@@ -715,9 +726,13 @@ def _model_row(canonical, routes, label=None, sub=None):
     name = f"<strong>{_model_link(canonical, label)}</strong>"
     if sub:
         name += f"<br><span class='mut'>{esc(sub)}</span>"
+    via = esc(ROUTER_LABEL.get(lo_router, lo_router or "—"))
+    if lo_router:
+        url, rel = gateway_link(lo_router, load_monetize())
+        via = f"<a href='{esc(url)}'{rel}>{via} →</a>"
     return (f"<tr><td>{name}</td>"
             f"<td class='n'>{_price_cell(lo_in)}</td><td class='n'>{_price_cell(lo_out)}</td>"
-            f"<td>{esc(ROUTER_LABEL.get(lo_router, lo_router or '—'))}</td>"
+            f"<td>{via}</td>"
             f"<td class='n'>{f'{sp:.1f}×' if sp else '—'}</td>"
             f"<td class='n'>{len(routes)}</td></tr>")
 
@@ -802,6 +817,16 @@ Single-gateway models are in the API.</p>
                 path="/llm/")
 
 
+def _cheapest_cta(router, price, spread, monetize):
+    """The one-line answer a buyer came for, linked to the gateway that earns it."""
+    if not router or price is None:
+        return ""
+    url, rel = gateway_link(router, monetize)
+    saving = f" — {spread:.1f}× cheaper than the priciest gateway" if spread and spread > 1.05 else ""
+    return (f'<p class="cta">Cheapest right now: <a href="{esc(url)}"{rel}>'
+            f'<strong>{esc(ROUTER_LABEL.get(router, router))}</strong> at ${price:.2f}/MTok in</a>{saving}.</p>')
+
+
 def render_llm_model(canonical, routes, history, entries, monetize, meta=None):
     """One model, every gateway that sells it, plus its own price history."""
     display = (meta or {}).get("display") or canonical
@@ -817,13 +842,15 @@ def render_llm_model(canonical, routes, history, entries, monetize, meta=None):
         series = history.get(r.get("input_id"), [])
         fee = ROUTER_FEES.get(rt)
         fee_note = f" <span class='badge' title='{esc(fee[0])}'>fees</span>" if fee else ""
+        url, rel = gateway_link(rt, monetize)
         rows.append(
             f"<tr><td><strong>{esc(ROUTER_LABEL.get(rt, rt))}</strong>{fee_note}</td>"
             f"<td class='n'>{_price_cell(r.get('input'))}</td>"
             f"<td class='n'>{_price_cell(r.get('output'))}</td>"
             f"<td class='n'>{ctx}</td>"
             f"<td>{sparkline(series)}</td>"
-            f"<td><span class='mut'>{esc(r.get('model_id') or '')}</span></td></tr>")
+            f"<td><span class='mut'>{esc(r.get('model_id') or '')}</span></td>"
+            f"<td><a href='{esc(url)}'{rel}>use</a></td></tr>")
 
     log = "\n".join(
         f"<li><time>{esc(e['date'])}</time> "
@@ -867,12 +894,13 @@ def render_llm_model(canonical, routes, history, entries, monetize, meta=None):
 
     body = f"""
 <h1>{esc(display)} API price — {len(routes)} gateway{'s' if len(routes) != 1 else ''} compared</h1>
+{_cheapest_cta(lo_router, lo_in, sp, monetize)}
 <p class="mut">{esc(lab + ' · ') if lab else ''}from <strong>{_price_cell(lo_in)}</strong> per
 million input tokens{f' · {sp:.1f}× spread between gateways' if sp and sp > 1.01 else ' · same price on every gateway'}
 · updated hourly</p>
 <div class="tablewrap"><table>
 <thead><tr><th>Gateway</th><th class="n">$ in /MTok</th><th class="n">$ out /MTok</th>
-<th class="n">Context</th><th>Input price history</th><th>Model ID</th></tr></thead>
+<th class="n">Context</th><th>Input price history</th><th>Model ID</th><th></th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div>
 {fees}
 <h2>Changelog for {esc(display)}</h2>
@@ -919,12 +947,18 @@ def render_router_compare(a, b, idx, monetize):
             verdict, cls = f"{la} −{abs(delta):.0f}%", "cut"
         else:
             verdict, cls = f"{lb} −{abs(delta):.0f}%", "cut"
+        winner = a if delta > 0.01 else (b if delta < -0.01 else None)
+        if winner:
+            wurl, wrel = gateway_link(winner, monetize)
+            verdict_html = f"<a href='{esc(wurl)}'{wrel} class='{cls}'>{esc(verdict)} →</a>"
+        else:
+            verdict_html = f"<span class='{cls}'>{esc(verdict)}</span>"
         rows.append(
             f"<tr><td>{_model_link(canonical)}</td>"
             f"<td class='n'>{_price_cell(ai)}</td><td class='n'>{_price_cell(bi)}</td>"
             f"<td class='n'>{_price_cell(ra.get('output'))}</td>"
             f"<td class='n'>{_price_cell(rb.get('output'))}</td>"
-            f"<td class='{cls}'>{esc(verdict)}</td></tr>")
+            f"<td>{verdict_html}</td></tr>")
 
     if same == len(shared) and shared:
         headline = (f"On token prices, {la} and {lb} are identical across all "
@@ -1607,6 +1641,37 @@ def build_site(offers, changelog, date):
         "".join(f"<url><loc>{esc(u)}</loc></url>\n" for u in urls) + "</urlset>\n")
     sponsor_stats["pages"] = len(urls)
     (SITE / "sponsor.html").write_text(render_sponsor_page(monetize, sponsor_stats))
+    (SITE / "llms.txt").write_text(f"""# gpudiff
+
+> The public record of change in AI compute and software pricing: GPU cloud
+> rental prices (Vast.ai, RunPod, AWS, Azure), LLM API per-token prices across
+> six gateways (OpenRouter, Ramp Router, Requesty, Glama, Novita, DeepInfra),
+> and SaaS pricing pages — snapshotted hourly, validated, diffed, and archived
+> in public git with a provenance URL on every number. CC BY 4.0: cite gpudiff.com.
+
+Current snapshot: {esc(date)} · {len(offers):,} prices · {len(fams)} GPU configurations ·
+{len(llm_model_index(llm_offers)):,} LLM models · {len(changelog):,} recorded changes.
+
+## Answering price questions
+- Cheapest current price per GPU: {BASE_URL}/api/v1/families.json
+- Every offer with provenance: {BASE_URL}/api/v1/offers.json
+- LLM per-token prices by gateway: {BASE_URL}/api/v1/llm/models.json
+- Per-GPU history: {BASE_URL}/api/v1/history/<gpu>.json (e.g. h100-sxm-80gb)
+- Per-model history: {BASE_URL}/api/v1/llm/history/<model>.json (e.g. claude-opus-5)
+- Every recorded change: {BASE_URL}/api/v1/changelog.json
+
+## Pages
+- GPU prices: {BASE_URL}/
+- LLM API prices: {BASE_URL}/llm/
+- Per-GPU pages: {BASE_URL}/gpu/<gpu>.html
+- Per-model pages: {BASE_URL}/llm/model/<model>.html
+- Gateway head-to-heads: {BASE_URL}/llm/compare/<a>-vs-<b>.html
+- Methodology and what we do not claim: {BASE_URL}/methodology.html
+
+Marketplace prices (Vast) are the 25th percentile of verified listings; hyperscaler
+prices are on-demand list divided by GPU count; nameplate specs are vendor claims,
+not measured throughput.
+""")
     (SITE / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n")
 
     return SITE / "index.html"
