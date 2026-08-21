@@ -1,6 +1,9 @@
 {
-  "_comment": "First-party sponsor slots. Add an object to `active` and it renders on the next hourly deploy; empty means the house ad recruits a sponsor instead. `section` is gpu | llm | saas | all. Rules we do not break: the unit is always labelled, it is our own HTML with no third-party script, and sponsorship never affects a ranking or a number.",
+  "_comment": "Self-serve sponsor slots. `active` is written by the sponsor-intake workflow from approved GitHub issues labelled 'sponsor-live' \u2014 you do not edit it by hand. Set `buy_url` to a payment link (Stripe Payment Link / Lemon Squeezy / Ko-fi) whose success page tells the buyer to open a sponsor issue. `auto_approve` renders a paid slot the moment its issue is labelled paid, no human review.",
   "contact_url": "https://github.com/graemegilmourbates/gpudiff/issues/new?title=Sponsorship%20inquiry&body=Company%3A%0AURL%3A%0APlacement%20(sitewide%2Fgpu%2Fllm%2Fsaas)%3A%0AMonths%3A",
-  "founding_rate_usd": 99,
-  "active": []
+  "founding_rate_usd": 49,
+  "active": [],
+  "buy_url": "",
+  "monthly_price_usd": 49,
+  "auto_approve": true
 }

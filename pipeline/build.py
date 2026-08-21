@@ -57,6 +57,16 @@ a { color:var(--acc); }
 .spark { vertical-align:middle; }
 .tablewrap { overflow-x:auto; }
 .cta { border-left:3px solid var(--cut); padding:6px 12px; background:var(--card); }
+.vol { font-size:10.5px; letter-spacing:.03em; text-transform:uppercase; padding:1px 6px;
+       border-radius:3px; border:1px solid currentColor; white-space:nowrap; }
+.vol-low  { color:var(--cut); }
+.vol-mid  { color:var(--gold, #9a7b1f); }
+.vol-high { color:var(--raise); }
+.vol-new  { color:var(--mut); }
+.pick { border:1px solid var(--line); border-radius:8px; padding:16px 18px; margin:14px 0;
+        background:var(--card); }
+.pick h3 { margin:0 0 4px; } .pick .big { font-size:22px; font-weight:700; }
+.pick .why { color:var(--mut); font-size:13.5px; margin-top:6px; }
 .sponsor { display:flex; align-items:center; gap:10px; min-height:38px; margin:14px 0 4px;
            padding:8px 12px; border:1px solid var(--line); border-radius:6px;
            background:var(--card); font-size:13.5px; }
@@ -226,6 +236,28 @@ def metric_badge(offer):
     return f'<span class="badge" title="How this number is measured">{esc(label)}</span>'
 
 
+def volatility(series):
+    """A plain-language stability read from a price history. Returns
+    (label, css_class, detail). Honest about thin history: fewer than 3
+    observations is 'new', never 'stable'."""
+    pts = [p for _, p in (series or []) if isinstance(p, (int, float)) and p > 0]
+    if len(pts) < 3:
+        return ("new", "vol-new", f"{len(pts)} day(s) of history")
+    lo, hi = min(pts), max(pts)
+    swing = (hi / lo - 1) * 100 if lo else 0
+    changes = sum(1 for a, b in zip(pts, pts[1:]) if a != b)
+    if swing < 2:
+        return ("stable", "vol-low", f"±{swing:.0f}% over {len(pts)} days")
+    if swing < 15:
+        return ("drifts", "vol-mid", f"±{swing:.0f}% over {len(pts)} days, {changes} move(s)")
+    return ("volatile", "vol-high", f"{swing:.0f}% range over {len(pts)} days, {changes} move(s)")
+
+
+def vol_badge(series):
+    label, cls, detail = volatility(series)
+    return f'<span class="vol {cls}" title="{esc(detail)}">{label}</span>'
+
+
 def sparkline(points, width=120, height=26):
     if len(points) < 2:
         return f'<span class="mut" title="History accrues daily">since {esc(points[0][0])}</span>' if points else ""
@@ -305,7 +337,7 @@ def sponsor_slot(path):
 
 def page(title, body, monetize, desc="", jsonld="", path="/"):
     nav = ('<nav class="site"><a href="/">gpus</a><a href="/llm/">llm apis</a>'
-           '<a href="/saas/">saas</a><a href="/fit.html">fit</a>'
+           '<a href="/gpu-guide.html">where to rent</a><a href="/llm/">llm apis</a><a href="/llm-guide.html">where to buy</a><a href="/saas/">saas</a><a href="/fit.html">fit</a>'
            '<a href="/changelog.html">changelog</a>'
            '<a href="/methodology.html">methodology</a>'
            '<a href="/api/">api</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
@@ -389,6 +421,7 @@ def render_index(fams, changelog, date, monetize):
     }) + '</script>')
     body = f"""
 <p class="mut">Now also tracking <a href="/llm/">LLM API prices per token</a> (beta).</p>
+<p><a href="/gpu-guide.html"><strong>Where should I rent? →</strong></a> the cheapest live pick per need, with volatility.</p>
 <h1>What changed in GPU cloud pricing</h1>
 <ul class="chg">{log}</ul>
 <p><a href="/changelog.html">Full changelog →</a></p>
@@ -1136,8 +1169,9 @@ def render_digest_pages(monetize):
 
 def render_sponsor_page(monetize, stats):
     cfg = load_sponsors()
-    rate = cfg.get("founding_rate_usd", 99)
+    rate = cfg.get("monthly_price_usd", cfg.get("founding_rate_usd", 49))
     contact = cfg.get("contact_url", "#")
+    buy = cfg.get("buy_url", "")
     metrics = load_metrics()
     visits = metrics.get("uniques_total")
     audience_row = (f"<tr><td>Visits to date</td><td class='n'>{esc(visits)}</td>"
@@ -1167,16 +1201,24 @@ small, precisely-targeted audience.</p>
 above are live and the analytics dashboard is shareable on request. A founding
 sponsor is buying a low rate and a long run, not a big audience today.</p>
 
-<h2>Placements</h2>
+<h2>Self-serve — live within the hour</h2>
+<p>Buy a month, tell us your one line, and the unit appears automatically. No
+sales call, no contract, cancel anytime.</p>
 <div class="tablewrap"><table>
 <thead><tr><th>Placement</th><th>Where it appears</th><th class="n">Monthly</th></tr></thead>
 <tbody>
 <tr><td><strong>Sitewide</strong></td><td>The single sponsor unit on every page, near the top</td><td class="n">${rate}</td></tr>
-<tr><td><strong>Section</strong></td><td>GPU, LLM, or SaaS pages only</td><td class="n">${int(rate * 0.6)}</td></tr>
-<tr><td><strong>Weekly digest</strong></td><td>One line in the digest and its archived page</td><td class="n">${int(rate * 0.4)}</td></tr>
+<tr><td><strong>Section</strong></td><td>GPU, LLM, or SaaS pages only</td><td class="n">${int(rate * 0.7)}</td></tr>
 </tbody></table></div>
-<p>One sponsor at a time per placement. Month to month, cancel whenever, no
-contract. Founding rate holds until the site passes 10,000 monthly visits.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>{'<a href=\'' + esc(buy) + '\'><strong>Buy a month →</strong></a>' if buy else 'Purchase (payment link coming — <a href=\'' + esc(contact) + '\'>enquire</a> meanwhile)'}</li>
+<li>Open a <a href="{esc(contact)}">sponsor issue</a> with your company, link, and one line of copy.</li>
+<li>Once payment clears, your unit is live on the next hourly build.</li>
+</ol>
+<p class="mut">Founding rate — locked until the site passes 10,000 monthly visits.
+Below what a comparable dev-audience placement costs, deliberately, because a slot
+that is always filled is worth more to us than a slot that is often empty.</p>
 
 <h2>What the unit looks like</h2>
 <aside class="sponsor"><span class="sponsor-tag">Sponsored</span>
@@ -1203,6 +1245,127 @@ and a start date.</p>"""
                 "Sponsor gpudiff: one labelled, first-party unit on a site read by engineers "
                 "comparing GPU cloud and LLM API prices. No trackers, no third-party scripts.",
                 path="/sponsor.html")
+
+
+def render_gpu_guide(fams, history, monetize):
+    """Where to rent: the single cheapest live option per common GPU need, with
+    a volatility read so nobody is surprised by a swing. Highest buying intent
+    on the site — so the referral links here matter most."""
+    def cheapest_in(keys):
+        cands = []
+        for fam in keys:
+            e = fams.get(fam)
+            if not e:
+                continue
+            for o in e["offers"]:
+                if o["pricing_type"] == "on_demand":
+                    cands.append((o["price"], fam, e, o))
+        return min(cands, default=None, key=lambda t: t[0])
+
+    needs = [
+        ("Cheapest 80GB-class card (large models, training)",
+         ["h100-sxm-80gb", "h100-pcie-80gb", "a100-sxm4-80gb", "a100-pcie-80gb", "h100-nvl-94gb"]),
+        ("Cheapest 24GB card (7B–13B inference, dev)",
+         ["rtx-4090-24gb", "rtx-3090-24gb", "l4-24gb", "a10-24gb", "a10g-24gb"]),
+        ("Cheapest 48GB card (fine-tuning, 34B inference)",
+         ["l40s-48gb", "l40-48gb", "rtx-a6000-48gb", "rtx-pro-5000-48gb", "rtx-4090-48gb"]),
+        ("Cheapest 141GB+ card (frontier, 70B+ single-GPU)",
+         ["h200-sxm-141gb", "h200-nvl-143gb", "b200-180gb", "mi300x-192gb", "b300-288gb"]),
+    ]
+    cards = []
+    for title, keys in needs:
+        pick = cheapest_in(keys)
+        if not pick:
+            continue
+        price, fam, e, o = pick
+        url, rel = outbound(o, monetize)
+        series = history.get(o["id"], [])
+        cards.append(f"""<div class="pick">
+<h3>{esc(title)}</h3>
+<div class="big">{esc(fam_display(fam, e))} — ${price:.2f}/hr</div>
+<div>on <strong>{esc(o['provider'])}</strong> ({esc(o.get('region',''))}) {vol_badge(series)}
+ · <a href="{esc(url)}"{rel}>rent →</a> · <a href="/gpu/{esc(fam)}.html">all offers &amp; history</a></div>
+<div class="why">Cheapest live on-demand price across everything we track for this need.
+The volatility tag reflects the last week of prices — marketplace rates move; check before you commit to a long run.</div>
+</div>""")
+    body = f"""
+<h1>Where to rent a GPU: the cheapest option right now</h1>
+<p class="mut">One pick per common need — the lowest live on-demand price across every
+provider we track, refreshed hourly. The volatility tag warns when a price has been
+moving, so a cheap number today is not a surprise bill tomorrow.</p>
+{''.join(cards)}
+<p class="mut">Want a specific card, spot prices, or the full history? Start from the
+<a href="/">GPU price table</a>. Prices are marketplace/list rates, not quotes; see
+<a href="/methodology.html">methodology</a>.</p>"""
+    return page("Where to Rent a GPU — cheapest option per need, updated hourly | gpudiff",
+                body, monetize,
+                "The cheapest live GPU cloud rental for each common need — 80GB, 24GB, 48GB, and frontier "
+                "cards — with a volatility read on each, refreshed hourly.",
+                path="/gpu-guide.html")
+
+
+def render_llm_guide(llm_offers, history, monetize):
+    """Where to buy tokens: cheapest gateway per tier, with volatility."""
+    idx = llm_model_index(llm_offers)
+    wl = load_watchlist()
+
+    def series_for(routes, router, direction):
+        r = routes.get(router) or {}
+        return history.get(r.get(f"{direction}_id"), [])
+
+    tiers = [
+        ("Cheapest frontier model (Claude / GPT / Gemini class)",
+         ["claude-opus-5", "claude-sonnet-5", "gpt-5.6-sol", "gpt-5.6-terra", "gemini-3.1-pro"]),
+        ("Cheapest strong open-weight model (Llama / Qwen / DeepSeek / GLM)",
+         ["deepseek-v4-pro", "qwen3.8-max", "glm-5.2", "llama-4-maverick", "kimi-k3"]),
+        ("Cheapest fast/cheap workhorse (flash-class)",
+         ["gemini-3.7-flash", "deepseek-v4-flash", "gpt-5.6-luna"]),
+    ]
+    cards = []
+    for title, keys in tiers:
+        best = None
+        for key in keys:
+            meta = wl.get(key, {})
+            routes = watchlist_routes(idx, meta, key) if meta else (idx.get(key) or {})
+            lo_in, lo_router = _cheapest(routes, "input")
+            if lo_in is None:
+                continue
+            if best is None or lo_in < best[0]:
+                best = (lo_in, key, meta, routes, lo_router)
+        if not best:
+            continue
+        lo_in, key, meta, routes, lo_router = best
+        lo_out, _ = _cheapest(routes, "output")
+        disp = meta.get("display", key)
+        url, rel = gateway_link(lo_router, monetize)
+        series = series_for(routes, lo_router, "input")
+        cards.append(f"""<div class="pick">
+<h3>{esc(title)}</h3>
+<div class="big">{esc(disp)} — ${lo_in:.2f} in / ${lo_out:.2f} out per MTok</div>
+<div>cheapest via <strong>{esc(ROUTER_LABEL.get(lo_router, lo_router))}</strong> {vol_badge(series)}
+ · <a href="{esc(url)}"{rel}>use →</a> · <a href="/llm/model/{esc(key)}.html">all gateways &amp; history</a></div>
+<div class="why">Lowest input price across the gateways we track for this tier. Frontier
+models are usually identical across gateways (list passthrough); open-weight prices move,
+so watch the volatility tag.</div>
+</div>""")
+    body = f"""
+<h1>Where to buy LLM tokens: the cheapest gateway right now</h1>
+<p class="mut">One pick per tier — the lowest live per-token price across six gateways,
+refreshed hourly, with a volatility read. Same model, wrong gateway, and you can pay
+several times as much.</p>
+{''.join(cards)}
+<p class="mut">Full table, every model, and per-model history on the
+<a href="/llm/">LLM prices page</a>. These are published list prices, not quotes;
+see <a href="/methodology.html">methodology</a>.</p>"""
+    return page("Where to Buy LLM Tokens — cheapest gateway per tier, updated hourly | gpudiff",
+                body, monetize,
+                "The cheapest LLM API gateway for each tier — frontier, open-weight, and flash models — "
+                "with a volatility read on each, refreshed hourly across six gateways.",
+                path="/llm-guide.html")
+
+
+def render_gpu_guide_stub():
+    pass
 
 
 def render_methodology(monetize):
@@ -1510,6 +1673,8 @@ def build_site(offers, changelog, date):
     (SITE / "changelog.html").write_text(render_changelog(changelog, monetize, aliases))
     (SITE / "methodology.html").write_text(render_methodology(monetize))
     (SITE / "fit.html").write_text(render_fit_page(monetize))
+    (SITE / "gpu-guide.html").write_text(render_gpu_guide(fams, history, monetize))
+    (SITE / "llm-guide.html").write_text(render_llm_guide(llm_offers, history, monetize))
     sponsor_stats = {
         "offers": len(offers),
         "providers": len({o["provider"] for o in offers}),
@@ -1625,7 +1790,8 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "offers.json").write_text(json.dumps(offers, indent=2) + "\n")
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
-    urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/saas/", f"{BASE_URL}/fit.html",
+    urls = [f"{BASE_URL}/", f"{BASE_URL}/gpu-guide.html", f"{BASE_URL}/llm-guide.html",
+            f"{BASE_URL}/llm/", f"{BASE_URL}/saas/", f"{BASE_URL}/fit.html",
             f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",
             f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/", f"{BASE_URL}/digest/",
             f"{BASE_URL}/sponsor.html"] + \
