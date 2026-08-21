@@ -337,7 +337,7 @@ def sponsor_slot(path):
 
 def page(title, body, monetize, desc="", jsonld="", path="/"):
     nav = ('<nav class="site"><a href="/">gpus</a><a href="/llm/">llm apis</a>'
-           '<a href="/gpu-guide.html">where to rent</a><a href="/llm/">llm apis</a><a href="/llm-guide.html">where to buy</a><a href="/saas/">saas</a><a href="/fit.html">fit</a>'
+           '<a href="/movers.html">movers</a><a href="/gpu-guide.html">where to rent</a><a href="/llm/">llm apis</a><a href="/llm-guide.html">where to buy</a><a href="/saas/">saas</a><a href="/fit.html">fit</a>'
            '<a href="/changelog.html">changelog</a>'
            '<a href="/methodology.html">methodology</a>'
            '<a href="/api/">api</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
@@ -421,7 +421,7 @@ def render_index(fams, changelog, date, monetize):
     }) + '</script>')
     body = f"""
 <p class="mut">Now also tracking <a href="/llm/">LLM API prices per token</a> (beta).</p>
-<p><a href="/gpu-guide.html"><strong>Where should I rent? →</strong></a> the cheapest live pick per need, with volatility.</p>
+<p><a href="/movers.html"><strong>Biggest price moves this week →</strong></a> · <a href="/gpu-guide.html">where should I rent?</a> the cheapest live pick per need.</p>
 <h1>What changed in GPU cloud pricing</h1>
 <ul class="chg">{log}</ul>
 <p><a href="/changelog.html">Full changelog →</a></p>
@@ -514,6 +514,28 @@ def render_family(fam, entry, history, changelog, monetize, aliases, fams=None):
         "mainEntity": [{"@type": "Question", "name": q,
                         "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs],
     }) + '</script>')
+
+    prod_ld = ('<script type="application/ld+json">' + json.dumps({
+        "@context": "https://schema.org", "@type": "Product",
+        "name": f"{name} cloud GPU rental",
+        "description": f"Hourly cloud rental prices for the {name} across {n_prov} providers.",
+        "category": "Cloud GPU rental",
+        "offers": {
+            "@type": "AggregateOffer", "priceCurrency": "USD",
+            "lowPrice": round(best["price"], 2),
+            "highPrice": round(hi, 2),
+            "offerCount": len(entry["offers"]),
+            "availability": "https://schema.org/InStock",
+        },
+    }) + '</script>')
+    crumb_ld = ('<script type="application/ld+json">' + json.dumps({
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "GPU prices", "item": BASE_URL + "/"},
+            {"@type": "ListItem", "position": 2, "name": name, "item": f"{BASE_URL}/gpu/{fam}.html"},
+        ],
+    }) + '</script>')
+    faq_ld = faq_ld + prod_ld + crumb_ld
 
     related = ""
     if fams:
@@ -1179,6 +1201,10 @@ def render_sponsor_page(monetize, stats):
                     if visits else
                     "<tr><td>Visits</td><td class='n'>early</td><td class='mut'>the site launched in "
                     "August 2026; ask and we will send the live dashboard</td></tr>")
+    if buy:
+        buy_line = f'<a href="{esc(buy)}"><strong>Buy a month \u2192</strong></a>'
+    else:
+        buy_line = f'Purchase (payment link coming \u2014 <a href="{esc(contact)}">enquire</a> meanwhile)'
     body = f"""
 <h1>Sponsor gpudiff</h1>
 <p>gpudiff is read by people deciding where to buy compute: engineers comparing
@@ -1212,7 +1238,7 @@ sales call, no contract, cancel anytime.</p>
 </tbody></table></div>
 <p><strong>How it works:</strong></p>
 <ol>
-<li>{'<a href=\'' + esc(buy) + '\'><strong>Buy a month →</strong></a>' if buy else 'Purchase (payment link coming — <a href=\'' + esc(contact) + '\'>enquire</a> meanwhile)'}</li>
+<li>{buy_line}</li>
 <li>Open a <a href="{esc(contact)}">sponsor issue</a> with your company, link, and one line of copy.</li>
 <li>Once payment clears, your unit is live on the next hourly build.</li>
 </ol>
@@ -1366,6 +1392,55 @@ see <a href="/methodology.html">methodology</a>.</p>"""
 
 def render_gpu_guide_stub():
     pass
+
+
+def render_movers(changelog, monetize, aliases):
+    """The biggest price changes in the last 7 days, always current. Targets the
+    high-intent 'gpu price drops this week' / 'llm price changes' searches, and
+    regenerates every build so it is genuinely fresh, not a stale doorway."""
+    import datetime
+    cutoff = (datetime.date.today() - datetime.timedelta(days=7)).isoformat()
+    recent = [e for e in changelog if e["kind"] == "price_change" and e["date"] >= cutoff]
+    def section_label(e):
+        return {"gpu": "GPU", "llm": "LLM", "saas": "SaaS"}[entry_section(e)]
+    def link(e):
+        prov, sku = e["id"].split(":")[0], e["id"].split(":")[1]
+        if prov in LLM_PROVIDERS:
+            return f"/llm/model/{esc(canon_model((e.get('id').split(':')[1]) or ''))}.html"
+        if sku.startswith("pricing-"):
+            return "/saas/"
+        return f"/gpu/{esc(family_of(sku, aliases))}.html"
+    drops = sorted([e for e in recent if e.get("pct", 0) < 0], key=lambda e: e["pct"])[:20]
+    rises = sorted([e for e in recent if e.get("pct", 0) > 0], key=lambda e: -e["pct"])[:20]
+    def rows(items, cls):
+        return "".join(
+            f"<tr><td><span class='badge'>{section_label(e)}</span></td>"
+            f"<td class='n {cls}'>{e['pct']:+.0f}%</td>"
+            f"<td><a href='{link(e)}'>{esc(e['summary'])}</a></td>"
+            f"<td class='mut n'>{esc(e['date'])}</td></tr>" for e in items) or             "<tr><td colspan='4' class='mut'>Quiet week — no moves in this direction.</td></tr>"
+    body = f"""
+<h1>Biggest AI compute price changes this week</h1>
+<p class="mut">The largest moves across GPU cloud, LLM API, and SaaS pricing in the last
+seven days, refreshed hourly from our public archive. {len(recent)} recorded changes in
+the window.</p>
+<h2>Biggest price drops</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Where</th><th class="n">Change</th><th>What</th><th class="n">Date</th></tr></thead>
+<tbody>{rows(drops, 'cut')}</tbody></table></div>
+<h2>Biggest price rises</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Where</th><th class="n">Change</th><th>What</th><th class="n">Date</th></tr></thead>
+<tbody>{rows(rises, 'raise')}</tbody></table></div>
+<p class="mut">Every change links its source and is versioned in
+<a href="https://github.com/graemegilmourbates/gpudiff">public git</a>. Follow moves as
+they happen: <a href="/rss.xml">RSS</a> · <a href="/api/v1/changelog.json">API</a>.
+See also <a href="/gpu-guide.html">where to rent a GPU</a> and
+<a href="/llm-guide.html">where to buy tokens</a>.</p>"""
+    return page("Biggest AI Compute Price Changes This Week — GPU, LLM & SaaS | gpudiff",
+                body, monetize,
+                "The biggest GPU cloud, LLM API, and SaaS price drops and rises in the last seven days, "
+                "refreshed hourly with provenance.",
+                path="/movers.html")
 
 
 def render_methodology(monetize):
@@ -1675,6 +1750,7 @@ def build_site(offers, changelog, date):
     (SITE / "fit.html").write_text(render_fit_page(monetize))
     (SITE / "gpu-guide.html").write_text(render_gpu_guide(fams, history, monetize))
     (SITE / "llm-guide.html").write_text(render_llm_guide(llm_offers, history, monetize))
+    (SITE / "movers.html").write_text(render_movers(changelog, monetize, aliases))
     sponsor_stats = {
         "offers": len(offers),
         "providers": len({o["provider"] for o in offers}),
@@ -1790,7 +1866,7 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "offers.json").write_text(json.dumps(offers, indent=2) + "\n")
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
-    urls = [f"{BASE_URL}/", f"{BASE_URL}/gpu-guide.html", f"{BASE_URL}/llm-guide.html",
+    urls = [f"{BASE_URL}/", f"{BASE_URL}/movers.html", f"{BASE_URL}/gpu-guide.html", f"{BASE_URL}/llm-guide.html",
             f"{BASE_URL}/llm/", f"{BASE_URL}/saas/", f"{BASE_URL}/fit.html",
             f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",
             f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/", f"{BASE_URL}/digest/",
