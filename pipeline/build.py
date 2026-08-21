@@ -1452,63 +1452,72 @@ See also <a href="/gpu-guide.html">where to rent a GPU</a> and
 
 
 def rank_providers(item_to_prices, min_comparable=3):
-    """Fair value ranking. item_to_prices maps an item (a GPU family or an LLM
-    model) to {provider: cheapest_price_that_provider_offers}. We only score
-    items offered by two or more providers — you cannot be "cheaper" on
-    something nobody else sells — and normalize each provider's price to the
-    cheapest for that item, so the score is average premium over the cheapest,
-    not an artifact of which items a provider happens to carry."""
+    """Fair, intuitive value ranking. item_to_prices maps an item (a GPU family
+    or an LLM model) to {provider: that provider's cheapest price for it}.
+
+    Only items two or more providers offer are scored — you cannot be "cheaper"
+    than nobody. For each item we find the lowest price and give every provider
+    within 0.5% of it a co-win (so identical frontier prices don't hand an
+    arbitrary provider the trophy). Each provider's headline number is the
+    MEDIAN premium over the cheapest across the items it offers — median, not
+    mean, so one wildly-priced outlier can't sink an otherwise cheap provider —
+    and providers are ranked by that, then by how often they are cheapest."""
     from collections import defaultdict
-    st = defaultdict(lambda: {"wins": 0, "comparable": 0, "premiums": [], "offered": 0})
+    import statistics
+    st = defaultdict(lambda: {"wins": 0, "comparable": 0, "premiums": []})
     for _, prices in item_to_prices.items():
-        for prov in prices:
-            st[prov]["offered"] += 1
         if len(prices) < 2:
             continue
         cheapest = min(prices.values())
-        winner = min(prices, key=prices.get)
-        st[winner]["wins"] += 1
+        if cheapest <= 0:
+            continue
         for prov, price in prices.items():
             st[prov]["comparable"] += 1
-            if cheapest:
-                st[prov]["premiums"].append(price / cheapest)
+            st[prov]["premiums"].append(price / cheapest)
+            if price <= cheapest * 1.005:
+                st[prov]["wins"] += 1
     rows = []
     for prov, d in st.items():
-        avg = sum(d["premiums"]) / len(d["premiums"]) if d["premiums"] else None
-        rows.append({"provider": prov, "wins": d["wins"], "comparable": d["comparable"],
-                     "offered": d["offered"], "avg_premium": avg})
-    ranked = sorted([r for r in rows if r["comparable"] >= min_comparable and r["avg_premium"]],
-                    key=lambda r: r["avg_premium"])
-    thin = sorted([r for r in rows if r not in ranked], key=lambda r: -r["offered"])
+        if not d["premiums"]:
+            continue
+        rows.append({
+            "provider": prov, "wins": d["wins"], "comparable": d["comparable"],
+            "win_rate": d["wins"] / d["comparable"],
+            "median_premium": statistics.median(d["premiums"]),
+        })
+    ranked = sorted([r for r in rows if r["comparable"] >= min_comparable],
+                    key=lambda r: (round(r["median_premium"], 3), -r["win_rate"]))
+    thin = sorted([r for r in rows if r["comparable"] < min_comparable],
+                  key=lambda r: -r["comparable"])
     return ranked, thin
 
 
-def _rank_table(ranked, thin, label_fn, link_fn):
-    def prem(r):
-        pct = (r["avg_premium"] - 1) * 100
-        return "cheapest overall" if pct < 1 else f"+{pct:.0f}% vs cheapest"
+def _rank_table(ranked, thin, label_fn, link_fn, unit="offers"):
+    def typical(r):
+        pct = (r["median_premium"] - 1) * 100
+        return "usually cheapest" if pct < 1 else f"+{pct:.0f}% typical"
     body = []
     for i, r in enumerate(ranked, 1):
         url, rel = link_fn(r["provider"])
-        medal = {1: "🥇", 2: "🥈", 3: "🥉"}.get(i, f"{i}")
-        cls = "cut" if i == 1 else ""
+        medal = {1: "\U0001F947", 2: "\U0001F948", 3: "\U0001F949"}.get(i, str(i))
+        cls = "cut" if r["median_premium"] < 1.01 else ("raise" if r["median_premium"] > 1.25 else "")
         body.append(
             f"<tr><td class='n'><strong>{medal}</strong></td>"
             f"<td><strong>{esc(label_fn(r['provider']))}</strong></td>"
-            f"<td class='n {cls}'>{prem(r)}</td>"
-            f"<td class='n'>{r['wins']} of {r['comparable']}</td>"
-            f"<td class='n'>{r['offered']}</td>"
-            f"<td><a href='{esc(url)}'{rel}>visit →</a></td></tr>")
+            f"<td class='n {cls}'>{typical(r)}</td>"
+            f"<td class='n'>{r['wins']} of {r['comparable']} "
+            f"<span class='mut'>({r['win_rate'] * 100:.0f}%)</span></td>"
+            f"<td><a href='{esc(url)}'{rel}>visit \u2192</a></td></tr>")
     for r in thin:
         url, rel = link_fn(r["provider"])
         body.append(
-            f"<tr><td class='n mut'>—</td><td>{esc(label_fn(r['provider']))} "
-            f"<span class='mut'>(limited overlap)</span></td>"
-            f"<td class='n mut'>n/a</td><td class='n mut'>—</td>"
-            f"<td class='n'>{r['offered']}</td>"
-            f"<td><a href='{esc(url)}'{rel}>visit →</a></td></tr>")
+            f"<tr><td class='n mut'>\u2014</td>"
+            f"<td>{esc(label_fn(r['provider']))} <span class='mut'>(too few shared {unit})</span></td>"
+            f"<td class='n mut'>\u2014</td>"
+            f"<td class='n mut'>{r['comparable']} shared</td>"
+            f"<td><a href='{esc(url)}'{rel}>visit \u2192</a></td></tr>")
     return ("<div class='tablewrap'><table><thead><tr><th class='n'>Rank</th><th>Provider</th>"
-            "<th class='n'>Avg. price</th><th class='n'>Cheapest on</th><th class='n'>Offers</th>"
+            f"<th class='n'>Typical price</th><th class='n'>Cheapest on</th>"
             "<th></th></tr></thead><tbody>" + "".join(body) + "</tbody></table></div>")
 
 
@@ -1528,8 +1537,9 @@ def render_gpu_ranking(fams, monetize):
     if ranked:
         w = ranked[0]
         verdict = (f'<p class="cta"><strong>Cheapest GPU cloud right now: '
-                   f'{esc(label(w["provider"]))}</strong> — lowest price on {w["wins"]} of '
-                   f'{w["comparable"]} comparable GPUs.</p>')
+                   f'{esc(label(w["provider"]))}</strong> \u2014 the lowest price on '
+                   f'{w["wins"]} of {w["comparable"]} comparable GPUs '
+                   f'({w["win_rate"] * 100:.0f}%).</p>')
     body = f"""
 <h1>Cheapest GPU cloud provider, ranked</h1>
 <p class="mut">Which cloud is actually cheapest for renting GPUs? We rank every provider we
@@ -1539,10 +1549,11 @@ only listing cheap hardware.</p>
 {verdict}
 {_rank_table(ranked, thin, label, link)}
 <h2>How this ranking works</h2>
-<p>For every GPU sold by two or more providers we find the cheapest, then measure how much
-more each other provider charges. "Avg. price" is that premium averaged over the GPUs a
-provider offers — lower is cheaper. "Cheapest on" counts the GPUs where a provider is the
-single lowest. We rank on <strong>published on-demand price only</strong> — not speed,
+<p>For every GPU sold by two or more providers we find the lowest price, then measure how
+much more each provider charges. <strong>"Typical price"</strong> is the median of those
+premiums across the GPUs a provider offers — median, so one oddly-priced card can't skew it.
+<strong>"Cheapest on"</strong> counts the GPUs where a provider matches the lowest price
+(ties share the win). We rank on <strong>published on-demand price only</strong> — not speed,
 reliability, or support (<a href="/methodology.html">methodology</a>). Provider links may
 carry a referral code; the ranking is computed from prices and is unaffected.</p>
 <p class="mut">Looking for one specific card? <a href="/gpu-guide.html">Where to rent a GPU →</a>
@@ -1568,8 +1579,9 @@ def render_llm_ranking(llm_offers, monetize):
     if ranked:
         w = ranked[0]
         verdict = (f'<p class="cta"><strong>Cheapest LLM gateway right now: '
-                   f'{esc(label(w["provider"]))}</strong> — lowest input price on {w["wins"]} of '
-                   f'{w["comparable"]} models it shares with other gateways.</p>')
+                   f'{esc(label(w["provider"]))}</strong> \u2014 the lowest input price on '
+                   f'{w["wins"]} of {w["comparable"]} shared models '
+                   f'({w["win_rate"] * 100:.0f}%).</p>')
     body = f"""
 <h1>Cheapest LLM API gateway, ranked</h1>
 <p class="mut">Six gateways resell the same models at different prices. We rank them by input
@@ -1579,9 +1591,13 @@ models — where the gap can be large.</p>
 {verdict}
 {_rank_table(ranked, thin, label, link)}
 <h2>How this ranking works</h2>
-<p>For every model sold by two or more gateways we find the cheapest input price, then measure
-each gateway's premium over it, averaged across the models it carries. "Cheapest on" counts
-outright wins. We rank on <strong>published per-token input price only</strong> — not latency,
+<p>For every model sold by two or more gateways we find the lowest input price, then measure
+each gateway's premium over it. <strong>"Typical price"</strong> is the median of those
+premiums across the models a gateway carries — median, so a handful of wildly-priced models
+can't skew the result, which is why a gateway that is cheapest most of the time reads as
+"usually cheapest" even if its average is dragged up by outliers. <strong>"Cheapest on"</strong>
+counts models where a gateway matches the lowest price (identical frontier prices are shared
+wins). We rank on <strong>published per-token input price only</strong> — not latency,
 throughput, or uptime (<a href="/methodology.html">methodology</a>). Gateway links may carry a
 referral code; the ranking is computed from prices and is unaffected.</p>
 <p class="mut"><a href="/llm-guide.html">Where to buy tokens by tier →</a> ·
