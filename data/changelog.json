@@ -3256,6 +3256,46 @@
   {
     "date": "2026-08-21",
     "kind": "added",
+    "id": "runpod:a100-pcie-80gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a100-pcie-80gb",
+    "price": 1.39,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed a100-pcie-80gb at 1.39 usd_per_hour"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "added",
+    "id": "runpod:a100-pcie-80gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "a100-pcie-80gb",
+    "price": 1.39,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed a100-pcie-80gb at 1.39 usd_per_hour"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "added",
+    "id": "runpod:b200-180gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "b200-180gb",
+    "price": 6.79,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed b200-180gb at 6.79 usd_per_hour"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "added",
+    "id": "runpod:b200-180gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "b200-180gb",
+    "price": 6.79,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed b200-180gb at 6.79 usd_per_hour"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "added",
     "id": "runpod:b300-288gb:secure-cloud:on-demand",
     "provider": "runpod",
     "sku": "b300-288gb",
@@ -3292,6 +3332,46 @@
     "price": 3.19,
     "unit": "usd_per_hour",
     "summary": "runpod listed h100-nvl-94gb at 3.19 usd_per_hour"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "added",
+    "id": "runpod:h200-sxm-141gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h200-sxm-141gb",
+    "price": 3.59,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed h200-sxm-141gb at 3.59 usd_per_hour"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "added",
+    "id": "runpod:h200-sxm-141gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "h200-sxm-141gb",
+    "price": 3.59,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed h200-sxm-141gb at 3.59 usd_per_hour"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "added",
+    "id": "runpod:mi300x-192gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "mi300x-192gb",
+    "price": 2.39,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed mi300x-192gb at 2.39 usd_per_hour"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "added",
+    "id": "runpod:mi300x-192gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "mi300x-192gb",
+    "price": 2.39,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed mi300x-192gb at 2.39 usd_per_hour"
   },
   {
     "date": "2026-08-21",
@@ -3339,9 +3419,9 @@
     "id": "vast:rtx-pro-6000-ws:global:on-demand",
     "provider": "vast",
     "sku": "rtx-pro-6000-ws",
-    "price": 1.3021,
+    "price": 1.1735,
     "unit": "usd_per_hour",
-    "summary": "vast listed rtx-pro-6000-ws at 1.3021 usd_per_hour"
+    "summary": "vast listed rtx-pro-6000-ws at 1.1735 usd_per_hour"
   },
   {
     "date": "2026-08-21",
@@ -3368,6 +3448,22 @@
     "provider": "glama",
     "sku": "jamba-large-1.7-output",
     "summary": "glama delisted jamba-large-1.7-output"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "removed",
+    "id": "novita:ling-3.0-flash-fast-input:global:list",
+    "provider": "novita",
+    "sku": "ling-3.0-flash-fast-input",
+    "summary": "novita delisted ling-3.0-flash-fast-input"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "removed",
+    "id": "novita:ling-3.0-flash-fast-output:global:list",
+    "provider": "novita",
+    "sku": "ling-3.0-flash-fast-output",
+    "summary": "novita delisted ling-3.0-flash-fast-output"
   },
   {
     "date": "2026-08-21",
@@ -3420,22 +3516,6 @@
   {
     "date": "2026-08-21",
     "kind": "removed",
-    "id": "runpod:rtx-a4000-16gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-a4000-16gb",
-    "summary": "runpod delisted rtx-a4000-16gb"
-  },
-  {
-    "date": "2026-08-21",
-    "kind": "removed",
-    "id": "runpod:rtx-a4000-16gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-a4000-16gb",
-    "summary": "runpod delisted rtx-a4000-16gb"
-  },
-  {
-    "date": "2026-08-21",
-    "kind": "removed",
     "id": "runpod:rtx-a4500-20gb:secure-cloud:on-demand",
     "provider": "runpod",
     "sku": "rtx-a4500-20gb",
@@ -3448,22 +3528,6 @@
     "provider": "runpod",
     "sku": "rtx-a4500-20gb",
     "summary": "runpod delisted rtx-a4500-20gb"
-  },
-  {
-    "date": "2026-08-21",
-    "kind": "removed",
-    "id": "runpod:rtx-a6000-48gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-a6000-48gb",
-    "summary": "runpod delisted rtx-a6000-48gb"
-  },
-  {
-    "date": "2026-08-21",
-    "kind": "removed",
-    "id": "runpod:rtx-a6000-48gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-a6000-48gb",
-    "summary": "runpod delisted rtx-a6000-48gb"
   },
   {
     "date": "2026-08-21",
@@ -3523,6 +3587,28 @@
   {
     "date": "2026-08-21",
     "kind": "price_change",
+    "id": "openrouter:minimax-minimax-m2.5-input:global:list",
+    "provider": "openrouter",
+    "sku": "minimax-minimax-m2.5-input",
+    "old_price": 0.225,
+    "new_price": 0.27,
+    "pct": 20.0,
+    "summary": "openrouter raised minimax-minimax-m2.5-input 20.0%: 0.225 \u2192 0.27 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "price_change",
+    "id": "openrouter:minimax-minimax-m2.5-output:global:list",
+    "provider": "openrouter",
+    "sku": "minimax-minimax-m2.5-output",
+    "old_price": 0.9,
+    "new_price": 0.95,
+    "pct": 5.6,
+    "summary": "openrouter raised minimax-minimax-m2.5-output 5.6%: 0.9 \u2192 0.95 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-21",
+    "kind": "price_change",
     "id": "openrouter:moonshotai-kimi-k2.7-code-input:global:list",
     "provider": "openrouter",
     "sku": "moonshotai-kimi-k2.7-code-input",
@@ -3552,17 +3638,6 @@
     "new_price": 3.9357,
     "pct": -3.5,
     "summary": "vast cut h200 3.5%: 4.0792 \u2192 3.9357 usd_per_hour"
-  },
-  {
-    "date": "2026-08-21",
-    "kind": "price_change",
-    "id": "vast:h200:global:spot",
-    "provider": "vast",
-    "sku": "h200",
-    "old_price": 3.4842,
-    "new_price": 3.8158,
-    "pct": 9.5,
-    "summary": "vast raised h200 9.5%: 3.4842 \u2192 3.8158 usd_per_hour"
   },
   {
     "date": "2026-08-21",
