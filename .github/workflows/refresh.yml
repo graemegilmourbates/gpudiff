@@ -65,12 +65,32 @@ jobs:
 
       # Tell search engines what changed (IndexNow is a public protocol; the
       # key file is served by the site). Once daily to stay polite.
-      - name: IndexNow ping (daily)
+      # Tell search engines what changed. Submits the whole sitemap (IndexNow
+      # accepts up to 10k URLs per call), and fires whenever the hour-of-day
+      # differs from the last ping — the old "== 06" check never matched once
+      # because GitHub's cron queue drifts past the minute.
+      - name: IndexNow ping
         run: |
-          [ "$(date -u +%H)" = "06" ] || exit 0
-          curl -s -m 30 -X POST "https://api.indexnow.org/indexnow" \
-            -H "Content-Type: application/json" \
-            -d '{"host":"gpudiff.com","key":"f3a92c47d8b14e0aa65b7c3d91e2f086","keyLocation":"https://gpudiff.com/f3a92c47d8b14e0aa65b7c3d91e2f086.txt","urlList":["https://gpudiff.com/","https://gpudiff.com/llm/","https://gpudiff.com/saas/","https://gpudiff.com/changelog.html","https://gpudiff.com/badges.html","https://gpudiff.com/rss.xml"]}' || true
+          python3 - <<'EOF'
+          import json, re, urllib.request, datetime, pathlib
+          stamp = pathlib.Path("data/.indexnow-last")
+          today = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+          if stamp.exists() and stamp.read_text().strip() == today:
+              print("already pinged today"); raise SystemExit
+          key = "f3a92c47d8b14e0aa65b7c3d91e2f086"
+          urls = re.findall(r"<loc>([^<]+)</loc>", pathlib.Path("site/sitemap.xml").read_text())
+          body = json.dumps({"host": "gpudiff.com", "key": key,
+                             "keyLocation": f"https://gpudiff.com/{key}.txt",
+                             "urlList": urls}).encode()
+          req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body,
+                                       headers={"Content-Type": "application/json; charset=utf-8"})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  print(f"IndexNow: HTTP {r.status} for {len(urls)} URLs")
+              stamp.write_text(today)
+          except Exception as exc:
+              print("IndexNow failed (non-fatal):", exc)
+          EOF
 
       # After good data is committed and the site shipped: fail the job if any
       # source was degraded, so the sentinel pages humans without blocking publish.
