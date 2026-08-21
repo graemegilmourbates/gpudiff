@@ -1,5 +1,5 @@
 {
-  "_comment": "Nameplate specs, one entry per GPU *memory configuration* — memory config is identity, never merged. mem_bw_gbs is vendor nameplate; null where we are not certain (missing beats wrong). aliases map provider SKU slugs into the family.",
+  "_comment": "Nameplate specs, one entry per GPU *memory configuration* \u2014 memory config is identity, never merged. mem_bw_gbs is vendor nameplate; null where we are not certain (missing beats wrong). aliases map provider SKU slugs into the family.",
   "families": {
     "h200-sxm-141gb": {
       "display": "H200 SXM 141GB",
@@ -8,7 +8,11 @@
       "mem_bw_gbs": 4800,
       "mem_type": "HBM3e",
       "provenance": "https://www.nvidia.com/en-us/data-center/h200/",
-      "aliases": ["h200", "h200-sxm-141gb", "h200-141gb"]
+      "aliases": [
+        "h200",
+        "h200-sxm-141gb",
+        "h200-141gb"
+      ]
     },
     "h200-nvl-143gb": {
       "display": "H200 NVL 143GB",
@@ -17,7 +21,11 @@
       "mem_bw_gbs": 4800,
       "mem_type": "HBM3e",
       "provenance": "https://www.nvidia.com/en-us/data-center/h200/",
-      "aliases": ["h200-nvl-143gb", "h200-nvl"]
+      "aliases": [
+        "h200-nvl-143gb",
+        "h200-nvl",
+        "h200-nvl-141gb"
+      ]
     },
     "h100-sxm-80gb": {
       "display": "H100 SXM 80GB",
@@ -26,7 +34,11 @@
       "mem_bw_gbs": 3350,
       "mem_type": "HBM3",
       "provenance": "https://www.nvidia.com/en-us/data-center/h100/",
-      "aliases": ["h100-sxm-80gb", "h100-sxm5-80gb", "h100-sxm"]
+      "aliases": [
+        "h100-sxm-80gb",
+        "h100-sxm5-80gb",
+        "h100-sxm"
+      ]
     },
     "h100-pcie-80gb": {
       "display": "H100 PCIe 80GB",
@@ -35,7 +47,10 @@
       "mem_bw_gbs": 2000,
       "mem_type": "HBM2e",
       "provenance": "https://www.nvidia.com/en-us/data-center/h100/",
-      "aliases": ["h100-pcie-80gb", "h100-pcie"]
+      "aliases": [
+        "h100-pcie-80gb",
+        "h100-pcie"
+      ]
     },
     "h100-nvl-94gb": {
       "display": "H100 NVL 94GB",
@@ -44,7 +59,10 @@
       "mem_bw_gbs": 3900,
       "mem_type": "HBM3",
       "provenance": "https://www.nvidia.com/en-us/data-center/h100/",
-      "aliases": ["h100-nvl-94gb", "h100-nvl"]
+      "aliases": [
+        "h100-nvl-94gb",
+        "h100-nvl"
+      ]
     },
     "a100-sxm4-80gb": {
       "display": "A100 SXM4 80GB",
@@ -53,7 +71,11 @@
       "mem_bw_gbs": 2039,
       "mem_type": "HBM2e",
       "provenance": "https://www.nvidia.com/en-us/data-center/a100/",
-      "aliases": ["a100-sxm-80gb", "a100-sxm4-80gb", "a100-sxm4"]
+      "aliases": [
+        "a100-sxm-80gb",
+        "a100-sxm4-80gb",
+        "a100-sxm4"
+      ]
     },
     "a100-pcie-80gb": {
       "display": "A100 PCIe 80GB",
@@ -62,7 +84,10 @@
       "mem_bw_gbs": 1935,
       "mem_type": "HBM2e",
       "provenance": "https://www.nvidia.com/en-us/data-center/a100/",
-      "aliases": ["a100-pcie-80gb", "a100-pcie"]
+      "aliases": [
+        "a100-pcie-80gb",
+        "a100-pcie"
+      ]
     },
     "a100-sxm4-40gb": {
       "display": "A100 SXM4 40GB",
@@ -71,7 +96,11 @@
       "mem_bw_gbs": 1555,
       "mem_type": "HBM2",
       "provenance": "https://www.nvidia.com/en-us/data-center/a100/",
-      "aliases": ["a100-sxm-40gb", "a100-sxm-40gb-40gb", "a100-sxm4-40gb"]
+      "aliases": [
+        "a100-sxm-40gb",
+        "a100-sxm-40gb-40gb",
+        "a100-sxm4-40gb"
+      ]
     },
     "b200-180gb": {
       "display": "B200 180GB",
@@ -80,7 +109,10 @@
       "mem_bw_gbs": null,
       "mem_type": "HBM3e",
       "provenance": "https://www.nvidia.com/en-us/data-center/dgx-b200/",
-      "aliases": ["b200-180gb", "b200"]
+      "aliases": [
+        "b200-180gb",
+        "b200"
+      ]
     },
     "b300-288gb": {
       "display": "B300 288GB",
@@ -89,7 +121,10 @@
       "mem_bw_gbs": null,
       "mem_type": "HBM3e",
       "provenance": "https://www.nvidia.com/en-us/data-center/gb300-nvl72/",
-      "aliases": ["b300-288gb", "b300"]
+      "aliases": [
+        "b300-288gb",
+        "b300"
+      ]
     },
     "mi300x-192gb": {
       "display": "MI300X 192GB",
@@ -98,7 +133,10 @@
       "mem_bw_gbs": 5300,
       "mem_type": "HBM3",
       "provenance": "https://www.amd.com/en/products/accelerators/instinct/mi300/mi300x.html",
-      "aliases": ["mi300x-192gb", "mi300x"]
+      "aliases": [
+        "mi300x-192gb",
+        "mi300x"
+      ]
     },
     "l40s-48gb": {
       "display": "L40S 48GB",
@@ -107,7 +145,10 @@
       "mem_bw_gbs": 864,
       "mem_type": "GDDR6",
       "provenance": "https://www.nvidia.com/en-us/data-center/l40s/",
-      "aliases": ["l40s-48gb", "l40s"]
+      "aliases": [
+        "l40s-48gb",
+        "l40s"
+      ]
     },
     "l4-24gb": {
       "display": "L4 24GB",
@@ -116,7 +157,10 @@
       "mem_bw_gbs": 300,
       "mem_type": "GDDR6",
       "provenance": "https://www.nvidia.com/en-us/data-center/l4/",
-      "aliases": ["l4-24gb", "l4"]
+      "aliases": [
+        "l4-24gb",
+        "l4"
+      ]
     },
     "a40-48gb": {
       "display": "A40 48GB",
@@ -125,7 +169,10 @@
       "mem_bw_gbs": 696,
       "mem_type": "GDDR6",
       "provenance": "https://www.nvidia.com/en-us/data-center/a40/",
-      "aliases": ["a40-48gb", "a40"]
+      "aliases": [
+        "a40-48gb",
+        "a40"
+      ]
     },
     "rtx-a6000-48gb": {
       "display": "RTX A6000 48GB",
@@ -134,7 +181,11 @@
       "mem_bw_gbs": 768,
       "mem_type": "GDDR6",
       "provenance": "https://www.nvidia.com/en-us/design-visualization/rtx-a6000/",
-      "aliases": ["rtx-a6000-48gb", "rtx-a6000", "a6000"]
+      "aliases": [
+        "rtx-a6000-48gb",
+        "rtx-a6000",
+        "a6000"
+      ]
     },
     "rtx-4090-24gb": {
       "display": "RTX 4090 24GB",
@@ -143,7 +194,10 @@
       "mem_bw_gbs": 1008,
       "mem_type": "GDDR6X",
       "provenance": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/",
-      "aliases": ["rtx-4090-24gb", "rtx-4090"]
+      "aliases": [
+        "rtx-4090-24gb",
+        "rtx-4090"
+      ]
     },
     "rtx-5090-32gb": {
       "display": "RTX 5090 32GB",
@@ -152,7 +206,10 @@
       "mem_bw_gbs": 1792,
       "mem_type": "GDDR7",
       "provenance": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
-      "aliases": ["rtx-5090-32gb", "rtx-5090"]
+      "aliases": [
+        "rtx-5090-32gb",
+        "rtx-5090"
+      ]
     },
     "rtx-3090-24gb": {
       "display": "RTX 3090 24GB",
@@ -161,7 +218,10 @@
       "mem_bw_gbs": 936,
       "mem_type": "GDDR6X",
       "provenance": "https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/",
-      "aliases": ["rtx-3090-24gb", "rtx-3090"]
+      "aliases": [
+        "rtx-3090-24gb",
+        "rtx-3090"
+      ]
     },
     "rtx-pro-5000-48gb": {
       "display": "RTX PRO 5000 48GB",
@@ -170,7 +230,10 @@
       "mem_bw_gbs": null,
       "mem_type": "GDDR7",
       "provenance": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-5000/",
-      "aliases": ["rtx-pro-5000-48gb", "rtx-pro-5000"]
+      "aliases": [
+        "rtx-pro-5000-48gb",
+        "rtx-pro-5000"
+      ]
     },
     "l40-48gb": {
       "display": "L40 48GB",
@@ -179,7 +242,10 @@
       "mem_bw_gbs": 864,
       "mem_type": "GDDR6",
       "provenance": "https://www.nvidia.com/en-us/data-center/l40/",
-      "aliases": ["l40-48gb", "l40"]
+      "aliases": [
+        "l40-48gb",
+        "l40"
+      ]
     },
     "a10-24gb": {
       "display": "A10 24GB",
@@ -188,7 +254,10 @@
       "mem_bw_gbs": 600,
       "mem_type": "GDDR6",
       "provenance": "https://www.nvidia.com/en-us/data-center/products/a10-gpu/",
-      "aliases": ["a10-24gb", "a10"]
+      "aliases": [
+        "a10-24gb",
+        "a10"
+      ]
     },
     "a10g-24gb": {
       "display": "A10G 24GB",
@@ -197,7 +266,10 @@
       "mem_bw_gbs": 600,
       "mem_type": "GDDR6",
       "provenance": "https://aws.amazon.com/ec2/instance-types/g5/",
-      "aliases": ["a10g-24gb", "a10g"]
+      "aliases": [
+        "a10g-24gb",
+        "a10g"
+      ]
     },
     "t4-16gb": {
       "display": "T4 16GB",
@@ -206,7 +278,10 @@
       "mem_bw_gbs": 300,
       "mem_type": "GDDR6",
       "provenance": "https://www.nvidia.com/en-us/data-center/tesla-t4/",
-      "aliases": ["t4-16gb", "t4"]
+      "aliases": [
+        "t4-16gb",
+        "t4"
+      ]
     },
     "rtx-pro-6000-96gb": {
       "display": "RTX PRO 6000 96GB",
@@ -215,7 +290,25 @@
       "mem_bw_gbs": null,
       "mem_type": "GDDR7",
       "provenance": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
-      "aliases": ["rtx-pro-6000-ws", "rtx-pro-6000-s", "rtx-pro-6000", "rtx-pro-6000-96gb"]
+      "aliases": [
+        "rtx-pro-6000-ws",
+        "rtx-pro-6000-s",
+        "rtx-pro-6000",
+        "rtx-pro-6000-96gb",
+        "rtx-pro-6000-ws-96gb",
+        "rtx-pro-6000-s-96gb"
+      ]
+    },
+    "rtx-4090-48gb": {
+      "display": "RTX 4090 48GB (modified)",
+      "vendor": "NVIDIA (third-party memory modification)",
+      "vram_gb": 48,
+      "mem_bw_gbs": null,
+      "mem_type": "GDDR6X",
+      "provenance": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/",
+      "aliases": [
+        "rtx-4090-48gb"
+      ]
     }
   }
 }
