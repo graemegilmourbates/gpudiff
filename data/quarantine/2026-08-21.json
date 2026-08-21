@@ -17,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-21T07:07:09Z"
+        "observed_at": "2026-08-21T07:55:54Z"
       },
       "fixture": false
     },
@@ -43,64 +43,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-21T07:07:09Z"
+        "observed_at": "2026-08-21T07:55:54Z"
       },
       "fixture": false
     },
     "previous_price": 2.28,
     "delta_pct": 75.4,
     "reason": "price moved 75.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3-14b-input:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3-14b-input",
-      "price": 0.2275,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3-14b",
-        "model_name": "Qwen: Qwen3 14B",
-        "context_length": 131072,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3-14b",
-        "observed_at": "2026-08-21T07:07:09Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.12,
-    "delta_pct": 89.6,
-    "reason": "price moved 89.6% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3-14b-output:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3-14b-output",
-      "price": 0.91,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3-14b",
-        "model_name": "Qwen: Qwen3 14B",
-        "context_length": 131072,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3-14b",
-        "observed_at": "2026-08-21T07:07:09Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.24,
-    "delta_pct": 279.2,
-    "reason": "price moved 279.2% (> 40% limit)"
   }
 ]
