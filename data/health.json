@@ -1,16 +1,17 @@
 {
   "date": "2026-08-21",
-  "observed_at": "2026-08-21T13:09:42Z",
+  "observed_at": "2026-08-21T13:57:27Z",
   "sources": [
     {
       "source": "vast",
-      "ok": true,
-      "offers": 4
+      "ok": false,
+      "offers": 0,
+      "error": "fetch succeeded but produced 0 offers"
     },
     {
       "source": "runpod",
       "ok": true,
-      "offers": 88
+      "offers": 82
     },
     {
       "source": "aws",
@@ -47,8 +48,8 @@
       "carried": true
     }
   ],
-  "valid": 2652,
+  "valid": 2644,
   "rejected": 0,
-  "quarantined": 3,
-  "healthy": true
+  "quarantined": 1,
+  "healthy": false
 }
