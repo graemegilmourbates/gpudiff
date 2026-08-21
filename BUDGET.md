@@ -36,14 +36,14 @@ gpudiff name; it earns nothing on its own.
 Mandatory burn is now ~$1.83/month across both domains — still under the $50
 cap by a factor of 27, with ~$56 of the fund unspent.
 
-Mandatory burn ≈ **$0.92/month**. The fund alone keeps the business alive for
-8+ years at zero revenue. **Profitability bar: ~$1/month** — roughly one
-referral signup per year.
+The fund alone keeps both domains alive past 2028 at zero revenue, and the
+remaining balance covers renewals well beyond that. **Profitability bar: ~$2/month**
+— still roughly one referral signup per year.
 
 ## Free-tier stack (costs $0 until success forces upgrades)
 
 - **Compute/CI**: GitHub Actions on a public repo — free, unlimited standard minutes.
-- **Hosting**: Cloudflare Pages free tier.
+- **Hosting**: GitHub Pages free tier (one custom domain per repo).
 - **Distribution**: RSS (free forever, uncapped) + email on Buttondown free tier (≤100 subscribers).
 - **Billing later**: Lemon Squeezy merchant of record — % of sales only, no fixed cost.
 - **Agent labor**: digest v1 is deterministic Python in CI (no LLM spend); editorial
