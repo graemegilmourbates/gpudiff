@@ -56,6 +56,15 @@ a { color:var(--acc); }
          color:var(--mut); white-space:nowrap; }
 .spark { vertical-align:middle; }
 .tablewrap { overflow-x:auto; }
+.sponsor { display:flex; align-items:center; gap:10px; min-height:38px; margin:14px 0 4px;
+           padding:8px 12px; border:1px solid var(--line); border-radius:6px;
+           background:var(--card); font-size:13.5px; }
+.sponsor a { color:var(--ink); text-decoration:none; }
+.sponsor a:hover { text-decoration:underline; }
+.sponsor-tag { font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--mut);
+               border:1px solid var(--line); border-radius:3px; padding:2px 6px; white-space:nowrap;
+               background:var(--bg); }
+.sponsor-house a { color:var(--mut); }
 footer.site { margin-top:48px; padding-top:16px; border-top:1px solid var(--line);
               color:var(--mut); font-size:13px; }
 footer.site a { color:var(--mut); }
@@ -83,6 +92,18 @@ def load_specs():
 
 def load_monetize():
     return _load(ROOT / "monetize.json", {})
+
+
+def load_sponsors():
+    return _load(ROOT / "sponsors.json", {"active": [], "contact_url": "#",
+                                          "founding_rate_usd": 99})
+
+
+def load_metrics():
+    """Latest analyst snapshot, for the media kit's live audience numbers."""
+    mdir = ROOT / "data" / "metrics"
+    snaps = sorted(mdir.glob("*.json")) if mdir.exists() else []
+    return json.loads(snaps[-1].read_text()) if snaps else {}
 
 
 def load_watchlist():
@@ -244,6 +265,33 @@ def subscribe_block(monetize):
             f'<a href="{esc(monetize.get("sponsor_url", "#"))}">Sponsor this site</a> {email}</div>')
 
 
+def section_of_path(path):
+    if path.startswith("/llm"):
+        return "llm"
+    if path.startswith("/saas"):
+        return "saas"
+    return "gpu"
+
+
+def sponsor_slot(path):
+    """One tasteful, labelled, first-party unit — or a house ad selling it.
+    No third-party script, so ad blockers have nothing to block and the layout
+    never shifts."""
+    cfg = load_sponsors()
+    section = section_of_path(path)
+    for sp in cfg.get("active", []):
+        if sp.get("section", "all") not in ("all", section):
+            continue
+        name = esc(sp.get("name", ""))
+        return (f'<aside class="sponsor"><span class="sponsor-tag">Sponsored</span>'
+                f'<a href="{esc(sp.get("url", "#"))}" rel="sponsored noopener" '
+                f'data-goatcounter-click="sponsor-{name}">'
+                f'<strong>{name}</strong> — {esc(sp.get("tagline", ""))}</a></aside>')
+    return ('<aside class="sponsor sponsor-house"><span class="sponsor-tag">Sponsor slot</span>'
+            '<a href="/sponsor.html" data-goatcounter-click="sponsor-house">'
+            'This space is available — reach engineers comparing GPU and LLM prices →</a></aside>')
+
+
 def page(title, body, monetize, desc="", jsonld="", path="/"):
     nav = ('<nav class="site"><a href="/">gpus</a><a href="/llm/">llm apis</a>'
            '<a href="/saas/">saas</a><a href="/fit.html">fit</a>'
@@ -279,13 +327,15 @@ def page(title, body, monetize, desc="", jsonld="", path="/"):
 <header class="site"><a class="brand" href="/">gpu<b>diff</b></a>
 <span class="tag">the public record of change in GPU cloud pricing</span>{nav}</header>
 {subscribe_block(monetize)}
+{sponsor_slot(path)}
 {body}
 <footer class="site">Every datum links its source and is versioned in
 <a href="https://github.com/graemegilmourbates/gpudiff">public git history</a>.
 Data: CC BY 4.0 — cite gpudiff.com. Nameplate specs are vendor claims, not measured
 throughput. Vast prices are the 25th percentile of verified marketplace listings
 (what a careful buyer actually gets); RunPod prices are list. Outbound provider
-links may carry referral codes; they never affect the numbers.</footer>
+links may carry referral codes and sponsored units are labelled; neither ever
+affects the numbers. <a href="/sponsor.html">Sponsor this site</a>.</footer>
 </div></body></html>"""
 
 
@@ -1050,6 +1100,77 @@ def render_digest_pages(monetize):
     return stems
 
 
+def render_sponsor_page(monetize, stats):
+    cfg = load_sponsors()
+    rate = cfg.get("founding_rate_usd", 99)
+    contact = cfg.get("contact_url", "#")
+    metrics = load_metrics()
+    visits = metrics.get("uniques_total")
+    audience_row = (f"<tr><td>Visits to date</td><td class='n'>{esc(visits)}</td>"
+                    f"<td class='mut'>counted by GoatCounter, cookieless</td></tr>"
+                    if visits else
+                    "<tr><td>Visits</td><td class='n'>early</td><td class='mut'>the site launched in "
+                    "August 2026; ask and we will send the live dashboard</td></tr>")
+    body = f"""
+<h1>Sponsor gpudiff</h1>
+<p>gpudiff is read by people deciding where to buy compute: engineers comparing
+GPU rental prices across clouds, teams choosing an LLM gateway, and buyers
+watching what software costs are doing. If you sell any of those, this is a
+small, precisely-targeted audience.</p>
+
+<h2>What the site is, in numbers</h2>
+<div class="tablewrap"><table>
+<tbody>
+<tr><td>Prices tracked</td><td class="n">{stats['offers']:,}</td><td class="mut">refreshed hourly</td></tr>
+<tr><td>Providers and gateways</td><td class="n">{stats['providers']}</td><td class="mut">GPU clouds, LLM routers, SaaS vendors</td></tr>
+<tr><td>GPU configurations</td><td class="n">{stats['families']}</td><td class="mut">memory config treated as a distinct product</td></tr>
+<tr><td>LLM models</td><td class="n">{stats['models']:,}</td><td class="mut">priced per million tokens</td></tr>
+<tr><td>Indexed pages</td><td class="n">{stats['pages']}</td><td class="mut">each one a specific buying question</td></tr>
+<tr><td>Recorded changes</td><td class="n">{stats['changes']:,}</td><td class="mut">the archive competitors cannot backfill</td></tr>
+{audience_row}
+</tbody></table></div>
+<p class="mut">Traffic is early and we will not pretend otherwise — the numbers
+above are live and the analytics dashboard is shareable on request. A founding
+sponsor is buying a low rate and a long run, not a big audience today.</p>
+
+<h2>Placements</h2>
+<div class="tablewrap"><table>
+<thead><tr><th>Placement</th><th>Where it appears</th><th class="n">Monthly</th></tr></thead>
+<tbody>
+<tr><td><strong>Sitewide</strong></td><td>The single sponsor unit on every page, near the top</td><td class="n">${rate}</td></tr>
+<tr><td><strong>Section</strong></td><td>GPU, LLM, or SaaS pages only</td><td class="n">${int(rate * 0.6)}</td></tr>
+<tr><td><strong>Weekly digest</strong></td><td>One line in the digest and its archived page</td><td class="n">${int(rate * 0.4)}</td></tr>
+</tbody></table></div>
+<p>One sponsor at a time per placement. Month to month, cancel whenever, no
+contract. Founding rate holds until the site passes 10,000 monthly visits.</p>
+
+<h2>What the unit looks like</h2>
+<aside class="sponsor"><span class="sponsor-tag">Sponsored</span>
+<a href="#"><strong>Your company</strong> — one honest line about what you sell</a></aside>
+<p class="mut">That is the whole format: our own HTML, a label, a link, and a
+line of text. No image ads, no animation, no third-party script, nothing that
+moves the page around as it loads.</p>
+
+<h2>Rules we do not bend</h2>
+<ul class="chg">
+<li>Every sponsored link is labelled and carries <code>rel="sponsored"</code>.</li>
+<li>Sponsorship never changes a price, a ranking, or which providers we track.
+The pipeline is open source, so anyone can verify that.</li>
+<li>No third-party ad scripts, no tracking pixels, no cookies. We will not sell
+an audience we do not surveil.</li>
+<li>We will decline a sponsor whose product we would not honestly list.</li>
+</ul>
+
+<h2>Get in touch</h2>
+<p><a href="{esc(contact)}">Open a sponsorship enquiry →</a> — tell us the company,
+the URL, which placement, and how many months. We will reply with current traffic
+and a start date.</p>"""
+    return page("Sponsor gpudiff — reach engineers comparing GPU and LLM prices", body, monetize,
+                "Sponsor gpudiff: one labelled, first-party unit on a site read by engineers "
+                "comparing GPU cloud and LLM API prices. No trackers, no third-party scripts.",
+                path="/sponsor.html")
+
+
 def render_methodology(monetize):
     body = """
 <h1>Methodology</h1>
@@ -1110,8 +1231,10 @@ measured throughput. Availability is not verified. Enterprise negotiated
 pricing is invisible to everyone, including us.</p>
 <h2>Money</h2>
 <p>Outbound provider links may carry referral codes (disclosed, rel=sponsored).
-They never influence which numbers are shown or how they're computed — the
-pipeline is open source, so you can check.</p>"""
+The site also sells a single first-party <a href="/sponsor.html">sponsor unit</a>,
+always labelled, served from our own HTML with no third-party script or tracker.
+Neither influences which numbers are shown, how they are computed, or which
+providers we track — the pipeline is open source, so you can check.</p>"""
     return page("Methodology — gpudiff", body, monetize,
                 "How gpudiff computes GPU cloud prices: per-source metrics, validation gates, provenance, and what we deliberately don't claim.",
                 path="/methodology.html")
@@ -1353,6 +1476,14 @@ def build_site(offers, changelog, date):
     (SITE / "changelog.html").write_text(render_changelog(changelog, monetize, aliases))
     (SITE / "methodology.html").write_text(render_methodology(monetize))
     (SITE / "fit.html").write_text(render_fit_page(monetize))
+    sponsor_stats = {
+        "offers": len(offers),
+        "providers": len({o["provider"] for o in offers}),
+        "families": len(fams),
+        "models": len(llm_model_index(llm_offers)),
+        "changes": len(changelog),
+        "pages": 0,  # filled after the sitemap is known
+    }
     digest_stems = render_digest_pages(monetize)
     (SITE / "api" / "index.html").write_text(render_api_docs(monetize))
 
@@ -1462,7 +1593,8 @@ def build_site(offers, changelog, date):
 
     urls = [f"{BASE_URL}/", f"{BASE_URL}/llm/", f"{BASE_URL}/saas/", f"{BASE_URL}/fit.html",
             f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",
-            f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/", f"{BASE_URL}/digest/"] + \
+            f"{BASE_URL}/methodology.html", f"{BASE_URL}/api/", f"{BASE_URL}/digest/",
+            f"{BASE_URL}/sponsor.html"] + \
            [f"{BASE_URL}/llm/model/{m}.html" for m in sorted(page_models)] + \
            [f"{BASE_URL}/llm/compare/{a}-vs-{b}.html" for a, b in llm_pairs] + \
            [f"{BASE_URL}/digest/{s}.html" for s in digest_stems] + \
@@ -1473,6 +1605,8 @@ def build_site(offers, changelog, date):
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
         "".join(f"<url><loc>{esc(u)}</loc></url>\n" for u in urls) + "</urlset>\n")
+    sponsor_stats["pages"] = len(urls)
+    (SITE / "sponsor.html").write_text(render_sponsor_page(monetize, sponsor_stats))
     (SITE / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {BASE_URL}/sitemap.xml\n")
 
     return SITE / "index.html"
