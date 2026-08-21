@@ -22,8 +22,19 @@ mandatory payment then happens by itself for years — no human, no agent.
 | ---------- | -------------------------------------- | -----: | -------------: |
 | 2026-08-14 | Seed                                   |     —  |        $100.00 |
 | 2026-08-14 | gpudiff.com, 2-year term (Porkbun)     |  ~$22  |          ~$78  |
+| 2026-08-21 | llmdiff.com, 2-year term (Porkbun)     |  ~$22  |          ~$56  |
 
-Registered through 2028-08-14. Renewal reserve now covers 2028–2031.
+gpudiff.com registered through 2028-08-14; llmdiff.com through 2028-08-21.
+
+**llmdiff.com is held, not deployed.** No DNS records, no second Pages domain,
+no content — a name serving nothing cannot split ranking signals with
+gpudiff.com. When it is switched on it should be a 301 to
+https://gpudiff.com/llm/ via Porkbun URL forwarding, never a second copy of
+the site. Bought as brand defence against the day the LLM section outgrows the
+gpudiff name; it earns nothing on its own.
+
+Mandatory burn is now ~$1.83/month across both domains — still under the $50
+cap by a factor of 27, with ~$56 of the fund unspent.
 
 Mandatory burn ≈ **$0.92/month**. The fund alone keeps the business alive for
 8+ years at zero revenue. **Profitability bar: ~$1/month** — roughly one
