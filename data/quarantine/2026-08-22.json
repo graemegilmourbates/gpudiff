@@ -1,51 +1,26 @@
 [
   {
     "offer": {
-      "id": "vast:h100-pcie-80gb:global:spot",
+      "id": "vast:h100-sxm-80gb:global:spot",
       "provider": "vast",
-      "sku": "h100-pcie-80gb",
-      "price": 0.6667,
+      "sku": "h100-sxm-80gb",
+      "price": 1.6,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "H100 PCIE",
+        "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 8,
+        "sample_size": 20,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
-    "previous_price": 1.3333,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:h100-nvl-94gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-nvl-94gb",
-      "price": 2.0,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 NVL",
-        "vram_gb": 94,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T22:36:49Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.3333,
+    "previous_price": 1.0667,
     "delta_pct": 50.0,
     "reason": "price moved 50.0% (> 40% limit)"
   },
@@ -61,12 +36,12 @@
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 24,
+        "sample_size": 23,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
@@ -79,7 +54,7 @@
       "id": "vast:a100-pcie-80gb:global:spot",
       "provider": "vast",
       "sku": "a100-pcie-80gb",
-      "price": 0.302,
+      "price": 1.0893,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
@@ -91,13 +66,13 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
     "previous_price": 0.1333,
-    "delta_pct": 126.6,
-    "reason": "price moved 126.6% (> 40% limit)"
+    "delta_pct": 717.2,
+    "reason": "price moved 717.2% (> 40% limit)"
   },
   {
     "offer": {
@@ -117,7 +92,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
@@ -143,7 +118,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
@@ -169,7 +144,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
@@ -195,7 +170,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
@@ -222,7 +197,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
@@ -249,7 +224,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-08-22T22:36:49Z"
+        "observed_at": "2026-08-22T23:34:10Z"
       },
       "fixture": false
     },
