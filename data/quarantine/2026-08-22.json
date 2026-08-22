@@ -4,25 +4,50 @@
       "id": "vast:h100-sxm-80gb:global:spot",
       "provider": "vast",
       "sku": "h100-sxm-80gb",
-      "price": 0.6,
+      "price": 1.6667,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 14,
+        "sample_size": 19,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
     "previous_price": 1.0667,
-    "delta_pct": 43.8,
-    "reason": "price moved 43.8% (> 40% limit)"
+    "delta_pct": 56.2,
+    "reason": "price moved 56.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h100-nvl-94gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-nvl-94gb",
+      "price": 2.0,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 NVL",
+        "vram_gb": 94,
+        "sample_size": 9,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-22T14:37:05Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.3333,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -36,12 +61,12 @@
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 20,
+        "sample_size": 19,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
@@ -51,28 +76,78 @@
   },
   {
     "offer": {
+      "id": "vast:h200-nvl-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-nvl-141gb",
+      "price": 3.3333,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200 NVL",
+        "vram_gb": 141,
+        "sample_size": 10,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-22T14:37:05Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.3333,
+    "delta_pct": 150.0,
+    "reason": "price moved 150.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:rtx-4090-48gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-4090-48gb",
-      "price": 0.5809,
+      "price": 0.5348,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX 4090",
         "vram_gb": 48,
-        "sample_size": 13,
+        "sample_size": 18,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
     "previous_price": 0.3754,
-    "delta_pct": 54.7,
-    "reason": "price moved 54.7% (> 40% limit)"
+    "delta_pct": 42.5,
+    "reason": "price moved 42.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-a6000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-a6000-48gb",
+      "price": 0.2,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX A6000",
+        "vram_gb": 48,
+        "sample_size": 9,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-22T14:37:05Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -86,12 +161,12 @@
       "attrs": {
         "gpu_model": "L40S",
         "vram_gb": 48,
-        "sample_size": 5,
+        "sample_size": 9,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
@@ -117,7 +192,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
@@ -143,7 +218,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
@@ -169,7 +244,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
@@ -195,7 +270,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
@@ -222,7 +297,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
@@ -249,7 +324,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-08-22T13:43:57Z"
+        "observed_at": "2026-08-22T14:37:05Z"
       },
       "fixture": false
     },
