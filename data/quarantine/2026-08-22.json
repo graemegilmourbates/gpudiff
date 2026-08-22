@@ -1,31 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 0.6,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 18,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T01:49:03Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.0667,
-    "delta_pct": 43.8,
-    "reason": "price moved 43.8% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
@@ -36,12 +11,12 @@
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 20,
+        "sample_size": 18,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T01:49:03Z"
+        "observed_at": "2026-08-22T03:06:39Z"
       },
       "fixture": false
     },
@@ -51,78 +26,28 @@
   },
   {
     "offer": {
-      "id": "vast:h200-nvl-141gb:global:spot",
-      "provider": "vast",
-      "sku": "h200-nvl-141gb",
-      "price": 2.4,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H200 NVL",
-        "vram_gb": 141,
-        "sample_size": 13,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T01:49:03Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.3333,
-    "delta_pct": 80.0,
-    "reason": "price moved 80.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:a100-pcie-80gb:global:spot",
-      "provider": "vast",
-      "sku": "a100-pcie-80gb",
-      "price": 0.236,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "A100 PCIE",
-        "vram_gb": 80,
-        "sample_size": 7,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T01:49:03Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.1333,
-    "delta_pct": 77.0,
-    "reason": "price moved 77.0% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:rtx-4090-48gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-4090-48gb",
-      "price": 0.5356,
+      "price": 0.5378,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX 4090",
         "vram_gb": 48,
-        "sample_size": 18,
+        "sample_size": 17,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T01:49:03Z"
+        "observed_at": "2026-08-22T03:06:39Z"
       },
       "fixture": false
     },
     "previous_price": 0.3754,
-    "delta_pct": 42.7,
-    "reason": "price moved 42.7% (> 40% limit)"
+    "delta_pct": 43.3,
+    "reason": "price moved 43.3% (> 40% limit)"
   },
   {
     "offer": {
@@ -142,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-08-22T01:49:03Z"
+        "observed_at": "2026-08-22T03:06:39Z"
       },
       "fixture": false
     },
@@ -168,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-08-22T01:49:03Z"
+        "observed_at": "2026-08-22T03:06:39Z"
       },
       "fixture": false
     },
@@ -194,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T01:49:03Z"
+        "observed_at": "2026-08-22T03:06:39Z"
       },
       "fixture": false
     },
@@ -220,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T01:49:03Z"
+        "observed_at": "2026-08-22T03:06:39Z"
       },
       "fixture": false
     },
@@ -246,7 +171,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T01:49:03Z"
+        "observed_at": "2026-08-22T03:06:39Z"
       },
       "fixture": false
     },
@@ -272,7 +197,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T01:49:03Z"
+        "observed_at": "2026-08-22T03:06:39Z"
       },
       "fixture": false
     },
