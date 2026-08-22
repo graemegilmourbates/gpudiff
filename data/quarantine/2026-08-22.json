@@ -16,7 +16,7 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
@@ -29,32 +29,32 @@
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
-      "price": 2.6316,
+      "price": 1.9342,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 22,
+        "sample_size": 24,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
     "previous_price": 1.25,
-    "delta_pct": 110.5,
-    "reason": "price moved 110.5% (> 40% limit)"
+    "delta_pct": 54.7,
+    "reason": "price moved 54.7% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:a100-pcie-80gb:global:spot",
       "provider": "vast",
       "sku": "a100-pcie-80gb",
-      "price": 0.5813,
+      "price": 1.0893,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
@@ -66,20 +66,20 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
     "previous_price": 0.1333,
-    "delta_pct": 336.1,
-    "reason": "price moved 336.1% (> 40% limit)"
+    "delta_pct": 717.2,
+    "reason": "price moved 717.2% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:rtx-4090-48gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-4090-48gb",
-      "price": 0.6022,
+      "price": 0.5378,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
@@ -91,13 +91,38 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
     "previous_price": 0.3754,
-    "delta_pct": 60.4,
-    "reason": "price moved 60.4% (> 40% limit)"
+    "delta_pct": 43.3,
+    "reason": "price moved 43.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:l40s-48gb:global:spot",
+      "provider": "vast",
+      "sku": "l40s-48gb",
+      "price": 0.7733,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L40S",
+        "vram_gb": 48,
+        "sample_size": 7,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-22T21:34:29Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5333,
+    "delta_pct": 45.0,
+    "reason": "price moved 45.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -117,7 +142,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
@@ -143,7 +168,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
@@ -169,7 +194,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
@@ -195,7 +220,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
@@ -222,7 +247,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
@@ -249,7 +274,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-08-22T20:38:20Z"
+        "observed_at": "2026-08-22T21:34:29Z"
       },
       "fixture": false
     },
