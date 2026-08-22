@@ -1,31 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:on-demand",
-      "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 2.9339,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 16,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T18:48:19Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.0059,
-    "delta_pct": 46.3,
-    "reason": "price moved 46.3% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
@@ -36,12 +11,12 @@
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 22,
+        "sample_size": 20,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
@@ -54,7 +29,7 @@
       "id": "vast:a100-pcie-80gb:global:spot",
       "provider": "vast",
       "sku": "a100-pcie-80gb",
-      "price": 0.4,
+      "price": 0.2,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
@@ -66,38 +41,38 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
     "previous_price": 0.1333,
-    "delta_pct": 200.1,
-    "reason": "price moved 200.1% (> 40% limit)"
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:rtx-4090-48gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-4090-48gb",
-      "price": 0.5819,
+      "price": 0.5837,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX 4090",
         "vram_gb": 48,
-        "sample_size": 16,
+        "sample_size": 15,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
     "previous_price": 0.3754,
-    "delta_pct": 55.0,
-    "reason": "price moved 55.0% (> 40% limit)"
+    "delta_pct": 55.5,
+    "reason": "price moved 55.5% (> 40% limit)"
   },
   {
     "offer": {
@@ -117,7 +92,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
@@ -143,7 +118,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
@@ -169,7 +144,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
@@ -195,7 +170,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
@@ -222,7 +197,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
@@ -249,7 +224,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-08-22T18:48:19Z"
+        "observed_at": "2026-08-22T19:33:55Z"
       },
       "fixture": false
     },
