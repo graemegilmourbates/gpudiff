@@ -1,6 +1,56 @@
 [
   {
     "offer": {
+      "id": "vast:h100-sxm-80gb:global:on-demand",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 2.5339,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 15,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-23T15:35:23Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.7344,
+    "delta_pct": 46.1,
+    "reason": "price moved 46.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-4090-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-4090-48gb",
+      "price": 0.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 15,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-23T15:35:23Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.2533,
+    "delta_pct": 57.9,
+    "reason": "price moved 57.9% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:moonshotai-kimi-k2.6-input:global:list",
       "provider": "openrouter",
       "sku": "moonshotai-kimi-k2.6-input",
@@ -17,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-23T14:38:17Z"
+        "observed_at": "2026-08-23T15:35:23Z"
       },
       "fixture": false
     },
@@ -43,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-23T14:38:17Z"
+        "observed_at": "2026-08-23T15:35:23Z"
       },
       "fixture": false
     },
