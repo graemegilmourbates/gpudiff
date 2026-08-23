@@ -1,6 +1,81 @@
 [
   {
     "offer": {
+      "id": "vast:h100-sxm-80gb:global:on-demand",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 2.5339,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 13,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-23T11:33:31Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.7344,
+    "delta_pct": 46.1,
+    "reason": "price moved 46.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h200-nvl-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-nvl-141gb",
+      "price": 2.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200 NVL",
+        "vram_gb": 141,
+        "sample_size": 14,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-23T11:33:31Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.3333,
+    "delta_pct": 80.0,
+    "reason": "price moved 80.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-4090-48gb:global:on-demand",
+      "provider": "vast",
+      "sku": "rtx-4090-48gb",
+      "price": 0.5819,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 16,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-23T11:33:31Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3753,
+    "delta_pct": 55.0,
+    "reason": "price moved 55.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:rtx-a6000-48gb:global:spot",
       "provider": "vast",
       "sku": "rtx-a6000-48gb",
@@ -11,12 +86,12 @@
       "attrs": {
         "gpu_model": "RTX A6000",
         "vram_gb": 48,
-        "sample_size": 9,
+        "sample_size": 10,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-23T10:38:35Z"
+        "observed_at": "2026-08-23T11:33:31Z"
       },
       "fixture": false
     },
@@ -42,7 +117,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-23T10:38:35Z"
+        "observed_at": "2026-08-23T11:33:31Z"
       },
       "fixture": false
     },
@@ -68,7 +143,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-23T10:38:35Z"
+        "observed_at": "2026-08-23T11:33:31Z"
       },
       "fixture": false
     },
