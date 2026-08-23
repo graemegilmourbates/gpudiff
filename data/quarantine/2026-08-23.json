@@ -1,78 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:h200-nvl-141gb:global:spot",
-      "provider": "vast",
-      "sku": "h200-nvl-141gb",
-      "price": 2.4,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H200 NVL",
-        "vram_gb": 141,
-        "sample_size": 14,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-23T07:46:41Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.3333,
-    "delta_pct": 80.0,
-    "reason": "price moved 80.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-4090-24gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-4090-24gb",
-      "price": 0.28,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX 4090",
-        "vram_gb": 24,
-        "sample_size": 39,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-23T07:46:41Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.2,
-    "delta_pct": 40.0,
-    "reason": "price moved 40.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-4090-48gb:global:on-demand",
+      "id": "vast:rtx-4090-48gb:global:spot",
       "provider": "vast",
       "sku": "rtx-4090-48gb",
-      "price": 0.5363,
+      "price": 0.4,
       "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
+      "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX 4090",
         "vram_gb": 48,
-        "sample_size": 25,
-        "metric": "p25_per_gpu_dph_verified"
+        "sample_size": 18,
+        "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-23T07:46:41Z"
+        "observed_at": "2026-08-23T08:47:30Z"
       },
       "fixture": false
     },
-    "previous_price": 0.3753,
-    "delta_pct": 42.9,
-    "reason": "price moved 42.9% (> 40% limit)"
+    "previous_price": 0.2533,
+    "delta_pct": 57.9,
+    "reason": "price moved 57.9% (> 40% limit)"
   },
   {
     "offer": {
@@ -86,18 +36,68 @@
       "attrs": {
         "gpu_model": "RTX A6000",
         "vram_gb": 48,
-        "sample_size": 7,
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-23T07:46:41Z"
+        "observed_at": "2026-08-23T08:47:30Z"
       },
       "fixture": false
     },
     "previous_price": 0.4,
     "delta_pct": 50.0,
     "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:l40s-48gb:global:on-demand",
+      "provider": "vast",
+      "sku": "l40s-48gb",
+      "price": 0.8011,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L40S",
+        "vram_gb": 48,
+        "sample_size": 6,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-23T08:47:30Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5348,
+    "delta_pct": 49.8,
+    "reason": "price moved 49.8% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:l40s-48gb:global:spot",
+      "provider": "vast",
+      "sku": "l40s-48gb",
+      "price": 0.7733,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L40S",
+        "vram_gb": 48,
+        "sample_size": 6,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-23T08:47:30Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4667,
+    "delta_pct": 65.7,
+    "reason": "price moved 65.7% (> 40% limit)"
   },
   {
     "offer": {
@@ -117,7 +117,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-23T07:46:41Z"
+        "observed_at": "2026-08-23T08:47:30Z"
       },
       "fixture": false
     },
@@ -143,7 +143,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-23T07:46:41Z"
+        "observed_at": "2026-08-23T08:47:30Z"
       },
       "fixture": false
     },
