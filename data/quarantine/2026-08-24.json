@@ -11,12 +11,12 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 17,
+        "sample_size": 14,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T20:47:30Z"
+        "observed_at": "2026-08-24T21:43:06Z"
       },
       "fixture": false
     },
@@ -26,28 +26,29 @@
   },
   {
     "offer": {
-      "id": "vast:rtx-pro-6000-s-96gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-s-96gb",
-      "price": 0.4667,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "id": "openrouter:deepseek-deepseek-v4-flash-latest-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-latest-output",
+      "price": 0.12,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX PRO 6000 S",
-        "vram_gb": 96,
-        "sample_size": 7,
-        "metric": "p25_min_bid_per_gpu"
+        "model_id": "~deepseek/deepseek-v4-flash-latest",
+        "model_name": "DeepSeek V4 Flash Latest",
+        "context_length": 1310720,
+        "direction": "output",
+        "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T20:47:30Z"
+        "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
+        "observed_at": "2026-08-24T21:43:06Z"
       },
       "fixture": false
     },
-    "previous_price": 0.8,
-    "delta_pct": 41.7,
-    "reason": "price moved 41.7% (> 40% limit)"
+    "previous_price": 0.08,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -67,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-24T20:47:30Z"
+        "observed_at": "2026-08-24T21:43:06Z"
       },
       "fixture": false
     },
@@ -93,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T20:47:30Z"
+        "observed_at": "2026-08-24T21:43:06Z"
       },
       "fixture": false
     },
@@ -119,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T20:47:30Z"
+        "observed_at": "2026-08-24T21:43:06Z"
       },
       "fixture": false
     },
@@ -145,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-08-24T20:47:30Z"
+        "observed_at": "2026-08-24T21:43:06Z"
       },
       "fixture": false
     },
