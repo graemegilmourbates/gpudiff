@@ -11,12 +11,12 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 18,
+        "sample_size": 14,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T13:12:09Z"
+        "observed_at": "2026-08-24T14:01:36Z"
       },
       "fixture": false
     },
@@ -26,28 +26,28 @@
   },
   {
     "offer": {
-      "id": "vast:rtx-4090-48gb:global:on-demand",
+      "id": "vast:a100-pcie-80gb:global:spot",
       "provider": "vast",
-      "sku": "rtx-4090-48gb",
-      "price": 0.5819,
+      "sku": "a100-pcie-80gb",
+      "price": 0.2,
       "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
+      "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX 4090",
-        "vram_gb": 48,
-        "sample_size": 13,
-        "metric": "p25_per_gpu_dph_verified"
+        "gpu_model": "A100 PCIE",
+        "vram_gb": 80,
+        "sample_size": 6,
+        "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T13:12:09Z"
+        "observed_at": "2026-08-24T14:01:36Z"
       },
       "fixture": false
     },
-    "previous_price": 0.3743,
-    "delta_pct": 55.5,
-    "reason": "price moved 55.5% (> 40% limit)"
+    "previous_price": 0.1333,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -67,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-24T13:12:09Z"
+        "observed_at": "2026-08-24T14:01:36Z"
       },
       "fixture": false
     },
@@ -93,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T13:12:09Z"
+        "observed_at": "2026-08-24T14:01:36Z"
       },
       "fixture": false
     },
@@ -119,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T13:12:09Z"
+        "observed_at": "2026-08-24T14:01:36Z"
       },
       "fixture": false
     },
@@ -145,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-08-24T13:12:09Z"
+        "observed_at": "2026-08-24T14:01:36Z"
       },
       "fixture": false
     },
