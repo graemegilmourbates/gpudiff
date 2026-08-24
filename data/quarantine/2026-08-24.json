@@ -11,12 +11,12 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 14,
+        "sample_size": 13,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T14:01:36Z"
+        "observed_at": "2026-08-24T14:59:01Z"
       },
       "fixture": false
     },
@@ -36,16 +36,66 @@
       "attrs": {
         "gpu_model": "A100 PCIE",
         "vram_gb": 80,
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-24T14:59:01Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.1333,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:l40s-48gb:global:spot",
+      "provider": "vast",
+      "sku": "l40s-48gb",
+      "price": 0.7733,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L40S",
+        "vram_gb": 48,
         "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T14:01:36Z"
+        "observed_at": "2026-08-24T14:59:01Z"
       },
       "fixture": false
     },
-    "previous_price": 0.1333,
+    "previous_price": 0.5333,
+    "delta_pct": 45.0,
+    "reason": "price moved 45.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-5000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-5000-48gb",
+      "price": 0.2,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 5000",
+        "vram_gb": 48,
+        "sample_size": 12,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-24T14:59:01Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4,
     "delta_pct": 50.0,
     "reason": "price moved 50.0% (> 40% limit)"
   },
@@ -67,7 +117,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-24T14:01:36Z"
+        "observed_at": "2026-08-24T14:59:01Z"
       },
       "fixture": false
     },
@@ -93,7 +143,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T14:01:36Z"
+        "observed_at": "2026-08-24T14:59:01Z"
       },
       "fixture": false
     },
@@ -119,7 +169,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T14:01:36Z"
+        "observed_at": "2026-08-24T14:59:01Z"
       },
       "fixture": false
     },
@@ -145,7 +195,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-08-24T14:01:36Z"
+        "observed_at": "2026-08-24T14:59:01Z"
       },
       "fixture": false
     },
