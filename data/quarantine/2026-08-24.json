@@ -4,25 +4,25 @@
       "id": "vast:h100-sxm-80gb:global:spot",
       "provider": "vast",
       "sku": "h100-sxm-80gb",
-      "price": 1.7333,
+      "price": 0.6,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 16,
+        "sample_size": 15,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T22:43:08Z"
+        "observed_at": "2026-08-24T23:34:07Z"
       },
       "fixture": false
     },
     "previous_price": 1.0667,
-    "delta_pct": 62.5,
-    "reason": "price moved 62.5% (> 40% limit)"
+    "delta_pct": 43.8,
+    "reason": "price moved 43.8% (> 40% limit)"
   },
   {
     "offer": {
@@ -42,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-08-24T22:43:08Z"
+        "observed_at": "2026-08-24T23:34:07Z"
       },
       "fixture": false
     },
@@ -68,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-24T22:43:08Z"
+        "observed_at": "2026-08-24T23:34:07Z"
       },
       "fixture": false
     },
@@ -94,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T22:43:08Z"
+        "observed_at": "2026-08-24T23:34:07Z"
       },
       "fixture": false
     },
@@ -120,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T22:43:08Z"
+        "observed_at": "2026-08-24T23:34:07Z"
       },
       "fixture": false
     },
@@ -146,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-08-24T22:43:08Z"
+        "observed_at": "2026-08-24T23:34:07Z"
       },
       "fixture": false
     },
