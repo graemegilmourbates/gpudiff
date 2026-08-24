@@ -1,0 +1,183 @@
+[
+  {
+    "offer": {
+      "id": "vast:h100-sxm-80gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 1.7333,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 20,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-24T01:56:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.0667,
+    "delta_pct": 62.5,
+    "reason": "price moved 62.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-0731-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-0731-input",
+      "price": 0.14,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash-0731",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0731",
+        "context_length": 1310720,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
+        "observed_at": "2026-08-24T01:56:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.08,
+    "delta_pct": 75.0,
+    "reason": "price moved 75.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-0731-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-0731-output",
+      "price": 0.28,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash-0731",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0731",
+        "context_length": 1310720,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
+        "observed_at": "2026-08-24T01:56:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.18,
+    "delta_pct": 55.6,
+    "reason": "price moved 55.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3.6-27b-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3.6-27b-input",
+      "price": 0.32,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3.6-27b",
+        "model_name": "Qwen: Qwen3.6 27B",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3.6-27b",
+        "observed_at": "2026-08-24T01:56:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.6,
+    "delta_pct": 46.7,
+    "reason": "price moved 46.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k2.6-input:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k2.6-input",
+      "price": 0.95,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "model_name": "MoonshotAI: Kimi K2.6",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
+        "observed_at": "2026-08-24T01:56:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5415,
+    "delta_pct": 75.4,
+    "reason": "price moved 75.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k2.6-output:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k2.6-output",
+      "price": 4.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "model_name": "MoonshotAI: Kimi K2.6",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
+        "observed_at": "2026-08-24T01:56:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.28,
+    "delta_pct": 75.4,
+    "reason": "price moved 75.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3.5-397b-a17b-output:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3.5-397b-a17b-output",
+      "price": 3.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3.5-397b-a17b",
+        "model_name": "Qwen: Qwen3.5 397B A17B",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
+        "observed_at": "2026-08-24T01:56:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.34,
+    "delta_pct": 53.8,
+    "reason": "price moved 53.8% (> 40% limit)"
+  }
+]
