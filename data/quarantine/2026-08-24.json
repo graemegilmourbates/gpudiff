@@ -11,43 +11,18 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 11,
+        "sample_size": 17,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T19:43:44Z"
+        "observed_at": "2026-08-24T20:47:30Z"
       },
       "fixture": false
     },
     "previous_price": 1.0667,
     "delta_pct": 62.5,
     "reason": "price moved 62.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-4090-48gb:global:on-demand",
-      "provider": "vast",
-      "sku": "rtx-4090-48gb",
-      "price": 0.6019,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX 4090",
-        "vram_gb": 48,
-        "sample_size": 13,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T19:43:44Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.3743,
-    "delta_pct": 60.8,
-    "reason": "price moved 60.8% (> 40% limit)"
   },
   {
     "offer": {
@@ -66,7 +41,7 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-24T19:43:44Z"
+        "observed_at": "2026-08-24T20:47:30Z"
       },
       "fixture": false
     },
@@ -92,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-24T19:43:44Z"
+        "observed_at": "2026-08-24T20:47:30Z"
       },
       "fixture": false
     },
@@ -118,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T19:43:44Z"
+        "observed_at": "2026-08-24T20:47:30Z"
       },
       "fixture": false
     },
@@ -144,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-08-24T19:43:44Z"
+        "observed_at": "2026-08-24T20:47:30Z"
       },
       "fixture": false
     },
@@ -170,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-08-24T19:43:44Z"
+        "observed_at": "2026-08-24T20:47:30Z"
       },
       "fixture": false
     },
