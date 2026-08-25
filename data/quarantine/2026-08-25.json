@@ -1,53 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:on-demand",
-      "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 2.5519,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 5,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T18:56:16Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.7344,
-    "delta_pct": 47.1,
-    "reason": "price moved 47.1% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
-      "price": 3.8158,
+      "price": 3.9408,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 14,
+        "sample_size": 16,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T18:56:16Z"
+        "observed_at": "2026-08-25T19:45:00Z"
       },
       "fixture": false
     },
     "previous_price": 2.6803,
-    "delta_pct": 42.4,
-    "reason": "price moved 42.4% (> 40% limit)"
+    "delta_pct": 47.0,
+    "reason": "price moved 47.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -61,12 +36,12 @@
       "attrs": {
         "gpu_model": "A100 PCIE",
         "vram_gb": 40,
-        "sample_size": 18,
+        "sample_size": 17,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T18:56:16Z"
+        "observed_at": "2026-08-25T19:45:00Z"
       },
       "fixture": false
     },
@@ -76,78 +51,28 @@
   },
   {
     "offer": {
-      "id": "vast:a100-pcie-80gb:global:spot",
+      "id": "vast:rtx-pro-5000-48gb:global:spot",
       "provider": "vast",
-      "sku": "a100-pcie-80gb",
-      "price": 0.2,
+      "sku": "rtx-pro-5000-48gb",
+      "price": 0.24,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 PCIE",
-        "vram_gb": 80,
-        "sample_size": 10,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T18:56:16Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.1333,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-a6000-48gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-a6000-48gb",
-      "price": 0.4,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX A6000",
+        "gpu_model": "RTX PRO 5000",
         "vram_gb": 48,
         "sample_size": 9,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T18:56:16Z"
+        "observed_at": "2026-08-25T19:45:00Z"
       },
       "fixture": false
     },
-    "previous_price": 0.2,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-pro-6000-ws-96gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-ws-96gb",
-      "price": 0.9333,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 6000 WS",
-        "vram_gb": 96,
-        "sample_size": 30,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T18:56:16Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6,
-    "delta_pct": 55.6,
-    "reason": "price moved 55.6% (> 40% limit)"
+    "previous_price": 0.401,
+    "delta_pct": 40.1,
+    "reason": "price moved 40.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -167,7 +92,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T18:56:16Z"
+        "observed_at": "2026-08-25T19:45:00Z"
       },
       "fixture": false
     },
@@ -193,7 +118,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T18:56:16Z"
+        "observed_at": "2026-08-25T19:45:00Z"
       },
       "fixture": false
     },
