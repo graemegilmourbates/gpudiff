@@ -1,53 +1,103 @@
 [
   {
     "offer": {
+      "id": "vast:h100-sxm-80gb:global:on-demand",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 2.9336,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 8,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-25T20:44:48Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.7344,
+    "delta_pct": 69.1,
+    "reason": "price moved 69.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h100-nvl-94gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-nvl-94gb",
+      "price": 1.6,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 NVL",
+        "vram_gb": 94,
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-25T20:44:48Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.8,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
-      "price": 3.9408,
+      "price": 3.8763,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 16,
+        "sample_size": 18,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T19:45:00Z"
+        "observed_at": "2026-08-25T20:44:48Z"
       },
       "fixture": false
     },
     "previous_price": 2.6803,
-    "delta_pct": 47.0,
-    "reason": "price moved 47.0% (> 40% limit)"
+    "delta_pct": 44.6,
+    "reason": "price moved 44.6% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "vast:a100-pcie-40gb:global:spot",
+      "id": "vast:a100-sxm4-80gb:global:spot",
       "provider": "vast",
-      "sku": "a100-pcie-40gb",
-      "price": 0.5373,
+      "sku": "a100-sxm4-80gb",
+      "price": 1.0347,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 PCIE",
-        "vram_gb": 40,
-        "sample_size": 17,
+        "gpu_model": "A100 SXM4",
+        "vram_gb": 80,
+        "sample_size": 8,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T19:45:00Z"
+        "observed_at": "2026-08-25T20:44:48Z"
       },
       "fixture": false
     },
-    "previous_price": 0.3813,
-    "delta_pct": 40.9,
-    "reason": "price moved 40.9% (> 40% limit)"
+    "previous_price": 0.6933,
+    "delta_pct": 49.2,
+    "reason": "price moved 49.2% (> 40% limit)"
   },
   {
     "offer": {
@@ -61,12 +111,12 @@
       "attrs": {
         "gpu_model": "RTX PRO 5000",
         "vram_gb": 48,
-        "sample_size": 9,
+        "sample_size": 11,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T19:45:00Z"
+        "observed_at": "2026-08-25T20:44:48Z"
       },
       "fixture": false
     },
@@ -79,7 +129,7 @@
       "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-input",
-      "price": 0.0826,
+      "price": 0.0798,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -92,20 +142,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T19:45:00Z"
+        "observed_at": "2026-08-25T20:44:48Z"
       },
       "fixture": false
     },
     "previous_price": 0.056,
-    "delta_pct": 47.5,
-    "reason": "price moved 47.5% (> 40% limit)"
+    "delta_pct": 42.5,
+    "reason": "price moved 42.5% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-output",
-      "price": 0.1652,
+      "price": 0.1596,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -118,12 +168,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T19:45:00Z"
+        "observed_at": "2026-08-25T20:44:48Z"
       },
       "fixture": false
     },
     "previous_price": 0.112,
-    "delta_pct": 47.5,
-    "reason": "price moved 47.5% (> 40% limit)"
+    "delta_pct": 42.5,
+    "reason": "price moved 42.5% (> 40% limit)"
   }
 ]
