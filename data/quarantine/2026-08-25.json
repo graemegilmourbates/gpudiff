@@ -1,85 +1,60 @@
 [
   {
     "offer": {
-      "id": "vast:a100-pcie-40gb:global:spot",
+      "id": "vast:a100-sxm4-80gb:global:spot",
       "provider": "vast",
-      "sku": "a100-pcie-40gb",
-      "price": 0.5373,
+      "sku": "a100-sxm4-80gb",
+      "price": 0.9733,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 PCIE",
-        "vram_gb": 40,
-        "sample_size": 21,
+        "gpu_model": "A100 SXM4",
+        "vram_gb": 80,
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T13:10:37Z"
+        "observed_at": "2026-08-25T14:02:52Z"
       },
       "fixture": false
     },
-    "previous_price": 0.3813,
-    "delta_pct": 40.9,
-    "reason": "price moved 40.9% (> 40% limit)"
+    "previous_price": 0.6933,
+    "delta_pct": 40.4,
+    "reason": "price moved 40.4% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "vast:rtx-4090-48gb:global:on-demand",
+      "id": "vast:l40s-48gb:global:spot",
       "provider": "vast",
-      "sku": "rtx-4090-48gb",
-      "price": 0.5356,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX 4090",
-        "vram_gb": 48,
-        "sample_size": 9,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T13:10:37Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.3744,
-    "delta_pct": 43.1,
-    "reason": "price moved 43.1% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-a6000-48gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-a6000-48gb",
-      "price": 0.4267,
+      "sku": "l40s-48gb",
+      "price": 0.7733,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX A6000",
+        "gpu_model": "L40S",
         "vram_gb": 48,
-        "sample_size": 8,
+        "sample_size": 5,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T13:10:37Z"
+        "observed_at": "2026-08-25T14:02:52Z"
       },
       "fixture": false
     },
-    "previous_price": 0.2,
-    "delta_pct": 113.3,
-    "reason": "price moved 113.3% (> 40% limit)"
+    "previous_price": 0.4667,
+    "delta_pct": 65.7,
+    "reason": "price moved 65.7% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-input",
-      "price": 0.0854,
+      "price": 0.0826,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -92,20 +67,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T13:10:37Z"
+        "observed_at": "2026-08-25T14:02:52Z"
       },
       "fixture": false
     },
     "previous_price": 0.056,
-    "delta_pct": 52.5,
-    "reason": "price moved 52.5% (> 40% limit)"
+    "delta_pct": 47.5,
+    "reason": "price moved 47.5% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-output",
-      "price": 0.1708,
+      "price": 0.1652,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -118,12 +93,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T13:10:37Z"
+        "observed_at": "2026-08-25T14:02:52Z"
       },
       "fixture": false
     },
     "previous_price": 0.112,
-    "delta_pct": 52.5,
-    "reason": "price moved 52.5% (> 40% limit)"
+    "delta_pct": 47.5,
+    "reason": "price moved 47.5% (> 40% limit)"
   }
 ]
