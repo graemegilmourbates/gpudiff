@@ -11,12 +11,12 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 8,
+        "sample_size": 12,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T20:44:48Z"
+        "observed_at": "2026-08-25T21:43:13Z"
       },
       "fixture": false
     },
@@ -26,78 +26,53 @@
   },
   {
     "offer": {
-      "id": "vast:h100-nvl-94gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-nvl-94gb",
-      "price": 1.6,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 NVL",
-        "vram_gb": 94,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T20:44:48Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.8,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:h200-141gb:global:spot",
-      "provider": "vast",
-      "sku": "h200-141gb",
-      "price": 3.8763,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H200",
-        "vram_gb": 141,
-        "sample_size": 18,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T20:44:48Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.6803,
-    "delta_pct": 44.6,
-    "reason": "price moved 44.6% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:a100-sxm4-80gb:global:spot",
       "provider": "vast",
       "sku": "a100-sxm4-80gb",
-      "price": 1.0347,
+      "price": 1.052,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "A100 SXM4",
         "vram_gb": 80,
-        "sample_size": 8,
+        "sample_size": 11,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T20:44:48Z"
+        "observed_at": "2026-08-25T21:43:13Z"
       },
       "fixture": false
     },
     "previous_price": 0.6933,
-    "delta_pct": 49.2,
-    "reason": "price moved 49.2% (> 40% limit)"
+    "delta_pct": 51.7,
+    "reason": "price moved 51.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:a100-pcie-40gb:global:spot",
+      "provider": "vast",
+      "sku": "a100-pcie-40gb",
+      "price": 0.5547,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "A100 PCIE",
+        "vram_gb": 40,
+        "sample_size": 14,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-25T21:43:13Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3813,
+    "delta_pct": 45.5,
+    "reason": "price moved 45.5% (> 40% limit)"
   },
   {
     "offer": {
@@ -116,7 +91,7 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T20:44:48Z"
+        "observed_at": "2026-08-25T21:43:13Z"
       },
       "fixture": false
     },
@@ -142,7 +117,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T20:44:48Z"
+        "observed_at": "2026-08-25T21:43:13Z"
       },
       "fixture": false
     },
@@ -168,7 +143,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T20:44:48Z"
+        "observed_at": "2026-08-25T21:43:13Z"
       },
       "fixture": false
     },
