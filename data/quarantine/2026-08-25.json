@@ -1,56 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:a100-sxm4-80gb:global:spot",
-      "provider": "vast",
-      "sku": "a100-sxm4-80gb",
-      "price": 0.9733,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "A100 SXM4",
-        "vram_gb": 80,
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T14:02:52Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6933,
-    "delta_pct": 40.4,
-    "reason": "price moved 40.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:l40s-48gb:global:spot",
-      "provider": "vast",
-      "sku": "l40s-48gb",
-      "price": 0.7733,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "L40S",
-        "vram_gb": 48,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T14:02:52Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.4667,
-    "delta_pct": 65.7,
-    "reason": "price moved 65.7% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-input",
@@ -67,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T14:02:52Z"
+        "observed_at": "2026-08-25T15:03:58Z"
       },
       "fixture": false
     },
@@ -93,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T14:02:52Z"
+        "observed_at": "2026-08-25T15:03:58Z"
       },
       "fixture": false
     },
