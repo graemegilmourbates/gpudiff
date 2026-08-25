@@ -1,28 +1,53 @@
 [
   {
     "offer": {
-      "id": "vast:a100-pcie-40gb:global:spot",
+      "id": "vast:h200-nvl-141gb:global:spot",
       "provider": "vast",
-      "sku": "a100-pcie-40gb",
-      "price": 0.6533,
+      "sku": "h200-nvl-141gb",
+      "price": 1.3333,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 PCIE",
-        "vram_gb": 40,
-        "sample_size": 17,
+        "gpu_model": "H200 NVL",
+        "vram_gb": 141,
+        "sample_size": 15,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
-    "previous_price": 0.3813,
-    "delta_pct": 71.3,
-    "reason": "price moved 71.3% (> 40% limit)"
+    "previous_price": 2.4,
+    "delta_pct": 44.4,
+    "reason": "price moved 44.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-4090-48gb:global:on-demand",
+      "provider": "vast",
+      "sku": "rtx-4090-48gb",
+      "price": 0.6037,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 14,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-25T07:57:18Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3744,
+    "delta_pct": 61.2,
+    "reason": "price moved 61.2% (> 40% limit)"
   },
   {
     "offer": {
@@ -36,12 +61,12 @@
       "attrs": {
         "gpu_model": "RTX A6000",
         "vram_gb": 48,
-        "sample_size": 11,
+        "sample_size": 10,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
@@ -51,53 +76,53 @@
   },
   {
     "offer": {
-      "id": "vast:l40s-48gb:global:spot",
+      "id": "vast:rtx-pro-6000-ws-96gb:global:spot",
       "provider": "vast",
-      "sku": "l40s-48gb",
-      "price": 0.7733,
+      "sku": "rtx-pro-6000-ws-96gb",
+      "price": 1.0333,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "L40S",
-        "vram_gb": 48,
-        "sample_size": 8,
+        "gpu_model": "RTX PRO 6000 WS",
+        "vram_gb": 96,
+        "sample_size": 20,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
-    "previous_price": 0.4667,
-    "delta_pct": 65.7,
-    "reason": "price moved 65.7% (> 40% limit)"
+    "previous_price": 0.6,
+    "delta_pct": 72.2,
+    "reason": "price moved 72.2% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:rtx-pro-5000-48gb:global:spot",
       "provider": "vast",
       "sku": "rtx-pro-5000-48gb",
-      "price": 0.16,
+      "price": 0.2,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX PRO 5000",
         "vram_gb": 48,
-        "sample_size": 13,
+        "sample_size": 15,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
     "previous_price": 0.401,
-    "delta_pct": 60.1,
-    "reason": "price moved 60.1% (> 40% limit)"
+    "delta_pct": 50.1,
+    "reason": "price moved 50.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -117,7 +142,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
@@ -143,7 +168,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
@@ -169,7 +194,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
@@ -195,7 +220,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
@@ -221,7 +246,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
@@ -247,7 +272,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
@@ -273,7 +298,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
@@ -299,7 +324,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-08-25T07:07:24Z"
+        "observed_at": "2026-08-25T07:57:18Z"
       },
       "fixture": false
     },
