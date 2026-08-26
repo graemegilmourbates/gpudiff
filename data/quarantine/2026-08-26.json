@@ -1,53 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:spot",
+      "id": "vast:rtx-4090-48gb:global:on-demand",
       "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 1.0667,
+      "sku": "rtx-4090-48gb",
+      "price": 0.5378,
       "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 18,
-        "metric": "p25_min_bid_per_gpu"
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 13,
+        "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
-    "previous_price": 2.0,
-    "delta_pct": 46.7,
-    "reason": "price moved 46.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:l4-24gb:global:spot",
-      "provider": "vast",
-      "sku": "l4-24gb",
-      "price": 0.1333,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "L4",
-        "vram_gb": 24,
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-26T04:54:40Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.2667,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
+    "previous_price": 0.3686,
+    "delta_pct": 45.9,
+    "reason": "price moved 45.9% (> 40% limit)"
   },
   {
     "offer": {
@@ -67,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
@@ -93,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
@@ -119,13 +94,39 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
     "previous_price": 0.08,
     "delta_pct": 50.0,
     "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3.6-27b-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3.6-27b-input",
+      "price": 0.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3.6-27b",
+        "model_name": "Qwen: Qwen3.6 27B",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3.6-27b",
+        "observed_at": "2026-08-26T05:49:33Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.32,
+    "delta_pct": 87.5,
+    "reason": "price moved 87.5% (> 40% limit)"
   },
   {
     "offer": {
@@ -145,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
@@ -171,7 +172,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
@@ -197,7 +198,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen2.5-vl-72b-instruct",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
@@ -223,7 +224,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
@@ -249,7 +250,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-08-26T04:54:40Z"
+        "observed_at": "2026-08-26T05:49:33Z"
       },
       "fixture": false
     },
