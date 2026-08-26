@@ -1,56 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:rtx-pro-6000-ws-96gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-ws-96gb",
-      "price": 0.8,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 6000 WS",
-        "vram_gb": 96,
-        "sample_size": 37,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-26T07:07:36Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.4667,
-    "delta_pct": 71.4,
-    "reason": "price moved 71.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-pro-5000-48gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-5000-48gb",
-      "price": 0.16,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 5000",
-        "vram_gb": 48,
-        "sample_size": 16,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-26T07:07:36Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.4,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-vision-exp-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-vision-exp-input",
@@ -67,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -93,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -119,7 +69,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -145,7 +95,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -171,7 +121,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -197,7 +147,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -223,7 +173,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -249,7 +199,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -275,7 +225,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen2.5-vl-72b-instruct",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -301,7 +251,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
@@ -327,7 +277,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-08-26T07:07:36Z"
+        "observed_at": "2026-08-26T07:58:13Z"
       },
       "fixture": false
     },
