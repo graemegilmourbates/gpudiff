@@ -435,7 +435,7 @@ def render_index(fams, changelog, date, monetize):
 <p><a href="/changelog.html">Full changelog →</a></p>
 <h2>Cheapest current price by GPU</h2>
 <p class="mut">Grouped by memory configuration — an H100 NVL 94GB and an H100 PCIe 80GB are
-different products, so they never share a row. Prices refresh hourly; snapshot {esc(date)}.
+different products, so they never share a row. Prices refresh continually; snapshot {esc(date)}.
 By provider: <a href="/provider/vast.html">Vast.ai</a> · <a href="/provider/runpod.html">RunPod</a> ·
 <a href="/provider/aws.html">AWS</a> · <a href="/provider/azure.html">Azure</a>. Head-to-head:
 <a href="/compare/h100-sxm-80gb-vs-h200-sxm-141gb.html">H100 vs H200</a> ·
@@ -445,11 +445,11 @@ By provider: <a href="/provider/vast.html">Vast.ai</a> · <a href="/provider/run
 <thead><tr><th>GPU</th><th class="n">VRAM GB</th><th class="n">On-demand $/hr</th><th>Where</th>
 <th class="n">Spot from</th><th class="n">$/GB·hr</th><th class="n">Offers</th><th></th></tr></thead>
 <tbody>{''.join(rows)}</tbody></table></div>
-<small class="mut">$/GB·hr = hourly price per gigabyte of nameplate VRAM — a screening lens,
+<small class="mut">$/GB·hr = continually price per gigabyte of nameplate VRAM — a screening lens,
 not a verdict; interconnect, cloud tier, and real throughput still matter.</small>"""
-    return page("GPU Cloud Pricing Compared — H100, H200, B200, A100, RTX 4090 rental prices, updated hourly | gpudiff",
+    return page("GPU Cloud Pricing Compared — H100, H200, B200, A100, RTX 4090 rental prices, updated continually | gpudiff",
                 body, monetize,
-                "Compare GPU cloud rental prices across Vast.ai, RunPod, AWS, and Azure — on-demand and spot, updated hourly, with price history and a changelog of every change.",
+                "Compare GPU cloud rental prices across Vast.ai, RunPod, AWS, and Azure — on-demand and spot, updated continually, with price history and a changelog of every change.",
                 jsonld)
 
 
@@ -502,7 +502,7 @@ def render_family(fam, entry, history, changelog, monetize, aliases, fams=None):
         (f"How much does an {name} cost to rent per hour?",
          f"As of the latest snapshot, {name} on-demand rental starts at ${best['price']:.2f}/hr "
          f"({best['provider']}, {best.get('region', 'global')}) and ranges up to ${hi:.2f}/hr across "
-         f"{n_prov} tracked provider{'s' if n_prov != 1 else ''}. Prices refresh hourly."),
+         f"{n_prov} tracked provider{'s' if n_prov != 1 else ''}. Prices refresh continually."),
         (f"What is the cheapest {name} cloud provider right now?",
          f"{best['provider']} currently lists the lowest on-demand {name} price we track, at "
          f"${best['price']:.2f}/hr. Every number links to the page it was observed on."),
@@ -553,7 +553,7 @@ def render_family(fam, entry, history, changelog, monetize, aliases, fams=None):
 
     prov_links = " · ".join(f'<a href="/provider/{esc(p)}.html">{esc(p)}</a>' for p in providers)
     body = f"""
-<h1>{esc(name)} cloud rental price — {n_prov} provider{'s' if n_prov != 1 else ''} compared, updated hourly</h1>
+<h1>{esc(name)} cloud rental price — {n_prov} provider{'s' if n_prov != 1 else ''} compared, updated continually</h1>
 <p class="mut">On-demand from <strong>${best['price']:.2f}/hr</strong>{f" · spot from ${spot[0]['price']:.2f}/hr" if spot else ""} · providers: {prov_links}</p>
 {specbox}
 <h2>Current offers</h2>
@@ -570,7 +570,7 @@ def render_family(fam, entry, history, changelog, monetize, aliases, fams=None):
     return page(f"{name} Cloud Rental Price — from ${best['price']:.2f}/hr, {n_prov} providers compared | gpudiff",
                 body, monetize,
                 f"{name} cloud rental prices: on-demand from ${best['price']:.2f}/hr across {n_prov} providers, "
-                f"spot prices, price history, and a changelog of every change. Updated hourly with provenance.",
+                f"spot prices, price history, and a changelog of every change. Updated continually with provenance.",
                 jsonld=faq_ld, path=f"/gpu/{fam}.html")
 
 
@@ -604,7 +604,7 @@ def render_provider_page(provider, offers, fams, monetize, aliases):
     faqs = [(f"How much do {display} GPUs cost?",
              (f"{display} GPU pricing starts at ${cheapest['price']:.2f}/hr on-demand "
               f"({fam_display(family_of(cheapest['sku'], aliases), fams.get(family_of(cheapest['sku'], aliases), {'spec': None}))}) "
-              f"across {len(od)} tracked configurations, updated hourly.") if cheapest else "No offers tracked right now."),
+              f"across {len(od)} tracked configurations, updated continually.") if cheapest else "No offers tracked right now."),
             (f"Is {display} cheaper than other GPU clouds?",
              f"It depends on the GPU — compare any card across every provider we track on its GPU page. "
              f"gpudiff records every price change, so you can also see whether {display} is trending up or down.")]
@@ -614,7 +614,7 @@ def render_provider_page(provider, offers, fams, monetize, aliases):
                        for q, a in faqs]}) + '</script>')
     faq_html = "".join(f"<h3>{esc(q)}</h3><p>{esc(a)}</p>" for q, a in faqs)
     body = f"""
-<h1>{esc(display)} GPU pricing — every tracked GPU, updated hourly</h1>
+<h1>{esc(display)} GPU pricing — every tracked GPU, updated continually</h1>
 <p>{esc(display)} is {esc(blurb)}</p>
 <div class="tablewrap"><table>
 <thead><tr><th>GPU</th><th>Region / tier</th><th class="n">On-demand $/hr</th><th></th></tr></thead>
@@ -622,7 +622,7 @@ def render_provider_page(provider, offers, fams, monetize, aliases):
 <h2>{esc(display)} pricing FAQ</h2>
 {faq_html}
 <p class="mut">Other providers: {" · ".join(f'<a href="/provider/{esc(p)}.html">{esc(PROVIDER_BLURB.get(p, (p,))[0])}</a>' for p in PROVIDER_BLURB if p != provider)}</p>"""
-    return page(f"{display} GPU Pricing ({len(od)} GPUs compared, updated hourly) | gpudiff", body, monetize,
+    return page(f"{display} GPU Pricing ({len(od)} GPUs compared, updated continually) | gpudiff", body, monetize,
                 f"{display} GPU rental prices for every tracked GPU, with price history and a changelog of changes. Compare against other clouds.",
                 jsonld=faq_ld, path=f"/provider/{provider}.html")
 
@@ -652,7 +652,7 @@ def render_compare_page(a, b, fams, monetize):
                f"(${bb['price']:.2f} vs ${ba['price']:.2f}/hr).") if ratio else ""
     body = f"""
 <h1>{esc(na)} vs {esc(nb)}: cloud rental price comparison</h1>
-<p>{esc(verdict)} Both numbers refresh hourly and link to their source.</p>
+<p>{esc(verdict)} Both numbers refresh continually and link to their source.</p>
 <div class="tablewrap"><table>
 <thead><tr><th></th><th class="n"><a href="/gpu/{esc(a)}.html">{esc(na)}</a></th><th class="n"><a href="/gpu/{esc(b)}.html">{esc(nb)}</a></th></tr></thead>
 <tbody>
@@ -665,7 +665,7 @@ def render_compare_page(a, b, fams, monetize):
 <p class="mut">Nameplate specs are vendor claims, not measured throughput. See each GPU's page for
 every offer, spot prices, and history. Other comparisons: {" · ".join(f'<a href="/compare/{x}-vs-{y}.html">{esc(fam_display(x, fams[x]))} vs {esc(fam_display(y, fams[y]))}</a>' for x, y in COMPARE_PAIRS if (x, y) != (a, b) and x in fams and y in fams)}</p>"""
     return page(f"{na} vs {nb} Price: Cloud Rental Cost Compared (hourly) | gpudiff", body, monetize,
-                f"{na} vs {nb}: cheapest cloud rental prices, VRAM, bandwidth, and price-per-GB compared, updated hourly.",
+                f"{na} vs {nb}: cheapest cloud rental prices, VRAM, bandwidth, and price-per-GB compared, updated continually.",
                 path=f"/compare/{a}-vs-{b}.html")
 
 
@@ -847,7 +847,7 @@ def render_llm_index(llm_offers, changelog, monetize):
     body = f"""
 <h1>LLM API pricing across {len(routers_live)} gateways <span class="badge">beta</span></h1>
 <p class="mut">The same model costs different amounts depending on which gateway you buy it
-through. We snapshot {", ".join(esc(ROUTER_LABEL.get(r, r)) for r in routers_live)} hourly,
+through. We snapshot {", ".join(esc(ROUTER_LABEL.get(r, r)) for r in routers_live)} continually,
 normalize everything to USD per million tokens, and diff it. {len(idx)} models tracked,
 {len(multi)} of them carried by more than one gateway. Click any model for its prices
 everywhere plus its own changelog.</p>
@@ -929,7 +929,7 @@ def render_llm_model(canonical, routes, history, entries, monetize, meta=None):
          f"The cheapest tracked gateway charges ${lo_in:.2f} per million input tokens and "
          f"${lo_out:.2f} per million output tokens"
          f"{f' ({ROUTER_LABEL.get(lo_router, lo_router)})' if lo_router else ''}. "
-         f"Prices refresh hourly." if lo_in and lo_out else "No current price is published."),
+         f"Prices refresh continually." if lo_in and lo_out else "No current price is published."),
         (f"Which gateway is cheapest for {display}?",
          f"{ROUTER_LABEL.get(lo_router, lo_router)} for input tokens and "
          f"{ROUTER_LABEL.get(lo_out_router, lo_out_router)} for output tokens, among the "
@@ -960,7 +960,7 @@ def render_llm_model(canonical, routes, history, entries, monetize, meta=None):
 {_cheapest_cta(lo_router, lo_in, sp, monetize)}
 <p class="mut">{esc(lab + ' · ') if lab else ''}from <strong>{_price_cell(lo_in)}</strong> per
 million input tokens{f' · {sp:.1f}× spread between gateways' if sp and sp > 1.01 else ' · same price on every gateway'}
-· updated hourly</p>
+· updated continually</p>
 <div class="tablewrap"><table>
 <thead><tr><th>Gateway</th><th class="n">$ in /MTok</th><th class="n">$ out /MTok</th>
 <th class="n">Context</th><th>Input price history</th><th>Model ID</th><th></th></tr></thead>
@@ -971,7 +971,7 @@ million input tokens{f' · {sp:.1f}× spread between gateways' if sp and sp > 1.
 <h2>{esc(display)} pricing FAQ</h2>
 {faq_html}
 <p class="mut"><a href="/llm/">← All LLM prices</a> · <a href="/api/v1/llm/models.json">API</a></p>"""
-    return page(f"{display} API Price — {len(routes)} gateways compared, updated hourly | gpudiff",
+    return page(f"{display} API Price — {len(routes)} gateways compared, updated continually | gpudiff",
                 body, monetize,
                 f"{display} API pricing per million tokens across {len(routes)} gateways, with price "
                 f"history and a changelog of every change.",
@@ -1056,7 +1056,7 @@ def render_router_compare(a, b, idx, monetize):
 
     body = f"""
 <h1>{esc(la)} vs {esc(lb)}: LLM API price comparison</h1>
-<p>{esc(headline)} Input prices are USD per million tokens, refreshed hourly; every model
+<p>{esc(headline)} Input prices are USD per million tokens, refreshed continually; every model
 links to its full cross-gateway history.</p>
 {bottom}
 <div class="tablewrap"><table>
@@ -1069,7 +1069,7 @@ links to its full cross-gateway history.</p>
     return page(f"{la} vs {lb} Pricing — {len(shared)} models compared per token | gpudiff",
                 body, monetize,
                 f"{la} vs {lb}: per-million-token API prices compared across {len(shared)} shared models, "
-                f"plus the gateway fees each one charges. Updated hourly.",
+                f"plus the gateway fees each one charges. Updated continually.",
                 path=f"/llm/compare/{a}-vs-{b}.html")
 
 
@@ -1223,7 +1223,7 @@ small, precisely-targeted audience.</p>
 <h2>What the site is, in numbers</h2>
 <div class="tablewrap"><table>
 <tbody>
-<tr><td>Prices tracked</td><td class="n">{stats['offers']:,}</td><td class="mut">refreshed hourly</td></tr>
+<tr><td>Prices tracked</td><td class="n">{stats['offers']:,}</td><td class="mut">refreshed continually</td></tr>
 <tr><td>Providers and gateways</td><td class="n">{stats['providers']}</td><td class="mut">GPU clouds, LLM routers, SaaS vendors</td></tr>
 <tr><td>GPU configurations</td><td class="n">{stats['families']}</td><td class="mut">memory config treated as a distinct product</td></tr>
 <tr><td>LLM models</td><td class="n">{stats['models']:,}</td><td class="mut">priced per million tokens</td></tr>
@@ -1248,7 +1248,7 @@ sales call, no contract, cancel anytime.</p>
 <ol>
 <li>{buy_line}</li>
 <li>Open a <a href="{esc(contact)}">sponsor issue</a> with your company, link, and one line of copy.</li>
-<li>Once payment clears, your unit is live on the next hourly build.</li>
+<li>Once payment clears, your unit is live on the next continually build.</li>
 </ol>
 <p class="mut">Founding rate — locked until the site passes 10,000 monthly visits.
 Below what a comparable dev-audience placement costs, deliberately, because a slot
@@ -1325,16 +1325,16 @@ The volatility tag reflects the last week of prices — marketplace rates move; 
     body = f"""
 <h1>Where to rent a GPU: the cheapest option right now</h1>
 <p class="mut">One pick per common need — the lowest live on-demand price across every
-provider we track, refreshed hourly. The volatility tag warns when a price has been
+provider we track, refreshed continually. The volatility tag warns when a price has been
 moving, so a cheap number today is not a surprise bill tomorrow.</p>
 {''.join(cards)}
 <p class="mut">Want a specific card, spot prices, or the full history? Start from the
 <a href="/">GPU price table</a>. Prices are marketplace/list rates, not quotes; see
 <a href="/methodology.html">methodology</a>.</p>"""
-    return page("Where to Rent a GPU — cheapest option per need, updated hourly | gpudiff",
+    return page("Where to Rent a GPU — cheapest option per need, updated continually | gpudiff",
                 body, monetize,
                 "The cheapest live GPU cloud rental for each common need — 80GB, 24GB, 48GB, and frontier "
-                "cards — with a volatility read on each, refreshed hourly.",
+                "cards — with a volatility read on each, refreshed continually.",
                 path="/gpu-guide.html")
 
 
@@ -1385,16 +1385,16 @@ so watch the volatility tag.</div>
     body = f"""
 <h1>Where to buy LLM tokens: the cheapest gateway right now</h1>
 <p class="mut">One pick per tier — the lowest live per-token price across six gateways,
-refreshed hourly, with a volatility read. Same model, wrong gateway, and you can pay
+refreshed continually, with a volatility read. Same model, wrong gateway, and you can pay
 several times as much.</p>
 {''.join(cards)}
 <p class="mut">Full table, every model, and per-model history on the
 <a href="/llm/">LLM prices page</a>. These are published list prices, not quotes;
 see <a href="/methodology.html">methodology</a>.</p>"""
-    return page("Where to Buy LLM Tokens — cheapest gateway per tier, updated hourly | gpudiff",
+    return page("Where to Buy LLM Tokens — cheapest gateway per tier, updated continually | gpudiff",
                 body, monetize,
                 "The cheapest LLM API gateway for each tier — frontier, open-weight, and flash models — "
-                "with a volatility read on each, refreshed hourly across six gateways.",
+                "with a volatility read on each, refreshed continually across six gateways.",
                 path="/llm-guide.html")
 
 
@@ -1429,7 +1429,7 @@ def render_movers(changelog, monetize, aliases):
     body = f"""
 <h1>Biggest AI compute price changes this week</h1>
 <p class="mut">The largest moves across GPU cloud, LLM API, and SaaS pricing in the last
-seven days, refreshed hourly from our public archive. {len(recent)} recorded changes in
+seven days, refreshed continually from our public archive. {len(recent)} recorded changes in
 the window.</p>
 <h2>Biggest price drops</h2>
 <div class="tablewrap"><table>
@@ -1447,7 +1447,7 @@ See also <a href="/gpu-guide.html">where to rent a GPU</a> and
     return page("Biggest AI Compute Price Changes This Week — GPU, LLM & SaaS | gpudiff",
                 body, monetize,
                 "The biggest GPU cloud, LLM API, and SaaS price drops and rises in the last seven days, "
-                "refreshed hourly with provenance.",
+                "refreshed continually with provenance.",
                 path="/movers.html")
 
 
@@ -1543,7 +1543,7 @@ def render_gpu_ranking(fams, monetize):
     body = f"""
 <h1>Cheapest GPU cloud provider, ranked</h1>
 <p class="mut">Which cloud is actually cheapest for renting GPUs? We rank every provider we
-track by how its prices compare on the GPUs it shares with others — on-demand, updated hourly.
+track by how its prices compare on the GPUs it shares with others — on-demand, updated continually.
 A provider is only scored on cards at least one competitor also offers, so nobody wins by
 only listing cheap hardware.</p>
 {verdict}
@@ -1561,7 +1561,7 @@ carry a referral code; the ranking is computed from prices and is unaffected.</p
     return page("Cheapest GPU Cloud Provider — RunPod, Vast, AWS, Azure ranked by price | gpudiff",
                 body, monetize,
                 "The cheapest GPU cloud provider, ranked by real on-demand prices across the GPUs "
-                "each one offers. Updated hourly, compared like-for-like.",
+                "each one offers. Updated continually, compared like-for-like.",
                 path="/cheapest-gpu-cloud.html")
 
 
@@ -1585,7 +1585,7 @@ def render_llm_ranking(llm_offers, monetize):
     body = f"""
 <h1>Cheapest LLM API gateway, ranked</h1>
 <p class="mut">Six gateways resell the same models at different prices. We rank them by input
-price across the models they share, updated hourly. Frontier models are usually identical
+price across the models they share, updated continually. Frontier models are usually identical
 everywhere (gateways pass list pricing through), so the ranking is decided by open-weight
 models — where the gap can be large.</p>
 {verdict}
@@ -1614,7 +1614,7 @@ def render_rankings_hub(fams, llm_offers, monetize):
 <h1>Price rankings: the cheapest GPU cloud and LLM API</h1>
 <p class="mut">Not "which option for this need" (that is the <a href="/gpu-guide.html">guides</a>)
 — this ranks the <em>providers themselves</em> by how cheap they are across everything they
-offer, compared like-for-like and updated hourly.</p>
+offer, compared like-for-like and updated continually.</p>
 <div class="pick"><h3><a href="/cheapest-gpu-cloud.html">Cheapest GPU cloud provider →</a></h3>
 <div class="why">RunPod, Vast.ai, AWS, and Azure ranked by real on-demand prices across the
 GPUs they share.</div></div>
@@ -1623,7 +1623,7 @@ GPUs they share.</div></div>
 per-token price across the models they share.</div></div>"""
     return page("Cheapest GPU Cloud & LLM API — price rankings | gpudiff", body, monetize,
                 "Price rankings for AI compute: the cheapest GPU cloud provider and the cheapest "
-                "LLM API gateway, compared like-for-like and updated hourly.",
+                "LLM API gateway, compared like-for-like and updated continually.",
                 path="/rankings.html")
 
 
@@ -1674,7 +1674,7 @@ prices (those live behind paywalls like TrendForce). See <a href="/methodology.h
 def render_methodology(monetize):
     body = """
 <h1>Methodology</h1>
-<p>gpudiff records the price of renting GPUs in the cloud, hourly, with a
+<p>gpudiff records the price of renting GPUs in the cloud, continually, with a
 changelog of every move. Here is exactly how the numbers are made.</p>
 <h2>Identity: a GPU memory configuration is a product</h2>
 <p>An H100 PCIe 80GB, an H100 NVL 94GB, and an H100 SXM 80GB never share a row
@@ -1688,9 +1688,9 @@ screening tool, not a verdict.</p>
 <tr><td>Vast.ai</td><td>25th percentile of verified marketplace listings, per GPU
 (dph ÷ GPU count); models with fewer than 5 listings are skipped. Spot = p25 of
 minimum bids. Marketplace listings vary in host quality — p25 is "what a careful
-buyer can actually get," not the single cheapest outlier.</td><td>hourly</td></tr>
+buyer can actually get," not the single cheapest outlier.</td><td>continually</td></tr>
 <tr><td>RunPod</td><td>Published list prices per GPU type, secure and community
-cloud, on-demand and spot. Community tiers can be availability-limited.</td><td>hourly</td></tr>
+cloud, on-demand and spot. Community tiers can be availability-limited.</td><td>continually</td></tr>
 <tr><td>AWS</td><td>On-demand Linux/shared list price of the smallest qualifying
 instance per GPU family, us-east-1, divided by GPU count. AWS sells bundles
 (CPUs + RAM attached), so rows are badged instance-bundled.</td><td>daily</td></tr>
@@ -1698,14 +1698,14 @@ instance per GPU family, us-east-1, divided by GPU count. AWS sells bundles
 count; on-demand and spot. Instance-bundled like AWS.</td><td>daily</td></tr>
 <tr><td>OpenRouter (LLM)</td><td>Public model catalog; input and output prices
 per million tokens, tracked as separate series per model. This is the resale
-layer of LLM pricing; official provider list pages join as slower sources.</td><td>hourly</td></tr>
+layer of LLM pricing; official provider list pages join as slower sources.</td><td>continually</td></tr>
 <tr><td>Requesty · Glama · Novita · DeepInfra (LLM)</td><td>Each router's public
 catalog, normalized to USD per million tokens. A router often lists one model
 several times (different upstream hosts or regions); we publish the cheapest
 route per model and record how many were collapsed. Models are joined across
 routers by canonical name — last path segment, region suffix stripped — so
 <code>vertex/claude-sonnet-5@eu</code> and <code>anthropic/claude-sonnet-5</code>
-are one row.</td><td>hourly</td></tr>
+are one row.</td><td>continually</td></tr>
 <tr><td>Ramp Router (LLM)</td><td>The published model table from Ramp's public docs:
 input and output price per million tokens, context window. Ramp writes decimal
 points as "p" (<code>kimi-k2p6</code>) and lists Anthropic models without the
@@ -1859,7 +1859,7 @@ from this site — no scripts, no tracking.</p>
 <p class="mut">HTML variant: swap the Markdown for
 <code>&lt;a href="…"&gt;&lt;img src="…svg"&gt;&lt;/a&gt;</code>. CC BY 4.0 — a link is the attribution.</p>"""
     return page("Badges — gpudiff", body, monetize,
-                "Embeddable live GPU price badges: current prices in your README or blog, updated hourly.",
+                "Embeddable live GPU price badges: current prices in your README or blog, updated continually.",
                 path="/badges.html")
 
 
@@ -2015,7 +2015,7 @@ def build_site(offers, changelog, date):
     badge_rows = []
     n_models = len({(o.get("attrs") or {}).get("model_id") for o in llm_offers})
     n_saas = len({o["provider"] for o in saas_offers})
-    overall = [("gpudiff.svg", "gpudiff", f"{len(offers)} prices · hourly diffs", "/"),
+    overall = [("gpudiff.svg", "gpudiff", f"{len(offers)} prices · continually diffs", "/"),
                ("llm.svg", "llm api prices", f"{n_models} models tracked", "/llm/"),
                ("saas.svg", "saas pricing", f"{n_saas} pages watched", "/saas/")]
     for fname, label, value, ppath in overall:
@@ -2125,7 +2125,7 @@ def build_site(offers, changelog, date):
 > The public record of change in AI compute and software pricing: GPU cloud
 > rental prices (Vast.ai, RunPod, AWS, Azure), LLM API per-token prices across
 > six gateways (OpenRouter, Ramp Router, Requesty, Glama, Novita, DeepInfra),
-> and SaaS pricing pages — snapshotted hourly, validated, diffed, and archived
+> and SaaS pricing pages — snapshotted continually, validated, diffed, and archived
 > in public git with a provenance URL on every number. CC BY 4.0: cite gpudiff.com.
 
 Current snapshot: {esc(date)} · {len(offers):,} prices · {len(fams)} GPU configurations ·
