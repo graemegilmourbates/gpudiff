@@ -42,6 +42,7 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
     else:
         from sources.aws import AwsSource
         from sources.azure import AzureSource
+        from sources.memory import MemorySource
         from sources.openrouter import OpenRouterSource
         from sources.ramp import RampSource
         from sources.routers import RoutersSource
@@ -50,6 +51,12 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
         from sources.vast import VastSource
         registry = [VastSource(), RunpodSource(), AwsSource(), AzureSource(),
                     OpenRouterSource(), RoutersSource(), RampSource(), SaasPagesSource()]
+        # Retail RAM source registers only when its key is set, so its inert
+        # empty result never trips the "0 offers = broken" health gate.
+        mem = MemorySource()
+        from sources.memory import _key
+        if _key():
+            registry.append(mem)
 
     hour = dt.datetime.now(dt.timezone.utc).hour
     offers, statuses = [], []

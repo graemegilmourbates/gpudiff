@@ -3,29 +3,76 @@
   "title": "Offer",
   "description": "One priced thing observed at one source at one moment. Niche-agnostic: a GPU rental, a SaaS plan, any priced SKU.",
   "type": "object",
-  "required": ["id", "provider", "sku", "price", "unit", "pricing_type", "provenance", "fixture"],
+  "required": [
+    "id",
+    "provider",
+    "sku",
+    "price",
+    "unit",
+    "pricing_type",
+    "provenance",
+    "fixture"
+  ],
   "properties": {
     "id": {
       "type": "string",
       "description": "Stable identity: provider:sku:region:pricing_type, lowercase",
       "pattern": "^[a-z0-9_.-]+:[a-z0-9_.-]+:[a-z0-9_.-]+:[a-z0-9_.-]+$"
     },
-    "provider": { "type": "string", "minLength": 1 },
-    "sku": { "type": "string", "minLength": 1 },
-    "price": { "type": "number", "exclusiveMinimum": 0, "maximum": 100000 },
-    "unit": { "type": "string", "enum": ["usd_per_hour", "usd_per_month", "usd_per_unit", "usd_per_mtok"] },
-    "pricing_type": { "type": "string", "enum": ["on_demand", "spot", "reserved", "list"] },
-    "region": { "type": "string" },
+    "provider": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sku": {
+      "type": "string",
+      "minLength": 1
+    },
+    "price": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 100000
+    },
+    "unit": {
+      "type": "string",
+      "enum": [
+        "usd_per_hour",
+        "usd_per_month",
+        "usd_per_unit",
+        "usd_per_mtok",
+        "usd_per_gb_ram"
+      ]
+    },
+    "pricing_type": {
+      "type": "string",
+      "enum": [
+        "on_demand",
+        "spot",
+        "reserved",
+        "list"
+      ]
+    },
+    "region": {
+      "type": "string"
+    },
     "attrs": {
       "type": "object",
       "description": "Niche-specific attributes (gpu_model, vram_gb, plan_seats, ...)"
     },
     "provenance": {
       "type": "object",
-      "required": ["url", "observed_at"],
+      "required": [
+        "url",
+        "observed_at"
+      ],
       "properties": {
-        "url": { "type": "string", "pattern": "^https?://" },
-        "observed_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}" }
+        "url": {
+          "type": "string",
+          "pattern": "^https?://"
+        },
+        "observed_at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}"
+        }
       }
     },
     "fixture": {
