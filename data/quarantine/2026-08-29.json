@@ -4,7 +4,7 @@
       "id": "vast:rtx-4090-48gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-4090-48gb",
-      "price": 0.5904,
+      "price": 0.5885,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
@@ -16,62 +16,62 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-29T18:27:34Z"
+        "observed_at": "2026-08-29T21:25:21Z"
       },
       "fixture": false
     },
     "previous_price": 0.3753,
-    "delta_pct": 57.3,
-    "reason": "price moved 57.3% (> 40% limit)"
+    "delta_pct": 56.8,
+    "reason": "price moved 56.8% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "vast:rtx-pro-6000-ws-96gb:global:spot",
+      "id": "vast:l40s-48gb:global:spot",
       "provider": "vast",
-      "sku": "rtx-pro-6000-ws-96gb",
-      "price": 1.0653,
+      "sku": "l40s-48gb",
+      "price": 0.7733,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX PRO 6000 WS",
-        "vram_gb": 96,
-        "sample_size": 25,
+        "gpu_model": "L40S",
+        "vram_gb": 48,
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-29T18:27:34Z"
+        "observed_at": "2026-08-29T21:25:21Z"
       },
       "fixture": false
     },
-    "previous_price": 0.7333,
-    "delta_pct": 45.3,
-    "reason": "price moved 45.3% (> 40% limit)"
+    "previous_price": 0.5333,
+    "delta_pct": 45.0,
+    "reason": "price moved 45.0% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:rtx-pro-5000-48gb:global:spot",
       "provider": "vast",
       "sku": "rtx-pro-5000-48gb",
-      "price": 0.3733,
+      "price": 0.4,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX PRO 5000",
         "vram_gb": 48,
-        "sample_size": 21,
+        "sample_size": 22,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-29T18:27:34Z"
+        "observed_at": "2026-08-29T21:25:21Z"
       },
       "fixture": false
     },
     "previous_price": 0.16,
-    "delta_pct": 133.3,
-    "reason": "price moved 133.3% (> 40% limit)"
+    "delta_pct": 150.0,
+    "reason": "price moved 150.0% (> 40% limit)"
   }
 ]
