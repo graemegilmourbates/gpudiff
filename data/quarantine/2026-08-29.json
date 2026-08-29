@@ -16,13 +16,38 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-29T09:01:33Z"
+        "observed_at": "2026-08-29T14:27:42Z"
       },
       "fixture": false
     },
     "previous_price": 0.5333,
     "delta_pct": 45.0,
     "reason": "price moved 45.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-5000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-5000-48gb",
+      "price": 0.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 5000",
+        "vram_gb": 48,
+        "sample_size": 18,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-29T14:27:42Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.16,
+    "delta_pct": 150.0,
+    "reason": "price moved 150.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -42,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-08-29T09:01:33Z"
+        "observed_at": "2026-08-29T14:27:42Z"
       },
       "fixture": false
     },
@@ -68,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-08-29T09:01:33Z"
+        "observed_at": "2026-08-29T14:27:42Z"
       },
       "fixture": false
     },
