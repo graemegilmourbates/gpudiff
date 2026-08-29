@@ -31,6 +31,8 @@ jobs:
         run: python3 -m pipeline.sponsor_intake
 
       - name: Run pipeline
+        env:
+          BESTBUY_API_KEY: ${{ secrets.BESTBUY_API_KEY }}
         run: python3 -m pipeline.refresh
 
       - name: Run tests

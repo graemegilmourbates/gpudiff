@@ -12,12 +12,11 @@ move the number, mirroring how the GPU marketplace source works. RAM is priced
 by the kit; we divide by total GB to make generations comparable."""
 
 import json
+import os
 import re
 import urllib.parse
 import urllib.request
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
 API = "https://api.bestbuy.com/v1/products"
 UA = "FoundryBot/0.1 (pricing aggregator; gpudiff.com)"
 PROVENANCE = "https://www.bestbuy.com/site/computer-cards-components/memory-ram/"
@@ -28,8 +27,9 @@ GEN = re.compile(r"\bDDR([345])\b", re.I)
 
 
 def _key():
-    cfg = json.loads((ROOT / "monetize.json").read_text())
-    return cfg.get("bestbuy_api_key", "")
+    # Read from an env var fed by a GitHub Actions secret — NEVER a committed
+    # file, since this is a public repo and a key there would be scraped.
+    return os.environ.get("BESTBUY_API_KEY", "").strip()
 
 
 def _p25(values):
