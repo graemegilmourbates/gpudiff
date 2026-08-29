@@ -1,104 +1,77 @@
 [
   {
     "offer": {
-      "id": "vast:l40s-48gb:global:spot",
+      "id": "vast:rtx-4090-48gb:global:on-demand",
       "provider": "vast",
-      "sku": "l40s-48gb",
-      "price": 0.7733,
+      "sku": "rtx-4090-48gb",
+      "price": 0.5904,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 17,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-08-29T18:27:34Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3753,
+    "delta_pct": 57.3,
+    "reason": "price moved 57.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-6000-ws-96gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-ws-96gb",
+      "price": 1.0653,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "L40S",
-        "vram_gb": 48,
-        "sample_size": 5,
+        "gpu_model": "RTX PRO 6000 WS",
+        "vram_gb": 96,
+        "sample_size": 25,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-29T14:27:42Z"
+        "observed_at": "2026-08-29T18:27:34Z"
       },
       "fixture": false
     },
-    "previous_price": 0.5333,
-    "delta_pct": 45.0,
-    "reason": "price moved 45.0% (> 40% limit)"
+    "previous_price": 0.7333,
+    "delta_pct": 45.3,
+    "reason": "price moved 45.3% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:rtx-pro-5000-48gb:global:spot",
       "provider": "vast",
       "sku": "rtx-pro-5000-48gb",
-      "price": 0.4,
+      "price": 0.3733,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX PRO 5000",
         "vram_gb": 48,
-        "sample_size": 18,
+        "sample_size": 21,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-29T14:27:42Z"
+        "observed_at": "2026-08-29T18:27:34Z"
       },
       "fixture": false
     },
     "previous_price": 0.16,
-    "delta_pct": 150.0,
-    "reason": "price moved 150.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-08-29T14:27:42Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-08-29T14:27:42Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.33,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
+    "delta_pct": 133.3,
+    "reason": "price moved 133.3% (> 40% limit)"
   }
 ]
