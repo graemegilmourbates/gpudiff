@@ -1,53 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:h200-141gb:global:spot",
+      "id": "vast:rtx-a6000-48gb:global:spot",
       "provider": "vast",
-      "sku": "h200-141gb",
-      "price": 3.75,
+      "sku": "rtx-a6000-48gb",
+      "price": 0.4,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "H200",
-        "vram_gb": 141,
-        "sample_size": 18,
+        "gpu_model": "RTX A6000",
+        "vram_gb": 48,
+        "sample_size": 11,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-30T21:03:49Z"
+        "observed_at": "2026-08-30T23:28:45Z"
       },
       "fixture": false
     },
-    "previous_price": 2.5776,
-    "delta_pct": 45.5,
-    "reason": "price moved 45.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-4090-24gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-4090-24gb",
-      "price": 0.2667,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX 4090",
-        "vram_gb": 24,
-        "sample_size": 44,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-08-30T21:03:49Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.184,
-    "delta_pct": 44.9,
-    "reason": "price moved 44.9% (> 40% limit)"
+    "previous_price": 0.2,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -67,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-08-30T21:03:49Z"
+        "observed_at": "2026-08-30T23:28:45Z"
       },
       "fixture": false
     },
@@ -89,12 +64,12 @@
         "canonical": "glm-5.3-flash",
         "direction": "input",
         "context_length": 1048576,
-        "routes_collapsed": 1,
+        "routes_collapsed": 4,
         "metric": "router_list"
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-08-30T21:03:49Z"
+        "observed_at": "2026-08-30T23:28:45Z"
       },
       "fixture": false
     },
@@ -116,12 +91,12 @@
         "canonical": "glm-5.3-flash",
         "direction": "output",
         "context_length": 1048576,
-        "routes_collapsed": 1,
+        "routes_collapsed": 4,
         "metric": "router_list"
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-08-30T21:03:49Z"
+        "observed_at": "2026-08-30T23:28:45Z"
       },
       "fixture": false
     },
@@ -143,12 +118,12 @@
         "canonical": "gpt-oss-120b",
         "direction": "input",
         "context_length": 131072,
-        "routes_collapsed": 5,
+        "routes_collapsed": 1,
         "metric": "router_list"
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-08-30T21:03:49Z"
+        "observed_at": "2026-08-30T23:28:45Z"
       },
       "fixture": false
     },
@@ -170,12 +145,12 @@
         "canonical": "gpt-oss-120b",
         "direction": "output",
         "context_length": 131072,
-        "routes_collapsed": 5,
+        "routes_collapsed": 1,
         "metric": "router_list"
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-08-30T21:03:49Z"
+        "observed_at": "2026-08-30T23:28:45Z"
       },
       "fixture": false
     },
