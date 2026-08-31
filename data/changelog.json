@@ -19627,12 +19627,592 @@
   {
     "date": "2026-08-31",
     "kind": "added",
+    "id": "openrouter:openai-gpt-3.5-turbo-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-3.5-turbo-batch-input",
+    "price": 0.25,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-3.5-turbo-batch-input at 0.25 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-3.5-turbo-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-3.5-turbo-batch-output",
+    "price": 0.75,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-3.5-turbo-batch-output at 0.75 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4-turbo-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4-turbo-batch-input",
+    "price": 5.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4-turbo-batch-input at 5.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4-turbo-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4-turbo-batch-output",
+    "price": 15.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4-turbo-batch-output at 15.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4.1-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4.1-batch-input",
+    "price": 1.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4.1-batch-input at 1.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4.1-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4.1-batch-output",
+    "price": 4.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4.1-batch-output at 4.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4.1-mini-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4.1-mini-batch-input",
+    "price": 0.2,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4.1-mini-batch-input at 0.2 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4.1-mini-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4.1-mini-batch-output",
+    "price": 0.8,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4.1-mini-batch-output at 0.8 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4.1-nano-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4.1-nano-batch-input",
+    "price": 0.05,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4.1-nano-batch-input at 0.05 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4.1-nano-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4.1-nano-batch-output",
+    "price": 0.2,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4.1-nano-batch-output at 0.2 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4o-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4o-batch-input",
+    "price": 1.25,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4o-batch-input at 1.25 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4o-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4o-batch-output",
+    "price": 5.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4o-batch-output at 5.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4o-mini-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4o-mini-batch-input",
+    "price": 0.075,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4o-mini-batch-input at 0.075 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-4o-mini-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-4o-mini-batch-output",
+    "price": 0.3,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-4o-mini-batch-output at 0.3 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5-batch-input",
+    "price": 0.625,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5-batch-input at 0.625 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5-batch-output",
+    "price": 5.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5-batch-output at 5.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5-mini-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5-mini-batch-input",
+    "price": 0.125,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5-mini-batch-input at 0.125 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5-mini-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5-mini-batch-output",
+    "price": 1.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5-mini-batch-output at 1.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5-nano-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5-nano-batch-input",
+    "price": 0.025,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5-nano-batch-input at 0.025 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5-nano-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5-nano-batch-output",
+    "price": 0.2,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5-nano-batch-output at 0.2 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5-pro-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5-pro-batch-input",
+    "price": 7.5,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5-pro-batch-input at 7.5 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5-pro-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5-pro-batch-output",
+    "price": 60.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5-pro-batch-output at 60.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.1-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.1-batch-input",
+    "price": 0.625,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.1-batch-input at 0.625 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.1-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.1-batch-output",
+    "price": 5.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.1-batch-output at 5.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.2-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.2-batch-input",
+    "price": 0.875,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.2-batch-input at 0.875 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.2-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.2-batch-output",
+    "price": 7.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.2-batch-output at 7.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.2-pro-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.2-pro-batch-input",
+    "price": 10.5,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.2-pro-batch-input at 10.5 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.2-pro-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.2-pro-batch-output",
+    "price": 84.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.2-pro-batch-output at 84.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.4-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.4-batch-input",
+    "price": 1.25,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.4-batch-input at 1.25 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.4-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.4-batch-output",
+    "price": 7.5,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.4-batch-output at 7.5 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.4-mini-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.4-mini-batch-input",
+    "price": 0.375,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.4-mini-batch-input at 0.375 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.4-mini-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.4-mini-batch-output",
+    "price": 2.25,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.4-mini-batch-output at 2.25 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.4-nano-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.4-nano-batch-input",
+    "price": 0.1,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.4-nano-batch-input at 0.1 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.4-nano-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.4-nano-batch-output",
+    "price": 0.625,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.4-nano-batch-output at 0.625 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.4-pro-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.4-pro-batch-input",
+    "price": 15.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.4-pro-batch-input at 15.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.4-pro-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.4-pro-batch-output",
+    "price": 90.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.4-pro-batch-output at 90.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.5-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.5-batch-input",
+    "price": 2.5,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.5-batch-input at 2.5 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.5-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.5-batch-output",
+    "price": 15.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.5-batch-output at 15.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.5-pro-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.5-pro-batch-input",
+    "price": 15.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.5-pro-batch-input at 15.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.5-pro-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.5-pro-batch-output",
+    "price": 90.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.5-pro-batch-output at 90.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-luna-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-luna-batch-input",
+    "price": 0.1,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-luna-batch-input at 0.1 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-luna-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-luna-batch-output",
+    "price": 0.6,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-luna-batch-output at 0.6 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-luna-pro-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-luna-pro-batch-input",
+    "price": 0.1,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-luna-pro-batch-input at 0.1 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-luna-pro-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-luna-pro-batch-output",
+    "price": 0.6,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-luna-pro-batch-output at 0.6 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-sol-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-sol-batch-input",
+    "price": 1.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-sol-batch-input at 1.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-sol-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-sol-batch-output",
+    "price": 5.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-sol-batch-output at 5.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-sol-pro-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-sol-pro-batch-input",
+    "price": 1.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-sol-pro-batch-input at 1.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-sol-pro-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-sol-pro-batch-output",
+    "price": 5.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-sol-pro-batch-output at 5.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-terra-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-terra-batch-input",
+    "price": 1.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-terra-batch-input at 1.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-terra-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-terra-batch-output",
+    "price": 6.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-terra-batch-output at 6.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-terra-pro-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-terra-pro-batch-input",
+    "price": 1.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-terra-pro-batch-input at 1.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-gpt-5.6-terra-pro-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-gpt-5.6-terra-pro-batch-output",
+    "price": 6.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-gpt-5.6-terra-pro-batch-output at 6.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-o3-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-o3-batch-input",
+    "price": 1.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-o3-batch-input at 1.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-o3-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-o3-batch-output",
+    "price": 4.0,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-o3-batch-output at 4.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-o3-mini-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-o3-mini-batch-input",
+    "price": 0.55,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-o3-mini-batch-input at 0.55 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-o3-mini-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-o3-mini-batch-output",
+    "price": 2.2,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-o3-mini-batch-output at 2.2 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-o4-mini-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "openai-o4-mini-batch-input",
+    "price": 0.55,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-o4-mini-batch-input at 0.55 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "openrouter:openai-o4-mini-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "openai-o4-mini-batch-output",
+    "price": 2.2,
+    "unit": "usd_per_mtok",
+    "summary": "openrouter listed openai-o4-mini-batch-output at 2.2 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
     "id": "requesty:glm-5.3-flash-input:global:list",
     "provider": "requesty",
     "sku": "glm-5.3-flash-input",
-    "price": 0.05,
+    "price": 0.075,
     "unit": "usd_per_mtok",
-    "summary": "requesty listed glm-5.3-flash-input at 0.05 usd_per_mtok"
+    "summary": "requesty listed glm-5.3-flash-input at 0.075 usd_per_mtok"
   },
   {
     "date": "2026-08-31",
@@ -19640,9 +20220,9 @@
     "id": "requesty:glm-5.3-flash-output:global:list",
     "provider": "requesty",
     "sku": "glm-5.3-flash-output",
-    "price": 0.1667,
+    "price": 0.25,
     "unit": "usd_per_mtok",
-    "summary": "requesty listed glm-5.3-flash-output at 0.1667 usd_per_mtok"
+    "summary": "requesty listed glm-5.3-flash-output at 0.25 usd_per_mtok"
   },
   {
     "date": "2026-08-31",
@@ -19667,6 +20247,26 @@
   {
     "date": "2026-08-31",
     "kind": "added",
+    "id": "runpod:a100-pcie-80gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a100-pcie-80gb",
+    "price": 1.19,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed a100-pcie-80gb at 1.19 usd_per_hour"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
+    "id": "runpod:a100-pcie-80gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "a100-pcie-80gb",
+    "price": 1.19,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed a100-pcie-80gb at 1.19 usd_per_hour"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "added",
     "id": "runpod:a100-sxm-40gb:community-cloud:on-demand",
     "provider": "runpod",
     "sku": "a100-sxm-40gb",
@@ -19683,46 +20283,6 @@
     "price": 1.0,
     "unit": "usd_per_hour",
     "summary": "runpod listed a100-sxm-40gb at 1.0 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "added",
-    "id": "runpod:h100-pcie-80gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "h100-pcie-80gb",
-    "price": 2.89,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "added",
-    "id": "runpod:h100-pcie-80gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "h100-pcie-80gb",
-    "price": 2.89,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "added",
-    "id": "runpod:rtx-a2000-6gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-a2000-6gb",
-    "price": 0.12,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-a2000-6gb at 0.12 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "added",
-    "id": "runpod:rtx-a2000-6gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-a2000-6gb",
-    "price": 0.12,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-a2000-6gb at 0.12 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -19750,9 +20310,17 @@
     "id": "vast:rtx-a6000-48gb:global:spot",
     "provider": "vast",
     "sku": "rtx-a6000-48gb",
-    "price": 0.2,
+    "price": 0.4,
     "unit": "usd_per_hour",
-    "summary": "vast listed rtx-a6000-48gb at 0.2 usd_per_hour"
+    "summary": "vast listed rtx-a6000-48gb at 0.4 usd_per_hour"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "removed",
+    "id": "openrouter:deepseek-deepseek-v4-flash-latest-input:global:list",
+    "provider": "openrouter",
+    "sku": "deepseek-deepseek-v4-flash-latest-input",
+    "summary": "openrouter delisted deepseek-deepseek-v4-flash-latest-input"
   },
   {
     "date": "2026-08-31",
@@ -19773,50 +20341,34 @@
   {
     "date": "2026-08-31",
     "kind": "removed",
-    "id": "openrouter:tencent-hy3-input:global:list",
+    "id": "openrouter:kwaipilot-kat-coder-air-v2.5-input:global:list",
     "provider": "openrouter",
-    "sku": "tencent-hy3-input",
-    "summary": "openrouter delisted tencent-hy3-input"
+    "sku": "kwaipilot-kat-coder-air-v2.5-input",
+    "summary": "openrouter delisted kwaipilot-kat-coder-air-v2.5-input"
   },
   {
     "date": "2026-08-31",
     "kind": "removed",
-    "id": "openrouter:tencent-hy3-output:global:list",
+    "id": "openrouter:kwaipilot-kat-coder-air-v2.5-output:global:list",
     "provider": "openrouter",
-    "sku": "tencent-hy3-output",
-    "summary": "openrouter delisted tencent-hy3-output"
+    "sku": "kwaipilot-kat-coder-air-v2.5-output",
+    "summary": "openrouter delisted kwaipilot-kat-coder-air-v2.5-output"
   },
   {
     "date": "2026-08-31",
     "kind": "removed",
-    "id": "runpod:a100-pcie-80gb:secure-cloud:on-demand",
+    "id": "runpod:b300-288gb:secure-cloud:on-demand",
     "provider": "runpod",
-    "sku": "a100-pcie-80gb",
-    "summary": "runpod delisted a100-pcie-80gb"
+    "sku": "b300-288gb",
+    "summary": "runpod delisted b300-288gb"
   },
   {
     "date": "2026-08-31",
     "kind": "removed",
-    "id": "runpod:a100-pcie-80gb:secure-cloud:spot",
+    "id": "runpod:b300-288gb:secure-cloud:spot",
     "provider": "runpod",
-    "sku": "a100-pcie-80gb",
-    "summary": "runpod delisted a100-pcie-80gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:h100-nvl-94gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "h100-nvl-94gb",
-    "summary": "runpod delisted h100-nvl-94gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:h100-nvl-94gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "h100-nvl-94gb",
-    "summary": "runpod delisted h100-nvl-94gb"
+    "sku": "b300-288gb",
+    "summary": "runpod delisted b300-288gb"
   },
   {
     "date": "2026-08-31",
@@ -19833,6 +20385,22 @@
     "provider": "runpod",
     "sku": "h200-nvl-143gb",
     "summary": "runpod delisted h200-nvl-143gb"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "removed",
+    "id": "runpod:h200-sxm-141gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "h200-sxm-141gb",
+    "summary": "runpod delisted h200-sxm-141gb"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "removed",
+    "id": "runpod:h200-sxm-141gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "h200-sxm-141gb",
+    "summary": "runpod delisted h200-sxm-141gb"
   },
   {
     "date": "2026-08-31",
@@ -19885,38 +20453,6 @@
   {
     "date": "2026-08-31",
     "kind": "removed",
-    "id": "runpod:rtx-3090-24gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-3090-24gb",
-    "summary": "runpod delisted rtx-3090-24gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-3090-24gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-3090-24gb",
-    "summary": "runpod delisted rtx-3090-24gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-3090-ti-24gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-3090-ti-24gb",
-    "summary": "runpod delisted rtx-3090-ti-24gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-3090-ti-24gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-3090-ti-24gb",
-    "summary": "runpod delisted rtx-3090-ti-24gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
     "id": "runpod:rtx-4000-ada-20gb:secure-cloud:on-demand",
     "provider": "runpod",
     "sku": "rtx-4000-ada-20gb",
@@ -19929,54 +20465,6 @@
     "provider": "runpod",
     "sku": "rtx-4000-ada-20gb",
     "summary": "runpod delisted rtx-4000-ada-20gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-4080-super-16gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-4080-super-16gb",
-    "summary": "runpod delisted rtx-4080-super-16gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-4080-super-16gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-4080-super-16gb",
-    "summary": "runpod delisted rtx-4080-super-16gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-5000-ada-32gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-5000-ada-32gb",
-    "summary": "runpod delisted rtx-5000-ada-32gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-5000-ada-32gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-5000-ada-32gb",
-    "summary": "runpod delisted rtx-5000-ada-32gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-6000-ada-48gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-6000-ada-48gb",
-    "summary": "runpod delisted rtx-6000-ada-48gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-6000-ada-48gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-6000-ada-48gb",
-    "summary": "runpod delisted rtx-6000-ada-48gb"
   },
   {
     "date": "2026-08-31",
@@ -19997,7 +20485,7 @@
   {
     "date": "2026-08-31",
     "kind": "removed",
-    "id": "runpod:rtx-a4000-16gb:secure-cloud:on-demand",
+    "id": "runpod:rtx-a4000-16gb:community-cloud:on-demand",
     "provider": "runpod",
     "sku": "rtx-a4000-16gb",
     "summary": "runpod delisted rtx-a4000-16gb"
@@ -20005,42 +20493,10 @@
   {
     "date": "2026-08-31",
     "kind": "removed",
-    "id": "runpod:rtx-a4000-16gb:secure-cloud:spot",
+    "id": "runpod:rtx-a4000-16gb:community-cloud:spot",
     "provider": "runpod",
     "sku": "rtx-a4000-16gb",
     "summary": "runpod delisted rtx-a4000-16gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-a4500-20gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-a4500-20gb",
-    "summary": "runpod delisted rtx-a4500-20gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-a4500-20gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-a4500-20gb",
-    "summary": "runpod delisted rtx-a4500-20gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-a6000-48gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-a6000-48gb",
-    "summary": "runpod delisted rtx-a6000-48gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-a6000-48gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-a6000-48gb",
-    "summary": "runpod delisted rtx-a6000-48gb"
   },
   {
     "date": "2026-08-31",
@@ -20057,38 +20513,6 @@
     "provider": "runpod",
     "sku": "rtx-pro-6000-96gb",
     "summary": "runpod delisted rtx-pro-6000-96gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-pro-6000-maxq-96gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-pro-6000-maxq-96gb",
-    "summary": "runpod delisted rtx-pro-6000-maxq-96gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:rtx-pro-6000-maxq-96gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-pro-6000-maxq-96gb",
-    "summary": "runpod delisted rtx-pro-6000-maxq-96gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:tesla-v100-16gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "tesla-v100-16gb",
-    "summary": "runpod delisted tesla-v100-16gb"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "removed",
-    "id": "runpod:tesla-v100-16gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "tesla-v100-16gb",
-    "summary": "runpod delisted tesla-v100-16gb"
   },
   {
     "date": "2026-08-31",
@@ -20125,6 +20549,14 @@
   {
     "date": "2026-08-31",
     "kind": "removed",
+    "id": "vast:h100-sxm-80gb:global:spot",
+    "provider": "vast",
+    "sku": "h100-sxm-80gb",
+    "summary": "vast delisted h100-sxm-80gb"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "removed",
     "id": "vast:l4-24gb:global:spot",
     "provider": "vast",
     "sku": "l4-24gb",
@@ -20133,10 +20565,18 @@
   {
     "date": "2026-08-31",
     "kind": "removed",
-    "id": "vast:rtx-pro-5000-48gb:global:spot",
+    "id": "vast:rtx-4090-48gb:global:on-demand",
     "provider": "vast",
-    "sku": "rtx-pro-5000-48gb",
-    "summary": "vast delisted rtx-pro-5000-48gb"
+    "sku": "rtx-4090-48gb",
+    "summary": "vast delisted rtx-4090-48gb"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "removed",
+    "id": "vast:rtx-4090-48gb:global:spot",
+    "provider": "vast",
+    "sku": "rtx-4090-48gb",
+    "summary": "vast delisted rtx-4090-48gb"
   },
   {
     "date": "2026-08-31",
@@ -20145,9 +20585,9 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-input",
     "old_price": 0.0784,
-    "new_price": 0.0871,
-    "pct": 11.1,
-    "summary": "openrouter raised deepseek-deepseek-v4-flash-input 11.1%: 0.0784 \u2192 0.0871 usd_per_mtok"
+    "new_price": 0.0809,
+    "pct": 3.2,
+    "summary": "openrouter raised deepseek-deepseek-v4-flash-input 3.2%: 0.0784 \u2192 0.0809 usd_per_mtok"
   },
   {
     "date": "2026-08-31",
@@ -20156,9 +20596,31 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-output",
     "old_price": 0.1568,
-    "new_price": 0.1742,
-    "pct": 11.1,
-    "summary": "openrouter raised deepseek-deepseek-v4-flash-output 11.1%: 0.1568 \u2192 0.1742 usd_per_mtok"
+    "new_price": 0.1618,
+    "pct": 3.2,
+    "summary": "openrouter raised deepseek-deepseek-v4-flash-output 3.2%: 0.1568 \u2192 0.1618 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "openrouter:google-gemini-3.5-flash-input:global:list",
+    "provider": "openrouter",
+    "sku": "google-gemini-3.5-flash-input",
+    "old_price": 1.5,
+    "new_price": 1.65,
+    "pct": 10.0,
+    "summary": "openrouter raised google-gemini-3.5-flash-input 10.0%: 1.5 \u2192 1.65 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "openrouter:google-gemini-3.5-flash-output:global:list",
+    "provider": "openrouter",
+    "sku": "google-gemini-3.5-flash-output",
+    "old_price": 9.0,
+    "new_price": 9.9,
+    "pct": 10.0,
+    "summary": "openrouter raised google-gemini-3.5-flash-output 10.0%: 9.0 \u2192 9.9 usd_per_mtok"
   },
   {
     "date": "2026-08-31",
@@ -20196,6 +20658,61 @@
   {
     "date": "2026-08-31",
     "kind": "price_change",
+    "id": "openrouter:qwen-qwen3.8-2.4t-a95b-batch-input:global:list",
+    "provider": "openrouter",
+    "sku": "qwen-qwen3.8-2.4t-a95b-batch-input",
+    "old_price": 2.5,
+    "new_price": 2.0,
+    "pct": -20.0,
+    "summary": "openrouter cut qwen-qwen3.8-2.4t-a95b-batch-input 20.0%: 2.5 \u2192 2.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "openrouter:qwen-qwen3.8-2.4t-a95b-batch-output:global:list",
+    "provider": "openrouter",
+    "sku": "qwen-qwen3.8-2.4t-a95b-batch-output",
+    "old_price": 6.25,
+    "new_price": 6.0,
+    "pct": -4.0,
+    "summary": "openrouter cut qwen-qwen3.8-2.4t-a95b-batch-output 4.0%: 6.25 \u2192 6.0 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "requesty:deepseek-v4-flash-0731-input:global:list",
+    "provider": "requesty",
+    "sku": "deepseek-v4-flash-0731-input",
+    "old_price": 0.065,
+    "new_price": 0.076,
+    "pct": 16.9,
+    "summary": "requesty raised deepseek-v4-flash-0731-input 16.9%: 0.065 \u2192 0.076 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "requesty:glm-5.2-input:global:list",
+    "provider": "requesty",
+    "sku": "glm-5.2-input",
+    "old_price": 0.7,
+    "new_price": 0.75,
+    "pct": 7.1,
+    "summary": "requesty raised glm-5.2-input 7.1%: 0.7 \u2192 0.75 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "requesty:glm-5.2-output:global:list",
+    "provider": "requesty",
+    "sku": "glm-5.2-output",
+    "old_price": 2.2,
+    "new_price": 2.4,
+    "pct": 9.1,
+    "summary": "requesty raised glm-5.2-output 9.1%: 2.2 \u2192 2.4 usd_per_mtok"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
     "id": "vast:a100-pcie-40gb:global:spot",
     "provider": "vast",
     "sku": "a100-pcie-40gb",
@@ -20211,20 +20728,9 @@
     "provider": "vast",
     "sku": "a100-sxm4-40gb",
     "old_price": 0.6948,
-    "new_price": 0.6681,
-    "pct": -3.8,
-    "summary": "vast cut a100-sxm4-40gb 3.8%: 0.6948 \u2192 0.6681 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "price_change",
-    "id": "vast:a100-sxm4-40gb:global:spot",
-    "provider": "vast",
-    "sku": "a100-sxm4-40gb",
-    "old_price": 0.5333,
-    "new_price": 0.4,
-    "pct": -25.0,
-    "summary": "vast cut a100-sxm4-40gb 25.0%: 0.5333 \u2192 0.4 usd_per_hour"
+    "new_price": 0.8406,
+    "pct": 21.0,
+    "summary": "vast raised a100-sxm4-40gb 21.0%: 0.6948 \u2192 0.8406 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20233,9 +20739,20 @@
     "provider": "vast",
     "sku": "a100-sxm4-80gb",
     "old_price": 1.0427,
-    "new_price": 1.0547,
-    "pct": 1.2,
-    "summary": "vast raised a100-sxm4-80gb 1.2%: 1.0427 \u2192 1.0547 usd_per_hour"
+    "new_price": 1.0162,
+    "pct": -2.5,
+    "summary": "vast cut a100-sxm4-80gb 2.5%: 1.0427 \u2192 1.0162 usd_per_hour"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "vast:a100-sxm4-80gb:global:spot",
+    "provider": "vast",
+    "sku": "a100-sxm4-80gb",
+    "old_price": 0.6667,
+    "new_price": 0.6493,
+    "pct": -2.6,
+    "summary": "vast cut a100-sxm4-80gb 2.6%: 0.6667 \u2192 0.6493 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20244,9 +20761,9 @@
     "provider": "vast",
     "sku": "b200-180gb",
     "old_price": 6.0026,
-    "new_price": 6.0013,
-    "pct": -0.0,
-    "summary": "vast cut b200-180gb 0.0%: 6.0026 \u2192 6.0013 usd_per_hour"
+    "new_price": 5.8764,
+    "pct": -2.1,
+    "summary": "vast cut b200-180gb 2.1%: 6.0026 \u2192 5.8764 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20266,20 +20783,9 @@
     "provider": "vast",
     "sku": "h100-sxm-80gb",
     "old_price": 2.4002,
-    "new_price": 1.7344,
+    "new_price": 1.7356,
     "pct": -27.7,
-    "summary": "vast cut h100-sxm-80gb 27.7%: 2.4002 \u2192 1.7344 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "price_change",
-    "id": "vast:h200-141gb:global:on-demand",
-    "provider": "vast",
-    "sku": "h200-141gb",
-    "old_price": 3.9766,
-    "new_price": 3.9481,
-    "pct": -0.7,
-    "summary": "vast cut h200-141gb 0.7%: 3.9766 \u2192 3.9481 usd_per_hour"
+    "summary": "vast cut h100-sxm-80gb 27.7%: 2.4002 \u2192 1.7356 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20288,9 +20794,9 @@
     "provider": "vast",
     "sku": "h200-141gb",
     "old_price": 2.6132,
-    "new_price": 2.6316,
-    "pct": 0.7,
-    "summary": "vast raised h200-141gb 0.7%: 2.6132 \u2192 2.6316 usd_per_hour"
+    "new_price": 3.2895,
+    "pct": 25.9,
+    "summary": "vast raised h200-141gb 25.9%: 2.6132 \u2192 3.2895 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20299,9 +20805,9 @@
     "provider": "vast",
     "sku": "h200-nvl-141gb",
     "old_price": 3.9144,
-    "new_price": 3.8685,
-    "pct": -1.2,
-    "summary": "vast cut h200-nvl-141gb 1.2%: 3.9144 \u2192 3.8685 usd_per_hour"
+    "new_price": 3.6672,
+    "pct": -6.3,
+    "summary": "vast cut h200-nvl-141gb 6.3%: 3.9144 \u2192 3.6672 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20310,9 +20816,20 @@
     "provider": "vast",
     "sku": "rtx-3090-24gb",
     "old_price": 0.1411,
-    "new_price": 0.1474,
-    "pct": 4.5,
-    "summary": "vast raised rtx-3090-24gb 4.5%: 0.1411 \u2192 0.1474 usd_per_hour"
+    "new_price": 0.1356,
+    "pct": -3.9,
+    "summary": "vast cut rtx-3090-24gb 3.9%: 0.1411 \u2192 0.1356 usd_per_hour"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "vast:rtx-3090-24gb:global:spot",
+    "provider": "vast",
+    "sku": "rtx-3090-24gb",
+    "old_price": 0.12,
+    "new_price": 0.1067,
+    "pct": -11.1,
+    "summary": "vast cut rtx-3090-24gb 11.1%: 0.12 \u2192 0.1067 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20321,9 +20838,9 @@
     "provider": "vast",
     "sku": "rtx-4090-24gb",
     "old_price": 0.3478,
-    "new_price": 0.3433,
-    "pct": -1.3,
-    "summary": "vast cut rtx-4090-24gb 1.3%: 0.3478 \u2192 0.3433 usd_per_hour"
+    "new_price": 0.3356,
+    "pct": -3.5,
+    "summary": "vast cut rtx-4090-24gb 3.5%: 0.3478 \u2192 0.3356 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20332,53 +20849,9 @@
     "provider": "vast",
     "sku": "rtx-4090-24gb",
     "old_price": 0.255,
-    "new_price": 0.28,
-    "pct": 9.8,
-    "summary": "vast raised rtx-4090-24gb 9.8%: 0.255 \u2192 0.28 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "price_change",
-    "id": "vast:rtx-4090-48gb:global:on-demand",
-    "provider": "vast",
-    "sku": "rtx-4090-48gb",
-    "old_price": 0.6037,
-    "new_price": 0.6074,
-    "pct": 0.6,
-    "summary": "vast raised rtx-4090-48gb 0.6%: 0.6037 \u2192 0.6074 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "price_change",
-    "id": "vast:rtx-4090-48gb:global:spot",
-    "provider": "vast",
-    "sku": "rtx-4090-48gb",
-    "old_price": 0.3333,
-    "new_price": 0.357,
-    "pct": 7.1,
-    "summary": "vast raised rtx-4090-48gb 7.1%: 0.3333 \u2192 0.357 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "price_change",
-    "id": "vast:rtx-5090-32gb:global:on-demand",
-    "provider": "vast",
-    "sku": "rtx-5090-32gb",
-    "old_price": 0.4037,
-    "new_price": 0.4131,
-    "pct": 2.3,
-    "summary": "vast raised rtx-5090-32gb 2.3%: 0.4037 \u2192 0.4131 usd_per_hour"
-  },
-  {
-    "date": "2026-08-31",
-    "kind": "price_change",
-    "id": "vast:rtx-a6000-48gb:global:on-demand",
-    "provider": "vast",
-    "sku": "rtx-a6000-48gb",
-    "old_price": 0.4044,
-    "new_price": 0.403,
-    "pct": -0.3,
-    "summary": "vast cut rtx-a6000-48gb 0.3%: 0.4044 \u2192 0.403 usd_per_hour"
+    "new_price": 0.2667,
+    "pct": 4.6,
+    "summary": "vast raised rtx-4090-24gb 4.6%: 0.255 \u2192 0.2667 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20387,9 +20860,9 @@
     "provider": "vast",
     "sku": "rtx-pro-5000-48gb",
     "old_price": 0.6674,
-    "new_price": 0.6669,
-    "pct": -0.1,
-    "summary": "vast cut rtx-pro-5000-48gb 0.1%: 0.6674 \u2192 0.6669 usd_per_hour"
+    "new_price": 0.6411,
+    "pct": -3.9,
+    "summary": "vast cut rtx-pro-5000-48gb 3.9%: 0.6674 \u2192 0.6411 usd_per_hour"
   },
   {
     "date": "2026-08-31",
@@ -20420,8 +20893,19 @@
     "provider": "vast",
     "sku": "rtx-pro-6000-ws-96gb",
     "old_price": 1.1902,
-    "new_price": 1.2044,
-    "pct": 1.2,
-    "summary": "vast raised rtx-pro-6000-ws-96gb 1.2%: 1.1902 \u2192 1.2044 usd_per_hour"
+    "new_price": 1.5215,
+    "pct": 27.8,
+    "summary": "vast raised rtx-pro-6000-ws-96gb 27.8%: 1.1902 \u2192 1.5215 usd_per_hour"
+  },
+  {
+    "date": "2026-08-31",
+    "kind": "price_change",
+    "id": "vast:rtx-pro-6000-ws-96gb:global:spot",
+    "provider": "vast",
+    "sku": "rtx-pro-6000-ws-96gb",
+    "old_price": 0.9333,
+    "new_price": 1.0667,
+    "pct": 14.3,
+    "summary": "vast raised rtx-pro-6000-ws-96gb 14.3%: 0.9333 \u2192 1.0667 usd_per_hour"
   }
 ]
