@@ -1,6 +1,106 @@
 [
   {
     "offer": {
+      "id": "vast:a100-sxm4-40gb:global:on-demand",
+      "provider": "vast",
+      "sku": "a100-sxm4-40gb",
+      "price": 0.9363,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "A100 SXM4",
+        "vram_gb": 40,
+        "sample_size": 6,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-01T21:45:42Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.6674,
+    "delta_pct": 40.3,
+    "reason": "price moved 40.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-4090-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-4090-48gb",
+      "price": 0.24,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 8,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-01T21:45:42Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4,
+    "delta_pct": 40.0,
+    "reason": "price moved 40.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-a6000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-a6000-48gb",
+      "price": 0.24,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX A6000",
+        "vram_gb": 48,
+        "sample_size": 7,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-01T21:45:42Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4,
+    "delta_pct": 40.0,
+    "reason": "price moved 40.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-5000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-5000-48gb",
+      "price": 0.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 5000",
+        "vram_gb": 48,
+        "sample_size": 13,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-01T21:45:42Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.2,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "novita:macaron-v1-tall-input:global:list",
       "provider": "novita",
       "sku": "macaron-v1-tall-input",
@@ -18,7 +118,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-01T18:29:23Z"
+        "observed_at": "2026-09-01T21:45:42Z"
       },
       "fixture": false
     },
@@ -45,7 +145,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-01T18:29:23Z"
+        "observed_at": "2026-09-01T21:45:42Z"
       },
       "fixture": false
     },
@@ -72,7 +172,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-01T18:29:23Z"
+        "observed_at": "2026-09-01T21:45:42Z"
       },
       "fixture": false
     },
@@ -99,7 +199,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-01T18:29:23Z"
+        "observed_at": "2026-09-01T21:45:42Z"
       },
       "fixture": false
     },
@@ -126,7 +226,7 @@
       },
       "provenance": {
         "url": "https://deepinfra.com/models",
-        "observed_at": "2026-09-01T18:29:23Z"
+        "observed_at": "2026-09-01T21:45:42Z"
       },
       "fixture": false
     },
@@ -153,7 +253,7 @@
       },
       "provenance": {
         "url": "https://deepinfra.com/models",
-        "observed_at": "2026-09-01T18:29:23Z"
+        "observed_at": "2026-09-01T21:45:42Z"
       },
       "fixture": false
     },
