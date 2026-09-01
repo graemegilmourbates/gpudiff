@@ -1,0 +1,315 @@
+[
+  {
+    "offer": {
+      "id": "vast:h100-sxm-80gb:global:on-demand",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 3.134,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 8,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.7356,
+    "delta_pct": 80.6,
+    "reason": "price moved 80.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-a6000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-a6000-48gb",
+      "price": 0.24,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX A6000",
+        "vram_gb": 48,
+        "sample_size": 7,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4,
+    "delta_pct": 40.0,
+    "reason": "price moved 40.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:l40s-48gb:global:spot",
+      "provider": "vast",
+      "sku": "l40s-48gb",
+      "price": 0.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L40S",
+        "vram_gb": 48,
+        "sample_size": 8,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.7733,
+    "delta_pct": 48.3,
+    "reason": "price moved 48.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-input:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-input",
+      "price": 0.132,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0825,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-output:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-output",
+      "price": 0.528,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.33,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3-235b-a22b-2507-output:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3-235b-a22b-2507-output",
+      "price": 0.55,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3-235b-a22b-2507",
+        "model_name": "Qwen: Qwen3 235B A22B Instruct 2507",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-2507",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.35,
+    "delta_pct": 57.1,
+    "reason": "price moved 57.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:gryphe-mythomax-l2-13b-input:global:list",
+      "provider": "openrouter",
+      "sku": "gryphe-mythomax-l2-13b-input",
+      "price": 0.35,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "gryphe/mythomax-l2-13b",
+        "model_name": "MythoMax 13B",
+        "context_length": 8192,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/gryphe/mythomax-l2-13b",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.06,
+    "delta_pct": 483.3,
+    "reason": "price moved 483.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:gryphe-mythomax-l2-13b-output:global:list",
+      "provider": "openrouter",
+      "sku": "gryphe-mythomax-l2-13b-output",
+      "price": 0.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "gryphe/mythomax-l2-13b",
+        "model_name": "MythoMax 13B",
+        "context_length": 8192,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/gryphe/mythomax-l2-13b",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.06,
+    "delta_pct": 900.0,
+    "reason": "price moved 900.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "novita:macaron-v1-tall-input:global:list",
+      "provider": "novita",
+      "sku": "macaron-v1-tall-input",
+      "price": 0.2475,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "mindai/macaron-v1-tall",
+        "canonical": "macaron-v1-tall",
+        "direction": "input",
+        "context_length": 262144,
+        "routes_collapsed": 1,
+        "metric": "router_list"
+      },
+      "provenance": {
+        "url": "https://novita.ai/models",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.45,
+    "delta_pct": 45.0,
+    "reason": "price moved 45.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "novita:macaron-v1-tall-output:global:list",
+      "provider": "novita",
+      "sku": "macaron-v1-tall-output",
+      "price": 1.43,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "mindai/macaron-v1-tall",
+        "canonical": "macaron-v1-tall",
+        "direction": "output",
+        "context_length": 262144,
+        "routes_collapsed": 1,
+        "metric": "router_list"
+      },
+      "provenance": {
+        "url": "https://novita.ai/models",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.6,
+    "delta_pct": 45.0,
+    "reason": "price moved 45.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "novita:macaron-v1-venti-input:global:list",
+      "provider": "novita",
+      "sku": "macaron-v1-venti-input",
+      "price": 0.825,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "mindai/macaron-v1-venti",
+        "canonical": "macaron-v1-venti",
+        "direction": "input",
+        "context_length": 1048576,
+        "routes_collapsed": 1,
+        "metric": "router_list"
+      },
+      "provenance": {
+        "url": "https://novita.ai/models",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.5,
+    "delta_pct": 45.0,
+    "reason": "price moved 45.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "novita:macaron-v1-venti-output:global:list",
+      "provider": "novita",
+      "sku": "macaron-v1-venti-output",
+      "price": 2.4475,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "mindai/macaron-v1-venti",
+        "canonical": "macaron-v1-venti",
+        "direction": "output",
+        "context_length": 1048576,
+        "routes_collapsed": 1,
+        "metric": "router_list"
+      },
+      "provenance": {
+        "url": "https://novita.ai/models",
+        "observed_at": "2026-09-01T05:05:45Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 4.5,
+    "delta_pct": 45.6,
+    "reason": "price moved 45.6% (> 40% limit)"
+  }
+]
