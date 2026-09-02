@@ -1,105 +1,130 @@
 [
   {
     "offer": {
-      "id": "vast:h100-pcie-80gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-pcie-80gb",
-      "price": 2.0,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 PCIE",
-        "vram_gb": 80,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-02T14:28:19Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.3333,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
-      "price": 3.9868,
+      "price": 3.7513,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 13,
+        "sample_size": 12,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-02T14:28:19Z"
+        "observed_at": "2026-09-02T18:41:03Z"
       },
       "fixture": false
     },
     "previous_price": 2.5803,
-    "delta_pct": 54.5,
-    "reason": "price moved 54.5% (> 40% limit)"
+    "delta_pct": 45.4,
+    "reason": "price moved 45.4% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
+      "id": "vast:rtx-pro-6000-ws-96gb:global:on-demand",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-ws-96gb",
+      "price": 1.8544,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 6000 WS",
+        "vram_gb": 96,
+        "sample_size": 5,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-02T18:41:03Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.2096,
+    "delta_pct": 53.3,
+    "reason": "price moved 53.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-6000-ws-96gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-ws-96gb",
+      "price": 1.0667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 6000 WS",
+        "vram_gb": 96,
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-02T18:41:03Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.7333,
+    "delta_pct": 45.5,
+    "reason": "price moved 45.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:google-gemini-3.7-flash-batch-input:global:list",
       "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-pro-0813-input",
-      "price": 1.1154,
+      "sku": "google-gemini-3.7-flash-batch-input",
+      "price": 0.375,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "deepseek/deepseek-v4-pro-0813",
-        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
+        "model_id": "google/gemini-3.7-flash:batch",
+        "model_name": "Google: Gemini 3.7 Flash (batch)",
         "context_length": 1048576,
         "direction": "input",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-02T14:28:19Z"
+        "url": "https://openrouter.ai/google/gemini-3.7-flash:batch",
+        "observed_at": "2026-09-02T18:41:03Z"
       },
       "fixture": false
     },
-    "previous_price": 0.66,
-    "delta_pct": 69.0,
-    "reason": "price moved 69.0% (> 40% limit)"
+    "previous_price": 0.1875,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-pro-0813-output:global:list",
+      "id": "openrouter:google-gemini-3.7-flash-batch-output:global:list",
       "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-pro-0813-output",
-      "price": 3.3462,
+      "sku": "google-gemini-3.7-flash-batch-output",
+      "price": 1.875,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "deepseek/deepseek-v4-pro-0813",
-        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
+        "model_id": "google/gemini-3.7-flash:batch",
+        "model_name": "Google: Gemini 3.7 Flash (batch)",
         "context_length": 1048576,
         "direction": "output",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-02T14:28:19Z"
+        "url": "https://openrouter.ai/google/gemini-3.7-flash:batch",
+        "observed_at": "2026-09-02T18:41:03Z"
       },
       "fixture": false
     },
-    "previous_price": 1.98,
-    "delta_pct": 69.0,
-    "reason": "price moved 69.0% (> 40% limit)"
+    "previous_price": 0.9375,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -119,63 +144,11 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-09-02T14:28:19Z"
+        "observed_at": "2026-09-02T18:41:03Z"
       },
       "fixture": false
     },
     "previous_price": 0.1,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-02T14:28:19Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-02T14:28:19Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.33,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
   },
@@ -197,7 +170,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
-        "observed_at": "2026-09-02T14:28:19Z"
+        "observed_at": "2026-09-02T18:41:03Z"
       },
       "fixture": false
     },
@@ -223,7 +196,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-09-02T14:28:19Z"
+        "observed_at": "2026-09-02T18:41:03Z"
       },
       "fixture": false
     },
@@ -249,7 +222,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-09-02T14:28:19Z"
+        "observed_at": "2026-09-02T18:41:03Z"
       },
       "fixture": false
     },
