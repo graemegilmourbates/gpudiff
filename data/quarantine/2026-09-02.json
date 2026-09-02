@@ -1,0 +1,206 @@
+[
+  {
+    "offer": {
+      "id": "vast:h100-sxm-80gb:global:on-demand",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 3.136,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 7,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-02T00:12:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.7344,
+    "delta_pct": 80.8,
+    "reason": "price moved 80.8% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h100-sxm-80gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 2.0667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 7,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-02T00:12:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.0667,
+    "delta_pct": 93.7,
+    "reason": "price moved 93.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h200-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-141gb",
+      "price": 4.2105,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "sample_size": 13,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-02T00:12:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.5803,
+    "delta_pct": 63.2,
+    "reason": "price moved 63.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h200-nvl-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-nvl-141gb",
+      "price": 2.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200 NVL",
+        "vram_gb": 141,
+        "sample_size": 6,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-02T00:12:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.3333,
+    "delta_pct": 80.0,
+    "reason": "price moved 80.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-latest-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-latest-output",
+      "price": 0.16,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~deepseek/deepseek-v4-flash-latest",
+        "model_name": "DeepSeek V4 Flash Latest",
+        "context_length": 1310720,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
+        "observed_at": "2026-09-02T00:12:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.1,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:nvidia-nemotron-3-ultra-550b-a55b-output:global:list",
+      "provider": "openrouter",
+      "sku": "nvidia-nemotron-3-ultra-550b-a55b-output",
+      "price": 3.125,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "nvidia/nemotron-3-ultra-550b-a55b",
+        "model_name": "NVIDIA: Nemotron 3 Ultra",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
+        "observed_at": "2026-09-02T00:12:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.2,
+    "delta_pct": 42.0,
+    "reason": "price moved 42.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-chat-v3.1-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-chat-v3.1-input",
+      "price": 0.25,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-chat-v3.1",
+        "model_name": "DeepSeek: DeepSeek V3.1",
+        "context_length": 163840,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
+        "observed_at": "2026-09-02T00:12:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.55,
+    "delta_pct": 54.5,
+    "reason": "price moved 54.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-chat-v3.1-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-chat-v3.1-output",
+      "price": 0.95,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-chat-v3.1",
+        "model_name": "DeepSeek: DeepSeek V3.1",
+        "context_length": 163840,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
+        "observed_at": "2026-09-02T00:12:22Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.65,
+    "delta_pct": 42.4,
+    "reason": "price moved 42.4% (> 40% limit)"
+  }
+]
