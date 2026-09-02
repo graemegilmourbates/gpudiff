@@ -1,53 +1,78 @@
 [
   {
     "offer": {
-      "id": "vast:h200-141gb:global:spot",
+      "id": "vast:h100-sxm-80gb:global:on-demand",
       "provider": "vast",
-      "sku": "h200-141gb",
-      "price": 3.7513,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H200",
-        "vram_gb": 141,
-        "sample_size": 12,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-02T18:41:03Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.5803,
-    "delta_pct": 45.4,
-    "reason": "price moved 45.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-pro-6000-ws-96gb:global:on-demand",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-ws-96gb",
-      "price": 1.8544,
+      "sku": "h100-sxm-80gb",
+      "price": 2.9344,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX PRO 6000 WS",
-        "vram_gb": 96,
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
         "sample_size": 5,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-02T18:41:03Z"
+        "observed_at": "2026-09-02T21:48:20Z"
       },
       "fixture": false
     },
-    "previous_price": 1.2096,
-    "delta_pct": 53.3,
-    "reason": "price moved 53.3% (> 40% limit)"
+    "previous_price": 1.7344,
+    "delta_pct": 69.2,
+    "reason": "price moved 69.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:a100-pcie-40gb:global:spot",
+      "provider": "vast",
+      "sku": "a100-pcie-40gb",
+      "price": 0.2667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "A100 PCIE",
+        "vram_gb": 40,
+        "sample_size": 8,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-02T21:48:20Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5333,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-4090-48gb:global:on-demand",
+      "provider": "vast",
+      "sku": "rtx-4090-48gb",
+      "price": 0.6074,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 10,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-02T21:48:20Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3736,
+    "delta_pct": 62.6,
+    "reason": "price moved 62.6% (> 40% limit)"
   },
   {
     "offer": {
@@ -61,12 +86,12 @@
       "attrs": {
         "gpu_model": "RTX PRO 6000 WS",
         "vram_gb": 96,
-        "sample_size": 5,
+        "sample_size": 10,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-02T18:41:03Z"
+        "observed_at": "2026-09-02T21:48:20Z"
       },
       "fixture": false
     },
@@ -92,7 +117,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/google/gemini-3.7-flash:batch",
-        "observed_at": "2026-09-02T18:41:03Z"
+        "observed_at": "2026-09-02T21:48:20Z"
       },
       "fixture": false
     },
@@ -118,7 +143,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/google/gemini-3.7-flash:batch",
-        "observed_at": "2026-09-02T18:41:03Z"
+        "observed_at": "2026-09-02T21:48:20Z"
       },
       "fixture": false
     },
@@ -144,39 +169,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-09-02T18:41:03Z"
+        "observed_at": "2026-09-02T21:48:20Z"
       },
       "fixture": false
     },
     "previous_price": 0.1,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:nvidia-nemotron-3-ultra-550b-a55b-output:global:list",
-      "provider": "openrouter",
-      "sku": "nvidia-nemotron-3-ultra-550b-a55b-output",
-      "price": 3.125,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "nvidia/nemotron-3-ultra-550b-a55b",
-        "model_name": "NVIDIA: Nemotron 3 Ultra",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b",
-        "observed_at": "2026-09-02T18:41:03Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.2,
-    "delta_pct": 42.0,
-    "reason": "price moved 42.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -196,7 +195,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-09-02T18:41:03Z"
+        "observed_at": "2026-09-02T21:48:20Z"
       },
       "fixture": false
     },
@@ -222,7 +221,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-09-02T18:41:03Z"
+        "observed_at": "2026-09-02T21:48:20Z"
       },
       "fixture": false
     },
