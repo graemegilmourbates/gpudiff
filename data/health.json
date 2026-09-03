@@ -1,6 +1,6 @@
 {
   "date": "2026-09-03",
-  "observed_at": "2026-09-03T00:14:48Z",
+  "observed_at": "2026-09-03T03:06:42Z",
   "sources": [
     {
       "source": "vast",
@@ -10,7 +10,7 @@
     {
       "source": "runpod",
       "ok": true,
-      "offers": 86
+      "offers": 100
     },
     {
       "source": "aws",
@@ -27,7 +27,7 @@
     {
       "source": "openrouter",
       "ok": true,
-      "offers": 798
+      "offers": 796
     },
     {
       "source": "routers",
@@ -45,10 +45,20 @@
       "ok": true,
       "offers": 30,
       "carried": true
+    },
+    {
+      "source": "bls",
+      "ok": true,
+      "offers": 2
+    },
+    {
+      "source": "newegg",
+      "ok": true,
+      "offers": 13
     }
   ],
-  "valid": 2680,
+  "valid": 2704,
   "rejected": 0,
-  "quarantined": 9,
+  "quarantined": 12,
   "healthy": true
 }
