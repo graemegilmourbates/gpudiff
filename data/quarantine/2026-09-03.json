@@ -1,78 +1,53 @@
 [
   {
     "offer": {
-      "id": "vast:rtx-a6000-48gb:global:spot",
+      "id": "vast:a100-pcie-40gb:global:on-demand",
       "provider": "vast",
-      "sku": "rtx-a6000-48gb",
-      "price": 0.4,
+      "sku": "a100-pcie-40gb",
+      "price": 0.86,
       "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX A6000",
-        "vram_gb": 48,
-        "sample_size": 7,
-        "metric": "p25_min_bid_per_gpu"
+        "gpu_model": "A100 PCIE",
+        "vram_gb": 40,
+        "sample_size": 6,
+        "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-03T18:37:18Z"
+        "observed_at": "2026-09-03T21:41:59Z"
       },
       "fixture": false
     },
-    "previous_price": 0.24,
-    "delta_pct": 66.7,
-    "reason": "price moved 66.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:l4-24gb:global:spot",
-      "provider": "vast",
-      "sku": "l4-24gb",
-      "price": 0.2,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "L4",
-        "vram_gb": 24,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-03T18:37:18Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.1333,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
+    "previous_price": 0.5341,
+    "delta_pct": 61.0,
+    "reason": "price moved 61.0% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:rtx-pro-5000-48gb:global:spot",
       "provider": "vast",
       "sku": "rtx-pro-5000-48gb",
-      "price": 0.2,
+      "price": 0.24,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX PRO 5000",
         "vram_gb": 48,
-        "sample_size": 18,
+        "sample_size": 20,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-03T18:37:18Z"
+        "observed_at": "2026-09-03T21:41:59Z"
       },
       "fixture": false
     },
     "previous_price": 0.4,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
+    "delta_pct": 40.0,
+    "reason": "price moved 40.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -92,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-09-03T18:37:18Z"
+        "observed_at": "2026-09-03T21:41:59Z"
       },
       "fixture": false
     },
@@ -118,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-09-03T18:37:18Z"
+        "observed_at": "2026-09-03T21:41:59Z"
       },
       "fixture": false
     },
@@ -144,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen2.5-vl-72b-instruct",
-        "observed_at": "2026-09-03T18:37:18Z"
+        "observed_at": "2026-09-03T21:41:59Z"
       },
       "fixture": false
     },
@@ -170,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-09-03T18:37:18Z"
+        "observed_at": "2026-09-03T21:41:59Z"
       },
       "fixture": false
     },
@@ -196,7 +171,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-09-03T18:37:18Z"
+        "observed_at": "2026-09-03T21:41:59Z"
       },
       "fixture": false
     },
