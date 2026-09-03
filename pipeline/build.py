@@ -346,7 +346,7 @@ def sponsor_slot(path):
 def page(title, body, monetize, desc="", jsonld="", path="/"):
     nav = ('<nav class="site"><a href="/">GPUs</a><a href="/llm/">LLM APIs</a>'
            '<a href="/rankings.html">rankings</a><a href="/movers.html">movers</a>'
-           '<a href="/saas/">SaaS</a><a href="/memory.html">RAM</a><a href="/fit.html">fit</a>'
+           '<a href="/saas/">SaaS</a><a href="/hardware.html">hardware</a><a href="/fit.html">fit</a>'
            '<a href="/changelog.html">changelog</a><a href="/methodology.html">methodology</a>'
            '<a href="/api/">API</a><a href="https://github.com/graemegilmourbates/gpudiff">source</a></nav>')
     gsc = monetize.get("google_site_verification", "")
@@ -1627,48 +1627,81 @@ per-token price across the models they share.</div></div>"""
                 path="/rankings.html")
 
 
-def render_memory(memory_offers, changelog, monetize, aliases):
-    by = {}
-    for o in memory_offers:
-        by.setdefault(o["attrs"]["generation"], []).append(o)
-    rows = []
-    for gen in sorted(by, reverse=True):
-        for o in sorted(by[gen], key=lambda o: o["attrs"]["kit_gb"]):
-            rows.append(
-                f"<tr><td><strong>{esc(gen)}</strong></td>"
-                f"<td class='n'>{o['attrs']['kit_gb']} GB</td>"
-                f"<td class='n'><strong>${o['price']:.2f}</strong>/GB</td>"
-                f"<td class='n'>${o['price'] * o['attrs']['kit_gb']:.0f}</td>"
-                f"<td class='mut n'>p25 \u00d7{o['attrs']['sample_size']}</td></tr>")
-    recent = [e for e in changelog if entry_section(e) == "memory"][-15:]
+def render_hardware(memory_offers, card_offers, commodity_offers, changelog, monetize, aliases):
+    """Physical hardware and commodity prices: retail GPU cards, retail RAM,
+    and the government chip price index. Retail rows come from Best Buy's
+    public API (key-gated); the index needs no key at all."""
+    # --- commodity index (live without any key) ---
+    idx_rows = []
+    for o in sorted(commodity_offers, key=lambda o: o["sku"]):
+        a = o["attrs"]
+        recent = a.get("recent") or []
+        spark = sparkline([(d, v) for d, v in recent]) if len(recent) > 1 else ""
+        first = recent[0][1] if recent else None
+        yoy = f"{(o['price'] / first - 1) * 100:+.1f}% over {len(recent)} mo" if first else ""
+        idx_rows.append(
+            f"<tr><td><strong>{esc(a.get('title', o['sku']))}</strong><br>"
+            f"<span class='mut'>BLS series {esc(a.get('series_id', ''))}</span></td>"
+            f"<td class='n'><strong>{o['price']:.2f}</strong></td>"
+            f"<td class='n'>{esc(a.get('period', ''))}</td>"
+            f"<td class='{'cut' if yoy.startswith('-') else 'raise' if yoy.startswith('+') else ''}'>{esc(yoy)}</td>"
+            f"<td>{spark}</td>"
+            f"<td><a href='{esc(o['provenance']['url'])}' rel='noopener'>source</a></td></tr>")
+    idx_table = ("<div class='tablewrap'><table><thead><tr><th>Index</th><th class='n'>Latest</th>"
+                 "<th class='n'>Month</th><th>Trend</th><th>12 months</th><th></th></tr></thead>"
+                 f"<tbody>{''.join(idx_rows)}</tbody></table></div>") if idx_rows else \
+                "<p class='mut'>Index unavailable this refresh.</p>"
+
+    # --- retail GPU cards ---
+    card_rows = []
+    for o in sorted(card_offers, key=lambda o: -o["price"]):
+        card_rows.append(
+            f"<tr><td><strong>{esc(o['attrs']['model'])}</strong></td>"
+            f"<td class='n'><strong>${o['price']:,.0f}</strong></td>"
+            f"<td class='mut n'>p25 \u00d7{o['attrs']['sample_size']}</td></tr>")
+    # --- retail RAM ---
+    ram_rows = []
+    for o in sorted(memory_offers, key=lambda o: (o["attrs"]["generation"], o["attrs"]["kit_gb"]), reverse=True):
+        ram_rows.append(
+            f"<tr><td><strong>{esc(o['attrs']['generation'])}</strong></td>"
+            f"<td class='n'>{o['attrs']['kit_gb']} GB</td>"
+            f"<td class='n'><strong>${o['price']:.2f}</strong>/GB</td>"
+            f"<td class='n'>${o['price'] * o['attrs']['kit_gb']:.0f}</td>"
+            f"<td class='mut n'>p25 \u00d7{o['attrs']['sample_size']}</td></tr>")
+    pending = ("<p class='mut'>Retail tracking is built and waiting on a data key; rows appear "
+               "on the next build once it is connected.</p>")
+    card_table = ("<div class='tablewrap'><table><thead><tr><th>Card</th><th class='n'>Price</th>"
+                  f"<th class='n'>Sample</th></tr></thead><tbody>{''.join(card_rows)}</tbody></table></div>") if card_rows else pending
+    ram_table = ("<div class='tablewrap'><table><thead><tr><th>Type</th><th class='n'>Kit</th>"
+                 "<th class='n'>$/GB</th><th class='n'>Kit price</th><th class='n'>Sample</th></tr></thead>"
+                 f"<tbody>{''.join(ram_rows)}</tbody></table></div>") if ram_rows else pending
+
+    recent = [e for e in changelog if entry_section(e) == "hardware"][-15:]
     log = "\n".join(chg_html(e, aliases) for e in reversed(recent)) or \
-          '<li class="mut">Price history begins once tracking is live.</li>'
-    if rows:
-        table = ("<div class='tablewrap'><table><thead><tr><th>Type</th><th class='n'>Kit</th>"
-                 "<th class='n'>$/GB</th><th class='n'>Kit price</th><th class='n'>Sample</th>"
-                 "</tr></thead><tbody>" + "".join(rows) + "</tbody></table></div>")
-        intro = ("Retail DDR5 and DDR4 memory prices, per gigabyte, from Best Buy's public "
-                 "catalog \u2014 the 25th-percentile price across current listings for each kit "
-                 "size, so one overpriced SKU can't skew it. Refreshed daily.")
-    else:
-        table = ('<p class="mut">Tracking is scaffolded and waiting on a data key. RAM prices '
-                 'appear here on the next build once it is connected.</p>')
-        intro = ("Retail DRAM prices swing sharply \u2014 exactly what a price changelog should "
-                 "capture. We source them from Best Buy's sanctioned public API rather than "
-                 "scraping retailers that block automated traffic.")
+          '<li class="mut">Changes appear as prices move.</li>'
     body = f"""
-<h1>RAM price tracker <span class="badge">beta</span></h1>
-<p class="mut">{intro}</p>
+<h1>Hardware &amp; chip prices <span class="badge">beta</span></h1>
+<p class="mut">The physical side of compute: what a graphics card or RAM kit costs to buy, and
+the government producer-price index for the chips inside them. Retail rows are the
+25th-percentile price across current listings so one overpriced SKU can't skew them.</p>
 <h2>What changed</h2>
 <ul class="chg">{log}</ul>
-<h2>Current $/GB by memory type</h2>
-{table}
-<p class="mut">Prices are US retail list from a public catalog, not spot/contract commodity
-prices (those live behind paywalls like TrendForce). See <a href="/methodology.html">methodology</a>.</p>"""
-    return page("RAM Price Tracker \u2014 DDR5 & DDR4 $/GB, updated daily | gpudiff", body, monetize,
-                "Retail DDR5 and DDR4 RAM prices per gigabyte, tracked daily with a changelog of every "
-                "change. Sourced from a public catalog API, not scraped.",
-                path="/memory.html")
+<h2>Chip price index (US producer prices)</h2>
+<p class="mut">Monthly indexes from the Bureau of Labor Statistics. There is no DRAM-only
+series; these are the closest official measures of what chip makers charge. Daily spot
+prices live behind paywalls (TrendForce), so we publish the free official series and say so.</p>
+{idx_table}
+<h2>Graphics cards, retail</h2>
+{card_table}
+<h2>RAM, retail $/GB</h2>
+{ram_table}
+<p class="mut">Retail prices are US list from a public catalog API; indexes are BLS. See
+<a href="/methodology.html">methodology</a>.</p>"""
+    return page("Hardware & Chip Prices \u2014 GPU cards, RAM $/GB, semiconductor index | gpudiff",
+                body, monetize,
+                "Retail graphics card and RAM prices plus the US semiconductor producer price index, "
+                "tracked continually with a changelog of every change.",
+                path="/hardware.html")
 
 
 def render_methodology(monetize):
@@ -1746,8 +1779,8 @@ SECTION_OF = {"usd_per_mtok": "llm", "usd_per_unit": "saas"}
 def entry_section(e):
     if e["id"].split(":")[0] in LLM_PROVIDERS:
         return "llm"
-    if e["id"].split(":")[0] == "bestbuy":
-        return "memory"
+    if e["id"].split(":")[0] in ("bestbuy", "bls"):
+        return "hardware"
     if e["id"].split(":")[1].startswith("pricing-"):
         return "saas"
     return "gpu"
@@ -1874,7 +1907,10 @@ def build_site(offers, changelog, date):
     llm_offers = [o for o in offers if o["unit"] == "usd_per_mtok"]
     saas_offers = [o for o in offers if o["unit"] == "usd_per_unit"]
     memory_offers = [o for o in offers if o["unit"] == "usd_per_gb_ram"]
-    gpu_offers = [o for o in offers if o["unit"] not in ("usd_per_mtok", "usd_per_unit", "usd_per_gb_ram")]
+    card_offers = [o for o in offers if o["unit"] == "usd_per_card"]
+    commodity_offers = [o for o in offers if o["unit"] == "ppi_index"]
+    HW_UNITS = ("usd_per_gb_ram", "usd_per_card", "ppi_index")
+    gpu_offers = [o for o in offers if o["unit"] not in ("usd_per_mtok", "usd_per_unit") + HW_UNITS]
     fams = group_families(gpu_offers, specs, aliases)
 
     (SITE / "gpu").mkdir(parents=True, exist_ok=True)
@@ -1982,7 +2018,9 @@ def build_site(offers, changelog, date):
     (SITE / "gpu-guide.html").write_text(render_gpu_guide(fams, history, monetize))
     (SITE / "llm-guide.html").write_text(render_llm_guide(llm_offers, history, monetize))
     (SITE / "movers.html").write_text(render_movers(changelog, monetize, aliases))
-    (SITE / "memory.html").write_text(render_memory(memory_offers, changelog, monetize, aliases))
+    hw_page = render_hardware(memory_offers, card_offers, commodity_offers, changelog, monetize, aliases)
+    (SITE / "hardware.html").write_text(hw_page)
+    (SITE / "memory.html").write_text(hw_page)  # legacy alias; canonical points at /hardware.html
     (SITE / "rankings.html").write_text(render_rankings_hub(fams, llm_offers, monetize))
     (SITE / "cheapest-gpu-cloud.html").write_text(render_gpu_ranking(fams, monetize))
     (SITE / "cheapest-llm-api.html").write_text(render_llm_ranking(llm_offers, monetize))
@@ -2102,7 +2140,7 @@ def build_site(offers, changelog, date):
     (SITE / "api" / "changelog.json").write_text(json.dumps(changelog, indent=2) + "\n")
 
     urls = [f"{BASE_URL}/", f"{BASE_URL}/rankings.html", f"{BASE_URL}/cheapest-gpu-cloud.html",
-            f"{BASE_URL}/cheapest-llm-api.html", f"{BASE_URL}/movers.html", f"{BASE_URL}/memory.html",
+            f"{BASE_URL}/cheapest-llm-api.html", f"{BASE_URL}/movers.html", f"{BASE_URL}/hardware.html",
             f"{BASE_URL}/gpu-guide.html", f"{BASE_URL}/llm-guide.html",
             f"{BASE_URL}/llm/", f"{BASE_URL}/saas/", f"{BASE_URL}/fit.html",
             f"{BASE_URL}/changelog.html", f"{BASE_URL}/badges.html",

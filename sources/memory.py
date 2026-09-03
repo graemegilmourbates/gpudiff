@@ -24,6 +24,9 @@ MIN_SAMPLE = 4
 
 CAP = re.compile(r"\b(\d{1,3})\s?GB\b", re.I)
 GEN = re.compile(r"\bDDR([345])\b", re.I)
+# Retail graphics cards: model token like "RTX 4090", "RTX 5070 Ti", "RX 7900 XTX", "Arc B580"
+GPU_MODEL = re.compile(r"\b(RTX\s?\d{4}(?:\s?(?:Ti|SUPER|D))?|RX\s?\d{4}(?:\s?XTX|\s?XT)?|Arc\s?[AB]\d{3})\b", re.I)
+CARD_PRICE = (100, 5000)   # sanity band; drops accessories and mislabeled bundles
 
 
 def _key():
@@ -81,7 +84,48 @@ class MemorySource:
                     break
                 page += 1
 
+        # ---- retail GPU cards, same key, same API ----
+        cards = {}
+        page = 1
+        while page <= 5:
+            query = "(search=graphics&search=card&salePrice>0)"
+            url = (f"{API}{query}?apiKey={urllib.parse.quote(key)}&format=json"
+                   f"&show=name,salePrice&pageSize=100&page={page}")
+            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                payload = json.load(resp)
+            for p in payload.get("products", []):
+                name, price = p.get("name", ""), p.get("salePrice")
+                if not isinstance(price, (int, float)) or not (CARD_PRICE[0] <= price <= CARD_PRICE[1]):
+                    continue
+                m = GPU_MODEL.search(name)
+                if not m:
+                    continue
+                model = re.sub(r"\s+", " ", m.group(1)).upper().strip()
+                cards.setdefault(model, []).append(price)
+            if page >= payload.get("totalPages", 1):
+                break
+            page += 1
+
         offers = []
+        for model, pool in sorted(cards.items()):
+            if len(pool) < 3:
+                continue
+            sku = re.sub(r"[^a-z0-9]+", "-", model.lower()).strip("-")
+            offers.append({
+                "id": f"bestbuy:{sku}:us:list",
+                "provider": "bestbuy",
+                "sku": sku,
+                "price": _p25(pool),
+                "unit": "usd_per_card",
+                "pricing_type": "list",
+                "region": "us",
+                "attrs": {"model": model, "sample_size": len(pool),
+                          "metric": "p25_retail_card"},
+                "provenance": {"url": "https://www.bestbuy.com/site/computer-cards-components/video-graphics-cards/",
+                               "observed_at": observed_at},
+                "fixture": False,
+            })
         for (gen, gb), pool in sorted(buckets.items()):
             if len(pool) < MIN_SAMPLE:
                 continue
