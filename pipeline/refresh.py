@@ -44,6 +44,7 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
         from sources.azure import AzureSource
         from sources.commodity import CommoditySource
         from sources.memory import MemorySource
+        from sources.newegg import NeweggSource
         from sources.openrouter import OpenRouterSource
         from sources.ramp import RampSource
         from sources.routers import RoutersSource
@@ -52,7 +53,7 @@ def gather(date, use_fixtures, observed_at, carry_pool=(), force_all=False):
         from sources.vast import VastSource
         registry = [VastSource(), RunpodSource(), AwsSource(), AzureSource(),
                     OpenRouterSource(), RoutersSource(), RampSource(), SaasPagesSource(),
-                    CommoditySource()]
+                    CommoditySource(), NeweggSource()]
         # Retail RAM source registers only when its key is set, so its inert
         # empty result never trips the "0 offers = broken" health gate.
         mem = MemorySource()

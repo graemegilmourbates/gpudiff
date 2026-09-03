@@ -1656,7 +1656,7 @@ def render_hardware(memory_offers, card_offers, commodity_offers, changelog, mon
     card_rows = []
     for o in sorted(card_offers, key=lambda o: -o["price"]):
         card_rows.append(
-            f"<tr><td><strong>{esc(o['attrs']['model'])}</strong></td>"
+            f"<tr><td><strong>{esc(o['attrs']['model'])}</strong> <span class='mut'>{esc(o['provider'])}</span></td>"
             f"<td class='n'><strong>${o['price']:,.0f}</strong></td>"
             f"<td class='mut n'>p25 \u00d7{o['attrs']['sample_size']}</td></tr>")
     # --- retail RAM ---
@@ -1779,7 +1779,7 @@ SECTION_OF = {"usd_per_mtok": "llm", "usd_per_unit": "saas"}
 def entry_section(e):
     if e["id"].split(":")[0] in LLM_PROVIDERS:
         return "llm"
-    if e["id"].split(":")[0] in ("bestbuy", "bls"):
+    if e["id"].split(":")[0] in ("bestbuy", "bls", "newegg"):
         return "hardware"
     if e["id"].split(":")[1].startswith("pricing-"):
         return "saas"
