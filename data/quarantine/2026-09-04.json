@@ -1,6 +1,56 @@
 [
   {
     "offer": {
+      "id": "vast:h100-sxm-80gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 2.0667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 9,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-04T21:27:37Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.0667,
+    "delta_pct": 93.7,
+    "reason": "price moved 93.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-a6000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-a6000-48gb",
+      "price": 0.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX A6000",
+        "vram_gb": 48,
+        "sample_size": 11,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-04T21:27:37Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.2,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:qwen-qwen3.6-27b-input:global:list",
       "provider": "openrouter",
       "sku": "qwen-qwen3.6-27b-input",
@@ -17,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-09-04T18:23:20Z"
+        "observed_at": "2026-09-04T21:27:37Z"
       },
       "fixture": false
     },
@@ -43,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-09-04T18:23:20Z"
+        "observed_at": "2026-09-04T21:27:37Z"
       },
       "fixture": false
     },
@@ -69,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
-        "observed_at": "2026-09-04T18:23:20Z"
+        "observed_at": "2026-09-04T21:27:37Z"
       },
       "fixture": false
     },
