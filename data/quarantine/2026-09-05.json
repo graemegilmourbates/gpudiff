@@ -1,0 +1,104 @@
+[
+  {
+    "offer": {
+      "id": "vast:h200-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-141gb",
+      "price": 2.1658,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "sample_size": 8,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-05T00:04:13Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 3.9474,
+    "delta_pct": 45.1,
+    "reason": "price moved 45.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-5000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-5000-48gb",
+      "price": 0.24,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 5000",
+        "vram_gb": 48,
+        "sample_size": 19,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-05T00:04:13Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4,
+    "delta_pct": 40.0,
+    "reason": "price moved 40.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3-14b-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3-14b-input",
+      "price": 0.2275,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3-14b",
+        "model_name": "Qwen: Qwen3 14B",
+        "context_length": 131072,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3-14b",
+        "observed_at": "2026-09-05T00:04:13Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.12,
+    "delta_pct": 89.6,
+    "reason": "price moved 89.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3-14b-output:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3-14b-output",
+      "price": 0.91,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3-14b",
+        "model_name": "Qwen: Qwen3 14B",
+        "context_length": 131072,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3-14b",
+        "observed_at": "2026-09-05T00:04:13Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.24,
+    "delta_pct": 279.2,
+    "reason": "price moved 279.2% (> 40% limit)"
+  }
+]
