@@ -11,12 +11,12 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 16,
+        "sample_size": 15,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-06T21:19:41Z"
+        "observed_at": "2026-09-06T23:52:42Z"
       },
       "fixture": false
     },
@@ -26,10 +26,36 @@
   },
   {
     "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-0731-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-0731-input",
+      "price": 0.14,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash-0731",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0731",
+        "context_length": 1310720,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
+        "observed_at": "2026-09-06T23:52:42Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.065,
+    "delta_pct": 115.4,
+    "reason": "price moved 115.4% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-0731-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-0731-output",
-      "price": 0.1,
+      "price": 0.28,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -42,13 +68,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-09-06T21:19:41Z"
+        "observed_at": "2026-09-06T23:52:42Z"
       },
       "fixture": false
     },
     "previous_price": 0.18,
-    "delta_pct": 44.4,
-    "reason": "price moved 44.4% (> 40% limit)"
+    "delta_pct": 55.6,
+    "reason": "price moved 55.6% (> 40% limit)"
   },
   {
     "offer": {
@@ -60,7 +86,7 @@
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "openai/gpt-6-astra",
+        "model_id": "openai-responses/gpt-6-astra",
         "canonical": "gpt-6-astra",
         "direction": "input",
         "context_length": 1050000,
@@ -69,7 +95,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-06T21:19:41Z"
+        "observed_at": "2026-09-06T23:52:42Z"
       },
       "fixture": false
     },
@@ -87,7 +113,7 @@
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "openai/gpt-6-astra",
+        "model_id": "openai-responses/gpt-6-astra",
         "canonical": "gpt-6-astra",
         "direction": "output",
         "context_length": 1050000,
@@ -96,7 +122,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-06T21:19:41Z"
+        "observed_at": "2026-09-06T23:52:42Z"
       },
       "fixture": false
     },
