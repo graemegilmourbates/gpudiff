@@ -11,18 +11,43 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 17,
+        "sample_size": 14,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-06T10:54:04Z"
+        "observed_at": "2026-09-06T14:09:36Z"
       },
       "fixture": false
     },
     "previous_price": 0.6667,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h100-nvl-94gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-nvl-94gb",
+      "price": 2.0,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 NVL",
+        "vram_gb": 94,
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-06T14:09:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.2,
+    "delta_pct": 66.7,
+    "reason": "price moved 66.7% (> 40% limit)"
   },
   {
     "offer": {
@@ -42,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-06T10:54:04Z"
+        "observed_at": "2026-09-06T14:09:36Z"
       },
       "fixture": false
     },
@@ -68,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-06T10:54:04Z"
+        "observed_at": "2026-09-06T14:09:36Z"
       },
       "fixture": false
     },
@@ -94,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-09-06T10:54:04Z"
+        "observed_at": "2026-09-06T14:09:36Z"
       },
       "fixture": false
     },
@@ -120,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-06T10:54:04Z"
+        "observed_at": "2026-09-06T14:09:36Z"
       },
       "fixture": false
     },
@@ -146,12 +171,66 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-06T10:54:04Z"
+        "observed_at": "2026-09-06T14:09:36Z"
       },
       "fixture": false
     },
     "previous_price": 0.33,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "requesty:gpt-6-astra-input:global:list",
+      "provider": "requesty",
+      "sku": "gpt-6-astra-input",
+      "price": 10.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai-responses/gpt-6-astra",
+        "canonical": "gpt-6-astra",
+        "direction": "input",
+        "context_length": 1050000,
+        "routes_collapsed": 4,
+        "metric": "router_list"
+      },
+      "provenance": {
+        "url": "https://requesty.ai/models",
+        "observed_at": "2026-09-06T14:09:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 5.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "requesty:gpt-6-astra-output:global:list",
+      "provider": "requesty",
+      "sku": "gpt-6-astra-output",
+      "price": 50.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai-responses/gpt-6-astra",
+        "canonical": "gpt-6-astra",
+        "direction": "output",
+        "context_length": 1050000,
+        "routes_collapsed": 4,
+        "metric": "router_list"
+      },
+      "provenance": {
+        "url": "https://requesty.ai/models",
+        "observed_at": "2026-09-06T14:09:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 25.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
   }
 ]
