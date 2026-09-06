@@ -11,68 +11,18 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 14,
+        "sample_size": 16,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-06T19:09:29Z"
+        "observed_at": "2026-09-06T21:19:41Z"
       },
       "fixture": false
     },
     "previous_price": 0.6667,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:h200-141gb:global:spot",
-      "provider": "vast",
-      "sku": "h200-141gb",
-      "price": 2.2882,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H200",
-        "vram_gb": 141,
-        "sample_size": 16,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-06T19:09:29Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 3.974,
-    "delta_pct": 42.4,
-    "reason": "price moved 42.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:l40s-48gb:global:on-demand",
-      "provider": "vast",
-      "sku": "l40s-48gb",
-      "price": 0.8007,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "L40S",
-        "vram_gb": 48,
-        "sample_size": 6,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-06T19:09:29Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.5348,
-    "delta_pct": 49.7,
-    "reason": "price moved 49.7% (> 40% limit)"
   },
   {
     "offer": {
@@ -92,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-09-06T19:09:29Z"
+        "observed_at": "2026-09-06T21:19:41Z"
       },
       "fixture": false
     },
@@ -119,7 +69,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-06T19:09:29Z"
+        "observed_at": "2026-09-06T21:19:41Z"
       },
       "fixture": false
     },
@@ -146,7 +96,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-06T19:09:29Z"
+        "observed_at": "2026-09-06T21:19:41Z"
       },
       "fixture": false
     },
