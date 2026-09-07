@@ -1,53 +1,53 @@
 [
   {
     "offer": {
+      "id": "vast:h100-nvl-94gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-nvl-94gb",
+      "price": 2.6987,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 NVL",
+        "vram_gb": 94,
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-07T22:49:48Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.3333,
+    "delta_pct": 102.4,
+    "reason": "price moved 102.4% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:rtx-pro-6000-s-96gb:global:spot",
       "provider": "vast",
       "sku": "rtx-pro-6000-s-96gb",
-      "price": 1.2667,
+      "price": 1.173,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX PRO 6000 S",
         "vram_gb": 96,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-07T19:57:04Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6667,
-    "delta_pct": 90.0,
-    "reason": "price moved 90.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-pro-5000-48gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-5000-48gb",
-      "price": 0.4,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 5000",
-        "vram_gb": 48,
         "sample_size": 14,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-07T19:57:04Z"
+        "observed_at": "2026-09-07T22:49:48Z"
       },
       "fixture": false
     },
-    "previous_price": 0.16,
-    "delta_pct": 150.0,
-    "reason": "price moved 150.0% (> 40% limit)"
+    "previous_price": 0.6667,
+    "delta_pct": 75.9,
+    "reason": "price moved 75.9% (> 40% limit)"
   },
   {
     "offer": {
@@ -67,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-09-07T19:57:04Z"
+        "observed_at": "2026-09-07T22:49:48Z"
       },
       "fixture": false
     },
@@ -93,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-09-07T19:57:04Z"
+        "observed_at": "2026-09-07T22:49:48Z"
       },
       "fixture": false
     },
@@ -119,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-09-07T19:57:04Z"
+        "observed_at": "2026-09-07T22:49:48Z"
       },
       "fixture": false
     },
