@@ -1,28 +1,53 @@
 [
   {
     "offer": {
-      "id": "vast:h200-141gb:global:spot",
+      "id": "vast:rtx-pro-6000-s-96gb:global:spot",
       "provider": "vast",
-      "sku": "h200-141gb",
-      "price": 1.9342,
+      "sku": "rtx-pro-6000-s-96gb",
+      "price": 1.2667,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "H200",
-        "vram_gb": 141,
-        "sample_size": 7,
+        "gpu_model": "RTX PRO 6000 S",
+        "vram_gb": 96,
+        "sample_size": 5,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-07T15:52:37Z"
+        "observed_at": "2026-09-07T19:57:04Z"
       },
       "fixture": false
     },
-    "previous_price": 3.3764,
-    "delta_pct": 42.7,
-    "reason": "price moved 42.7% (> 40% limit)"
+    "previous_price": 0.6667,
+    "delta_pct": 90.0,
+    "reason": "price moved 90.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-5000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-5000-48gb",
+      "price": 0.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 5000",
+        "vram_gb": 48,
+        "sample_size": 14,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-07T19:57:04Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.16,
+    "delta_pct": 150.0,
+    "reason": "price moved 150.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -42,65 +67,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-09-07T15:52:37Z"
+        "observed_at": "2026-09-07T19:57:04Z"
       },
       "fixture": false
     },
     "previous_price": 0.09,
     "delta_pct": 77.8,
     "reason": "price moved 77.8% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-07T15:52:37Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-07T15:52:37Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.33,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -120,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-09-07T15:52:37Z"
+        "observed_at": "2026-09-07T19:57:04Z"
       },
       "fixture": false
     },
@@ -146,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-09-07T15:52:37Z"
+        "observed_at": "2026-09-07T19:57:04Z"
       },
       "fixture": false
     },
