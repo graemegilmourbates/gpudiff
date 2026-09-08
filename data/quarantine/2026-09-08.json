@@ -1,80 +1,78 @@
 [
   {
     "offer": {
-      "id": "vast:rtx-4090-48gb:global:on-demand",
+      "id": "vast:h100-sxm-80gb:global:spot",
       "provider": "vast",
-      "sku": "rtx-4090-48gb",
-      "price": 0.6074,
+      "sku": "h100-sxm-80gb",
+      "price": 1.0667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 14,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-08T21:50:27Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.6533,
+    "delta_pct": 63.3,
+    "reason": "price moved 63.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:a100-sxm4-40gb:global:on-demand",
+      "provider": "vast",
+      "sku": "a100-sxm4-40gb",
+      "price": 0.4278,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX 4090",
-        "vram_gb": 48,
-        "sample_size": 7,
+        "gpu_model": "A100 SXM4",
+        "vram_gb": 40,
+        "sample_size": 12,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
-    "previous_price": 0.3753,
-    "delta_pct": 61.8,
-    "reason": "price moved 61.8% (> 40% limit)"
+    "previous_price": 0.821,
+    "delta_pct": 47.9,
+    "reason": "price moved 47.9% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:inception-mercury-2.5-preview-input:global:list",
-      "provider": "openrouter",
-      "sku": "inception-mercury-2.5-preview-input",
-      "price": 0.2,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
+      "id": "vast:a100-sxm4-80gb:global:spot",
+      "provider": "vast",
+      "sku": "a100-sxm4-80gb",
+      "price": 1.0,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "model_id": "inception/mercury-2.5-preview",
-        "model_name": "Inception: Mercury 2.5 Preview",
-        "context_length": 260000,
-        "direction": "input",
-        "metric": "openrouter_list"
+        "gpu_model": "A100 SXM4",
+        "vram_gb": 80,
+        "sample_size": 6,
+        "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
-        "url": "https://openrouter.ai/inception/mercury-2.5-preview",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
-    "previous_price": 0.04,
-    "delta_pct": 400.0,
-    "reason": "price moved 400.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:inception-mercury-2.5-preview-output:global:list",
-      "provider": "openrouter",
-      "sku": "inception-mercury-2.5-preview-output",
-      "price": 0.75,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "inception/mercury-2.5-preview",
-        "model_name": "Inception: Mercury 2.5 Preview",
-        "context_length": 260000,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/inception/mercury-2.5-preview",
-        "observed_at": "2026-09-08T18:38:59Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.15,
-    "delta_pct": 400.0,
-    "reason": "price moved 400.0% (> 40% limit)"
+    "previous_price": 0.6667,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -94,7 +92,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash:batch",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -120,7 +118,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash:batch",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -146,7 +144,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813:batch",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -172,7 +170,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813:batch",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -198,7 +196,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta/muse-glimmer-30b:batch",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -224,7 +222,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta/muse-glimmer-30b:batch",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -250,7 +248,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -276,7 +274,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -302,7 +300,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -328,7 +326,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -354,7 +352,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -380,7 +378,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-14b",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
@@ -406,7 +404,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-14b",
-        "observed_at": "2026-09-08T18:38:59Z"
+        "observed_at": "2026-09-08T21:50:27Z"
       },
       "fixture": false
     },
