@@ -1,130 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:spot",
+      "id": "vast:l4-24gb:global:spot",
       "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 1.0,
+      "sku": "l4-24gb",
+      "price": 0.2667,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 9,
+        "gpu_model": "L4",
+        "vram_gb": 24,
+        "sample_size": 5,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
-    "previous_price": 0.6533,
-    "delta_pct": 53.1,
-    "reason": "price moved 53.1% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:h100-pcie-80gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-pcie-80gb",
-      "price": 0.3467,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 PCIE",
-        "vram_gb": 80,
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-08T11:16:43Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.3333,
-    "delta_pct": 74.0,
-    "reason": "price moved 74.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-4090-48gb:global:on-demand",
-      "provider": "vast",
-      "sku": "rtx-4090-48gb",
-      "price": 0.6037,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX 4090",
-        "vram_gb": 48,
-        "sample_size": 9,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-08T11:16:43Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.3753,
-    "delta_pct": 60.9,
-    "reason": "price moved 60.9% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-pro-0813-input",
-      "price": 1.0494,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "deepseek/deepseek-v4-pro-0813",
-        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-08T11:16:43Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.66,
-    "delta_pct": 59.0,
-    "reason": "price moved 59.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-pro-0813-output:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-pro-0813-output",
-      "price": 3.1482,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "deepseek/deepseek-v4-pro-0813",
-        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-08T11:16:43Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.98,
-    "delta_pct": 59.0,
-    "reason": "price moved 59.0% (> 40% limit)"
+    "previous_price": 0.1333,
+    "delta_pct": 100.1,
+    "reason": "price moved 100.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -144,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
@@ -170,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
@@ -196,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
@@ -222,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
@@ -248,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-397b-a17b",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
@@ -274,7 +172,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
@@ -300,7 +198,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-chat-v3.1",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
@@ -326,7 +224,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-14b",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
@@ -352,7 +250,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-14b",
-        "observed_at": "2026-09-08T11:16:43Z"
+        "observed_at": "2026-09-08T15:09:23Z"
       },
       "fixture": false
     },
