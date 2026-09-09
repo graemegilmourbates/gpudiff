@@ -1,6 +1,31 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-4090-48gb:global:on-demand",
+      "provider": "vast",
+      "sku": "rtx-4090-48gb",
+      "price": 0.5858,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 13,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-09T04:41:25Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3753,
+    "delta_pct": 56.1,
+    "reason": "price moved 56.1% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:ibm-granite-granite-4.2-8b-input:global:list",
       "provider": "openrouter",
       "sku": "ibm-granite-granite-4.2-8b-input",
@@ -17,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/ibm-granite/granite-4.2-8b",
-        "observed_at": "2026-09-09T00:13:10Z"
+        "observed_at": "2026-09-09T04:41:25Z"
       },
       "fixture": false
     },
@@ -43,13 +68,117 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/ibm-granite/granite-4.2-8b",
-        "observed_at": "2026-09-09T00:13:10Z"
+        "observed_at": "2026-09-09T04:41:25Z"
       },
       "fixture": false
     },
     "previous_price": 0.15,
     "delta_pct": 66.7,
     "reason": "price moved 66.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-input:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-input",
+      "price": 0.132,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-09-09T04:41:25Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0825,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-output:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-output",
+      "price": 0.528,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-09-09T04:41:25Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.33,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3-235b-a22b-2507-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3-235b-a22b-2507-input",
+      "price": 0.22,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3-235b-a22b-2507",
+        "model_name": "Qwen: Qwen3 235B A22B Instruct 2507",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-2507",
+        "observed_at": "2026-09-09T04:41:25Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.09,
+    "delta_pct": 144.4,
+    "reason": "price moved 144.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3-235b-a22b-2507-output:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3-235b-a22b-2507-output",
+      "price": 0.88,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3-235b-a22b-2507",
+        "model_name": "Qwen: Qwen3 235B A22B Instruct 2507",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-2507",
+        "observed_at": "2026-09-09T04:41:25Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.55,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -70,7 +199,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-09T00:13:10Z"
+        "observed_at": "2026-09-09T04:41:25Z"
       },
       "fixture": false
     },
@@ -97,7 +226,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-09T00:13:10Z"
+        "observed_at": "2026-09-09T04:41:25Z"
       },
       "fixture": false
     },

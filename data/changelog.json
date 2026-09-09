@@ -28326,22 +28326,42 @@
   {
     "date": "2026-09-09",
     "kind": "added",
-    "id": "runpod:h200-sxm-141gb:community-cloud:on-demand",
+    "id": "runpod:h100-pcie-80gb:secure-cloud:on-demand",
     "provider": "runpod",
-    "sku": "h200-sxm-141gb",
-    "price": 3.59,
+    "sku": "h100-pcie-80gb",
+    "price": 2.89,
     "unit": "usd_per_hour",
-    "summary": "runpod listed h200-sxm-141gb at 3.59 usd_per_hour"
+    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
   },
   {
     "date": "2026-09-09",
     "kind": "added",
-    "id": "runpod:h200-sxm-141gb:community-cloud:spot",
+    "id": "runpod:h100-pcie-80gb:secure-cloud:spot",
     "provider": "runpod",
-    "sku": "h200-sxm-141gb",
-    "price": 3.59,
+    "sku": "h100-pcie-80gb",
+    "price": 2.89,
     "unit": "usd_per_hour",
-    "summary": "runpod listed h200-sxm-141gb at 3.59 usd_per_hour"
+    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:l40-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "l40-48gb",
+    "price": 0.82,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed l40-48gb at 0.82 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:l40-48gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "l40-48gb",
+    "price": 0.82,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed l40-48gb at 0.82 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28386,12 +28406,132 @@
   {
     "date": "2026-09-09",
     "kind": "added",
+    "id": "runpod:rtx-a4000-16gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a4000-16gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a4000-16gb at 0.25 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-a4000-16gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-a4000-16gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a4000-16gb at 0.25 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-a4500-20gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a4500-20gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a4500-20gb at 0.25 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-a4500-20gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-a4500-20gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a4500-20gb at 0.25 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-a5000-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a5000-24gb",
+    "price": 0.27,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a5000-24gb at 0.27 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-a5000-24gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-a5000-24gb",
+    "price": 0.27,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a5000-24gb at 0.27 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-pro-6000-96gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-96gb",
+    "price": 1.69,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-pro-6000-96gb at 1.69 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-pro-6000-96gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-96gb",
+    "price": 1.69,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-pro-6000-96gb at 1.69 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-pro-6000-maxq-96gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-maxq-96gb",
+    "price": 1.64,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-pro-6000-maxq-96gb at 1.64 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "runpod:rtx-pro-6000-maxq-96gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-pro-6000-maxq-96gb",
+    "price": 1.64,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-pro-6000-maxq-96gb at 1.64 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
     "id": "vast:a100-sxm4-40gb:global:on-demand",
     "provider": "vast",
     "sku": "a100-sxm4-40gb",
-    "price": 0.6444,
+    "price": 0.4278,
     "unit": "usd_per_hour",
-    "summary": "vast listed a100-sxm4-40gb at 0.6444 usd_per_hour"
+    "summary": "vast listed a100-sxm4-40gb at 0.4278 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "vast:h100-nvl-94gb:global:on-demand",
+    "provider": "vast",
+    "sku": "h100-nvl-94gb",
+    "price": 2.7778,
+    "unit": "usd_per_hour",
+    "summary": "vast listed h100-nvl-94gb at 2.7778 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "vast:h100-nvl-94gb:global:spot",
+    "provider": "vast",
+    "sku": "h100-nvl-94gb",
+    "price": 1.3333,
+    "unit": "usd_per_hour",
+    "summary": "vast listed h100-nvl-94gb at 1.3333 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28399,9 +28539,221 @@
     "id": "vast:h100-sxm-80gb:global:spot",
     "provider": "vast",
     "sku": "h100-sxm-80gb",
-    "price": 1.0667,
+    "price": 1.0,
     "unit": "usd_per_hour",
-    "summary": "vast listed h100-sxm-80gb at 1.0667 usd_per_hour"
+    "summary": "vast listed h100-sxm-80gb at 1.0 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "vast:l40s-48gb:global:on-demand",
+    "provider": "vast",
+    "sku": "l40s-48gb",
+    "price": 0.6007,
+    "unit": "usd_per_hour",
+    "summary": "vast listed l40s-48gb at 0.6007 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "added",
+    "id": "vast:l40s-48gb:global:spot",
+    "provider": "vast",
+    "sku": "l40s-48gb",
+    "price": 0.5333,
+    "unit": "usd_per_hour",
+    "summary": "vast listed l40s-48gb at 0.5333 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-ocr-input:global:list",
+    "provider": "novita",
+    "sku": "deepseek-ocr-input",
+    "summary": "novita delisted deepseek-ocr-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-ocr-output:global:list",
+    "provider": "novita",
+    "sku": "deepseek-ocr-output",
+    "summary": "novita delisted deepseek-ocr-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-prover-v2-671b-input:global:list",
+    "provider": "novita",
+    "sku": "deepseek-prover-v2-671b-input",
+    "summary": "novita delisted deepseek-prover-v2-671b-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-prover-v2-671b-output:global:list",
+    "provider": "novita",
+    "sku": "deepseek-prover-v2-671b-output",
+    "summary": "novita delisted deepseek-prover-v2-671b-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-r1-distill-qwen-14b-input:global:list",
+    "provider": "novita",
+    "sku": "deepseek-r1-distill-qwen-14b-input",
+    "summary": "novita delisted deepseek-r1-distill-qwen-14b-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-r1-distill-qwen-14b-output:global:list",
+    "provider": "novita",
+    "sku": "deepseek-r1-distill-qwen-14b-output",
+    "summary": "novita delisted deepseek-r1-distill-qwen-14b-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-r1-distill-qwen-32b-input:global:list",
+    "provider": "novita",
+    "sku": "deepseek-r1-distill-qwen-32b-input",
+    "summary": "novita delisted deepseek-r1-distill-qwen-32b-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-r1-distill-qwen-32b-output:global:list",
+    "provider": "novita",
+    "sku": "deepseek-r1-distill-qwen-32b-output",
+    "summary": "novita delisted deepseek-r1-distill-qwen-32b-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-v3-0324-input:global:list",
+    "provider": "novita",
+    "sku": "deepseek-v3-0324-input",
+    "summary": "novita delisted deepseek-v3-0324-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-v3-0324-output:global:list",
+    "provider": "novita",
+    "sku": "deepseek-v3-0324-output",
+    "summary": "novita delisted deepseek-v3-0324-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-v3-turbo-input:global:list",
+    "provider": "novita",
+    "sku": "deepseek-v3-turbo-input",
+    "summary": "novita delisted deepseek-v3-turbo-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:deepseek-v3-turbo-output:global:list",
+    "provider": "novita",
+    "sku": "deepseek-v3-turbo-output",
+    "summary": "novita delisted deepseek-v3-turbo-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:elephant-input:global:list",
+    "provider": "novita",
+    "sku": "elephant-input",
+    "summary": "novita delisted elephant-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:elephant-output:global:list",
+    "provider": "novita",
+    "sku": "elephant-output",
+    "summary": "novita delisted elephant-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ernie-4.5-21b-a3b-thinking-input:global:list",
+    "provider": "novita",
+    "sku": "ernie-4.5-21b-a3b-thinking-input",
+    "summary": "novita delisted ernie-4.5-21b-a3b-thinking-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ernie-4.5-21b-a3b-thinking-output:global:list",
+    "provider": "novita",
+    "sku": "ernie-4.5-21b-a3b-thinking-output",
+    "summary": "novita delisted ernie-4.5-21b-a3b-thinking-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ernie-4.5-300b-a47b-paddle-input:global:list",
+    "provider": "novita",
+    "sku": "ernie-4.5-300b-a47b-paddle-input",
+    "summary": "novita delisted ernie-4.5-300b-a47b-paddle-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ernie-4.5-300b-a47b-paddle-output:global:list",
+    "provider": "novita",
+    "sku": "ernie-4.5-300b-a47b-paddle-output",
+    "summary": "novita delisted ernie-4.5-300b-a47b-paddle-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ernie-4.5-vl-28b-a3b-input:global:list",
+    "provider": "novita",
+    "sku": "ernie-4.5-vl-28b-a3b-input",
+    "summary": "novita delisted ernie-4.5-vl-28b-a3b-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ernie-4.5-vl-28b-a3b-output:global:list",
+    "provider": "novita",
+    "sku": "ernie-4.5-vl-28b-a3b-output",
+    "summary": "novita delisted ernie-4.5-vl-28b-a3b-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ernie-4.5-vl-28b-a3b-thinking-input:global:list",
+    "provider": "novita",
+    "sku": "ernie-4.5-vl-28b-a3b-thinking-input",
+    "summary": "novita delisted ernie-4.5-vl-28b-a3b-thinking-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ernie-4.5-vl-28b-a3b-thinking-output:global:list",
+    "provider": "novita",
+    "sku": "ernie-4.5-vl-28b-a3b-thinking-output",
+    "summary": "novita delisted ernie-4.5-vl-28b-a3b-thinking-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:glm-4.5-input:global:list",
+    "provider": "novita",
+    "sku": "glm-4.5-input",
+    "summary": "novita delisted glm-4.5-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:glm-4.5-output:global:list",
+    "provider": "novita",
+    "sku": "glm-4.5-output",
+    "summary": "novita delisted glm-4.5-output"
   },
   {
     "date": "2026-09-09",
@@ -28422,6 +28774,390 @@
   {
     "date": "2026-09-09",
     "kind": "removed",
+    "id": "novita:kat-coder-pro-input:global:list",
+    "provider": "novita",
+    "sku": "kat-coder-pro-input",
+    "summary": "novita delisted kat-coder-pro-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:kat-coder-pro-output:global:list",
+    "provider": "novita",
+    "sku": "kat-coder-pro-output",
+    "summary": "novita delisted kat-coder-pro-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ling-2.6-1t-input:global:list",
+    "provider": "novita",
+    "sku": "ling-2.6-1t-input",
+    "summary": "novita delisted ling-2.6-1t-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ling-2.6-1t-output:global:list",
+    "provider": "novita",
+    "sku": "ling-2.6-1t-output",
+    "summary": "novita delisted ling-2.6-1t-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ling-2.6-flash-input:global:list",
+    "provider": "novita",
+    "sku": "ling-2.6-flash-input",
+    "summary": "novita delisted ling-2.6-flash-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ling-2.6-flash-output:global:list",
+    "provider": "novita",
+    "sku": "ling-2.6-flash-output",
+    "summary": "novita delisted ling-2.6-flash-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ling-3.0-flash-fast-input:global:list",
+    "provider": "novita",
+    "sku": "ling-3.0-flash-fast-input",
+    "summary": "novita delisted ling-3.0-flash-fast-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ling-3.0-flash-fast-output:global:list",
+    "provider": "novita",
+    "sku": "ling-3.0-flash-fast-output",
+    "summary": "novita delisted ling-3.0-flash-fast-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:llama-3-70b-instruct-input:global:list",
+    "provider": "novita",
+    "sku": "llama-3-70b-instruct-input",
+    "summary": "novita delisted llama-3-70b-instruct-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:llama-3-70b-instruct-output:global:list",
+    "provider": "novita",
+    "sku": "llama-3-70b-instruct-output",
+    "summary": "novita delisted llama-3-70b-instruct-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:llama-3-8b-instruct-input:global:list",
+    "provider": "novita",
+    "sku": "llama-3-8b-instruct-input",
+    "summary": "novita delisted llama-3-8b-instruct-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:llama-3-8b-instruct-output:global:list",
+    "provider": "novita",
+    "sku": "llama-3-8b-instruct-output",
+    "summary": "novita delisted llama-3-8b-instruct-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:llama-3.2-3b-instruct-input:global:list",
+    "provider": "novita",
+    "sku": "llama-3.2-3b-instruct-input",
+    "summary": "novita delisted llama-3.2-3b-instruct-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:llama-3.2-3b-instruct-output:global:list",
+    "provider": "novita",
+    "sku": "llama-3.2-3b-instruct-output",
+    "summary": "novita delisted llama-3.2-3b-instruct-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:mimo-v2-flash-input:global:list",
+    "provider": "novita",
+    "sku": "mimo-v2-flash-input",
+    "summary": "novita delisted mimo-v2-flash-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:mimo-v2-flash-output:global:list",
+    "provider": "novita",
+    "sku": "mimo-v2-flash-output",
+    "summary": "novita delisted mimo-v2-flash-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:mimo-v2-pro-input:global:list",
+    "provider": "novita",
+    "sku": "mimo-v2-pro-input",
+    "summary": "novita delisted mimo-v2-pro-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:mimo-v2-pro-output:global:list",
+    "provider": "novita",
+    "sku": "mimo-v2-pro-output",
+    "summary": "novita delisted mimo-v2-pro-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:nous-hermes-llama2-13b-input:global:list",
+    "provider": "novita",
+    "sku": "nous-hermes-llama2-13b-input",
+    "summary": "novita delisted nous-hermes-llama2-13b-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:nous-hermes-llama2-13b-output:global:list",
+    "provider": "novita",
+    "sku": "nous-hermes-llama2-13b-output",
+    "summary": "novita delisted nous-hermes-llama2-13b-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:openchat-7b-input:global:list",
+    "provider": "novita",
+    "sku": "openchat-7b-input",
+    "summary": "novita delisted openchat-7b-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:openchat-7b-output:global:list",
+    "provider": "novita",
+    "sku": "openchat-7b-output",
+    "summary": "novita delisted openchat-7b-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:openhermes-2.5-mistral-7b-input:global:list",
+    "provider": "novita",
+    "sku": "openhermes-2.5-mistral-7b-input",
+    "summary": "novita delisted openhermes-2.5-mistral-7b-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:openhermes-2.5-mistral-7b-output:global:list",
+    "provider": "novita",
+    "sku": "openhermes-2.5-mistral-7b-output",
+    "summary": "novita delisted openhermes-2.5-mistral-7b-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen-2-7b-instruct-input:global:list",
+    "provider": "novita",
+    "sku": "qwen-2-7b-instruct-input",
+    "summary": "novita delisted qwen-2-7b-instruct-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen-2-7b-instruct-output:global:list",
+    "provider": "novita",
+    "sku": "qwen-2-7b-instruct-output",
+    "summary": "novita delisted qwen-2-7b-instruct-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen-2-vl-72b-instruct-input:global:list",
+    "provider": "novita",
+    "sku": "qwen-2-vl-72b-instruct-input",
+    "summary": "novita delisted qwen-2-vl-72b-instruct-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen-2-vl-72b-instruct-output:global:list",
+    "provider": "novita",
+    "sku": "qwen-2-vl-72b-instruct-output",
+    "summary": "novita delisted qwen-2-vl-72b-instruct-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen2.5-7b-instruct-input:global:list",
+    "provider": "novita",
+    "sku": "qwen2.5-7b-instruct-input",
+    "summary": "novita delisted qwen2.5-7b-instruct-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen2.5-7b-instruct-output:global:list",
+    "provider": "novita",
+    "sku": "qwen2.5-7b-instruct-output",
+    "summary": "novita delisted qwen2.5-7b-instruct-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen2.5-vl-72b-instruct-input:global:list",
+    "provider": "novita",
+    "sku": "qwen2.5-vl-72b-instruct-input",
+    "summary": "novita delisted qwen2.5-vl-72b-instruct-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen2.5-vl-72b-instruct-output:global:list",
+    "provider": "novita",
+    "sku": "qwen2.5-vl-72b-instruct-output",
+    "summary": "novita delisted qwen2.5-vl-72b-instruct-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-30b-a3b-fp8-input:global:list",
+    "provider": "novita",
+    "sku": "qwen3-30b-a3b-fp8-input",
+    "summary": "novita delisted qwen3-30b-a3b-fp8-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-30b-a3b-fp8-output:global:list",
+    "provider": "novita",
+    "sku": "qwen3-30b-a3b-fp8-output",
+    "summary": "novita delisted qwen3-30b-a3b-fp8-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-32b-fp8-input:global:list",
+    "provider": "novita",
+    "sku": "qwen3-32b-fp8-input",
+    "summary": "novita delisted qwen3-32b-fp8-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-32b-fp8-output:global:list",
+    "provider": "novita",
+    "sku": "qwen3-32b-fp8-output",
+    "summary": "novita delisted qwen3-32b-fp8-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-4b-fp8-input:global:list",
+    "provider": "novita",
+    "sku": "qwen3-4b-fp8-input",
+    "summary": "novita delisted qwen3-4b-fp8-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-4b-fp8-output:global:list",
+    "provider": "novita",
+    "sku": "qwen3-4b-fp8-output",
+    "summary": "novita delisted qwen3-4b-fp8-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-8b-fp8-input:global:list",
+    "provider": "novita",
+    "sku": "qwen3-8b-fp8-input",
+    "summary": "novita delisted qwen3-8b-fp8-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-8b-fp8-output:global:list",
+    "provider": "novita",
+    "sku": "qwen3-8b-fp8-output",
+    "summary": "novita delisted qwen3-8b-fp8-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-next-80b-a3b-thinking-input:global:list",
+    "provider": "novita",
+    "sku": "qwen3-next-80b-a3b-thinking-input",
+    "summary": "novita delisted qwen3-next-80b-a3b-thinking-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-next-80b-a3b-thinking-output:global:list",
+    "provider": "novita",
+    "sku": "qwen3-next-80b-a3b-thinking-output",
+    "summary": "novita delisted qwen3-next-80b-a3b-thinking-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-vl-30b-a3b-thinking-input:global:list",
+    "provider": "novita",
+    "sku": "qwen3-vl-30b-a3b-thinking-input",
+    "summary": "novita delisted qwen3-vl-30b-a3b-thinking-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-vl-30b-a3b-thinking-output:global:list",
+    "provider": "novita",
+    "sku": "qwen3-vl-30b-a3b-thinking-output",
+    "summary": "novita delisted qwen3-vl-30b-a3b-thinking-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-vl-8b-instruct-input:global:list",
+    "provider": "novita",
+    "sku": "qwen3-vl-8b-instruct-input",
+    "summary": "novita delisted qwen3-vl-8b-instruct-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:qwen3-vl-8b-instruct-output:global:list",
+    "provider": "novita",
+    "sku": "qwen3-vl-8b-instruct-output",
+    "summary": "novita delisted qwen3-vl-8b-instruct-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ring-2.6-1t-input:global:list",
+    "provider": "novita",
+    "sku": "ring-2.6-1t-input",
+    "summary": "novita delisted ring-2.6-1t-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "novita:ring-2.6-1t-output:global:list",
+    "provider": "novita",
+    "sku": "ring-2.6-1t-output",
+    "summary": "novita delisted ring-2.6-1t-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
     "id": "openrouter:ibm-granite-granite-4.2-8b-input:global:list",
     "provider": "openrouter",
     "sku": "ibm-granite-granite-4.2-8b-input",
@@ -28438,18 +29174,66 @@
   {
     "date": "2026-09-09",
     "kind": "removed",
-    "id": "runpod:a100-pcie-80gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "a100-pcie-80gb",
-    "summary": "runpod delisted a100-pcie-80gb"
+    "id": "openrouter:qwen-qwen3-235b-a22b-2507-input:global:list",
+    "provider": "openrouter",
+    "sku": "qwen-qwen3-235b-a22b-2507-input",
+    "summary": "openrouter delisted qwen-qwen3-235b-a22b-2507-input"
   },
   {
     "date": "2026-09-09",
     "kind": "removed",
-    "id": "runpod:a100-pcie-80gb:community-cloud:spot",
+    "id": "openrouter:qwen-qwen3-235b-a22b-2507-output:global:list",
+    "provider": "openrouter",
+    "sku": "qwen-qwen3-235b-a22b-2507-output",
+    "summary": "openrouter delisted qwen-qwen3-235b-a22b-2507-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "openrouter:tencent-hy3-input:global:list",
+    "provider": "openrouter",
+    "sku": "tencent-hy3-input",
+    "summary": "openrouter delisted tencent-hy3-input"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "openrouter:tencent-hy3-output:global:list",
+    "provider": "openrouter",
+    "sku": "tencent-hy3-output",
+    "summary": "openrouter delisted tencent-hy3-output"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "runpod:mi300x-192gb:secure-cloud:on-demand",
     "provider": "runpod",
-    "sku": "a100-pcie-80gb",
-    "summary": "runpod delisted a100-pcie-80gb"
+    "sku": "mi300x-192gb",
+    "summary": "runpod delisted mi300x-192gb"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "runpod:mi300x-192gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "mi300x-192gb",
+    "summary": "runpod delisted mi300x-192gb"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "runpod:rtx-3090-24gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3090-24gb",
+    "summary": "runpod delisted rtx-3090-24gb"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "removed",
+    "id": "runpod:rtx-3090-24gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-3090-24gb",
+    "summary": "runpod delisted rtx-3090-24gb"
   },
   {
     "date": "2026-09-09",
@@ -28477,14 +29261,22 @@
   },
   {
     "date": "2026-09-09",
+    "kind": "removed",
+    "id": "vast:rtx-4090-48gb:global:on-demand",
+    "provider": "vast",
+    "sku": "rtx-4090-48gb",
+    "summary": "vast delisted rtx-4090-48gb"
+  },
+  {
+    "date": "2026-09-09",
     "kind": "price_change",
     "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-input",
     "old_price": 0.0825,
-    "new_price": 0.0809,
-    "pct": -1.9,
-    "summary": "openrouter cut deepseek-deepseek-v4-flash-input 1.9%: 0.0825 \u2192 0.0809 usd_per_mtok"
+    "new_price": 0.0886,
+    "pct": 7.4,
+    "summary": "openrouter raised deepseek-deepseek-v4-flash-input 7.4%: 0.0825 \u2192 0.0886 usd_per_mtok"
   },
   {
     "date": "2026-09-09",
@@ -28493,9 +29285,9 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-output",
     "old_price": 0.1649,
-    "new_price": 0.1618,
-    "pct": -1.9,
-    "summary": "openrouter cut deepseek-deepseek-v4-flash-output 1.9%: 0.1649 \u2192 0.1618 usd_per_mtok"
+    "new_price": 0.1772,
+    "pct": 7.5,
+    "summary": "openrouter raised deepseek-deepseek-v4-flash-output 7.5%: 0.1649 \u2192 0.1772 usd_per_mtok"
   },
   {
     "date": "2026-09-09",
@@ -28504,9 +29296,9 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-pro-input",
     "old_price": 0.9464,
-    "new_price": 0.9396,
-    "pct": -0.7,
-    "summary": "openrouter cut deepseek-deepseek-v4-pro-input 0.7%: 0.9464 \u2192 0.9396 usd_per_mtok"
+    "new_price": 0.9553,
+    "pct": 0.9,
+    "summary": "openrouter raised deepseek-deepseek-v4-pro-input 0.9%: 0.9464 \u2192 0.9553 usd_per_mtok"
   },
   {
     "date": "2026-09-09",
@@ -28515,9 +29307,9 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-pro-output",
     "old_price": 1.8928,
-    "new_price": 1.8792,
-    "pct": -0.7,
-    "summary": "openrouter cut deepseek-deepseek-v4-pro-output 0.7%: 1.8928 \u2192 1.8792 usd_per_mtok"
+    "new_price": 1.9105,
+    "pct": 0.9,
+    "summary": "openrouter raised deepseek-deepseek-v4-pro-output 0.9%: 1.8928 \u2192 1.9105 usd_per_mtok"
   },
   {
     "date": "2026-09-09",
@@ -28529,6 +29321,28 @@
     "new_price": 0.55,
     "pct": 37.5,
     "summary": "openrouter raised minimax-minimax-m1-input 37.5%: 0.4 \u2192 0.55 usd_per_mtok"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "price_change",
+    "id": "openrouter:moonshotai-kimi-latest-input:global:list",
+    "provider": "openrouter",
+    "sku": "moonshotai-kimi-latest-input",
+    "old_price": 2.55,
+    "new_price": 2.4,
+    "pct": -5.9,
+    "summary": "openrouter cut moonshotai-kimi-latest-input 5.9%: 2.55 \u2192 2.4 usd_per_mtok"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "price_change",
+    "id": "openrouter:moonshotai-kimi-latest-output:global:list",
+    "provider": "openrouter",
+    "sku": "moonshotai-kimi-latest-output",
+    "old_price": 12.75,
+    "new_price": 12.0,
+    "pct": -5.9,
+    "summary": "openrouter cut moonshotai-kimi-latest-output 5.9%: 12.75 \u2192 12.0 usd_per_mtok"
   },
   {
     "date": "2026-09-09",
@@ -28603,9 +29417,9 @@
     "provider": "vast",
     "sku": "b200-180gb",
     "old_price": 6.7526,
-    "new_price": 7.5052,
-    "pct": 11.1,
-    "summary": "vast raised b200-180gb 11.1%: 6.7526 \u2192 7.5052 usd_per_hour"
+    "new_price": 5.3135,
+    "pct": -21.3,
+    "summary": "vast cut b200-180gb 21.3%: 6.7526 \u2192 5.3135 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28614,20 +29428,20 @@
     "provider": "vast",
     "sku": "h100-pcie-80gb",
     "old_price": 2.5348,
-    "new_price": 2.5356,
-    "pct": 0.0,
-    "summary": "vast raised h100-pcie-80gb 0.0%: 2.5348 \u2192 2.5356 usd_per_hour"
+    "new_price": 2.5344,
+    "pct": -0.0,
+    "summary": "vast cut h100-pcie-80gb 0.0%: 2.5348 \u2192 2.5344 usd_per_hour"
   },
   {
     "date": "2026-09-09",
     "kind": "price_change",
-    "id": "vast:h100-pcie-80gb:global:spot",
+    "id": "vast:h100-sxm-80gb:global:on-demand",
     "provider": "vast",
-    "sku": "h100-pcie-80gb",
-    "old_price": 1.3333,
-    "new_price": 1.467,
-    "pct": 10.0,
-    "summary": "vast raised h100-pcie-80gb 10.0%: 1.3333 \u2192 1.467 usd_per_hour"
+    "sku": "h100-sxm-80gb",
+    "old_price": 2.2674,
+    "new_price": 2.4007,
+    "pct": 5.9,
+    "summary": "vast raised h100-sxm-80gb 5.9%: 2.2674 \u2192 2.4007 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28636,9 +29450,9 @@
     "provider": "vast",
     "sku": "h200-141gb",
     "old_price": 3.9744,
-    "new_price": 3.9683,
-    "pct": -0.2,
-    "summary": "vast cut h200-141gb 0.2%: 3.9744 \u2192 3.9683 usd_per_hour"
+    "new_price": 3.9766,
+    "pct": 0.1,
+    "summary": "vast raised h200-141gb 0.1%: 3.9744 \u2192 3.9766 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28647,9 +29461,9 @@
     "provider": "vast",
     "sku": "h200-141gb",
     "old_price": 3.9474,
-    "new_price": 3.3711,
-    "pct": -14.6,
-    "summary": "vast cut h200-141gb 14.6%: 3.9474 \u2192 3.3711 usd_per_hour"
+    "new_price": 3.1526,
+    "pct": -20.1,
+    "summary": "vast cut h200-141gb 20.1%: 3.9474 \u2192 3.1526 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28658,31 +29472,20 @@
     "provider": "vast",
     "sku": "h200-nvl-141gb",
     "old_price": 3.7222,
-    "new_price": 3.6022,
-    "pct": -3.2,
-    "summary": "vast cut h200-nvl-141gb 3.2%: 3.7222 \u2192 3.6022 usd_per_hour"
+    "new_price": 3.5444,
+    "pct": -4.8,
+    "summary": "vast cut h200-nvl-141gb 4.8%: 3.7222 \u2192 3.5444 usd_per_hour"
   },
   {
     "date": "2026-09-09",
     "kind": "price_change",
-    "id": "vast:h200-nvl-141gb:global:spot",
-    "provider": "vast",
-    "sku": "h200-nvl-141gb",
-    "old_price": 1.3333,
-    "new_price": 1.4667,
-    "pct": 10.0,
-    "summary": "vast raised h200-nvl-141gb 10.0%: 1.3333 \u2192 1.4667 usd_per_hour"
-  },
-  {
-    "date": "2026-09-09",
-    "kind": "price_change",
-    "id": "vast:rtx-3090-24gb:global:on-demand",
+    "id": "vast:rtx-3090-24gb:global:spot",
     "provider": "vast",
     "sku": "rtx-3090-24gb",
-    "old_price": 0.1478,
-    "new_price": 0.1472,
-    "pct": -0.4,
-    "summary": "vast cut rtx-3090-24gb 0.4%: 0.1478 \u2192 0.1472 usd_per_hour"
+    "old_price": 0.12,
+    "new_price": 0.1067,
+    "pct": -11.1,
+    "summary": "vast cut rtx-3090-24gb 11.1%: 0.12 \u2192 0.1067 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28702,20 +29505,9 @@
     "provider": "vast",
     "sku": "rtx-4090-24gb",
     "old_price": 0.2533,
-    "new_price": 0.191,
-    "pct": -24.6,
-    "summary": "vast cut rtx-4090-24gb 24.6%: 0.2533 \u2192 0.191 usd_per_hour"
-  },
-  {
-    "date": "2026-09-09",
-    "kind": "price_change",
-    "id": "vast:rtx-4090-48gb:global:on-demand",
-    "provider": "vast",
-    "sku": "rtx-4090-48gb",
-    "old_price": 0.3753,
-    "new_price": 0.4689,
-    "pct": 24.9,
-    "summary": "vast raised rtx-4090-48gb 24.9%: 0.3753 \u2192 0.4689 usd_per_hour"
+    "new_price": 0.24,
+    "pct": -5.3,
+    "summary": "vast cut rtx-4090-24gb 5.3%: 0.2533 \u2192 0.24 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28735,9 +29527,31 @@
     "provider": "vast",
     "sku": "rtx-5090-32gb",
     "old_price": 0.4544,
-    "new_price": 0.4059,
+    "new_price": 0.4102,
+    "pct": -9.7,
+    "summary": "vast cut rtx-5090-32gb 9.7%: 0.4544 \u2192 0.4102 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "price_change",
+    "id": "vast:rtx-5090-32gb:global:spot",
+    "provider": "vast",
+    "sku": "rtx-5090-32gb",
+    "old_price": 0.3733,
+    "new_price": 0.3333,
     "pct": -10.7,
-    "summary": "vast cut rtx-5090-32gb 10.7%: 0.4544 \u2192 0.4059 usd_per_hour"
+    "summary": "vast cut rtx-5090-32gb 10.7%: 0.3733 \u2192 0.3333 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "price_change",
+    "id": "vast:rtx-a6000-48gb:global:on-demand",
+    "provider": "vast",
+    "sku": "rtx-a6000-48gb",
+    "old_price": 0.4044,
+    "new_price": 0.4022,
+    "pct": -0.5,
+    "summary": "vast cut rtx-a6000-48gb 0.5%: 0.4044 \u2192 0.4022 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28753,13 +29567,35 @@
   {
     "date": "2026-09-09",
     "kind": "price_change",
+    "id": "vast:rtx-pro-5000-48gb:global:spot",
+    "provider": "vast",
+    "sku": "rtx-pro-5000-48gb",
+    "old_price": 0.16,
+    "new_price": 0.2,
+    "pct": 25.0,
+    "summary": "vast raised rtx-pro-5000-48gb 25.0%: 0.16 \u2192 0.2 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "price_change",
     "id": "vast:rtx-pro-6000-s-96gb:global:on-demand",
     "provider": "vast",
     "sku": "rtx-pro-6000-s-96gb",
     "old_price": 1.5036,
-    "new_price": 1.434,
-    "pct": -4.6,
-    "summary": "vast cut rtx-pro-6000-s-96gb 4.6%: 1.5036 \u2192 1.434 usd_per_hour"
+    "new_price": 1.4651,
+    "pct": -2.6,
+    "summary": "vast cut rtx-pro-6000-s-96gb 2.6%: 1.5036 \u2192 1.4651 usd_per_hour"
+  },
+  {
+    "date": "2026-09-09",
+    "kind": "price_change",
+    "id": "vast:rtx-pro-6000-s-96gb:global:spot",
+    "provider": "vast",
+    "sku": "rtx-pro-6000-s-96gb",
+    "old_price": 0.7477,
+    "new_price": 0.8667,
+    "pct": 15.9,
+    "summary": "vast raised rtx-pro-6000-s-96gb 15.9%: 0.7477 \u2192 0.8667 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28768,9 +29604,9 @@
     "provider": "vast",
     "sku": "rtx-pro-6000-ws-96gb",
     "old_price": 1.441,
-    "new_price": 1.4556,
-    "pct": 1.0,
-    "summary": "vast raised rtx-pro-6000-ws-96gb 1.0%: 1.441 \u2192 1.4556 usd_per_hour"
+    "new_price": 1.2756,
+    "pct": -11.5,
+    "summary": "vast cut rtx-pro-6000-ws-96gb 11.5%: 1.441 \u2192 1.2756 usd_per_hour"
   },
   {
     "date": "2026-09-09",
@@ -28779,8 +29615,8 @@
     "provider": "vast",
     "sku": "rtx-pro-6000-ws-96gb",
     "old_price": 0.9333,
-    "new_price": 0.8667,
-    "pct": -7.1,
-    "summary": "vast cut rtx-pro-6000-ws-96gb 7.1%: 0.9333 \u2192 0.8667 usd_per_hour"
+    "new_price": 1.0667,
+    "pct": 14.3,
+    "summary": "vast raised rtx-pro-6000-ws-96gb 14.3%: 0.9333 \u2192 1.0667 usd_per_hour"
   }
 ]
