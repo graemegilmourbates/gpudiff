@@ -1,78 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:on-demand",
+      "id": "vast:rtx-4090-24gb:global:spot",
       "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 4.6204,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 5,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-10T18:26:40Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.2674,
-    "delta_pct": 103.8,
-    "reason": "price moved 103.8% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:h100-sxm-80gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 2.6667,
+      "sku": "rtx-4090-24gb",
+      "price": 0.299,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 5,
+        "gpu_model": "RTX 4090",
+        "vram_gb": 24,
+        "sample_size": 28,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-10T18:26:40Z"
+        "observed_at": "2026-09-10T21:37:00Z"
       },
       "fixture": false
     },
-    "previous_price": 1.0667,
-    "delta_pct": 150.0,
-    "reason": "price moved 150.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-pro-6000-ws-96gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-ws-96gb",
-      "price": 0.6667,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 6000 WS",
-        "vram_gb": 96,
-        "sample_size": 15,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-10T18:26:40Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.1333,
-    "delta_pct": 41.2,
-    "reason": "price moved 41.2% (> 40% limit)"
+    "previous_price": 0.2,
+    "delta_pct": 49.5,
+    "reason": "price moved 49.5% (> 40% limit)"
   },
   {
     "offer": {
@@ -92,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-09-10T18:26:40Z"
+        "observed_at": "2026-09-10T21:37:00Z"
       },
       "fixture": false
     },
@@ -118,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-09-10T18:26:40Z"
+        "observed_at": "2026-09-10T21:37:00Z"
       },
       "fixture": false
     },
