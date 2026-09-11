@@ -1,28 +1,53 @@
 [
   {
     "offer": {
-      "id": "vast:h200-nvl-141gb:global:spot",
+      "id": "vast:rtx-5090-32gb:global:on-demand",
       "provider": "vast",
-      "sku": "h200-nvl-141gb",
-      "price": 2.4,
+      "sku": "rtx-5090-32gb",
+      "price": 26.9252,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 5090",
+        "vram_gb": 32,
+        "sample_size": 5,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-11T21:42:38Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5611,
+    "delta_pct": 4698.6,
+    "reason": "price moved 4698.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-5090-32gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-5090-32gb",
+      "price": 1.3333,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "H200 NVL",
-        "vram_gb": 141,
-        "sample_size": 14,
+        "gpu_model": "RTX 5090",
+        "vram_gb": 32,
+        "sample_size": 5,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
-    "previous_price": 1.3333,
-    "delta_pct": 80.0,
-    "reason": "price moved 80.0% (> 40% limit)"
+    "previous_price": 0.4,
+    "delta_pct": 233.3,
+    "reason": "price moved 233.3% (> 40% limit)"
   },
   {
     "offer": {
@@ -42,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~z-ai/glm-latest",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -68,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/upstage/solar-pro4",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -94,13 +119,39 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/upstage/solar-pro4",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
     "previous_price": 0.12,
     "delta_pct": 200.0,
     "reason": "price moved 200.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k3-input:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k3-input",
+      "price": 1.7955,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k3",
+        "model_name": "MoonshotAI: Kimi K3",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k3",
+        "observed_at": "2026-09-11T21:42:38Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 3.0,
+    "delta_pct": 40.1,
+    "reason": "price moved 40.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -120,7 +171,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -146,7 +197,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -172,7 +223,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-instruct-2507",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -198,7 +249,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-instruct-2507",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -220,12 +271,12 @@
         "canonical": "deepseek-v4.1-flash",
         "direction": "output",
         "context_length": 1048576,
-        "routes_collapsed": 3,
+        "routes_collapsed": 1,
         "metric": "router_list"
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -252,7 +303,7 @@
       },
       "provenance": {
         "url": "https://deepinfra.com/models",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -279,7 +330,7 @@
       },
       "provenance": {
         "url": "https://deepinfra.com/models",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
@@ -306,7 +357,7 @@
       },
       "provenance": {
         "url": "https://deepinfra.com/models",
-        "observed_at": "2026-09-11T18:31:22Z"
+        "observed_at": "2026-09-11T21:42:38Z"
       },
       "fixture": false
     },
