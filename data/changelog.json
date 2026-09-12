@@ -32405,9 +32405,9 @@
     "id": "openrouter:moonshotai-kimi-k3-input:global:list",
     "provider": "openrouter",
     "sku": "moonshotai-kimi-k3-input",
-    "price": 2.3027,
+    "price": 2.6481,
     "unit": "usd_per_mtok",
-    "summary": "openrouter listed moonshotai-kimi-k3-input at 2.3027 usd_per_mtok"
+    "summary": "openrouter listed moonshotai-kimi-k3-input at 2.6481 usd_per_mtok"
   },
   {
     "date": "2026-09-12",
@@ -32482,32 +32482,52 @@
   {
     "date": "2026-09-12",
     "kind": "added",
+    "id": "requesty:deepseek-v4.1-flash-flex-input:global:list",
+    "provider": "requesty",
+    "sku": "deepseek-v4.1-flash-flex-input",
+    "price": 0.16,
+    "unit": "usd_per_mtok",
+    "summary": "requesty listed deepseek-v4.1-flash-flex-input at 0.16 usd_per_mtok"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
+    "id": "requesty:deepseek-v4.1-flash-flex-output:global:list",
+    "provider": "requesty",
+    "sku": "deepseek-v4.1-flash-flex-output",
+    "price": 0.48,
+    "unit": "usd_per_mtok",
+    "summary": "requesty listed deepseek-v4.1-flash-flex-output at 0.48 usd_per_mtok"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
     "id": "requesty:deepseek-v4.1-flash-output:global:list",
     "provider": "requesty",
     "sku": "deepseek-v4.1-flash-output",
-    "price": 0.66,
+    "price": 0.6,
     "unit": "usd_per_mtok",
-    "summary": "requesty listed deepseek-v4.1-flash-output at 0.66 usd_per_mtok"
+    "summary": "requesty listed deepseek-v4.1-flash-output at 0.6 usd_per_mtok"
   },
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:a100-pcie-80gb:secure-cloud:on-demand",
+    "id": "runpod:a100-pcie-80gb:community-cloud:on-demand",
     "provider": "runpod",
     "sku": "a100-pcie-80gb",
-    "price": 1.59,
+    "price": 1.19,
     "unit": "usd_per_hour",
-    "summary": "runpod listed a100-pcie-80gb at 1.59 usd_per_hour"
+    "summary": "runpod listed a100-pcie-80gb at 1.19 usd_per_hour"
   },
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:a100-pcie-80gb:secure-cloud:spot",
+    "id": "runpod:a100-pcie-80gb:community-cloud:spot",
     "provider": "runpod",
     "sku": "a100-pcie-80gb",
-    "price": 1.59,
+    "price": 1.19,
     "unit": "usd_per_hour",
-    "summary": "runpod listed a100-pcie-80gb at 1.59 usd_per_hour"
+    "summary": "runpod listed a100-pcie-80gb at 1.19 usd_per_hour"
   },
   {
     "date": "2026-09-12",
@@ -32528,6 +32548,26 @@
     "price": 1.0,
     "unit": "usd_per_hour",
     "summary": "runpod listed a100-sxm-40gb at 1.0 usd_per_hour"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
+    "id": "runpod:a100-sxm-80gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "a100-sxm-80gb",
+    "price": 1.39,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed a100-sxm-80gb at 1.39 usd_per_hour"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
+    "id": "runpod:a100-sxm-80gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "a100-sxm-80gb",
+    "price": 1.39,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed a100-sxm-80gb at 1.39 usd_per_hour"
   },
   {
     "date": "2026-09-12",
@@ -32612,26 +32652,6 @@
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:h100-pcie-80gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "h100-pcie-80gb",
-    "price": 2.89,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "added",
-    "id": "runpod:h100-pcie-80gb:secure-cloud:spot",
-    "provider": "runpod",
-    "sku": "h100-pcie-80gb",
-    "price": 2.89,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "added",
     "id": "runpod:h100-sxm-80gb:secure-cloud:on-demand",
     "provider": "runpod",
     "sku": "h100-sxm-80gb",
@@ -32648,26 +32668,6 @@
     "price": 3.49,
     "unit": "usd_per_hour",
     "summary": "runpod listed h100-sxm-80gb at 3.49 usd_per_hour"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "added",
-    "id": "runpod:h200-sxm-141gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "h200-sxm-141gb",
-    "price": 3.59,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed h200-sxm-141gb at 3.59 usd_per_hour"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "added",
-    "id": "runpod:h200-sxm-141gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "h200-sxm-141gb",
-    "price": 3.59,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed h200-sxm-141gb at 3.59 usd_per_hour"
   },
   {
     "date": "2026-09-12",
@@ -32728,6 +32728,26 @@
     "price": 0.69,
     "unit": "usd_per_hour",
     "summary": "runpod listed l40-48gb at 0.69 usd_per_hour"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
+    "id": "runpod:l40-48gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "l40-48gb",
+    "price": 0.82,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed l40-48gb at 0.82 usd_per_hour"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
+    "id": "runpod:l40-48gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "l40-48gb",
+    "price": 0.82,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed l40-48gb at 0.82 usd_per_hour"
   },
   {
     "date": "2026-09-12",
@@ -32852,6 +32872,26 @@
   {
     "date": "2026-09-12",
     "kind": "added",
+    "id": "runpod:rtx-3080-ti-12gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-3080-ti-12gb",
+    "price": 0.18,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-3080-ti-12gb at 0.18 usd_per_hour"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
+    "id": "runpod:rtx-3080-ti-12gb:community-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-3080-ti-12gb",
+    "price": 0.18,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-3080-ti-12gb at 0.18 usd_per_hour"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
     "id": "runpod:rtx-3090-24gb:community-cloud:on-demand",
     "provider": "runpod",
     "sku": "rtx-3090-24gb",
@@ -32872,42 +32912,22 @@
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:rtx-4000-ada-20gb:secure-cloud:on-demand",
+    "id": "runpod:rtx-3090-ti-24gb:community-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-4000-ada-20gb",
-    "price": 0.28,
+    "sku": "rtx-3090-ti-24gb",
+    "price": 0.27,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-4000-ada-20gb at 0.28 usd_per_hour"
+    "summary": "runpod listed rtx-3090-ti-24gb at 0.27 usd_per_hour"
   },
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:rtx-4000-ada-20gb:secure-cloud:spot",
+    "id": "runpod:rtx-3090-ti-24gb:community-cloud:spot",
     "provider": "runpod",
-    "sku": "rtx-4000-ada-20gb",
-    "price": 0.28,
+    "sku": "rtx-3090-ti-24gb",
+    "price": 0.27,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-4000-ada-20gb at 0.28 usd_per_hour"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "added",
-    "id": "runpod:rtx-5000-ada-32gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-5000-ada-32gb",
-    "price": 0.49,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-5000-ada-32gb at 0.49 usd_per_hour"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "added",
-    "id": "runpod:rtx-5000-ada-32gb:community-cloud:spot",
-    "provider": "runpod",
-    "sku": "rtx-5000-ada-32gb",
-    "price": 0.49,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-5000-ada-32gb at 0.49 usd_per_hour"
+    "summary": "runpod listed rtx-3090-ti-24gb at 0.27 usd_per_hour"
   },
   {
     "date": "2026-09-12",
@@ -32932,42 +32952,62 @@
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:rtx-5090-32gb:community-cloud:on-demand",
+    "id": "runpod:rtx-6000-ada-48gb:community-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-5090-32gb",
-    "price": 0.69,
+    "sku": "rtx-6000-ada-48gb",
+    "price": 0.74,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-5090-32gb at 0.69 usd_per_hour"
+    "summary": "runpod listed rtx-6000-ada-48gb at 0.74 usd_per_hour"
   },
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:rtx-5090-32gb:community-cloud:spot",
+    "id": "runpod:rtx-6000-ada-48gb:community-cloud:spot",
     "provider": "runpod",
-    "sku": "rtx-5090-32gb",
-    "price": 0.69,
+    "sku": "rtx-6000-ada-48gb",
+    "price": 0.74,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-5090-32gb at 0.69 usd_per_hour"
+    "summary": "runpod listed rtx-6000-ada-48gb at 0.74 usd_per_hour"
   },
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:rtx-5090-32gb:secure-cloud:on-demand",
+    "id": "runpod:rtx-6000-ada-48gb:secure-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-5090-32gb",
-    "price": 0.99,
+    "sku": "rtx-6000-ada-48gb",
+    "price": 0.84,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-5090-32gb at 0.99 usd_per_hour"
+    "summary": "runpod listed rtx-6000-ada-48gb at 0.84 usd_per_hour"
   },
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:rtx-5090-32gb:secure-cloud:spot",
+    "id": "runpod:rtx-6000-ada-48gb:secure-cloud:spot",
     "provider": "runpod",
-    "sku": "rtx-5090-32gb",
-    "price": 0.99,
+    "sku": "rtx-6000-ada-48gb",
+    "price": 0.84,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-5090-32gb at 0.99 usd_per_hour"
+    "summary": "runpod listed rtx-6000-ada-48gb at 0.84 usd_per_hour"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
+    "id": "runpod:rtx-a4000-16gb:secure-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "rtx-a4000-16gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a4000-16gb at 0.25 usd_per_hour"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "added",
+    "id": "runpod:rtx-a4000-16gb:secure-cloud:spot",
+    "provider": "runpod",
+    "sku": "rtx-a4000-16gb",
+    "price": 0.25,
+    "unit": "usd_per_hour",
+    "summary": "runpod listed rtx-a4000-16gb at 0.25 usd_per_hour"
   },
   {
     "date": "2026-09-12",
@@ -33112,22 +33152,22 @@
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:rtx-pro-6000-wk-96gb:secure-cloud:on-demand",
+    "id": "runpod:v100-sxm2-16gb:community-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-pro-6000-wk-96gb",
-    "price": 2.19,
+    "sku": "v100-sxm2-16gb",
+    "price": 0.23,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-pro-6000-wk-96gb at 2.19 usd_per_hour"
+    "summary": "runpod listed v100-sxm2-16gb at 0.23 usd_per_hour"
   },
   {
     "date": "2026-09-12",
     "kind": "added",
-    "id": "runpod:rtx-pro-6000-wk-96gb:secure-cloud:spot",
+    "id": "runpod:v100-sxm2-16gb:community-cloud:spot",
     "provider": "runpod",
-    "sku": "rtx-pro-6000-wk-96gb",
-    "price": 2.19,
+    "sku": "v100-sxm2-16gb",
+    "price": 0.23,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-pro-6000-wk-96gb at 2.19 usd_per_hour"
+    "summary": "runpod listed v100-sxm2-16gb at 0.23 usd_per_hour"
   },
   {
     "date": "2026-09-12",
@@ -33156,6 +33196,22 @@
   {
     "date": "2026-09-12",
     "kind": "removed",
+    "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
+    "provider": "openrouter",
+    "sku": "deepseek-deepseek-v4-pro-input",
+    "summary": "openrouter delisted deepseek-deepseek-v4-pro-input"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "removed",
+    "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
+    "provider": "openrouter",
+    "sku": "deepseek-deepseek-v4-pro-output",
+    "summary": "openrouter delisted deepseek-deepseek-v4-pro-output"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "removed",
     "id": "openrouter:meta-llama-llama-3.1-70b-instruct-input:global:list",
     "provider": "openrouter",
     "sku": "meta-llama-llama-3.1-70b-instruct-input",
@@ -33168,6 +33224,14 @@
     "provider": "openrouter",
     "sku": "meta-llama-llama-3.1-70b-instruct-output",
     "summary": "openrouter delisted meta-llama-llama-3.1-70b-instruct-output"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "removed",
+    "id": "openrouter:moonshotai-kimi-k3-output:global:list",
+    "provider": "openrouter",
+    "sku": "moonshotai-kimi-k3-output",
+    "summary": "openrouter delisted moonshotai-kimi-k3-output"
   },
   {
     "date": "2026-09-12",
@@ -33192,38 +33256,6 @@
     "provider": "openrouter",
     "sku": "qwen-qwen3.8-27b-input",
     "summary": "openrouter delisted qwen-qwen3.8-27b-input"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "removed",
-    "id": "openrouter:tencent-hy3-input:global:list",
-    "provider": "openrouter",
-    "sku": "tencent-hy3-input",
-    "summary": "openrouter delisted tencent-hy3-input"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "removed",
-    "id": "openrouter:tencent-hy3-output:global:list",
-    "provider": "openrouter",
-    "sku": "tencent-hy3-output",
-    "summary": "openrouter delisted tencent-hy3-output"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "removed",
-    "id": "openrouter:z-ai-glm-5.3-flash-input:global:list",
-    "provider": "openrouter",
-    "sku": "z-ai-glm-5.3-flash-input",
-    "summary": "openrouter delisted z-ai-glm-5.3-flash-input"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "removed",
-    "id": "openrouter:z-ai-glm-5.3-flash-output:global:list",
-    "provider": "openrouter",
-    "sku": "z-ai-glm-5.3-flash-output",
-    "summary": "openrouter delisted z-ai-glm-5.3-flash-output"
   },
   {
     "date": "2026-09-12",
@@ -33259,9 +33291,9 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-input",
     "old_price": 0.0846,
-    "new_price": 0.0665,
-    "pct": -21.4,
-    "summary": "openrouter cut deepseek-deepseek-v4-flash-input 21.4%: 0.0846 \u2192 0.0665 usd_per_mtok"
+    "new_price": 0.0659,
+    "pct": -22.1,
+    "summary": "openrouter cut deepseek-deepseek-v4-flash-input 22.1%: 0.0846 \u2192 0.0659 usd_per_mtok"
   },
   {
     "date": "2026-09-12",
@@ -33270,64 +33302,9 @@
     "provider": "openrouter",
     "sku": "deepseek-deepseek-v4-flash-output",
     "old_price": 0.1691,
-    "new_price": 0.133,
-    "pct": -21.3,
-    "summary": "openrouter cut deepseek-deepseek-v4-flash-output 21.3%: 0.1691 \u2192 0.133 usd_per_mtok"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "price_change",
-    "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
-    "provider": "openrouter",
-    "sku": "deepseek-deepseek-v4-pro-0813-input",
-    "old_price": 0.5795,
-    "new_price": 0.5782,
-    "pct": -0.2,
-    "summary": "openrouter cut deepseek-deepseek-v4-pro-0813-input 0.2%: 0.5795 \u2192 0.5782 usd_per_mtok"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "price_change",
-    "id": "openrouter:deepseek-deepseek-v4-pro-0813-output:global:list",
-    "provider": "openrouter",
-    "sku": "deepseek-deepseek-v4-pro-0813-output",
-    "old_price": 1.7384,
-    "new_price": 1.7345,
-    "pct": -0.2,
-    "summary": "openrouter cut deepseek-deepseek-v4-pro-0813-output 0.2%: 1.7384 \u2192 1.7345 usd_per_mtok"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "price_change",
-    "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
-    "provider": "openrouter",
-    "sku": "deepseek-deepseek-v4-pro-input",
-    "old_price": 0.9478,
-    "new_price": 0.7687,
-    "pct": -18.9,
-    "summary": "openrouter cut deepseek-deepseek-v4-pro-input 18.9%: 0.9478 \u2192 0.7687 usd_per_mtok"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "price_change",
-    "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
-    "provider": "openrouter",
-    "sku": "deepseek-deepseek-v4-pro-output",
-    "old_price": 1.8956,
-    "new_price": 1.5375,
-    "pct": -18.9,
-    "summary": "openrouter cut deepseek-deepseek-v4-pro-output 18.9%: 1.8956 \u2192 1.5375 usd_per_mtok"
-  },
-  {
-    "date": "2026-09-12",
-    "kind": "price_change",
-    "id": "openrouter:moonshotai-kimi-k3-output:global:list",
-    "provider": "openrouter",
-    "sku": "moonshotai-kimi-k3-output",
-    "old_price": 9.006,
-    "new_price": 11.5502,
-    "pct": 28.3,
-    "summary": "openrouter raised moonshotai-kimi-k3-output 28.3%: 9.006 \u2192 11.5502 usd_per_mtok"
+    "new_price": 0.1319,
+    "pct": -22.0,
+    "summary": "openrouter cut deepseek-deepseek-v4-flash-output 22.0%: 0.1691 \u2192 0.1319 usd_per_mtok"
   },
   {
     "date": "2026-09-12",
@@ -33361,5 +33338,16 @@
     "new_price": 2.55,
     "pct": -15.0,
     "summary": "openrouter cut qwen-qwen3.8-27b-output 15.0%: 3.0 \u2192 2.55 usd_per_mtok"
+  },
+  {
+    "date": "2026-09-12",
+    "kind": "price_change",
+    "id": "requesty:deepseek-v4.1-flash-input:global:list",
+    "provider": "requesty",
+    "sku": "deepseek-v4.1-flash-input",
+    "old_price": 0.22,
+    "new_price": 0.2,
+    "pct": -9.1,
+    "summary": "requesty cut deepseek-v4.1-flash-input 9.1%: 0.22 \u2192 0.2 usd_per_mtok"
   }
 ]
