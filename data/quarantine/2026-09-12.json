@@ -1,6 +1,58 @@
 [
   {
     "offer": {
+      "id": "openrouter:z-ai-glm-5.3-flash-input:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.3-flash-input",
+      "price": 0.075,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.3-flash",
+        "model_name": "Z.ai: GLM 5.3 Flash",
+        "context_length": 1310720,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
+        "observed_at": "2026-09-12T09:19:50Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.15,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.3-flash-output:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.3-flash-output",
+      "price": 0.25,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.3-flash",
+        "model_name": "Z.ai: GLM 5.3 Flash",
+        "context_length": 1310720,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
+        "observed_at": "2026-09-12T09:19:50Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:qwen-qwen3.8-27b-input:global:list",
       "provider": "openrouter",
       "sku": "qwen-qwen3.8-27b-input",
@@ -17,13 +69,91 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.8-27b",
-        "observed_at": "2026-09-12T04:41:08Z"
+        "observed_at": "2026-09-12T09:19:50Z"
       },
       "fixture": false
     },
     "previous_price": 0.42,
     "delta_pct": 49.0,
     "reason": "price moved 49.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-latest-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-latest-input",
+      "price": 0.03,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~deepseek/deepseek-v4-flash-latest",
+        "model_name": "DeepSeek: DeepSeek V4 Flash Latest",
+        "context_length": 1310720,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
+        "observed_at": "2026-09-12T09:19:50Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.05,
+    "delta_pct": 40.0,
+    "reason": "price moved 40.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-latest-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-latest-output",
+      "price": 0.07,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~deepseek/deepseek-v4-flash-latest",
+        "model_name": "DeepSeek: DeepSeek V4 Flash Latest",
+        "context_length": 1310720,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
+        "observed_at": "2026-09-12T09:19:50Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.16,
+    "delta_pct": 56.2,
+    "reason": "price moved 56.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-0731-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-0731-output",
+      "price": 0.08,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash-0731",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0731",
+        "context_length": 1310720,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
+        "observed_at": "2026-09-12T09:19:50Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.18,
+    "delta_pct": 55.6,
+    "reason": "price moved 55.6% (> 40% limit)"
   },
   {
     "offer": {
@@ -43,7 +173,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-12T04:41:08Z"
+        "observed_at": "2026-09-12T09:19:50Z"
       },
       "fixture": false
     },
@@ -69,7 +199,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-12T04:41:08Z"
+        "observed_at": "2026-09-12T09:19:50Z"
       },
       "fixture": false
     },
@@ -95,7 +225,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-2507",
-        "observed_at": "2026-09-12T04:41:08Z"
+        "observed_at": "2026-09-12T09:19:50Z"
       },
       "fixture": false
     },
@@ -121,7 +251,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-235b-a22b-2507",
-        "observed_at": "2026-09-12T04:41:08Z"
+        "observed_at": "2026-09-12T09:19:50Z"
       },
       "fixture": false
     },
@@ -147,7 +277,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.1-70b-instruct",
-        "observed_at": "2026-09-12T04:41:08Z"
+        "observed_at": "2026-09-12T09:19:50Z"
       },
       "fixture": false
     },
@@ -173,7 +303,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.1-70b-instruct",
-        "observed_at": "2026-09-12T04:41:08Z"
+        "observed_at": "2026-09-12T09:19:50Z"
       },
       "fixture": false
     },
