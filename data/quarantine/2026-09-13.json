@@ -11,12 +11,12 @@
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 13,
+        "sample_size": 9,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-13T04:45:03Z"
+        "observed_at": "2026-09-13T10:15:55Z"
       },
       "fixture": false
     },
@@ -29,7 +29,7 @@
       "id": "vast:rtx-5090-32gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-5090-32gb",
-      "price": 0.5606,
+      "price": 0.5344,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
@@ -41,13 +41,13 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-13T04:45:03Z"
+        "observed_at": "2026-09-13T10:15:55Z"
       },
       "fixture": false
     },
     "previous_price": 5.337,
-    "delta_pct": 89.5,
-    "reason": "price moved 89.5% (> 40% limit)"
+    "delta_pct": 90.0,
+    "reason": "price moved 90.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -67,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-13T04:45:03Z"
+        "observed_at": "2026-09-13T10:15:55Z"
       },
       "fixture": false
     },
@@ -93,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-13T04:45:03Z"
+        "observed_at": "2026-09-13T10:15:55Z"
       },
       "fixture": false
     },
@@ -119,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
-        "observed_at": "2026-09-13T04:45:03Z"
+        "observed_at": "2026-09-13T10:15:55Z"
       },
       "fixture": false
     },
@@ -145,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-instruct-2507",
-        "observed_at": "2026-09-13T04:45:03Z"
+        "observed_at": "2026-09-13T10:15:55Z"
       },
       "fixture": false
     },
