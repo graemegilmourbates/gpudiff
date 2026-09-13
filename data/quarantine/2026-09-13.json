@@ -1,6 +1,56 @@
 [
   {
     "offer": {
+      "id": "vast:h200-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-141gb",
+      "price": 1.9342,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "sample_size": 8,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-13T23:08:49Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 3.9474,
+    "delta_pct": 51.0,
+    "reason": "price moved 51.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h200-nvl-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-nvl-141gb",
+      "price": 2.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200 NVL",
+        "vram_gb": 141,
+        "sample_size": 13,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-13T23:08:49Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.373,
+    "delta_pct": 74.8,
+    "reason": "price moved 74.8% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:rtx-5090-32gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-5090-32gb",
@@ -16,7 +66,7 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-13T20:48:28Z"
+        "observed_at": "2026-09-13T23:08:49Z"
       },
       "fixture": false
     },
@@ -42,7 +92,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
-        "observed_at": "2026-09-13T20:48:28Z"
+        "observed_at": "2026-09-13T23:08:49Z"
       },
       "fixture": false
     },
@@ -68,7 +118,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3-30b-a3b-instruct-2507",
-        "observed_at": "2026-09-13T20:48:28Z"
+        "observed_at": "2026-09-13T23:08:49Z"
       },
       "fixture": false
     },
