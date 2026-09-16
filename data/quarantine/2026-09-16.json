@@ -11,12 +11,12 @@
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 6,
+        "sample_size": 11,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-16T20:06:28Z"
+        "observed_at": "2026-09-16T22:55:13Z"
       },
       "fixture": false
     },
@@ -42,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/gryphe/mythomax-l2-13b",
-        "observed_at": "2026-09-16T20:06:28Z"
+        "observed_at": "2026-09-16T22:55:13Z"
       },
       "fixture": false
     },
@@ -60,16 +60,16 @@
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "novita/glm-5.3-flash",
+        "model_id": "zai/glm-5.3-flash",
         "canonical": "glm-5.3-flash",
         "direction": "input",
-        "context_length": 1048576,
-        "routes_collapsed": 8,
+        "context_length": 1000000,
+        "routes_collapsed": 7,
         "metric": "router_list"
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-16T20:06:28Z"
+        "observed_at": "2026-09-16T22:55:13Z"
       },
       "fixture": false
     },
@@ -87,7 +87,7 @@
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "novita/glm-5.3-flash",
+        "model_id": "lyceum/glm-5.3-flash",
         "canonical": "glm-5.3-flash",
         "direction": "output",
         "context_length": 1048576,
@@ -96,7 +96,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-16T20:06:28Z"
+        "observed_at": "2026-09-16T22:55:13Z"
       },
       "fixture": false
     },
