@@ -4,7 +4,7 @@
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
-      "price": 4.2105,
+      "price": 4.5395,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
@@ -16,63 +16,13 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-16T16:53:09Z"
+        "observed_at": "2026-09-16T20:06:28Z"
       },
       "fixture": false
     },
     "previous_price": 2.3026,
-    "delta_pct": 82.9,
-    "reason": "price moved 82.9% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-pro-6000-s-96gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-s-96gb",
-      "price": 1.2,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 6000 S",
-        "vram_gb": 96,
-        "sample_size": 14,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-16T16:53:09Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6667,
-    "delta_pct": 80.0,
-    "reason": "price moved 80.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-pro-5000-48gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-5000-48gb",
-      "price": 0.4667,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 5000",
-        "vram_gb": 48,
-        "sample_size": 15,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-16T16:53:09Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.2422,
-    "delta_pct": 92.7,
-    "reason": "price moved 92.7% (> 40% limit)"
+    "delta_pct": 97.1,
+    "reason": "price moved 97.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -92,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/gryphe/mythomax-l2-13b",
-        "observed_at": "2026-09-16T16:53:09Z"
+        "observed_at": "2026-09-16T20:06:28Z"
       },
       "fixture": false
     },
@@ -110,16 +60,16 @@
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "zai/glm-5.3-flash",
+        "model_id": "novita/glm-5.3-flash",
         "canonical": "glm-5.3-flash",
         "direction": "input",
-        "context_length": 1000000,
-        "routes_collapsed": 7,
+        "context_length": 1048576,
+        "routes_collapsed": 8,
         "metric": "router_list"
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-16T16:53:09Z"
+        "observed_at": "2026-09-16T20:06:28Z"
       },
       "fixture": false
     },
@@ -137,7 +87,7 @@
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "tensorx/glm-5.3-flash",
+        "model_id": "novita/glm-5.3-flash",
         "canonical": "glm-5.3-flash",
         "direction": "output",
         "context_length": 1048576,
@@ -146,7 +96,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-09-16T16:53:09Z"
+        "observed_at": "2026-09-16T20:06:28Z"
       },
       "fixture": false
     },
