@@ -1,16 +1,16 @@
 {
   "date": "2026-09-17",
-  "observed_at": "2026-09-17T13:25:58Z",
+  "observed_at": "2026-09-17T18:12:04Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 28
+      "offers": 26
     },
     {
       "source": "runpod",
-      "ok": false,
-      "error": "HTTPError: HTTP Error 503: Service Unavailable"
+      "ok": true,
+      "offers": 66
     },
     {
       "source": "aws",
@@ -59,8 +59,8 @@
       "carried": true
     }
   ],
-  "valid": 2652,
+  "valid": 2717,
   "rejected": 0,
-  "quarantined": 4,
-  "healthy": false
+  "quarantined": 3,
+  "healthy": true
 }
