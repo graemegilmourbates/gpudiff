@@ -1,158 +1,53 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-4090-24gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-4090-24gb",
+      "price": 0.3893,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 24,
+        "sample_size": 41,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-17T13:25:58Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.243,
+    "delta_pct": 60.2,
+    "reason": "price moved 60.2% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:rtx-3090-24gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-3090-24gb",
-      "price": 0.2352,
+      "price": 0.2033,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX 3090",
         "vram_gb": 24,
-        "sample_size": 39,
+        "sample_size": 27,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-17T07:37:45Z"
+        "observed_at": "2026-09-17T13:25:58Z"
       },
       "fixture": false
     },
     "previous_price": 0.143,
-    "delta_pct": 64.5,
-    "reason": "price moved 64.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:deepseek-deepseek-pro-latest-output:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-pro-latest-output",
-      "price": 2.96,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "~deepseek/deepseek-pro-latest",
-        "model_name": "DeepSeek: DeepSeek Pro Latest",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
-        "observed_at": "2026-09-17T07:37:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.7384,
-    "delta_pct": 70.3,
-    "reason": "price moved 70.3% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:deepseek-deepseek-v4.1-flash-input:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4.1-flash-input",
-      "price": 0.3,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "deepseek/deepseek-v4.1-flash",
-        "model_name": "DeepSeek: DeepSeek V4.1 Flash",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-09-17T07:37:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.15,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:deepseek-deepseek-v4.1-flash-output:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4.1-flash-output",
-      "price": 1.2,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "deepseek/deepseek-v4.1-flash",
-        "model_name": "DeepSeek: DeepSeek V4.1 Flash",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-09-17T07:37:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-pro-0813-input",
-      "price": 1.32,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "deepseek/deepseek-v4-pro-0813",
-        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-17T07:37:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.5795,
-    "delta_pct": 127.8,
-    "reason": "price moved 127.8% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-pro-0813-output:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-pro-0813-output",
-      "price": 3.96,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "deepseek/deepseek-v4-pro-0813",
-        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-17T07:37:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.7384,
-    "delta_pct": 127.8,
-    "reason": "price moved 127.8% (> 40% limit)"
+    "delta_pct": 42.2,
+    "reason": "price moved 42.2% (> 40% limit)"
   },
   {
     "offer": {
@@ -172,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-17T07:37:45Z"
+        "observed_at": "2026-09-17T13:25:58Z"
       },
       "fixture": false
     },
@@ -198,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-17T07:37:45Z"
+        "observed_at": "2026-09-17T13:25:58Z"
       },
       "fixture": false
     },

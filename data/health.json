@@ -1,16 +1,16 @@
 {
   "date": "2026-09-17",
-  "observed_at": "2026-09-17T07:37:45Z",
+  "observed_at": "2026-09-17T13:25:58Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 22
+      "offers": 28
     },
     {
       "source": "runpod",
-      "ok": true,
-      "offers": 76
+      "ok": false,
+      "error": "HTTPError: HTTP Error 503: Service Unavailable"
     },
     {
       "source": "aws",
@@ -32,7 +32,7 @@
     {
       "source": "routers",
       "ok": true,
-      "offers": 1580
+      "offers": 1582
     },
     {
       "source": "ramp",
@@ -59,8 +59,8 @@
       "carried": true
     }
   ],
-  "valid": 2716,
+  "valid": 2652,
   "rejected": 0,
-  "quarantined": 8,
-  "healthy": true
+  "quarantined": 4,
+  "healthy": false
 }
