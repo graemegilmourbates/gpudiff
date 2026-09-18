@@ -1,28 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:h200-nvl-141gb:global:spot",
+      "id": "vast:h100-sxm-80gb:global:spot",
       "provider": "vast",
-      "sku": "h200-nvl-141gb",
-      "price": 2.4,
+      "sku": "h100-sxm-80gb",
+      "price": 1.7333,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "H200 NVL",
-        "vram_gb": 141,
-        "sample_size": 8,
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 11,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-18T00:16:17Z"
+        "observed_at": "2026-09-18T04:48:32Z"
       },
       "fixture": false
     },
-    "previous_price": 1.4667,
-    "delta_pct": 63.6,
-    "reason": "price moved 63.6% (> 40% limit)"
+    "previous_price": 1.0667,
+    "delta_pct": 62.5,
+    "reason": "price moved 62.5% (> 40% limit)"
   },
   {
     "offer": {
@@ -36,12 +36,12 @@
       "attrs": {
         "gpu_model": "L4",
         "vram_gb": 24,
-        "sample_size": 9,
+        "sample_size": 7,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-18T00:16:17Z"
+        "observed_at": "2026-09-18T04:48:32Z"
       },
       "fixture": false
     },
@@ -51,28 +51,29 @@
   },
   {
     "offer": {
-      "id": "vast:rtx-pro-5000-48gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-5000-48gb",
-      "price": 0.3529,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "id": "openrouter:deepseek-deepseek-v4-flash-latest-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-latest-input",
+      "price": 0.0558,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX PRO 5000",
-        "vram_gb": 48,
-        "sample_size": 19,
-        "metric": "p25_min_bid_per_gpu"
+        "model_id": "~deepseek/deepseek-v4-flash-latest",
+        "model_name": "DeepSeek: DeepSeek V4 Flash Latest",
+        "context_length": 1310720,
+        "direction": "input",
+        "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-18T00:16:17Z"
+        "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
+        "observed_at": "2026-09-18T04:48:32Z"
       },
       "fixture": false
     },
-    "previous_price": 0.2133,
-    "delta_pct": 65.4,
-    "reason": "price moved 65.4% (> 40% limit)"
+    "previous_price": 0.03,
+    "delta_pct": 86.0,
+    "reason": "price moved 86.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -92,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-18T00:16:17Z"
+        "observed_at": "2026-09-18T04:48:32Z"
       },
       "fixture": false
     },
@@ -118,13 +119,117 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-18T00:16:17Z"
+        "observed_at": "2026-09-18T04:48:32Z"
       },
       "fixture": false
     },
     "previous_price": 0.33,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.2-input:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.2-input",
+      "price": 0.4875,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.2",
+        "model_name": "Z.ai: GLM 5.2",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.2",
+        "observed_at": "2026-09-18T04:48:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.4,
+    "delta_pct": 65.2,
+    "reason": "price moved 65.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.2-output:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.2-output",
+      "price": 1.56,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.2",
+        "model_name": "Z.ai: GLM 5.2",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.2",
+        "observed_at": "2026-09-18T04:48:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 4.4,
+    "delta_pct": 64.5,
+    "reason": "price moved 64.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-pro-input",
+      "price": 0.9434,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0423",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
+        "observed_at": "2026-09-18T04:48:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.6,
+    "delta_pct": 41.0,
+    "reason": "price moved 41.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-pro-output",
+      "price": 1.8867,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0423",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
+        "observed_at": "2026-09-18T04:48:32Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 3.2,
+    "delta_pct": 41.0,
+    "reason": "price moved 41.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -144,7 +249,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/openai/gpt-oss-120b",
-        "observed_at": "2026-09-18T00:16:17Z"
+        "observed_at": "2026-09-18T04:48:32Z"
       },
       "fixture": false
     },
@@ -170,7 +275,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/openai/gpt-oss-120b",
-        "observed_at": "2026-09-18T00:16:17Z"
+        "observed_at": "2026-09-18T04:48:32Z"
       },
       "fixture": false
     },
