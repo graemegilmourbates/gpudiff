@@ -1,6 +1,56 @@
 [
   {
     "offer": {
+      "id": "vast:h200-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-141gb",
+      "price": 4.2105,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "sample_size": 6,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-19T20:38:10Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.3026,
+    "delta_pct": 82.9,
+    "reason": "price moved 82.9% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-5090-32gb:global:on-demand",
+      "provider": "vast",
+      "sku": "rtx-5090-32gb",
+      "price": 0.8022,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 5090",
+        "vram_gb": 32,
+        "sample_size": 64,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-09-19T20:38:10Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5659,
+    "delta_pct": 41.8,
+    "reason": "price moved 41.8% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-latest-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-latest-output",
@@ -17,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-09-19T18:00:03Z"
+        "observed_at": "2026-09-19T20:38:10Z"
       },
       "fixture": false
     },
@@ -43,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-09-19T18:00:03Z"
+        "observed_at": "2026-09-19T20:38:10Z"
       },
       "fixture": false
     },
@@ -69,7 +119,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-09-19T18:00:03Z"
+        "observed_at": "2026-09-19T20:38:10Z"
       },
       "fixture": false
     },
