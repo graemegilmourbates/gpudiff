@@ -11,12 +11,12 @@
       "attrs": {
         "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 11,
+        "sample_size": 9,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
@@ -29,102 +29,76 @@
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
-      "price": 3.5513,
+      "price": 4.2105,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 9,
+        "sample_size": 8,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
     "previous_price": 2.3026,
-    "delta_pct": 54.2,
-    "reason": "price moved 54.2% (> 40% limit)"
+    "delta_pct": 82.9,
+    "reason": "price moved 82.9% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "vast:a100-sxm4-80gb:global:spot",
+      "id": "vast:rtx-3090-24gb:global:on-demand",
       "provider": "vast",
-      "sku": "a100-sxm4-80gb",
-      "price": 0.4,
+      "sku": "rtx-3090-24gb",
+      "price": 0.2464,
       "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 SXM4",
-        "vram_gb": 80,
-        "sample_size": 9,
-        "metric": "p25_min_bid_per_gpu"
+        "gpu_model": "RTX 3090",
+        "vram_gb": 24,
+        "sample_size": 49,
+        "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
-    "previous_price": 0.9307,
-    "delta_pct": 57.0,
-    "reason": "price moved 57.0% (> 40% limit)"
+    "previous_price": 0.1729,
+    "delta_pct": 42.5,
+    "reason": "price moved 42.5% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
+      "id": "openrouter:qwen-qwen3.8-27b-input:global:list",
       "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
+      "sku": "qwen-qwen3.8-27b-input",
+      "price": 0.42,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
+        "model_id": "qwen/qwen3.8-27b",
+        "model_name": "Qwen: Qwen3.8 27B",
+        "context_length": 1000000,
         "direction": "input",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "url": "https://openrouter.ai/qwen/qwen3.8-27b",
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-20T16:03:51Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.33,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
+    "previous_price": 0.214,
+    "delta_pct": 96.3,
+    "reason": "price moved 96.3% (> 40% limit)"
   },
   {
     "offer": {
@@ -144,13 +118,39 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
     "previous_price": 0.1625,
     "delta_pct": 92.3,
     "reason": "price moved 92.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3-vl-30b-a3b-instruct-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3-vl-30b-a3b-instruct-input",
+      "price": 0.2,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3-vl-30b-a3b-instruct",
+        "model_name": "Qwen: Qwen3 VL 30B A3B Instruct",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3-vl-30b-a3b-instruct",
+        "observed_at": "2026-09-20T18:46:40Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.13,
+    "delta_pct": 53.8,
+    "reason": "price moved 53.8% (> 40% limit)"
   },
   {
     "offer": {
@@ -171,7 +171,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
@@ -198,7 +198,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
@@ -225,7 +225,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
@@ -252,7 +252,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-09-20T16:03:51Z"
+        "observed_at": "2026-09-20T18:46:40Z"
       },
       "fixture": false
     },
