@@ -1,53 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:a100-sxm4-80gb:global:on-demand",
+      "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
-      "sku": "a100-sxm4-80gb",
-      "price": 1.6146,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "A100 SXM4",
-        "vram_gb": 80,
-        "sample_size": 10,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-20T01:06:55Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.9418,
-    "delta_pct": 71.4,
-    "reason": "price moved 71.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:a100-sxm4-80gb:global:spot",
-      "provider": "vast",
-      "sku": "a100-sxm4-80gb",
-      "price": 0.4,
+      "sku": "h200-141gb",
+      "price": 4.2105,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 SXM4",
-        "vram_gb": 80,
+        "gpu_model": "H200",
+        "vram_gb": 141,
         "sample_size": 10,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-20T01:06:55Z"
+        "observed_at": "2026-09-20T06:14:00Z"
       },
       "fixture": false
     },
-    "previous_price": 0.9307,
-    "delta_pct": 57.0,
-    "reason": "price moved 57.0% (> 40% limit)"
+    "previous_price": 2.3026,
+    "delta_pct": 82.9,
+    "reason": "price moved 82.9% (> 40% limit)"
   },
   {
     "offer": {
@@ -67,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.8-27b",
-        "observed_at": "2026-09-20T01:06:55Z"
+        "observed_at": "2026-09-20T06:14:00Z"
       },
       "fixture": false
     },
@@ -93,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-20T01:06:55Z"
+        "observed_at": "2026-09-20T06:14:00Z"
       },
       "fixture": false
     },
@@ -119,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-20T01:06:55Z"
+        "observed_at": "2026-09-20T06:14:00Z"
       },
       "fixture": false
     },
@@ -145,12 +120,74 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
-        "observed_at": "2026-09-20T01:06:55Z"
+        "observed_at": "2026-09-20T06:14:00Z"
       },
       "fixture": false
     },
     "previous_price": 0.1625,
     "delta_pct": 92.3,
     "reason": "price moved 92.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "zoom:pricing-top:global:list",
+      "provider": "zoom",
+      "sku": "pricing-top",
+      "price": 200.0,
+      "unit": "usd_per_unit",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "price_points": [
+          1.0,
+          2.0,
+          10.0,
+          14.16,
+          16.99,
+          18.33,
+          21.99,
+          200.0
+        ],
+        "point_count": 8,
+        "metric": "page_scan"
+      },
+      "provenance": {
+        "url": "https://www.zoom.com/en/pricing/",
+        "observed_at": "2026-09-20T06:14:00Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.0,
+    "delta_pct": 9900.0,
+    "reason": "price moved 9900.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "asana:pricing-entry:global:list",
+      "provider": "asana",
+      "sku": "pricing-entry",
+      "price": 10.99,
+      "unit": "usd_per_unit",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "price_points": [
+          10.99,
+          13.49,
+          24.99,
+          30.49
+        ],
+        "point_count": 4,
+        "metric": "page_scan"
+      },
+      "provenance": {
+        "url": "https://asana.com/pricing",
+        "observed_at": "2026-09-20T06:14:00Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 5.99,
+    "delta_pct": 83.5,
+    "reason": "price moved 83.5% (> 40% limit)"
   }
 ]

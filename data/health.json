@@ -1,6 +1,6 @@
 {
   "date": "2026-09-20",
-  "observed_at": "2026-09-20T01:06:55Z",
+  "observed_at": "2026-09-20T06:14:00Z",
   "sources": [
     {
       "source": "vast",
@@ -10,19 +10,17 @@
     {
       "source": "runpod",
       "ok": true,
-      "offers": 96
+      "offers": 88
     },
     {
       "source": "aws",
       "ok": true,
-      "offers": 9,
-      "carried": true
+      "offers": 9
     },
     {
       "source": "azure",
       "ok": true,
-      "offers": 12,
-      "carried": true
+      "offers": 12
     },
     {
       "source": "openrouter",
@@ -36,31 +34,27 @@
     },
     {
       "source": "ramp",
-      "ok": true,
-      "offers": 140,
-      "carried": true
+      "ok": false,
+      "error": "RuntimeError: only 0 models parsed from https://docs.router.com/supported-models \u2014 page shape changed"
     },
     {
       "source": "saaspages",
       "ok": true,
-      "offers": 40,
-      "carried": true
+      "offers": 38
     },
     {
       "source": "bls",
       "ok": true,
-      "offers": 2,
-      "carried": true
+      "offers": 2
     },
     {
       "source": "newegg",
       "ok": true,
-      "offers": 13,
-      "carried": true
+      "offers": 13
     }
   ],
-  "valid": 2761,
+  "valid": 2610,
   "rejected": 0,
-  "quarantined": 6,
-  "healthy": true
+  "quarantined": 7,
+  "healthy": false
 }
