@@ -1,16 +1,16 @@
 {
   "date": "2026-09-24",
-  "observed_at": "2026-09-24T04:47:40Z",
+  "observed_at": "2026-09-24T09:59:25Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 30
+      "offers": 24
     },
     {
       "source": "runpod",
       "ok": true,
-      "offers": 84
+      "offers": 40
     },
     {
       "source": "aws",
@@ -27,12 +27,12 @@
     {
       "source": "openrouter",
       "ok": true,
-      "offers": 856
+      "offers": 858
     },
     {
       "source": "routers",
       "ok": true,
-      "offers": 1627
+      "offers": 1631
     },
     {
       "source": "ramp",
@@ -58,8 +58,8 @@
       "carried": true
     }
   ],
-  "valid": 2663,
+  "valid": 2614,
   "rejected": 0,
-  "quarantined": 6,
+  "quarantined": 11,
   "healthy": false
 }
