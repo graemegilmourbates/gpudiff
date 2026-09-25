@@ -1,6 +1,58 @@
 [
   {
     "offer": {
+      "id": "openrouter:deepseek-deepseek-pro-latest-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-pro-latest-input",
+      "price": 0.0998,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~deepseek/deepseek-pro-latest",
+        "model_name": "DeepSeek: DeepSeek Pro Latest",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
+        "observed_at": "2026-09-25T07:46:21Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3894,
+    "delta_pct": 74.4,
+    "reason": "price moved 74.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-pro-latest-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-pro-latest-output",
+      "price": 2.88,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~deepseek/deepseek-pro-latest",
+        "model_name": "DeepSeek: DeepSeek Pro Latest",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
+        "observed_at": "2026-09-25T07:46:21Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.1682,
+    "delta_pct": 146.5,
+    "reason": "price moved 146.5% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:deepseek-deepseek-v4.1-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4.1-flash-input",
@@ -17,7 +69,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-09-25T01:28:54Z"
+        "observed_at": "2026-09-25T07:46:21Z"
       },
       "fixture": false
     },
@@ -43,7 +95,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-09-25T01:28:54Z"
+        "observed_at": "2026-09-25T07:46:21Z"
       },
       "fixture": false
     },
@@ -53,29 +105,29 @@
   },
   {
     "offer": {
-      "id": "openrouter:moonshotai-kimi-k3-input:global:list",
+      "id": "openrouter:z-ai-glm-5.3-flash-output:global:list",
       "provider": "openrouter",
-      "sku": "moonshotai-kimi-k3-input",
-      "price": 0.8845,
+      "sku": "z-ai-glm-5.3-flash-output",
+      "price": 0.14,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "moonshotai/kimi-k3",
-        "model_name": "MoonshotAI: Kimi K3",
-        "context_length": 1048576,
-        "direction": "input",
+        "model_id": "z-ai/glm-5.3-flash",
+        "model_name": "Z.ai: GLM 5.3 Flash",
+        "context_length": 1310720,
+        "direction": "output",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/moonshotai/kimi-k3",
-        "observed_at": "2026-09-25T01:28:54Z"
+        "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
+        "observed_at": "2026-09-25T07:46:21Z"
       },
       "fixture": false
     },
-    "previous_price": 3.0,
-    "delta_pct": 70.5,
-    "reason": "price moved 70.5% (> 40% limit)"
+    "previous_price": 0.6,
+    "delta_pct": 76.7,
+    "reason": "price moved 76.7% (> 40% limit)"
   },
   {
     "offer": {
@@ -95,7 +147,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-25T01:28:54Z"
+        "observed_at": "2026-09-25T07:46:21Z"
       },
       "fixture": false
     },
@@ -121,7 +173,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-25T01:28:54Z"
+        "observed_at": "2026-09-25T07:46:21Z"
       },
       "fixture": false
     },
@@ -147,7 +199,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-4.7",
-        "observed_at": "2026-09-25T01:28:54Z"
+        "observed_at": "2026-09-25T07:46:21Z"
       },
       "fixture": false
     },
