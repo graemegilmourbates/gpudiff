@@ -1,28 +1,28 @@
 [
   {
     "offer": {
-      "id": "vast:a100-sxm4-80gb:global:on-demand",
+      "id": "vast:h100-sxm-80gb:global:spot",
       "provider": "vast",
-      "sku": "a100-sxm4-80gb",
-      "price": 1.6061,
+      "sku": "h100-sxm-80gb",
+      "price": 2.6,
       "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
+      "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 SXM4",
+        "gpu_model": "H100 SXM",
         "vram_gb": 80,
-        "sample_size": 13,
-        "metric": "p25_per_gpu_dph_verified"
+        "sample_size": 14,
+        "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-09-27T18:22:30Z"
+        "observed_at": "2026-09-27T22:08:42Z"
       },
       "fixture": false
     },
-    "previous_price": 1.0689,
-    "delta_pct": 50.3,
-    "reason": "price moved 50.3% (> 40% limit)"
+    "previous_price": 1.0667,
+    "delta_pct": 143.7,
+    "reason": "price moved 143.7% (> 40% limit)"
   },
   {
     "offer": {
@@ -42,39 +42,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-09-27T18:22:30Z"
+        "observed_at": "2026-09-27T22:08:42Z"
       },
       "fixture": false
     },
     "previous_price": 0.5,
     "delta_pct": 72.0,
     "reason": "price moved 72.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:z-ai-glm-latest-output:global:list",
-      "provider": "openrouter",
-      "sku": "z-ai-glm-latest-output",
-      "price": 2.574,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "~z-ai/glm-latest",
-        "model_name": "Z.ai: GLM Latest",
-        "context_length": 1310720,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/~z-ai/glm-latest",
-        "observed_at": "2026-09-27T18:22:30Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.1924,
-    "delta_pct": 115.9,
-    "reason": "price moved 115.9% (> 40% limit)"
   },
   {
     "offer": {
@@ -94,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-09-27T18:22:30Z"
+        "observed_at": "2026-09-27T22:08:42Z"
       },
       "fixture": false
     },
