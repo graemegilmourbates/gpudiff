@@ -4,7 +4,7 @@
       "id": "openrouter:deepseek-deepseek-pro-latest-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-pro-latest-output",
-      "price": 3.5,
+      "price": 4.2,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -17,13 +17,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
     "previous_price": 0.7326,
-    "delta_pct": 377.8,
-    "reason": "price moved 377.8% (> 40% limit)"
+    "delta_pct": 473.3,
+    "reason": "price moved 473.3% (> 40% limit)"
   },
   {
     "offer": {
@@ -43,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -69,7 +69,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -95,7 +95,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -108,7 +108,7 @@
       "id": "openrouter:z-ai-glm-latest-output:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-latest-output",
-      "price": 2.574,
+      "price": 4.4,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -121,13 +121,39 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~z-ai/glm-latest",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
     "previous_price": 1.1176,
-    "delta_pct": 130.3,
-    "reason": "price moved 130.3% (> 40% limit)"
+    "delta_pct": 293.7,
+    "reason": "price moved 293.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.3-input:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.3-input",
+      "price": 0.325,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.3",
+        "model_name": "Z.ai: GLM 5.3",
+        "context_length": 1310720,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.3",
+        "observed_at": "2026-09-28T06:51:34Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.4,
+    "delta_pct": 76.8,
+    "reason": "price moved 76.8% (> 40% limit)"
   },
   {
     "offer": {
@@ -147,7 +173,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -173,7 +199,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -186,7 +212,7 @@
       "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-input",
-      "price": 0.9483,
+      "price": 0.9553,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -199,20 +225,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
     "previous_price": 0.348,
-    "delta_pct": 172.5,
-    "reason": "price moved 172.5% (> 40% limit)"
+    "delta_pct": 174.5,
+    "reason": "price moved 174.5% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-output",
-      "price": 1.8966,
+      "price": 1.9105,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -225,13 +251,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
     "previous_price": 0.696,
-    "delta_pct": 172.5,
-    "reason": "price moved 172.5% (> 40% limit)"
+    "delta_pct": 174.5,
+    "reason": "price moved 174.5% (> 40% limit)"
   },
   {
     "offer": {
@@ -251,7 +277,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -277,7 +303,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -303,7 +329,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.1",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -329,7 +355,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.1",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -355,7 +381,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/minimax/minimax-m2.7",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -381,7 +407,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/minimax/minimax-m2.7",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -407,7 +433,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.5-35b-a3b",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
@@ -417,54 +443,34 @@
   },
   {
     "offer": {
-      "id": "openrouter:qwen-qwen3-14b-input:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3-14b-input",
-      "price": 0.2275,
-      "unit": "usd_per_mtok",
+      "id": "slack:pricing-top:global:list",
+      "provider": "slack",
+      "sku": "pricing-top",
+      "price": 45.0,
+      "unit": "usd_per_unit",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "qwen/qwen3-14b",
-        "model_name": "Qwen: Qwen3 14B",
-        "context_length": 131072,
-        "direction": "input",
-        "metric": "openrouter_list"
+        "price_points": [
+          4.38,
+          7.25,
+          8.75,
+          9.0,
+          15.0,
+          18.0,
+          45.0
+        ],
+        "point_count": 7,
+        "metric": "page_scan"
       },
       "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3-14b",
-        "observed_at": "2026-09-28T00:44:13Z"
+        "url": "https://slack.com/pricing",
+        "observed_at": "2026-09-28T06:51:34Z"
       },
       "fixture": false
     },
-    "previous_price": 0.12,
-    "delta_pct": 89.6,
-    "reason": "price moved 89.6% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3-14b-output:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3-14b-output",
-      "price": 0.91,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3-14b",
-        "model_name": "Qwen: Qwen3 14B",
-        "context_length": 131072,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3-14b",
-        "observed_at": "2026-09-28T00:44:13Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.24,
-    "delta_pct": 279.2,
-    "reason": "price moved 279.2% (> 40% limit)"
+    "previous_price": 18.0,
+    "delta_pct": 150.0,
+    "reason": "price moved 150.0% (> 40% limit)"
   }
 ]
