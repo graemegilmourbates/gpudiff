@@ -1,28 +1,26 @@
 {
   "date": "2026-10-03",
-  "observed_at": "2026-10-03T00:28:46Z",
+  "observed_at": "2026-10-03T06:31:07Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 36
+      "offers": 38
     },
     {
       "source": "runpod",
       "ok": true,
-      "offers": 94
+      "offers": 78
     },
     {
       "source": "aws",
       "ok": true,
-      "offers": 9,
-      "carried": true
+      "offers": 9
     },
     {
       "source": "azure",
       "ok": true,
-      "offers": 12,
-      "carried": true
+      "offers": 12
     },
     {
       "source": "openrouter",
@@ -32,7 +30,7 @@
     {
       "source": "routers",
       "ok": true,
-      "offers": 1641
+      "offers": 1639
     },
     {
       "source": "ramp",
@@ -42,24 +40,21 @@
     {
       "source": "saaspages",
       "ok": true,
-      "offers": 38,
-      "carried": true
+      "offers": 40
     },
     {
       "source": "bls",
       "ok": true,
-      "offers": 2,
-      "carried": true
+      "offers": 2
     },
     {
       "source": "newegg",
       "ok": true,
-      "offers": 8,
-      "carried": true
+      "offers": 10
     }
   ],
-  "valid": 2706,
+  "valid": 2691,
   "rejected": 0,
-  "quarantined": 8,
+  "quarantined": 11,
   "healthy": false
 }
