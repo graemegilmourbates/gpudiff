@@ -1,31 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 1.5067,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 9,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-04T19:35:44Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.0667,
-    "delta_pct": 41.2,
-    "reason": "price moved 41.2% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:rtx-a6000-48gb:global:spot",
       "provider": "vast",
       "sku": "rtx-a6000-48gb",
@@ -36,12 +11,12 @@
       "attrs": {
         "gpu_model": "RTX A6000",
         "vram_gb": 48,
-        "sample_size": 8,
+        "sample_size": 11,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-04T19:35:44Z"
+        "observed_at": "2026-10-04T23:07:45Z"
       },
       "fixture": false
     },
@@ -67,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~z-ai/glm-latest",
-        "observed_at": "2026-10-04T19:35:44Z"
+        "observed_at": "2026-10-04T23:07:45Z"
       },
       "fixture": false
     },
@@ -93,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-10-04T19:35:44Z"
+        "observed_at": "2026-10-04T23:07:45Z"
       },
       "fixture": false
     },
@@ -119,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-10-04T19:35:44Z"
+        "observed_at": "2026-10-04T23:07:45Z"
       },
       "fixture": false
     },
@@ -145,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-10-04T19:35:44Z"
+        "observed_at": "2026-10-04T23:07:45Z"
       },
       "fixture": false
     },
@@ -171,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-10-04T19:35:44Z"
+        "observed_at": "2026-10-04T23:07:45Z"
       },
       "fixture": false
     },
@@ -197,7 +172,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-10-04T19:35:44Z"
+        "observed_at": "2026-10-04T23:07:45Z"
       },
       "fixture": false
     },
