@@ -4,7 +4,7 @@
       "id": "vast:h100-nvl-94gb:global:spot",
       "provider": "vast",
       "sku": "h100-nvl-94gb",
-      "price": 2.412,
+      "price": 2.2533,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
@@ -16,45 +16,45 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-04T02:37:03Z"
+        "observed_at": "2026-10-04T09:45:15Z"
       },
       "fixture": false
     },
     "previous_price": 0.6667,
-    "delta_pct": 261.8,
-    "reason": "price moved 261.8% (> 40% limit)"
+    "delta_pct": 238.0,
+    "reason": "price moved 238.0% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:h200-nvl-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-nvl-141gb",
-      "price": 2.2667,
+      "price": 2.38,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H200 NVL",
         "vram_gb": 141,
-        "sample_size": 6,
+        "sample_size": 15,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-04T02:37:03Z"
+        "observed_at": "2026-10-04T09:45:15Z"
       },
       "fixture": false
     },
     "previous_price": 1.3333,
-    "delta_pct": 70.0,
-    "reason": "price moved 70.0% (> 40% limit)"
+    "delta_pct": 78.5,
+    "reason": "price moved 78.5% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:z-ai-glm-latest-output:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-latest-output",
-      "price": 4.4,
+      "price": 5.0,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -67,13 +67,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~z-ai/glm-latest",
-        "observed_at": "2026-10-04T02:37:03Z"
+        "observed_at": "2026-10-04T09:45:15Z"
       },
       "fixture": false
     },
     "previous_price": 2.4,
-    "delta_pct": 83.3,
-    "reason": "price moved 83.3% (> 40% limit)"
+    "delta_pct": 108.3,
+    "reason": "price moved 108.3% (> 40% limit)"
   },
   {
     "offer": {
@@ -93,7 +93,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-04T02:37:03Z"
+        "observed_at": "2026-10-04T09:45:15Z"
       },
       "fixture": false
     },
@@ -119,13 +119,39 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-04T02:37:03Z"
+        "observed_at": "2026-10-04T09:45:15Z"
       },
       "fixture": false
     },
     "previous_price": 0.33,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-output",
+      "price": 1.28,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0423",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
+        "observed_at": "2026-10-04T09:45:15Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.056,
+    "delta_pct": 2185.7,
+    "reason": "price moved 2185.7% (> 40% limit)"
   },
   {
     "offer": {
@@ -145,7 +171,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-10-04T02:37:03Z"
+        "observed_at": "2026-10-04T09:45:15Z"
       },
       "fixture": false
     },
@@ -171,7 +197,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
-        "observed_at": "2026-10-04T02:37:03Z"
+        "observed_at": "2026-10-04T09:45:15Z"
       },
       "fixture": false
     },
