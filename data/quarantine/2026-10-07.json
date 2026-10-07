@@ -1,28 +1,78 @@
 [
   {
     "offer": {
-      "id": "vast:a100-sxm4-40gb:global:on-demand",
+      "id": "vast:h100-sxm-80gb:global:spot",
       "provider": "vast",
-      "sku": "a100-sxm4-40gb",
-      "price": 0.667,
+      "sku": "h100-sxm-80gb",
+      "price": 1.52,
       "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
+      "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 SXM4",
-        "vram_gb": 40,
-        "sample_size": 12,
-        "metric": "p25_per_gpu_dph_verified"
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-07T14:29:32Z"
+        "observed_at": "2026-10-07T20:35:58Z"
       },
       "fixture": false
     },
-    "previous_price": 0.4452,
-    "delta_pct": 49.8,
-    "reason": "price moved 49.8% (> 40% limit)"
+    "previous_price": 0.915,
+    "delta_pct": 66.1,
+    "reason": "price moved 66.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-4090-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-4090-48gb",
+      "price": 0.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX 4090",
+        "vram_gb": 48,
+        "sample_size": 11,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-07T20:35:58Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.254,
+    "delta_pct": 57.5,
+    "reason": "price moved 57.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:l40s-48gb:global:spot",
+      "provider": "vast",
+      "sku": "l40s-48gb",
+      "price": 0.32,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L40S",
+        "vram_gb": 48,
+        "sample_size": 9,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-07T20:35:58Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5867,
+    "delta_pct": 45.5,
+    "reason": "price moved 45.5% (> 40% limit)"
   },
   {
     "offer": {
@@ -36,12 +86,12 @@
       "attrs": {
         "gpu_model": "L4",
         "vram_gb": 24,
-        "sample_size": 7,
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-07T14:29:32Z"
+        "observed_at": "2026-10-07T20:35:58Z"
       },
       "fixture": false
     },
@@ -54,7 +104,7 @@
       "id": "openrouter:deepseek-deepseek-v4.1-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4.1-flash-input",
-      "price": 0.05,
+      "price": 0.3,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -67,65 +117,65 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-10-07T14:29:32Z"
+        "observed_at": "2026-10-07T20:35:58Z"
       },
       "fixture": false
     },
     "previous_price": 0.0182,
-    "delta_pct": 174.7,
-    "reason": "price moved 174.7% (> 40% limit)"
+    "delta_pct": 1548.4,
+    "reason": "price moved 1548.4% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
+      "id": "openrouter:anthropic-claude-haiku-latest-input:global:list",
       "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
+      "sku": "anthropic-claude-haiku-latest-input",
+      "price": 0.1,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
+        "model_id": "~anthropic/claude-haiku-latest",
+        "model_name": "Anthropic: Claude Haiku Latest",
+        "context_length": 1000000,
         "direction": "input",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-07T14:29:32Z"
+        "url": "https://openrouter.ai/~anthropic/claude-haiku-latest",
+        "observed_at": "2026-10-07T20:35:58Z"
       },
       "fixture": false
     },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
+    "previous_price": 1.0,
+    "delta_pct": 90.0,
+    "reason": "price moved 90.0% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
+      "id": "openrouter:anthropic-claude-haiku-latest-output:global:list",
       "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
+      "sku": "anthropic-claude-haiku-latest-output",
+      "price": 0.5,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
+        "model_id": "~anthropic/claude-haiku-latest",
+        "model_name": "Anthropic: Claude Haiku Latest",
+        "context_length": 1000000,
         "direction": "output",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-07T14:29:32Z"
+        "url": "https://openrouter.ai/~anthropic/claude-haiku-latest",
+        "observed_at": "2026-10-07T20:35:58Z"
       },
       "fixture": false
     },
-    "previous_price": 0.33,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
+    "previous_price": 5.0,
+    "delta_pct": 90.0,
+    "reason": "price moved 90.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -145,7 +195,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
-        "observed_at": "2026-10-07T14:29:32Z"
+        "observed_at": "2026-10-07T20:35:58Z"
       },
       "fixture": false
     },
