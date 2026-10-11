@@ -1,0 +1,106 @@
+[
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3.8-27b-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3.8-27b-input",
+      "price": 0.04,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3.8-27b",
+        "model_name": "Qwen: Qwen3.8 27B",
+        "context_length": 1000000,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3.8-27b",
+        "observed_at": "2026-10-11T01:51:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.425,
+    "delta_pct": 90.6,
+    "reason": "price moved 90.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-input:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-input",
+      "price": 0.132,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-10-11T01:51:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0825,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-output:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-output",
+      "price": 0.528,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-10-11T01:51:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.33,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k2.6-input:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k2.6-input",
+      "price": 0.65,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k2.6",
+        "model_name": "MoonshotAI: Kimi K2.6",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k2.6",
+        "observed_at": "2026-10-11T01:51:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4344,
+    "delta_pct": 49.6,
+    "reason": "price moved 49.6% (> 40% limit)"
+  }
+]
