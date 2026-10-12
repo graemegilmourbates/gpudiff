@@ -1,10 +1,10 @@
-# Analyst report — 2026-09-28
+# Analyst report — 2026-10-12
 
-- **Site visits (GoatCounter total)**: 318
+- **Site visits (GoatCounter total)**: 350
 - **HN mentions**: 0
 - **Repo**: 0★ · 0 forks · 0 watchers
-- **Changelog velocity (7d)**: 972 entries — 636 gpu · 332 llm · 4 saas
-- **Dataset**: 2610 offers · sources DEGRADED
+- **Changelog velocity (7d)**: 961 entries — 643 gpu · 318 llm · 0 saas
+- **Dataset**: 2555 offers · sources DEGRADED
 
 Owner-reported (monthly, in the board issue): referral signups & earnings (Vast, RunPod).
 Gate (day-90): 1,000 uniques/mo OR 150 subscribers OR $50 MRR.
