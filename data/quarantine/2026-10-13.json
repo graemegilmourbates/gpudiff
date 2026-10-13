@@ -1,0 +1,364 @@
+[
+  {
+    "offer": {
+      "id": "vast:rtx-a6000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-a6000-48gb",
+      "price": 0.2,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX A6000",
+        "vram_gb": 48,
+        "sample_size": 10,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3733,
+    "delta_pct": 46.4,
+    "reason": "price moved 46.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:l4-24gb:global:spot",
+      "provider": "vast",
+      "sku": "l4-24gb",
+      "price": 0.2,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L4",
+        "vram_gb": 24,
+        "sample_size": 10,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.1333,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-pro-0813-input",
+      "price": 1.32,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-pro-0813",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.66,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-pro-0813-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-pro-0813-output",
+      "price": 3.96,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-pro-0813",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.98,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k3-output:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k3-output",
+      "price": 15.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k3",
+        "model_name": "MoonshotAI: Kimi K3",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k3",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 10.0,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-input:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-input",
+      "price": 0.132,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0825,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-output:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-output",
+      "price": 0.528,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.33,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-latest-output:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-latest-output",
+      "price": 15.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~moonshotai/kimi-latest",
+        "model_name": "MoonshotAI: Kimi Latest",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~moonshotai/kimi-latest",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 10.0,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:minimax-minimax-m2.7-input:global:list",
+      "provider": "openrouter",
+      "sku": "minimax-minimax-m2.7-input",
+      "price": 0.3,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "minimax/minimax-m2.7",
+        "model_name": "MiniMax: MiniMax M2.7",
+        "context_length": 204800,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/minimax/minimax-m2.7",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.21,
+    "delta_pct": 42.9,
+    "reason": "price moved 42.9% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:minimax-minimax-m2.7-output:global:list",
+      "provider": "openrouter",
+      "sku": "minimax-minimax-m2.7-output",
+      "price": 1.2,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "minimax/minimax-m2.7",
+        "model_name": "MiniMax: MiniMax M2.7",
+        "context_length": 204800,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/minimax/minimax-m2.7",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.84,
+    "delta_pct": 42.9,
+    "reason": "price moved 42.9% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-oss-120b-input:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-oss-120b-input",
+      "price": 0.15,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-oss-120b",
+        "model_name": "OpenAI: gpt-oss-120b",
+        "context_length": 131072,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-oss-120b",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.037,
+    "delta_pct": 305.4,
+    "reason": "price moved 305.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-oss-120b-output:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-oss-120b-output",
+      "price": 0.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-oss-120b",
+        "model_name": "OpenAI: gpt-oss-120b",
+        "context_length": 131072,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-oss-120b",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.17,
+    "delta_pct": 252.9,
+    "reason": "price moved 252.9% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:meta-llama-llama-3.3-70b-instruct-input:global:list",
+      "provider": "openrouter",
+      "sku": "meta-llama-llama-3.3-70b-instruct-input",
+      "price": 0.59,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "meta-llama/llama-3.3-70b-instruct",
+        "model_name": "Meta: Llama 3.3 70B Instruct",
+        "context_length": 131072,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.22,
+    "delta_pct": 168.2,
+    "reason": "price moved 168.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:meta-llama-llama-3.3-70b-instruct-output:global:list",
+      "provider": "openrouter",
+      "sku": "meta-llama-llama-3.3-70b-instruct-output",
+      "price": 0.79,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "meta-llama/llama-3.3-70b-instruct",
+        "model_name": "Meta: Llama 3.3 70B Instruct",
+        "context_length": 131072,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/meta-llama/llama-3.3-70b-instruct",
+        "observed_at": "2026-10-13T03:32:28Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5,
+    "delta_pct": 58.0,
+    "reason": "price moved 58.0% (> 40% limit)"
+  }
+]
