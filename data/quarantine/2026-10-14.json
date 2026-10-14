@@ -1,6 +1,31 @@
 [
   {
     "offer": {
+      "id": "vast:a100-pcie-80gb:global:spot",
+      "provider": "vast",
+      "sku": "a100-pcie-80gb",
+      "price": 0.452,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "A100 PCIE",
+        "vram_gb": 80,
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.135,
+    "delta_pct": 234.8,
+    "reason": "price moved 234.8% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:deepseek-deepseek-flash-latest-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-flash-latest-input",
@@ -17,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-flash-latest",
-        "observed_at": "2026-10-14T18:36:50Z"
+        "observed_at": "2026-10-14T22:17:51Z"
       },
       "fixture": false
     },
@@ -43,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-10-14T18:36:50Z"
+        "observed_at": "2026-10-14T22:17:51Z"
       },
       "fixture": false
     },
@@ -69,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-10-14T18:36:50Z"
+        "observed_at": "2026-10-14T22:17:51Z"
       },
       "fixture": false
     },
@@ -95,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-10-14T18:36:50Z"
+        "observed_at": "2026-10-14T22:17:51Z"
       },
       "fixture": false
     },
@@ -121,12 +146,298 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k3",
-        "observed_at": "2026-10-14T18:36:50Z"
+        "observed_at": "2026-10-14T22:17:51Z"
       },
       "fixture": false
     },
     "previous_price": 10.0,
     "delta_pct": 50.0,
     "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-5.6-sol-pro-input:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-5.6-sol-pro-input",
+      "price": 4.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-5.6-sol-pro",
+        "model_name": "OpenAI: GPT-5.6 Sol Pro",
+        "context_length": 1050000,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol-pro",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-5.6-sol-pro-output:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-5.6-sol-pro-output",
+      "price": 20.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-5.6-sol-pro",
+        "model_name": "OpenAI: GPT-5.6 Sol Pro",
+        "context_length": 1050000,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol-pro",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 10.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-5.6-sol-pro-batch-input:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-5.6-sol-pro-batch-input",
+      "price": 2.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-5.6-sol-pro:batch",
+        "model_name": "OpenAI: GPT-5.6 Sol Pro (batch)",
+        "context_length": 1050000,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol-pro:batch",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-5.6-sol-pro-batch-output:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-5.6-sol-pro-batch-output",
+      "price": 10.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-5.6-sol-pro:batch",
+        "model_name": "OpenAI: GPT-5.6 Sol Pro (batch)",
+        "context_length": 1050000,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol-pro:batch",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 5.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-5.6-sol-input:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-5.6-sol-input",
+      "price": 4.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-5.6-sol",
+        "model_name": "OpenAI: GPT-5.6 Sol",
+        "context_length": 1050000,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-5.6-sol-output:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-5.6-sol-output",
+      "price": 20.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-5.6-sol",
+        "model_name": "OpenAI: GPT-5.6 Sol",
+        "context_length": 1050000,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 10.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-5.6-sol-batch-input:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-5.6-sol-batch-input",
+      "price": 2.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-5.6-sol:batch",
+        "model_name": "OpenAI: GPT-5.6 Sol (batch)",
+        "context_length": 1050000,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol:batch",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-5.6-sol-batch-output:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-5.6-sol-batch-output",
+      "price": 10.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-5.6-sol:batch",
+        "model_name": "OpenAI: GPT-5.6 Sol (batch)",
+        "context_length": 1050000,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-5.6-sol:batch",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 5.0,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.2-input:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.2-input",
+      "price": 0.04,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.2",
+        "model_name": "Z.ai: GLM 5.2",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.2",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.08,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3.6-35b-a3b-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3.6-35b-a3b-input",
+      "price": 0.15,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3.6-35b-a3b",
+        "model_name": "Qwen: Qwen3.6 35B A3B",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3.6-35b-a3b",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.1,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:google-gemma-4-31b-it-input:global:list",
+      "provider": "openrouter",
+      "sku": "google-gemma-4-31b-it-input",
+      "price": 0.2,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "google/gemma-4-31b-it",
+        "model_name": "Google: Gemma 4 31B",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/google/gemma-4-31b-it",
+        "observed_at": "2026-10-14T22:17:51Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.09,
+    "delta_pct": 122.2,
+    "reason": "price moved 122.2% (> 40% limit)"
   }
 ]
