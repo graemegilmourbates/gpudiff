@@ -1,81 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:b200-180gb:global:on-demand",
-      "provider": "vast",
-      "sku": "b200-180gb",
-      "price": 9.0026,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "B200",
-        "vram_gb": 180,
-        "sample_size": 9,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-19T01:14:34Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 6.2521,
-    "delta_pct": 44.0,
-    "reason": "price moved 44.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:a100-sxm4-80gb:global:spot",
-      "provider": "vast",
-      "sku": "a100-sxm4-80gb",
-      "price": 0.8933,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "A100 SXM4",
-        "vram_gb": 80,
-        "sample_size": 9,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-19T01:14:34Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.401,
-    "delta_pct": 122.8,
-    "reason": "price moved 122.8% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:a100-pcie-80gb:global:spot",
-      "provider": "vast",
-      "sku": "a100-pcie-80gb",
-      "price": 0.407,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "A100 PCIE",
-        "vram_gb": 80,
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-19T01:14:34Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.772,
-    "delta_pct": 47.3,
-    "reason": "price moved 47.3% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:deepseek-deepseek-v4.1-flash-1017-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4.1-flash-1017-input",
@@ -92,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
-        "observed_at": "2026-10-19T01:14:34Z"
+        "observed_at": "2026-10-19T06:13:52Z"
       },
       "fixture": false
     },
@@ -118,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
-        "observed_at": "2026-10-19T01:14:34Z"
+        "observed_at": "2026-10-19T06:13:52Z"
       },
       "fixture": false
     },
@@ -144,7 +69,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
-        "observed_at": "2026-10-19T01:14:34Z"
+        "observed_at": "2026-10-19T06:13:52Z"
       },
       "fixture": false
     },
@@ -170,7 +95,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-19T01:14:34Z"
+        "observed_at": "2026-10-19T06:13:52Z"
       },
       "fixture": false
     },
@@ -196,7 +121,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-19T01:14:34Z"
+        "observed_at": "2026-10-19T06:13:52Z"
       },
       "fixture": false
     },
@@ -209,7 +134,7 @@
       "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-input",
-      "price": 0.9483,
+      "price": 0.9553,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -222,20 +147,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-10-19T01:14:34Z"
+        "observed_at": "2026-10-19T06:13:52Z"
       },
       "fixture": false
     },
     "previous_price": 0.2088,
-    "delta_pct": 354.2,
-    "reason": "price moved 354.2% (> 40% limit)"
+    "delta_pct": 357.5,
+    "reason": "price moved 357.5% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-output",
-      "price": 1.8966,
+      "price": 1.9105,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -248,12 +173,74 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-10-19T01:14:34Z"
+        "observed_at": "2026-10-19T06:13:52Z"
       },
       "fixture": false
     },
     "previous_price": 0.4176,
-    "delta_pct": 354.2,
-    "reason": "price moved 354.2% (> 40% limit)"
+    "delta_pct": 357.5,
+    "reason": "price moved 357.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "slack:pricing-top:global:list",
+      "provider": "slack",
+      "sku": "pricing-top",
+      "price": 18.0,
+      "unit": "usd_per_unit",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "price_points": [
+          4.38,
+          7.25,
+          8.75,
+          9.0,
+          15.0,
+          18.0
+        ],
+        "point_count": 6,
+        "metric": "page_scan"
+      },
+      "provenance": {
+        "url": "https://slack.com/pricing",
+        "observed_at": "2026-10-19T06:13:52Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 45.0,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "linear:pricing-entry:global:list",
+      "provider": "linear",
+      "sku": "pricing-entry",
+      "price": 1.0,
+      "unit": "usd_per_unit",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "price_points": [
+          1.0,
+          10.0,
+          12.0,
+          15.0,
+          16.0,
+          46.0
+        ],
+        "point_count": 6,
+        "metric": "page_scan"
+      },
+      "provenance": {
+        "url": "https://linear.app/pricing",
+        "observed_at": "2026-10-19T06:13:52Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 10.0,
+    "delta_pct": 90.0,
+    "reason": "price moved 90.0% (> 40% limit)"
   }
 ]
