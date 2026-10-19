@@ -1,85 +1,88 @@
 [
   {
     "offer": {
-      "id": "vast:b200-180gb:global:on-demand",
-      "provider": "vast",
-      "sku": "b200-180gb",
-      "price": 9.0026,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
+      "id": "openrouter:reflection-beam-1.0-501b-a23b-input:global:list",
+      "provider": "openrouter",
+      "sku": "reflection-beam-1.0-501b-a23b-input",
+      "price": 0.3,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "gpu_model": "B200",
-        "vram_gb": 180,
-        "sample_size": 5,
-        "metric": "p25_per_gpu_dph_verified"
+        "model_id": "reflection/beam-1.0-501b-a23b",
+        "model_name": "Reflection: Beam 1.0 501B A23B",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-19T19:20:54Z"
+        "url": "https://openrouter.ai/reflection/beam-1.0-501b-a23b",
+        "observed_at": "2026-10-19T23:38:53Z"
       },
       "fixture": false
     },
-    "previous_price": 6.2521,
-    "delta_pct": 44.0,
-    "reason": "price moved 44.0% (> 40% limit)"
+    "previous_price": 1.0,
+    "delta_pct": 70.0,
+    "reason": "price moved 70.0% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "vast:a100-sxm4-80gb:global:spot",
-      "provider": "vast",
-      "sku": "a100-sxm4-80gb",
-      "price": 0.8933,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "id": "openrouter:reflection-beam-1.0-501b-a23b-output:global:list",
+      "provider": "openrouter",
+      "sku": "reflection-beam-1.0-501b-a23b-output",
+      "price": 1.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "gpu_model": "A100 SXM4",
-        "vram_gb": 80,
-        "sample_size": 10,
-        "metric": "p25_min_bid_per_gpu"
+        "model_id": "reflection/beam-1.0-501b-a23b",
+        "model_name": "Reflection: Beam 1.0 501B A23B",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-19T19:20:54Z"
+        "url": "https://openrouter.ai/reflection/beam-1.0-501b-a23b",
+        "observed_at": "2026-10-19T23:38:53Z"
       },
       "fixture": false
     },
-    "previous_price": 0.401,
-    "delta_pct": 122.8,
-    "reason": "price moved 122.8% (> 40% limit)"
+    "previous_price": 3.0,
+    "delta_pct": 66.7,
+    "reason": "price moved 66.7% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "vast:l4-24gb:global:spot",
-      "provider": "vast",
-      "sku": "l4-24gb",
-      "price": 0.32,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "id": "openrouter:nvidia-nemotron-3.5-super-vl-input:global:list",
+      "provider": "openrouter",
+      "sku": "nvidia-nemotron-3.5-super-vl-input",
+      "price": 0.15,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "gpu_model": "L4",
-        "vram_gb": 24,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
+        "model_id": "nvidia/nemotron-3.5-super-vl",
+        "model_name": "NVIDIA: Nemotron 3.5 Super VL",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-19T19:20:54Z"
+        "url": "https://openrouter.ai/nvidia/nemotron-3.5-super-vl",
+        "observed_at": "2026-10-19T23:38:53Z"
       },
       "fixture": false
     },
-    "previous_price": 0.1733,
-    "delta_pct": 84.7,
-    "reason": "price moved 84.7% (> 40% limit)"
+    "previous_price": 0.1,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-input",
-      "price": 0.3953,
+      "price": 0.3583,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -92,20 +95,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-10-19T19:20:54Z"
+        "observed_at": "2026-10-19T23:38:53Z"
       },
       "fixture": false
     },
     "previous_price": 0.2088,
-    "delta_pct": 89.3,
-    "reason": "price moved 89.3% (> 40% limit)"
+    "delta_pct": 71.6,
+    "reason": "price moved 71.6% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-output",
-      "price": 0.7907,
+      "price": 0.7165,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -118,12 +121,39 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-10-19T19:20:54Z"
+        "observed_at": "2026-10-19T23:38:53Z"
       },
       "fixture": false
     },
     "previous_price": 0.4176,
-    "delta_pct": 89.3,
-    "reason": "price moved 89.3% (> 40% limit)"
+    "delta_pct": 71.6,
+    "reason": "price moved 71.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "deepinfra:nvidia-nemotron-3.5-super-vl-input:global:list",
+      "provider": "deepinfra",
+      "sku": "nvidia-nemotron-3.5-super-vl-input",
+      "price": 0.15,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "nvidia/NVIDIA-Nemotron-3.5-Super-VL",
+        "canonical": "nvidia-nemotron-3.5-super-vl",
+        "direction": "input",
+        "context_length": 262144,
+        "routes_collapsed": 1,
+        "metric": "router_list"
+      },
+      "provenance": {
+        "url": "https://deepinfra.com/models",
+        "observed_at": "2026-10-19T23:38:53Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.1,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
   }
 ]
