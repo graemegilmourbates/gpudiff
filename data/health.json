@@ -1,16 +1,16 @@
 {
   "date": "2026-10-20",
-  "observed_at": "2026-10-20T19:14:30Z",
+  "observed_at": "2026-10-20T22:18:23Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 28
+      "offers": 26
     },
     {
       "source": "runpod",
       "ok": true,
-      "offers": 27
+      "offers": 28
     },
     {
       "source": "aws",
@@ -57,8 +57,8 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
-  "valid": 2581,
+  "valid": 2578,
   "rejected": 0,
-  "quarantined": 16,
+  "quarantined": 18,
   "healthy": false
 }
