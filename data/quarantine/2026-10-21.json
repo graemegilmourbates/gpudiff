@@ -4,25 +4,77 @@
       "id": "vast:rtx-4090-24gb:global:on-demand",
       "provider": "vast",
       "sku": "rtx-4090-24gb",
-      "price": 0.7506,
+      "price": 0.8028,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
         "gpu_model": "RTX 4090",
         "vram_gb": 24,
-        "sample_size": 39,
+        "sample_size": 42,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
     "previous_price": 0.5339,
-    "delta_pct": 40.6,
-    "reason": "price moved 40.6% (> 40% limit)"
+    "delta_pct": 50.4,
+    "reason": "price moved 50.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-flash-latest-input:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-flash-latest-input",
+      "price": 0.0063,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~z-ai/glm-flash-latest",
+        "model_name": "Z.ai: GLM Flash Latest",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~z-ai/glm-flash-latest",
+        "observed_at": "2026-10-21T22:19:16Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0471,
+    "delta_pct": 86.6,
+    "reason": "price moved 86.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-flash-latest-output:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-flash-latest-output",
+      "price": 0.1789,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~z-ai/glm-flash-latest",
+        "model_name": "Z.ai: GLM Flash Latest",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~z-ai/glm-flash-latest",
+        "observed_at": "2026-10-21T22:19:16Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.12,
+    "delta_pct": 49.1,
+    "reason": "price moved 49.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -42,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
@@ -68,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
@@ -94,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
@@ -120,7 +172,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
@@ -146,7 +198,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.2",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
@@ -172,7 +224,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.1",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
@@ -198,7 +250,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.1",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
@@ -224,7 +276,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
@@ -250,7 +302,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b",
-        "observed_at": "2026-10-21T18:37:01Z"
+        "observed_at": "2026-10-21T22:19:16Z"
       },
       "fixture": false
     },
