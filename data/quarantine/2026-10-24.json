@@ -1,103 +1,103 @@
 [
   {
     "offer": {
+      "id": "vast:h100-sxm-80gb:global:on-demand",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 3.7474,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 5,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-24T18:07:25Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.1222,
+    "delta_pct": 76.6,
+    "reason": "price moved 76.6% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:h200-nvl-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-nvl-141gb",
-      "price": 2.52,
+      "price": 2.2667,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H200 NVL",
         "vram_gb": 141,
-        "sample_size": 21,
+        "sample_size": 22,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-24T14:30:45Z"
+        "observed_at": "2026-10-24T18:07:25Z"
       },
       "fixture": false
     },
     "previous_price": 1.4667,
-    "delta_pct": 71.8,
-    "reason": "price moved 71.8% (> 40% limit)"
+    "delta_pct": 54.5,
+    "reason": "price moved 54.5% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:a100-sxm4-40gb:global:on-demand",
+      "provider": "vast",
+      "sku": "a100-sxm4-40gb",
+      "price": 0.8407,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "A100 SXM4",
+        "vram_gb": 40,
+        "sample_size": 7,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-24T18:07:25Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4163,
+    "delta_pct": 101.9,
+    "reason": "price moved 101.9% (> 40% limit)"
   },
   {
     "offer": {
       "id": "vast:a100-sxm4-40gb:global:spot",
       "provider": "vast",
       "sku": "a100-sxm4-40gb",
-      "price": 0.4667,
+      "price": 0.5333,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "A100 SXM4",
         "vram_gb": 40,
-        "sample_size": 9,
+        "sample_size": 7,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-24T14:30:45Z"
+        "observed_at": "2026-10-24T18:07:25Z"
       },
       "fixture": false
     },
     "previous_price": 0.3333,
-    "delta_pct": 40.0,
-    "reason": "price moved 40.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:rtx-4090-48gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-4090-48gb",
-      "price": 0.5333,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX 4090",
-        "vram_gb": 48,
-        "sample_size": 17,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-24T14:30:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.334,
-    "delta_pct": 59.7,
-    "reason": "price moved 59.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:l40s-48gb:global:on-demand",
-      "provider": "vast",
-      "sku": "l40s-48gb",
-      "price": 0.8002,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "L40S",
-        "vram_gb": 48,
-        "sample_size": 13,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-24T14:30:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.5363,
-    "delta_pct": 49.2,
-    "reason": "price moved 49.2% (> 40% limit)"
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -117,7 +117,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-flash-latest",
-        "observed_at": "2026-10-24T14:30:45Z"
+        "observed_at": "2026-10-24T18:07:25Z"
       },
       "fixture": false
     },
@@ -143,7 +143,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-flash-latest",
-        "observed_at": "2026-10-24T14:30:45Z"
+        "observed_at": "2026-10-24T18:07:25Z"
       },
       "fixture": false
     },
@@ -169,7 +169,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-10-24T14:30:45Z"
+        "observed_at": "2026-10-24T18:07:25Z"
       },
       "fixture": false
     },
@@ -195,65 +195,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~z-ai/glm-latest",
-        "observed_at": "2026-10-24T14:30:45Z"
+        "observed_at": "2026-10-24T18:07:25Z"
       },
       "fixture": false
     },
     "previous_price": 1.4,
     "delta_pct": 206.8,
     "reason": "price moved 206.8% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-24T14:30:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-24T14:30:45Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.33,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -273,7 +221,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~moonshotai/kimi-latest",
-        "observed_at": "2026-10-24T14:30:45Z"
+        "observed_at": "2026-10-24T18:07:25Z"
       },
       "fixture": false
     },
