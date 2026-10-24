@@ -77114,42 +77114,22 @@
   {
     "date": "2026-10-24",
     "kind": "added",
-    "id": "runpod:h100-pcie-80gb:secure-cloud:on-demand",
+    "id": "runpod:h100-nvl-94gb:community-cloud:on-demand",
     "provider": "runpod",
-    "sku": "h100-pcie-80gb",
-    "price": 2.89,
+    "sku": "h100-nvl-94gb",
+    "price": 2.59,
     "unit": "usd_per_hour",
-    "summary": "runpod listed h100-pcie-80gb at 2.89 usd_per_hour"
+    "summary": "runpod listed h100-nvl-94gb at 2.59 usd_per_hour"
   },
   {
     "date": "2026-10-24",
     "kind": "added",
-    "id": "runpod:rtx-3080-ti-12gb:community-cloud:on-demand",
+    "id": "runpod:h200-sxm-141gb:community-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-3080-ti-12gb",
-    "price": 0.18,
+    "sku": "h200-sxm-141gb",
+    "price": 3.59,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-3080-ti-12gb at 0.18 usd_per_hour"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "added",
-    "id": "runpod:rtx-3090-24gb:community-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-3090-24gb",
-    "price": 0.22,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-3090-24gb at 0.22 usd_per_hour"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "added",
-    "id": "runpod:rtx-3090-24gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-3090-24gb",
-    "price": 0.5,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-3090-24gb at 0.5 usd_per_hour"
+    "summary": "runpod listed h200-sxm-141gb at 3.59 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77164,22 +77144,12 @@
   {
     "date": "2026-10-24",
     "kind": "added",
-    "id": "runpod:rtx-a4000-16gb:community-cloud:on-demand",
+    "id": "runpod:rtx-a6000-48gb:secure-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-a4000-16gb",
-    "price": 0.17,
+    "sku": "rtx-a6000-48gb",
+    "price": 0.59,
     "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-a4000-16gb at 0.17 usd_per_hour"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "added",
-    "id": "runpod:rtx-a4500-20gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-a4500-20gb",
-    "price": 0.25,
-    "unit": "usd_per_hour",
-    "summary": "runpod listed rtx-a4500-20gb at 0.25 usd_per_hour"
+    "summary": "runpod listed rtx-a6000-48gb at 0.59 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77187,9 +77157,9 @@
     "id": "vast:a100-pcie-40gb:global:on-demand",
     "provider": "vast",
     "sku": "a100-pcie-40gb",
-    "price": 0.4015,
+    "price": 0.5348,
     "unit": "usd_per_hour",
-    "summary": "vast listed a100-pcie-40gb at 0.4015 usd_per_hour"
+    "summary": "vast listed a100-pcie-40gb at 0.5348 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77197,39 +77167,9 @@
     "id": "vast:a100-pcie-40gb:global:spot",
     "provider": "vast",
     "sku": "a100-pcie-40gb",
-    "price": 0.467,
+    "price": 0.4,
     "unit": "usd_per_hour",
-    "summary": "vast listed a100-pcie-40gb at 0.467 usd_per_hour"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "added",
-    "id": "vast:a100-pcie-80gb:global:on-demand",
-    "provider": "vast",
-    "sku": "a100-pcie-80gb",
-    "price": 1.0011,
-    "unit": "usd_per_hour",
-    "summary": "vast listed a100-pcie-80gb at 1.0011 usd_per_hour"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "added",
-    "id": "vast:a100-pcie-80gb:global:spot",
-    "provider": "vast",
-    "sku": "a100-pcie-80gb",
-    "price": 0.262,
-    "unit": "usd_per_hour",
-    "summary": "vast listed a100-pcie-80gb at 0.262 usd_per_hour"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "added",
-    "id": "vast:h100-sxm-80gb:global:spot",
-    "provider": "vast",
-    "sku": "h100-sxm-80gb",
-    "price": 1.11,
-    "unit": "usd_per_hour",
-    "summary": "vast listed h100-sxm-80gb at 1.11 usd_per_hour"
+    "summary": "vast listed a100-pcie-40gb at 0.4 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77237,9 +77177,9 @@
     "id": "vast:h200-141gb:global:on-demand",
     "provider": "vast",
     "sku": "h200-141gb",
-    "price": 5.0537,
+    "price": 3.6848,
     "unit": "usd_per_hour",
-    "summary": "vast listed h200-141gb at 5.0537 usd_per_hour"
+    "summary": "vast listed h200-141gb at 3.6848 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77247,9 +77187,29 @@
     "id": "vast:h200-141gb:global:spot",
     "provider": "vast",
     "sku": "h200-141gb",
-    "price": 3.6016,
+    "price": 3.2895,
     "unit": "usd_per_hour",
-    "summary": "vast listed h200-141gb at 3.6016 usd_per_hour"
+    "summary": "vast listed h200-141gb at 3.2895 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "added",
+    "id": "vast:l4-24gb:global:on-demand",
+    "provider": "vast",
+    "sku": "l4-24gb",
+    "price": 0.2956,
+    "unit": "usd_per_hour",
+    "summary": "vast listed l4-24gb at 0.2956 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "added",
+    "id": "vast:l4-24gb:global:spot",
+    "provider": "vast",
+    "sku": "l4-24gb",
+    "price": 0.1733,
+    "unit": "usd_per_hour",
+    "summary": "vast listed l4-24gb at 0.1733 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77390,18 +77350,10 @@
   {
     "date": "2026-10-24",
     "kind": "removed",
-    "id": "runpod:rtx-2000-ada-16gb:secure-cloud:on-demand",
+    "id": "runpod:rtx-5080-16gb:community-cloud:on-demand",
     "provider": "runpod",
-    "sku": "rtx-2000-ada-16gb",
-    "summary": "runpod delisted rtx-2000-ada-16gb"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "removed",
-    "id": "runpod:rtx-4000-ada-20gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-4000-ada-20gb",
-    "summary": "runpod delisted rtx-4000-ada-20gb"
+    "sku": "rtx-5080-16gb",
+    "summary": "runpod delisted rtx-5080-16gb"
   },
   {
     "date": "2026-10-24",
@@ -77422,14 +77374,6 @@
   {
     "date": "2026-10-24",
     "kind": "removed",
-    "id": "runpod:rtx-pro-6000-wk-96gb:secure-cloud:on-demand",
-    "provider": "runpod",
-    "sku": "rtx-pro-6000-wk-96gb",
-    "summary": "runpod delisted rtx-pro-6000-wk-96gb"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "removed",
     "id": "runpod:tesla-v100-16gb:community-cloud:on-demand",
     "provider": "runpod",
     "sku": "tesla-v100-16gb",
@@ -77438,10 +77382,10 @@
   {
     "date": "2026-10-24",
     "kind": "removed",
-    "id": "vast:a100-sxm4-40gb:global:on-demand",
-    "provider": "vast",
-    "sku": "a100-sxm4-40gb",
-    "summary": "vast delisted a100-sxm4-40gb"
+    "id": "runpod:v100-sxm2-16gb:community-cloud:on-demand",
+    "provider": "runpod",
+    "sku": "v100-sxm2-16gb",
+    "summary": "runpod delisted v100-sxm2-16gb"
   },
   {
     "date": "2026-10-24",
@@ -77454,10 +77398,10 @@
   {
     "date": "2026-10-24",
     "kind": "removed",
-    "id": "vast:h100-nvl-94gb:global:on-demand",
+    "id": "vast:b200-180gb:global:spot",
     "provider": "vast",
-    "sku": "h100-nvl-94gb",
-    "summary": "vast delisted h100-nvl-94gb"
+    "sku": "b200-180gb",
+    "summary": "vast delisted b200-180gb"
   },
   {
     "date": "2026-10-24",
@@ -77466,22 +77410,6 @@
     "provider": "vast",
     "sku": "h100-nvl-94gb",
     "summary": "vast delisted h100-nvl-94gb"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "removed",
-    "id": "vast:h100-pcie-80gb:global:on-demand",
-    "provider": "vast",
-    "sku": "h100-pcie-80gb",
-    "summary": "vast delisted h100-pcie-80gb"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "removed",
-    "id": "vast:h100-pcie-80gb:global:spot",
-    "provider": "vast",
-    "sku": "h100-pcie-80gb",
-    "summary": "vast delisted h100-pcie-80gb"
   },
   {
     "date": "2026-10-24",
@@ -77498,6 +77426,14 @@
     "provider": "vast",
     "sku": "h200-nvl-141gb",
     "summary": "vast delisted h200-nvl-141gb"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "removed",
+    "id": "vast:l40s-48gb:global:on-demand",
+    "provider": "vast",
+    "sku": "l40s-48gb",
+    "summary": "vast delisted l40s-48gb"
   },
   {
     "date": "2026-10-24",
@@ -77546,28 +77482,6 @@
   {
     "date": "2026-10-24",
     "kind": "price_change",
-    "id": "openrouter:moonshotai-kimi-k2.7-code-input:global:list",
-    "provider": "openrouter",
-    "sku": "moonshotai-kimi-k2.7-code-input",
-    "old_price": 0.6712,
-    "new_price": 0.6725,
-    "pct": 0.2,
-    "summary": "openrouter raised moonshotai-kimi-k2.7-code-input 0.2%: 0.6712 \u2192 0.6725 usd_per_mtok"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "price_change",
-    "id": "openrouter:moonshotai-kimi-k2.7-code-output:global:list",
-    "provider": "openrouter",
-    "sku": "moonshotai-kimi-k2.7-code-output",
-    "old_price": 3.35,
-    "new_price": 3.1,
-    "pct": -7.5,
-    "summary": "openrouter cut moonshotai-kimi-k2.7-code-output 7.5%: 3.35 \u2192 3.1 usd_per_mtok"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "price_change",
     "id": "openrouter:moonshotai-kimi-latest-input:global:list",
     "provider": "openrouter",
     "sku": "moonshotai-kimi-latest-input",
@@ -77612,13 +77526,35 @@
   {
     "date": "2026-10-24",
     "kind": "price_change",
+    "id": "vast:a100-sxm4-40gb:global:on-demand",
+    "provider": "vast",
+    "sku": "a100-sxm4-40gb",
+    "old_price": 0.4163,
+    "new_price": 0.5393,
+    "pct": 29.5,
+    "summary": "vast raised a100-sxm4-40gb 29.5%: 0.4163 \u2192 0.5393 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "price_change",
     "id": "vast:a100-sxm4-80gb:global:on-demand",
     "provider": "vast",
     "sku": "a100-sxm4-80gb",
     "old_price": 1.096,
-    "new_price": 1.1349,
-    "pct": 3.5,
-    "summary": "vast raised a100-sxm4-80gb 3.5%: 1.096 \u2192 1.1349 usd_per_hour"
+    "new_price": 1.0689,
+    "pct": -2.5,
+    "summary": "vast cut a100-sxm4-80gb 2.5%: 1.096 \u2192 1.0689 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "price_change",
+    "id": "vast:a100-sxm4-80gb:global:spot",
+    "provider": "vast",
+    "sku": "a100-sxm4-80gb",
+    "old_price": 0.8,
+    "new_price": 0.6667,
+    "pct": -16.7,
+    "summary": "vast cut a100-sxm4-80gb 16.7%: 0.8 \u2192 0.6667 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77627,9 +77563,42 @@
     "provider": "vast",
     "sku": "b200-180gb",
     "old_price": 7.501,
-    "new_price": 7.5021,
+    "new_price": 10.001,
+    "pct": 33.3,
+    "summary": "vast raised b200-180gb 33.3%: 7.501 \u2192 10.001 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "price_change",
+    "id": "vast:h100-nvl-94gb:global:on-demand",
+    "provider": "vast",
+    "sku": "h100-nvl-94gb",
+    "old_price": 2.6672,
+    "new_price": 2.6681,
     "pct": 0.0,
-    "summary": "vast raised b200-180gb 0.0%: 7.501 \u2192 7.5021 usd_per_hour"
+    "summary": "vast raised h100-nvl-94gb 0.0%: 2.6672 \u2192 2.6681 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "price_change",
+    "id": "vast:h100-pcie-80gb:global:on-demand",
+    "provider": "vast",
+    "sku": "h100-pcie-80gb",
+    "old_price": 2.0011,
+    "new_price": 2.0022,
+    "pct": 0.1,
+    "summary": "vast raised h100-pcie-80gb 0.1%: 2.0011 \u2192 2.0022 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "price_change",
+    "id": "vast:h100-pcie-80gb:global:spot",
+    "provider": "vast",
+    "sku": "h100-pcie-80gb",
+    "old_price": 0.532,
+    "new_price": 0.6667,
+    "pct": 25.3,
+    "summary": "vast raised h100-pcie-80gb 25.3%: 0.532 \u2192 0.6667 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77638,9 +77607,9 @@
     "provider": "vast",
     "sku": "h200-nvl-141gb",
     "old_price": 3.9202,
-    "new_price": 3.9872,
-    "pct": 1.7,
-    "summary": "vast raised h200-nvl-141gb 1.7%: 3.9202 \u2192 3.9872 usd_per_hour"
+    "new_price": 3.9336,
+    "pct": 0.3,
+    "summary": "vast raised h200-nvl-141gb 0.3%: 3.9202 \u2192 3.9336 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77649,9 +77618,9 @@
     "provider": "vast",
     "sku": "l40s-48gb",
     "old_price": 0.533,
-    "new_price": 0.4,
-    "pct": -25.0,
-    "summary": "vast cut l40s-48gb 25.0%: 0.533 \u2192 0.4 usd_per_hour"
+    "new_price": 0.44,
+    "pct": -17.4,
+    "summary": "vast cut l40s-48gb 17.4%: 0.533 \u2192 0.44 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77660,9 +77629,9 @@
     "provider": "vast",
     "sku": "rtx-3090-24gb",
     "old_price": 0.2144,
-    "new_price": 0.2096,
-    "pct": -2.2,
-    "summary": "vast cut rtx-3090-24gb 2.2%: 0.2144 \u2192 0.2096 usd_per_hour"
+    "new_price": 0.2137,
+    "pct": -0.3,
+    "summary": "vast cut rtx-3090-24gb 0.3%: 0.2144 \u2192 0.2137 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77671,9 +77640,9 @@
     "provider": "vast",
     "sku": "rtx-3090-24gb",
     "old_price": 0.153,
-    "new_price": 0.136,
-    "pct": -11.1,
-    "summary": "vast cut rtx-3090-24gb 11.1%: 0.153 \u2192 0.136 usd_per_hour"
+    "new_price": 0.1333,
+    "pct": -12.9,
+    "summary": "vast cut rtx-3090-24gb 12.9%: 0.153 \u2192 0.1333 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77682,9 +77651,9 @@
     "provider": "vast",
     "sku": "rtx-4090-24gb",
     "old_price": 0.5356,
-    "new_price": 0.5078,
-    "pct": -5.2,
-    "summary": "vast cut rtx-4090-24gb 5.2%: 0.5356 \u2192 0.5078 usd_per_hour"
+    "new_price": 0.5344,
+    "pct": -0.2,
+    "summary": "vast cut rtx-4090-24gb 0.2%: 0.5356 \u2192 0.5344 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77693,20 +77662,9 @@
     "provider": "vast",
     "sku": "rtx-4090-24gb",
     "old_price": 0.397,
-    "new_price": 0.421,
-    "pct": 6.0,
-    "summary": "vast raised rtx-4090-24gb 6.0%: 0.397 \u2192 0.421 usd_per_hour"
-  },
-  {
-    "date": "2026-10-24",
-    "kind": "price_change",
-    "id": "vast:rtx-4090-48gb:global:on-demand",
-    "provider": "vast",
-    "sku": "rtx-4090-48gb",
-    "old_price": 0.8019,
-    "new_price": 0.8009,
-    "pct": -0.1,
-    "summary": "vast cut rtx-4090-48gb 0.1%: 0.8019 \u2192 0.8009 usd_per_hour"
+    "new_price": 0.36,
+    "pct": -9.3,
+    "summary": "vast cut rtx-4090-24gb 9.3%: 0.397 \u2192 0.36 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77726,9 +77684,9 @@
     "provider": "vast",
     "sku": "rtx-5090-32gb",
     "old_price": 0.9756,
-    "new_price": 0.803,
-    "pct": -17.7,
-    "summary": "vast cut rtx-5090-32gb 17.7%: 0.9756 \u2192 0.803 usd_per_hour"
+    "new_price": 0.667,
+    "pct": -31.6,
+    "summary": "vast cut rtx-5090-32gb 31.6%: 0.9756 \u2192 0.667 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77737,9 +77695,20 @@
     "provider": "vast",
     "sku": "rtx-5090-32gb",
     "old_price": 0.6667,
-    "new_price": 0.5,
-    "pct": -25.0,
-    "summary": "vast cut rtx-5090-32gb 25.0%: 0.6667 \u2192 0.5 usd_per_hour"
+    "new_price": 0.5333,
+    "pct": -20.0,
+    "summary": "vast cut rtx-5090-32gb 20.0%: 0.6667 \u2192 0.5333 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "price_change",
+    "id": "vast:rtx-pro-5000-48gb:global:on-demand",
+    "provider": "vast",
+    "sku": "rtx-pro-5000-48gb",
+    "old_price": 0.6704,
+    "new_price": 0.7356,
+    "pct": 9.7,
+    "summary": "vast raised rtx-pro-5000-48gb 9.7%: 0.6704 \u2192 0.7356 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77759,9 +77728,20 @@
     "provider": "vast",
     "sku": "rtx-pro-6000-s-96gb",
     "old_price": 1.337,
-    "new_price": 1.4872,
-    "pct": 11.2,
-    "summary": "vast raised rtx-pro-6000-s-96gb 11.2%: 1.337 \u2192 1.4872 usd_per_hour"
+    "new_price": 1.4689,
+    "pct": 9.9,
+    "summary": "vast raised rtx-pro-6000-s-96gb 9.9%: 1.337 \u2192 1.4689 usd_per_hour"
+  },
+  {
+    "date": "2026-10-24",
+    "kind": "price_change",
+    "id": "vast:rtx-pro-6000-s-96gb:global:spot",
+    "provider": "vast",
+    "sku": "rtx-pro-6000-s-96gb",
+    "old_price": 0.8,
+    "new_price": 1.0667,
+    "pct": 33.3,
+    "summary": "vast raised rtx-pro-6000-s-96gb 33.3%: 0.8 \u2192 1.0667 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77770,9 +77750,9 @@
     "provider": "vast",
     "sku": "rtx-pro-6000-ws-96gb",
     "old_price": 1.4296,
-    "new_price": 1.6015,
-    "pct": 12.0,
-    "summary": "vast raised rtx-pro-6000-ws-96gb 12.0%: 1.4296 \u2192 1.6015 usd_per_hour"
+    "new_price": 1.3343,
+    "pct": -6.7,
+    "summary": "vast cut rtx-pro-6000-ws-96gb 6.7%: 1.4296 \u2192 1.3343 usd_per_hour"
   },
   {
     "date": "2026-10-24",
@@ -77781,8 +77761,8 @@
     "provider": "vast",
     "sku": "rtx-pro-6000-ws-96gb",
     "old_price": 0.689,
-    "new_price": 0.6667,
-    "pct": -3.2,
-    "summary": "vast cut rtx-pro-6000-ws-96gb 3.2%: 0.689 \u2192 0.6667 usd_per_hour"
+    "new_price": 0.8667,
+    "pct": 25.8,
+    "summary": "vast raised rtx-pro-6000-ws-96gb 25.8%: 0.689 \u2192 0.8667 usd_per_hour"
   }
 ]
