@@ -1,83 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:rtx-pro-6000-s-96gb:global:spot",
-      "provider": "vast",
-      "sku": "rtx-pro-6000-s-96gb",
-      "price": 1.3333,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "RTX PRO 6000 S",
-        "vram_gb": 96,
-        "sample_size": 14,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-25T01:08:43Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.7067,
-    "delta_pct": 88.7,
-    "reason": "price moved 88.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:z-ai-glm-flash-latest-input:global:list",
-      "provider": "openrouter",
-      "sku": "z-ai-glm-flash-latest-input",
-      "price": 0.0191,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "~z-ai/glm-flash-latest",
-        "model_name": "Z.ai: GLM Flash Latest",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/~z-ai/glm-flash-latest",
-        "observed_at": "2026-10-25T01:08:43Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0502,
-    "delta_pct": 62.0,
-    "reason": "price moved 62.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:z-ai-glm-flash-latest-output:global:list",
-      "provider": "openrouter",
-      "sku": "z-ai-glm-flash-latest-output",
-      "price": 0.1352,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "~z-ai/glm-flash-latest",
-        "model_name": "Z.ai: GLM Flash Latest",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/~z-ai/glm-flash-latest",
-        "observed_at": "2026-10-25T01:08:43Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0819,
-    "delta_pct": 65.1,
-    "reason": "price moved 65.1% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:tencent-hy3-input:global:list",
       "provider": "openrouter",
       "sku": "tencent-hy3-input",
@@ -94,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-25T01:08:43Z"
+        "observed_at": "2026-10-25T06:05:54Z"
       },
       "fixture": false
     },
@@ -120,12 +43,42 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-25T01:08:43Z"
+        "observed_at": "2026-10-25T06:05:54Z"
       },
       "fixture": false
     },
     "previous_price": 0.33,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "asana:pricing-entry:global:list",
+      "provider": "asana",
+      "sku": "pricing-entry",
+      "price": 5.99,
+      "unit": "usd_per_unit",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "price_points": [
+          5.99,
+          10.99,
+          13.49,
+          24.99,
+          30.49
+        ],
+        "point_count": 5,
+        "metric": "page_scan"
+      },
+      "provenance": {
+        "url": "https://asana.com/pricing",
+        "observed_at": "2026-10-25T06:05:54Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 10.99,
+    "delta_pct": 45.5,
+    "reason": "price moved 45.5% (> 40% limit)"
   }
 ]
