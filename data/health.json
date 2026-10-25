@@ -1,6 +1,6 @@
 {
   "date": "2026-10-25",
-  "observed_at": "2026-10-25T16:15:00Z",
+  "observed_at": "2026-10-25T19:04:05Z",
   "sources": [
     {
       "source": "vast",
@@ -10,7 +10,7 @@
     {
       "source": "runpod",
       "ok": true,
-      "offers": 27
+      "offers": 33
     },
     {
       "source": "aws",
@@ -48,7 +48,8 @@
     {
       "source": "bls",
       "ok": true,
-      "offers": 2
+      "offers": 2,
+      "carried": true
     },
     {
       "source": "newegg",
@@ -56,8 +57,8 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
-  "valid": 2600,
+  "valid": 2605,
   "rejected": 0,
-  "quarantined": 2,
+  "quarantined": 3,
   "healthy": false
 }

@@ -1,28 +1,53 @@
 [
   {
     "offer": {
+      "id": "vast:h200-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-141gb",
+      "price": 4.2618,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "sample_size": 5,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-25T19:04:05Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.9342,
+    "delta_pct": 120.3,
+    "reason": "price moved 120.3% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:a100-sxm4-80gb:global:spot",
       "provider": "vast",
       "sku": "a100-sxm4-80gb",
-      "price": 1.0533,
+      "price": 1.0667,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "A100 SXM4",
         "vram_gb": 80,
-        "sample_size": 9,
+        "sample_size": 7,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-25T16:15:00Z"
+        "observed_at": "2026-10-25T19:04:05Z"
       },
       "fixture": false
     },
     "previous_price": 0.6667,
-    "delta_pct": 58.0,
-    "reason": "price moved 58.0% (> 40% limit)"
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -42,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.6-27b",
-        "observed_at": "2026-10-25T16:15:00Z"
+        "observed_at": "2026-10-25T19:04:05Z"
       },
       "fixture": false
     },
