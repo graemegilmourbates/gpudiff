@@ -1,6 +1,6 @@
 {
   "date": "2026-10-25",
-  "observed_at": "2026-10-25T06:05:54Z",
+  "observed_at": "2026-10-25T11:23:55Z",
   "sources": [
     {
       "source": "vast",
@@ -10,17 +10,19 @@
     {
       "source": "runpod",
       "ok": true,
-      "offers": 32
+      "offers": 30
     },
     {
       "source": "aws",
       "ok": true,
-      "offers": 9
+      "offers": 9,
+      "carried": true
     },
     {
       "source": "azure",
       "ok": true,
-      "offers": 12
+      "offers": 12,
+      "carried": true
     },
     {
       "source": "openrouter",
@@ -40,7 +42,8 @@
     {
       "source": "saaspages",
       "ok": true,
-      "offers": 38
+      "offers": 37,
+      "carried": true
     },
     {
       "source": "bls",
@@ -53,8 +56,8 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
-  "valid": 2605,
+  "valid": 2601,
   "rejected": 0,
-  "quarantined": 3,
+  "quarantined": 4,
   "healthy": false
 }

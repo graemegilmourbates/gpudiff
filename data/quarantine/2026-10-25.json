@@ -1,6 +1,56 @@
 [
   {
     "offer": {
+      "id": "vast:h100-sxm-80gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 1.208,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 6,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-25T11:23:55Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.757,
+    "delta_pct": 59.6,
+    "reason": "price moved 59.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h200-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-141gb",
+      "price": 4.0664,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "sample_size": 9,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-25T11:23:55Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.9342,
+    "delta_pct": 110.2,
+    "reason": "price moved 110.2% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:tencent-hy3-input:global:list",
       "provider": "openrouter",
       "sku": "tencent-hy3-input",
@@ -17,7 +67,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-25T06:05:54Z"
+        "observed_at": "2026-10-25T11:23:55Z"
       },
       "fixture": false
     },
@@ -43,42 +93,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-25T06:05:54Z"
+        "observed_at": "2026-10-25T11:23:55Z"
       },
       "fixture": false
     },
     "previous_price": 0.33,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "asana:pricing-entry:global:list",
-      "provider": "asana",
-      "sku": "pricing-entry",
-      "price": 5.99,
-      "unit": "usd_per_unit",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "price_points": [
-          5.99,
-          10.99,
-          13.49,
-          24.99,
-          30.49
-        ],
-        "point_count": 5,
-        "metric": "page_scan"
-      },
-      "provenance": {
-        "url": "https://asana.com/pricing",
-        "observed_at": "2026-10-25T06:05:54Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 10.99,
-    "delta_pct": 45.5,
-    "reason": "price moved 45.5% (> 40% limit)"
   }
 ]
