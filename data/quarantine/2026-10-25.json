@@ -1,103 +1,52 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:spot",
+      "id": "vast:a100-sxm4-80gb:global:spot",
       "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 1.208,
+      "sku": "a100-sxm4-80gb",
+      "price": 1.0533,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "H100 SXM",
+        "gpu_model": "A100 SXM4",
         "vram_gb": 80,
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-25T11:23:55Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.757,
-    "delta_pct": 59.6,
-    "reason": "price moved 59.6% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:h200-141gb:global:spot",
-      "provider": "vast",
-      "sku": "h200-141gb",
-      "price": 4.0664,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H200",
-        "vram_gb": 141,
         "sample_size": 9,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-25T11:23:55Z"
+        "observed_at": "2026-10-25T16:15:00Z"
       },
       "fixture": false
     },
-    "previous_price": 1.9342,
-    "delta_pct": 110.2,
-    "reason": "price moved 110.2% (> 40% limit)"
+    "previous_price": 0.6667,
+    "delta_pct": 58.0,
+    "reason": "price moved 58.0% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
+      "id": "openrouter:qwen-qwen3.6-27b-output:global:list",
       "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
+      "sku": "qwen-qwen3.6-27b-output",
+      "price": 3.2,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-25T11:23:55Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
+        "model_id": "qwen/qwen3.6-27b",
+        "model_name": "Qwen: Qwen3.6 27B",
         "context_length": 262144,
         "direction": "output",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-25T11:23:55Z"
+        "url": "https://openrouter.ai/qwen/qwen3.6-27b",
+        "observed_at": "2026-10-25T16:15:00Z"
       },
       "fixture": false
     },
-    "previous_price": 0.33,
+    "previous_price": 2.0,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
   }

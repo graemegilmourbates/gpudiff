@@ -1,16 +1,16 @@
 {
   "date": "2026-10-25",
-  "observed_at": "2026-10-25T11:23:55Z",
+  "observed_at": "2026-10-25T16:15:00Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 32
+      "offers": 30
     },
     {
       "source": "runpod",
       "ok": true,
-      "offers": 30
+      "offers": 27
     },
     {
       "source": "aws",
@@ -47,8 +47,8 @@
     },
     {
       "source": "bls",
-      "ok": false,
-      "error": "HTTPError: HTTP Error 503: Service Unavailable"
+      "ok": true,
+      "offers": 2
     },
     {
       "source": "newegg",
@@ -56,8 +56,8 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
-  "valid": 2601,
+  "valid": 2600,
   "rejected": 0,
-  "quarantined": 4,
+  "quarantined": 2,
   "healthy": false
 }
