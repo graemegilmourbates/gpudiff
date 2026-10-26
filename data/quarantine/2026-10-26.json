@@ -1,0 +1,288 @@
+[
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-pro-latest-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-pro-latest-input",
+      "price": 0.2325,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~deepseek/deepseek-pro-latest",
+        "model_name": "DeepSeek: DeepSeek Pro Latest",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.1188,
+    "delta_pct": 95.7,
+    "reason": "price moved 95.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-0731-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-0731-input",
+      "price": 0.44,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash-0731",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0731",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0444,
+    "delta_pct": 891.0,
+    "reason": "price moved 891.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-0731-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-0731-output",
+      "price": 1.32,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash-0731",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0731",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.1333,
+    "delta_pct": 890.2,
+    "reason": "price moved 890.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k3-output:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k3-output",
+      "price": 16.0,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k3",
+        "model_name": "MoonshotAI: Kimi K3",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k3",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 10.8,
+    "delta_pct": 48.1,
+    "reason": "price moved 48.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-input:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-input",
+      "price": 0.132,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0825,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-output:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-output",
+      "price": 0.528,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.33,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-pro-input",
+      "price": 0.9483,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0423",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.2088,
+    "delta_pct": 354.2,
+    "reason": "price moved 354.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-pro-output",
+      "price": 1.8966,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0423",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4176,
+    "delta_pct": 354.2,
+    "reason": "price moved 354.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-input",
+      "price": 0.05,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0423",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.091,
+    "delta_pct": 45.1,
+    "reason": "price moved 45.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-flash-output",
+      "price": 0.45,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-flash",
+        "model_name": "DeepSeek: DeepSeek V4 Flash 0423",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.182,
+    "delta_pct": 147.3,
+    "reason": "price moved 147.3% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:google-gemma-4-31b-it-input:global:list",
+      "provider": "openrouter",
+      "sku": "google-gemma-4-31b-it-input",
+      "price": 0.1,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "google/gemma-4-31b-it",
+        "model_name": "Google: Gemma 4 31B",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/google/gemma-4-31b-it",
+        "observed_at": "2026-10-26T00:21:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.2,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  }
+]
