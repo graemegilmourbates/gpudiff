@@ -1,6 +1,31 @@
 [
   {
     "offer": {
+      "id": "vast:b200-180gb:global:spot",
+      "provider": "vast",
+      "sku": "b200-180gb",
+      "price": 8.75,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "B200",
+        "vram_gb": 180,
+        "sample_size": 14,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-26T12:58:11Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 5.9375,
+    "delta_pct": 47.4,
+    "reason": "price moved 47.4% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:a100-sxm4-80gb:global:spot",
       "provider": "vast",
       "sku": "a100-sxm4-80gb",
@@ -11,12 +36,12 @@
       "attrs": {
         "gpu_model": "A100 SXM4",
         "vram_gb": 80,
-        "sample_size": 9,
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
@@ -26,35 +51,85 @@
   },
   {
     "offer": {
-      "id": "vast:rtx-a6000-48gb:global:spot",
+      "id": "vast:l40s-48gb:global:on-demand",
       "provider": "vast",
-      "sku": "rtx-a6000-48gb",
-      "price": 0.1333,
+      "sku": "l40s-48gb",
+      "price": 0.8002,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L40S",
+        "vram_gb": 48,
+        "sample_size": 15,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-26T12:58:11Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.5363,
+    "delta_pct": 49.2,
+    "reason": "price moved 49.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-6000-s-96gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-s-96gb",
+      "price": 1.3333,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "gpu_model": "RTX A6000",
-        "vram_gb": 48,
-        "sample_size": 8,
+        "gpu_model": "RTX PRO 6000 S",
+        "vram_gb": 96,
+        "sample_size": 10,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
-    "previous_price": 0.3067,
-    "delta_pct": 56.5,
-    "reason": "price moved 56.5% (> 40% limit)"
+    "previous_price": 0.7333,
+    "delta_pct": 81.8,
+    "reason": "price moved 81.8% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:rtx-pro-5000-48gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-5000-48gb",
+      "price": 0.5867,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 5000",
+        "vram_gb": 48,
+        "sample_size": 9,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-26T12:58:11Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4,
+    "delta_pct": 46.7,
+    "reason": "price moved 46.7% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-pro-latest-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-pro-latest-input",
-      "price": 0.2565,
+      "price": 0.2297,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -67,13 +142,39 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
     "previous_price": 0.1188,
-    "delta_pct": 115.9,
-    "reason": "price moved 115.9% (> 40% limit)"
+    "delta_pct": 93.4,
+    "reason": "price moved 93.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-pro-latest-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-pro-latest-output",
+      "price": 0.689,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "~deepseek/deepseek-pro-latest",
+        "model_name": "DeepSeek: DeepSeek Pro Latest",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/~deepseek/deepseek-pro-latest",
+        "observed_at": "2026-10-26T12:58:11Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 8.0,
+    "delta_pct": 91.4,
+    "reason": "price moved 91.4% (> 40% limit)"
   },
   {
     "offer": {
@@ -93,7 +194,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~z-ai/glm-latest",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
@@ -119,7 +220,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
@@ -145,7 +246,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
@@ -171,7 +272,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/moonshotai/kimi-k3",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
@@ -197,7 +298,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
@@ -223,39 +324,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
     "previous_price": 0.33,
     "delta_pct": 60.0,
     "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:moonshotai-kimi-latest-output:global:list",
-      "provider": "openrouter",
-      "sku": "moonshotai-kimi-latest-output",
-      "price": 20.0,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "~moonshotai/kimi-latest",
-        "model_name": "MoonshotAI: Kimi Latest",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/~moonshotai/kimi-latest",
-        "observed_at": "2026-10-26T06:10:35Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 9.75,
-    "delta_pct": 105.1,
-    "reason": "price moved 105.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -275,7 +350,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
@@ -301,69 +376,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-10-26T06:10:35Z"
+        "observed_at": "2026-10-26T12:58:11Z"
       },
       "fixture": false
     },
     "previous_price": 0.4176,
     "delta_pct": 357.5,
     "reason": "price moved 357.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:google-gemma-4-31b-it-input:global:list",
-      "provider": "openrouter",
-      "sku": "google-gemma-4-31b-it-input",
-      "price": 0.1,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "google/gemma-4-31b-it",
-        "model_name": "Google: Gemma 4 31B",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/google/gemma-4-31b-it",
-        "observed_at": "2026-10-26T06:10:35Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.2,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "slack:pricing-top:global:list",
-      "provider": "slack",
-      "sku": "pricing-top",
-      "price": 18.0,
-      "unit": "usd_per_unit",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "price_points": [
-          4.38,
-          7.25,
-          8.75,
-          9.0,
-          15.0,
-          18.0
-        ],
-        "point_count": 6,
-        "metric": "page_scan"
-      },
-      "provenance": {
-        "url": "https://slack.com/pricing",
-        "observed_at": "2026-10-26T06:10:35Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 45.0,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
   }
 ]
