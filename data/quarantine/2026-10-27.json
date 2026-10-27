@@ -1,6 +1,31 @@
 [
   {
     "offer": {
+      "id": "vast:rtx-pro-6000-s-96gb:global:spot",
+      "provider": "vast",
+      "sku": "rtx-pro-6000-s-96gb",
+      "price": 1.0,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "RTX PRO 6000 S",
+        "vram_gb": 96,
+        "sample_size": 13,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-27T23:45:50Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.7067,
+    "delta_pct": 41.5,
+    "reason": "price moved 41.5% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:deepseek-deepseek-v4.1-flash-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4.1-flash-output",
@@ -17,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
@@ -43,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
@@ -69,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
@@ -82,7 +107,7 @@
       "id": "openrouter:moonshotai-kimi-latest-output:global:list",
       "provider": "openrouter",
       "sku": "moonshotai-kimi-latest-output",
-      "price": 11.5,
+      "price": 20.0,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -95,20 +120,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~moonshotai/kimi-latest",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
     "previous_price": 8.099,
-    "delta_pct": 42.0,
-    "reason": "price moved 42.0% (> 40% limit)"
+    "delta_pct": 146.9,
+    "reason": "price moved 146.9% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-input",
-      "price": 0.0473,
+      "price": 0.14,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -121,20 +146,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
     "previous_price": 0.091,
-    "delta_pct": 48.0,
-    "reason": "price moved 48.0% (> 40% limit)"
+    "delta_pct": 53.8,
+    "reason": "price moved 53.8% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-output",
-      "price": 0.0946,
+      "price": 0.28,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -147,13 +172,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
     "previous_price": 0.182,
-    "delta_pct": 48.0,
-    "reason": "price moved 48.0% (> 40% limit)"
+    "delta_pct": 53.8,
+    "reason": "price moved 53.8% (> 40% limit)"
   },
   {
     "offer": {
@@ -173,7 +198,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
@@ -199,7 +224,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
@@ -225,7 +250,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/xiaomi/mimo-v2.5",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
@@ -251,7 +276,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/xiaomi/mimo-v2.5",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
@@ -277,7 +302,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/google/gemma-3-4b-it",
-        "observed_at": "2026-10-27T20:05:07Z"
+        "observed_at": "2026-10-27T23:45:50Z"
       },
       "fixture": false
     },
