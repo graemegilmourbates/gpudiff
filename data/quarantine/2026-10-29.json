@@ -1,6 +1,31 @@
 [
   {
     "offer": {
+      "id": "vast:a100-sxm4-80gb:global:spot",
+      "provider": "vast",
+      "sku": "a100-sxm4-80gb",
+      "price": 0.6667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "A100 SXM4",
+        "vram_gb": 80,
+        "sample_size": 6,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-10-29T09:55:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.4667,
+    "delta_pct": 42.9,
+    "reason": "price moved 42.9% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:deepseek-deepseek-v4.1-flash-1017-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4.1-flash-1017-input",
@@ -17,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
-        "observed_at": "2026-10-29T02:26:30Z"
+        "observed_at": "2026-10-29T09:55:35Z"
       },
       "fixture": false
     },
@@ -43,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
-        "observed_at": "2026-10-29T02:26:30Z"
+        "observed_at": "2026-10-29T09:55:35Z"
       },
       "fixture": false
     },
@@ -69,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.8-27b",
-        "observed_at": "2026-10-29T02:26:30Z"
+        "observed_at": "2026-10-29T09:55:35Z"
       },
       "fixture": false
     },
@@ -95,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/qwen/qwen3.8-27b",
-        "observed_at": "2026-10-29T02:26:30Z"
+        "observed_at": "2026-10-29T09:55:35Z"
       },
       "fixture": false
     },
@@ -121,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-10-29T02:26:30Z"
+        "observed_at": "2026-10-29T09:55:35Z"
       },
       "fixture": false
     },
@@ -147,13 +172,39 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
-        "observed_at": "2026-10-29T02:26:30Z"
+        "observed_at": "2026-10-29T09:55:35Z"
       },
       "fixture": false
     },
     "previous_price": 1.98,
     "delta_pct": 100.0,
     "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:moonshotai-kimi-k3-output:global:list",
+      "provider": "openrouter",
+      "sku": "moonshotai-kimi-k3-output",
+      "price": 10.8,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "moonshotai/kimi-k3",
+        "model_name": "MoonshotAI: Kimi K3",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/moonshotai/kimi-k3",
+        "observed_at": "2026-10-29T09:55:35Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 20.0,
+    "delta_pct": 46.0,
+    "reason": "price moved 46.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -173,7 +224,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-29T02:26:30Z"
+        "observed_at": "2026-10-29T09:55:35Z"
       },
       "fixture": false
     },
@@ -199,7 +250,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-10-29T02:26:30Z"
+        "observed_at": "2026-10-29T09:55:35Z"
       },
       "fixture": false
     },
