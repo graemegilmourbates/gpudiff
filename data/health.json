@@ -1,38 +1,36 @@
 {
-  "date": "2026-11-03",
-  "observed_at": "2026-11-03T23:20:27Z",
+  "date": "2026-11-04",
+  "observed_at": "2026-11-04T06:16:04Z",
   "sources": [
     {
       "source": "vast",
       "ok": true,
-      "offers": 28
+      "offers": 32
     },
     {
       "source": "runpod",
       "ok": true,
-      "offers": 30
+      "offers": 12
     },
     {
       "source": "aws",
       "ok": true,
-      "offers": 9,
-      "carried": true
+      "offers": 9
     },
     {
       "source": "azure",
       "ok": true,
-      "offers": 12,
-      "carried": true
+      "offers": 12
     },
     {
       "source": "openrouter",
       "ok": true,
-      "offers": 856
+      "offers": 858
     },
     {
       "source": "routers",
       "ok": true,
-      "offers": 1585
+      "offers": 1589
     },
     {
       "source": "ramp",
@@ -42,14 +40,12 @@
     {
       "source": "saaspages",
       "ok": true,
-      "offers": 39,
-      "carried": true
+      "offers": 40
     },
     {
       "source": "bls",
       "ok": true,
-      "offers": 2,
-      "carried": true
+      "offers": 2
     },
     {
       "source": "newegg",
@@ -57,7 +53,7 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
-  "valid": 2548,
+  "valid": 2541,
   "rejected": 0,
   "quarantined": 13,
   "healthy": false
