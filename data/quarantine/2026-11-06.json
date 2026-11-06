@@ -1,83 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:l40s-48gb:global:spot",
-      "provider": "vast",
-      "sku": "l40s-48gb",
-      "price": 0.8,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "L40S",
-        "vram_gb": 48,
-        "sample_size": 6,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.5333,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:minimax-minimax-m3.1-flash-input:global:list",
-      "provider": "openrouter",
-      "sku": "minimax-minimax-m3.1-flash-input",
-      "price": 0.15,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "minimax/minimax-m3.1-flash",
-        "model_name": "MiniMax: MiniMax M3.1 Flash",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.075,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:minimax-minimax-m3.1-flash-output:global:list",
-      "provider": "openrouter",
-      "sku": "minimax-minimax-m3.1-flash-output",
-      "price": 0.6,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "minimax/minimax-m3.1-flash",
-        "model_name": "MiniMax: MiniMax M3.1 Flash",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.3,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-vision-exp-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-vision-exp-input",
@@ -94,7 +17,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-11-06T15:00:33Z"
+        "observed_at": "2026-11-06T20:53:13Z"
       },
       "fixture": false
     },
@@ -120,7 +43,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp",
-        "observed_at": "2026-11-06T15:00:33Z"
+        "observed_at": "2026-11-06T20:53:13Z"
       },
       "fixture": false
     },
@@ -130,88 +53,10 @@
   },
   {
     "offer": {
-      "id": "openrouter:deepseek-deepseek-v4-flash-latest-output:global:list",
-      "provider": "openrouter",
-      "sku": "deepseek-deepseek-v4-flash-latest-output",
-      "price": 0.161,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "~deepseek/deepseek-v4-flash-latest",
-        "model_name": "DeepSeek: DeepSeek V4 Flash Latest",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.3,
-    "delta_pct": 46.3,
-    "reason": "price moved 46.3% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.33,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-input",
-      "price": 0.8717,
+      "price": 0.7501,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -224,20 +69,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-11-06T15:00:33Z"
+        "observed_at": "2026-11-06T20:53:13Z"
       },
       "fixture": false
     },
     "previous_price": 1.6,
-    "delta_pct": 45.5,
-    "reason": "price moved 45.5% (> 40% limit)"
+    "delta_pct": 53.1,
+    "reason": "price moved 53.1% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-pro-output",
-      "price": 1.7435,
+      "price": 1.5002,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -250,65 +95,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-11-06T15:00:33Z"
+        "observed_at": "2026-11-06T20:53:13Z"
       },
       "fixture": false
     },
     "previous_price": 3.2,
-    "delta_pct": 45.5,
-    "reason": "price moved 45.5% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:google-gemma-4-26b-a4b-it-input:global:list",
-      "provider": "openrouter",
-      "sku": "google-gemma-4-26b-a4b-it-input",
-      "price": 0.09,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "google/gemma-4-26b-a4b-it",
-        "model_name": "Google: Gemma 4 26B A4B ",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.057,
-    "delta_pct": 57.9,
-    "reason": "price moved 57.9% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:google-gemma-4-26b-a4b-it-output:global:list",
-      "provider": "openrouter",
-      "sku": "google-gemma-4-26b-a4b-it-output",
-      "price": 0.3,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "google/gemma-4-26b-a4b-it",
-        "model_name": "Google: Gemma 4 26B A4B ",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.171,
-    "delta_pct": 75.4,
-    "reason": "price moved 75.4% (> 40% limit)"
+    "delta_pct": 53.1,
+    "reason": "price moved 53.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -328,7 +121,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b",
-        "observed_at": "2026-11-06T15:00:33Z"
+        "observed_at": "2026-11-06T20:53:13Z"
       },
       "fixture": false
     },
@@ -354,64 +147,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/nvidia/nemotron-3-super-120b-a12b",
-        "observed_at": "2026-11-06T15:00:33Z"
+        "observed_at": "2026-11-06T20:53:13Z"
       },
       "fixture": false
     },
     "previous_price": 2.4,
     "delta_pct": 83.3,
     "reason": "price moved 83.3% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:openai-gpt-oss-120b-input:global:list",
-      "provider": "openrouter",
-      "sku": "openai-gpt-oss-120b-input",
-      "price": 0.024,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "openai/gpt-oss-120b",
-        "model_name": "OpenAI: gpt-oss-120b",
-        "context_length": 131072,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/openai/gpt-oss-120b",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.15,
-    "delta_pct": 84.0,
-    "reason": "price moved 84.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:openai-gpt-oss-120b-output:global:list",
-      "provider": "openrouter",
-      "sku": "openai-gpt-oss-120b-output",
-      "price": 0.088,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "openai/gpt-oss-120b",
-        "model_name": "OpenAI: gpt-oss-120b",
-        "context_length": 131072,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/openai/gpt-oss-120b",
-        "observed_at": "2026-11-06T15:00:33Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6,
-    "delta_pct": 85.3,
-    "reason": "price moved 85.3% (> 40% limit)"
   }
 ]
