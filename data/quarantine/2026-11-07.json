@@ -1,189 +1,60 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:on-demand",
-      "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 3.4053,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 5,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-07T13:59:34Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.2689,
-    "delta_pct": 50.1,
-    "reason": "price moved 50.1% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:h100-sxm-80gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 1.0,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-07T13:59:34Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6667,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:h100-pcie-80gb:global:on-demand",
       "provider": "vast",
       "sku": "h100-pcie-80gb",
-      "price": 3.9817,
+      "price": 3.5917,
       "unit": "usd_per_hour",
       "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
         "gpu_model": "H100 PCIE",
         "vram_gb": 80,
-        "sample_size": 5,
+        "sample_size": 7,
         "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-07T13:59:34Z"
+        "observed_at": "2026-11-07T18:46:16Z"
       },
       "fixture": false
     },
     "previous_price": 2.5378,
-    "delta_pct": 56.9,
-    "reason": "price moved 56.9% (> 40% limit)"
+    "delta_pct": 41.5,
+    "reason": "price moved 41.5% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:minimax-minimax-m3.1-flash-input:global:list",
-      "provider": "openrouter",
-      "sku": "minimax-minimax-m3.1-flash-input",
-      "price": 0.15,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
+      "id": "vast:h200-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-141gb",
+      "price": 1.491,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "model_id": "minimax/minimax-m3.1-flash",
-        "model_name": "MiniMax: MiniMax M3.1 Flash",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "sample_size": 8,
+        "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
-        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
-        "observed_at": "2026-11-07T13:59:34Z"
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-11-07T18:46:16Z"
       },
       "fixture": false
     },
-    "previous_price": 0.075,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:minimax-minimax-m3.1-flash-output:global:list",
-      "provider": "openrouter",
-      "sku": "minimax-minimax-m3.1-flash-output",
-      "price": 0.6,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "minimax/minimax-m3.1-flash",
-        "model_name": "MiniMax: MiniMax M3.1 Flash",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
-        "observed_at": "2026-11-07T13:59:34Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.3,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-11-07T13:59:34Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-11-07T13:59:34Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.33,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
+    "previous_price": 3.6961,
+    "delta_pct": 59.7,
+    "reason": "price moved 59.7% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:openai-gpt-oss-120b-input:global:list",
       "provider": "openrouter",
       "sku": "openai-gpt-oss-120b-input",
-      "price": 0.018,
+      "price": 0.019,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -196,20 +67,20 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/openai/gpt-oss-120b",
-        "observed_at": "2026-11-07T13:59:34Z"
+        "observed_at": "2026-11-07T18:46:16Z"
       },
       "fixture": false
     },
     "previous_price": 0.15,
-    "delta_pct": 88.0,
-    "reason": "price moved 88.0% (> 40% limit)"
+    "delta_pct": 87.3,
+    "reason": "price moved 87.3% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:openai-gpt-oss-120b-output:global:list",
       "provider": "openrouter",
       "sku": "openai-gpt-oss-120b-output",
-      "price": 0.067,
+      "price": 0.071,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -222,12 +93,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/openai/gpt-oss-120b",
-        "observed_at": "2026-11-07T13:59:34Z"
+        "observed_at": "2026-11-07T18:46:16Z"
       },
       "fixture": false
     },
     "previous_price": 0.6,
-    "delta_pct": 88.8,
-    "reason": "price moved 88.8% (> 40% limit)"
+    "delta_pct": 88.2,
+    "reason": "price moved 88.2% (> 40% limit)"
   }
 ]
