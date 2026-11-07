@@ -1,104 +1,52 @@
 [
   {
     "offer": {
-      "id": "vast:h100-pcie-80gb:global:on-demand",
-      "provider": "vast",
-      "sku": "h100-pcie-80gb",
-      "price": 3.5917,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 PCIE",
-        "vram_gb": 80,
-        "sample_size": 7,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-07T18:46:16Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.5378,
-    "delta_pct": 41.5,
-    "reason": "price moved 41.5% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
-      "price": 1.491,
+      "price": 1.3158,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 8,
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-07T18:46:16Z"
+        "observed_at": "2026-11-07T22:43:50Z"
       },
       "fixture": false
     },
     "previous_price": 3.6961,
-    "delta_pct": 59.7,
-    "reason": "price moved 59.7% (> 40% limit)"
+    "delta_pct": 64.4,
+    "reason": "price moved 64.4% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:openai-gpt-oss-120b-input:global:list",
-      "provider": "openrouter",
-      "sku": "openai-gpt-oss-120b-input",
-      "price": 0.019,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
+      "id": "vast:h200-nvl-141gb:global:spot",
+      "provider": "vast",
+      "sku": "h200-nvl-141gb",
+      "price": 2.4,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
       "region": "global",
       "attrs": {
-        "model_id": "openai/gpt-oss-120b",
-        "model_name": "OpenAI: gpt-oss-120b",
-        "context_length": 131072,
-        "direction": "input",
-        "metric": "openrouter_list"
+        "gpu_model": "H200 NVL",
+        "vram_gb": 141,
+        "sample_size": 14,
+        "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
-        "url": "https://openrouter.ai/openai/gpt-oss-120b",
-        "observed_at": "2026-11-07T18:46:16Z"
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-11-07T22:43:50Z"
       },
       "fixture": false
     },
-    "previous_price": 0.15,
-    "delta_pct": 87.3,
-    "reason": "price moved 87.3% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:openai-gpt-oss-120b-output:global:list",
-      "provider": "openrouter",
-      "sku": "openai-gpt-oss-120b-output",
-      "price": 0.071,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "openai/gpt-oss-120b",
-        "model_name": "OpenAI: gpt-oss-120b",
-        "context_length": 131072,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/openai/gpt-oss-120b",
-        "observed_at": "2026-11-07T18:46:16Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.6,
-    "delta_pct": 88.2,
-    "reason": "price moved 88.2% (> 40% limit)"
+    "previous_price": 1.3333,
+    "delta_pct": 80.0,
+    "reason": "price moved 80.0% (> 40% limit)"
   }
 ]
