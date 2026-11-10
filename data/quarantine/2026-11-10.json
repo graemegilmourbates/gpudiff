@@ -1,31 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:h100-sxm-80gb:global:on-demand",
-      "provider": "vast",
-      "sku": "h100-sxm-80gb",
-      "price": 3.3339,
-      "unit": "usd_per_hour",
-      "pricing_type": "on_demand",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 SXM",
-        "vram_gb": 80,
-        "sample_size": 5,
-        "metric": "p25_per_gpu_dph_verified"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-10T17:48:30Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 2.2778,
-    "delta_pct": 46.4,
-    "reason": "price moved 46.4% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:l40s-48gb:global:spot",
       "provider": "vast",
       "sku": "l40s-48gb",
@@ -41,7 +16,7 @@
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -67,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -93,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -119,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -145,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3-flash",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -171,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/google/gemma-4-26b-a4b-it",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -198,7 +173,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -225,7 +200,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -252,7 +227,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -279,7 +254,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -306,7 +281,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -333,7 +308,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
@@ -360,7 +335,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-11-10T17:48:30Z"
+        "observed_at": "2026-11-10T23:17:30Z"
       },
       "fixture": false
     },
