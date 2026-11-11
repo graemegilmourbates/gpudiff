@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-10",
-  "observed_at": "2026-11-10T23:17:30Z",
+  "date": "2026-11-11",
+  "observed_at": "2026-11-11T06:12:25Z",
   "sources": [
     {
       "source": "vast",
@@ -10,29 +10,27 @@
     {
       "source": "runpod",
       "ok": true,
-      "offers": 17
+      "offers": 24
     },
     {
       "source": "aws",
       "ok": true,
-      "offers": 9,
-      "carried": true
+      "offers": 9
     },
     {
       "source": "azure",
-      "ok": true,
-      "offers": 12,
-      "carried": true
+      "ok": false,
+      "error": "HTTPError: HTTP Error 429: Too Many Requests"
     },
     {
       "source": "openrouter",
       "ok": true,
-      "offers": 888
+      "offers": 890
     },
     {
       "source": "routers",
       "ok": true,
-      "offers": 1526
+      "offers": 1524
     },
     {
       "source": "ramp",
@@ -42,14 +40,12 @@
     {
       "source": "saaspages",
       "ok": true,
-      "offers": 39,
-      "carried": true
+      "offers": 42
     },
     {
       "source": "bls",
       "ok": true,
-      "offers": 2,
-      "carried": true
+      "offers": 2
     },
     {
       "source": "newegg",
@@ -57,8 +53,8 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
-  "valid": 2512,
+  "valid": 2514,
   "rejected": 0,
-  "quarantined": 13,
+  "quarantined": 9,
   "healthy": false
 }
