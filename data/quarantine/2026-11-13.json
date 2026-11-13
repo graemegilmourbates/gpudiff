@@ -1,0 +1,158 @@
+[
+  {
+    "offer": {
+      "id": "openrouter:z-ai-glm-5.3-output:global:list",
+      "provider": "openrouter",
+      "sku": "z-ai-glm-5.3-output",
+      "price": 3.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "z-ai/glm-5.3",
+        "model_name": "Z.ai: GLM 5.3",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/z-ai/glm-5.3",
+        "observed_at": "2026-11-13T00:19:37Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.4,
+    "delta_pct": 157.1,
+    "reason": "price moved 157.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-input:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-input",
+      "price": 0.132,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-11-13T00:19:37Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.0825,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-output:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-output",
+      "price": 0.528,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-11-13T00:19:37Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.33,
+    "delta_pct": 60.0,
+    "reason": "price moved 60.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:xiaomi-mimo-v2.5-pro-output:global:list",
+      "provider": "openrouter",
+      "sku": "xiaomi-mimo-v2.5-pro-output",
+      "price": 0.87,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "xiaomi/mimo-v2.5-pro",
+        "model_name": "Xiaomi: MiMo-V2.5-Pro",
+        "context_length": 1024000,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
+        "observed_at": "2026-11-13T00:19:37Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.8,
+    "delta_pct": 51.7,
+    "reason": "price moved 51.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3.5-9b-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3.5-9b-input",
+      "price": 0.059,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3.5-9b",
+        "model_name": "Qwen: Qwen3.5-9B",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3.5-9b",
+        "observed_at": "2026-11-13T00:19:37Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.136,
+    "delta_pct": 56.6,
+    "reason": "price moved 56.6% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3.5-9b-output:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3.5-9b-output",
+      "price": 0.087,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3.5-9b",
+        "model_name": "Qwen: Qwen3.5-9B",
+        "context_length": 262144,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3.5-9b",
+        "observed_at": "2026-11-13T00:19:37Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.199,
+    "delta_pct": 56.3,
+    "reason": "price moved 56.3% (> 40% limit)"
+  }
+]

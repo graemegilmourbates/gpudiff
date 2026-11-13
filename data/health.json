@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-12",
-  "observed_at": "2026-11-12T18:54:02Z",
+  "date": "2026-11-13",
+  "observed_at": "2026-11-13T00:19:37Z",
   "sources": [
     {
       "source": "vast",
@@ -10,7 +10,7 @@
     {
       "source": "runpod",
       "ok": true,
-      "offers": 19
+      "offers": 21
     },
     {
       "source": "aws",
@@ -27,12 +27,12 @@
     {
       "source": "openrouter",
       "ok": true,
-      "offers": 894
+      "offers": 896
     },
     {
       "source": "routers",
       "ok": true,
-      "offers": 1516
+      "offers": 928
     },
     {
       "source": "ramp",
@@ -57,8 +57,8 @@
       "error": "HTTPError: HTTP Error 403: Forbidden"
     }
   ],
-  "valid": 2513,
+  "valid": 1933,
   "rejected": 0,
-  "quarantined": 10,
+  "quarantined": 6,
   "healthy": false
 }
