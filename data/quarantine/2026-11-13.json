@@ -1,31 +1,6 @@
 [
   {
     "offer": {
-      "id": "vast:h100-pcie-80gb:global:spot",
-      "provider": "vast",
-      "sku": "h100-pcie-80gb",
-      "price": 0.6667,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H100 PCIE",
-        "vram_gb": 80,
-        "sample_size": 5,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-13T16:19:21Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.6667,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
       "id": "vast:h200-141gb:global:spot",
       "provider": "vast",
       "sku": "h200-141gb",
@@ -36,68 +11,18 @@
       "attrs": {
         "gpu_model": "H200",
         "vram_gb": 141,
-        "sample_size": 8,
+        "sample_size": 7,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-13T16:19:21Z"
+        "observed_at": "2026-11-13T22:36:06Z"
       },
       "fixture": false
     },
     "previous_price": 1.5789,
     "delta_pct": 66.7,
     "reason": "price moved 66.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:b200-180gb:global:spot",
-      "provider": "vast",
-      "sku": "b200-180gb",
-      "price": 8.75,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "B200",
-        "vram_gb": 180,
-        "sample_size": 13,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-13T16:19:21Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 5.9375,
-    "delta_pct": 47.4,
-    "reason": "price moved 47.4% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:l40s-48gb:global:spot",
-      "provider": "vast",
-      "sku": "l40s-48gb",
-      "price": 0.7333,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "L40S",
-        "vram_gb": 48,
-        "sample_size": 10,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-13T16:19:21Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.4,
-    "delta_pct": 83.3,
-    "reason": "price moved 83.3% (> 40% limit)"
   },
   {
     "offer": {
@@ -117,7 +42,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/ricursiveai/ripple-65b-preview",
-        "observed_at": "2026-11-13T16:19:21Z"
+        "observed_at": "2026-11-13T22:36:06Z"
       },
       "fixture": false
     },
@@ -143,7 +68,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/ricursiveai/ripple-65b-preview",
-        "observed_at": "2026-11-13T16:19:21Z"
+        "observed_at": "2026-11-13T22:36:06Z"
       },
       "fixture": false
     },
@@ -169,7 +94,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/ibm-granite/granite-4.2-8b",
-        "observed_at": "2026-11-13T16:19:21Z"
+        "observed_at": "2026-11-13T22:36:06Z"
       },
       "fixture": false
     },
@@ -195,7 +120,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3",
-        "observed_at": "2026-11-13T16:19:21Z"
+        "observed_at": "2026-11-13T22:36:06Z"
       },
       "fixture": false
     },
@@ -221,64 +146,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
-        "observed_at": "2026-11-13T16:19:21Z"
+        "observed_at": "2026-11-13T22:36:06Z"
       },
       "fixture": false
     },
     "previous_price": 1.8,
     "delta_pct": 51.7,
     "reason": "price moved 51.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3.5-9b-input:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3.5-9b-input",
-      "price": 0.068,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3.5-9b",
-        "model_name": "Qwen: Qwen3.5-9B",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3.5-9b",
-        "observed_at": "2026-11-13T16:19:21Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.136,
-    "delta_pct": 50.0,
-    "reason": "price moved 50.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3.5-9b-output:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3.5-9b-output",
-      "price": 0.1,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3.5-9b",
-        "model_name": "Qwen: Qwen3.5-9B",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3.5-9b",
-        "observed_at": "2026-11-13T16:19:21Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.199,
-    "delta_pct": 49.7,
-    "reason": "price moved 49.7% (> 40% limit)"
   }
 ]
