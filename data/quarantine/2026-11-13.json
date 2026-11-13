@@ -1,6 +1,136 @@
 [
   {
     "offer": {
+      "id": "openrouter:ricursiveai-ripple-65b-preview-input:global:list",
+      "provider": "openrouter",
+      "sku": "ricursiveai-ripple-65b-preview-input",
+      "price": 0.1,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "ricursiveai/ripple-65b-preview",
+        "model_name": "Ricursive: Ripple 65B Preview",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/ricursiveai/ripple-65b-preview",
+        "observed_at": "2026-11-13T07:55:10Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.2,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:ricursiveai-ripple-65b-preview-output:global:list",
+      "provider": "openrouter",
+      "sku": "ricursiveai-ripple-65b-preview-output",
+      "price": 0.3,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "ricursiveai/ripple-65b-preview",
+        "model_name": "Ricursive: Ripple 65B Preview",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/ricursiveai/ripple-65b-preview",
+        "observed_at": "2026-11-13T07:55:10Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.6,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:minimax-minimax-m3.1-flash-input:global:list",
+      "provider": "openrouter",
+      "sku": "minimax-minimax-m3.1-flash-input",
+      "price": 0.15,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "minimax/minimax-m3.1-flash",
+        "model_name": "MiniMax: MiniMax M3.1 Flash",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
+        "observed_at": "2026-11-13T07:55:10Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.075,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:minimax-minimax-m3.1-flash-output:global:list",
+      "provider": "openrouter",
+      "sku": "minimax-minimax-m3.1-flash-output",
+      "price": 0.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "minimax/minimax-m3.1-flash",
+        "model_name": "MiniMax: MiniMax M3.1 Flash",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
+        "observed_at": "2026-11-13T07:55:10Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4.1-flash-1017-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4.1-flash-1017-output",
+      "price": 1.2,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4.1-flash-1017",
+        "model_name": "DeepSeek: DeepSeek V4.1 Flash 1017",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4.1-flash-1017",
+        "observed_at": "2026-11-13T07:55:10Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.6,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "openrouter:z-ai-glm-5.3-output:global:list",
       "provider": "openrouter",
       "sku": "z-ai-glm-5.3-output",
@@ -17,7 +147,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/z-ai/glm-5.3",
-        "observed_at": "2026-11-13T00:19:37Z"
+        "observed_at": "2026-11-13T07:55:10Z"
       },
       "fixture": false
     },
@@ -43,7 +173,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-11-13T00:19:37Z"
+        "observed_at": "2026-11-13T07:55:10Z"
       },
       "fixture": false
     },
@@ -69,7 +199,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-11-13T00:19:37Z"
+        "observed_at": "2026-11-13T07:55:10Z"
       },
       "fixture": false
     },
@@ -95,64 +225,12 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/xiaomi/mimo-v2.5-pro",
-        "observed_at": "2026-11-13T00:19:37Z"
+        "observed_at": "2026-11-13T07:55:10Z"
       },
       "fixture": false
     },
     "previous_price": 1.8,
     "delta_pct": 51.7,
     "reason": "price moved 51.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3.5-9b-input:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3.5-9b-input",
-      "price": 0.059,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3.5-9b",
-        "model_name": "Qwen: Qwen3.5-9B",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3.5-9b",
-        "observed_at": "2026-11-13T00:19:37Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.136,
-    "delta_pct": 56.6,
-    "reason": "price moved 56.6% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:qwen-qwen3.5-9b-output:global:list",
-      "provider": "openrouter",
-      "sku": "qwen-qwen3.5-9b-output",
-      "price": 0.087,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "qwen/qwen3.5-9b",
-        "model_name": "Qwen: Qwen3.5-9B",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/qwen/qwen3.5-9b",
-        "observed_at": "2026-11-13T00:19:37Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.199,
-    "delta_pct": 56.3,
-    "reason": "price moved 56.3% (> 40% limit)"
   }
 ]
