@@ -1,112 +1,87 @@
 [
   {
     "offer": {
-      "id": "vast:h200-141gb:global:spot",
+      "id": "vast:a100-sxm4-40gb:global:on-demand",
       "provider": "vast",
-      "sku": "h200-141gb",
-      "price": 2.315,
+      "sku": "a100-sxm4-40gb",
+      "price": 0.8022,
       "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "H200",
-        "vram_gb": 141,
-        "sample_size": 11,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-19T13:00:16Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 1.3158,
-    "delta_pct": 75.9,
-    "reason": "price moved 75.9% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "vast:a100-sxm4-80gb:global:spot",
-      "provider": "vast",
-      "sku": "a100-sxm4-80gb",
-      "price": 0.9333,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
+      "pricing_type": "on_demand",
       "region": "global",
       "attrs": {
         "gpu_model": "A100 SXM4",
-        "vram_gb": 80,
-        "sample_size": 15,
-        "metric": "p25_min_bid_per_gpu"
+        "vram_gb": 40,
+        "sample_size": 17,
+        "metric": "p25_per_gpu_dph_verified"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
-    "previous_price": 0.52,
-    "delta_pct": 79.5,
-    "reason": "price moved 79.5% (> 40% limit)"
+    "previous_price": 0.5378,
+    "delta_pct": 49.2,
+    "reason": "price moved 49.2% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:minimax-minimax-m3.1-flash-input:global:list",
+      "id": "openrouter:deepseek-deepseek-v4-pro-0813-input:global:list",
       "provider": "openrouter",
-      "sku": "minimax-minimax-m3.1-flash-input",
-      "price": 0.15,
+      "sku": "deepseek-deepseek-v4-pro-0813-input",
+      "price": 0.18,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "minimax/minimax-m3.1-flash",
-        "model_name": "MiniMax: MiniMax M3.1 Flash",
+        "model_id": "deepseek/deepseek-v4-pro-0813",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
         "context_length": 1048576,
         "direction": "input",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
-    "previous_price": 0.075,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
+    "previous_price": 0.111,
+    "delta_pct": 62.2,
+    "reason": "price moved 62.2% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:minimax-minimax-m3.1-flash-output:global:list",
+      "id": "openrouter:deepseek-deepseek-v4-pro-0813-output:global:list",
       "provider": "openrouter",
-      "sku": "minimax-minimax-m3.1-flash-output",
-      "price": 0.6,
+      "sku": "deepseek-deepseek-v4-pro-0813-output",
+      "price": 7.8,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "minimax/minimax-m3.1-flash",
-        "model_name": "MiniMax: MiniMax M3.1 Flash",
+        "model_id": "deepseek/deepseek-v4-pro-0813",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0813",
         "context_length": 1048576,
         "direction": "output",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813",
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
-    "previous_price": 0.3,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
+    "previous_price": 4.44,
+    "delta_pct": 75.7,
+    "reason": "price moved 75.7% (> 40% limit)"
   },
   {
     "offer": {
       "id": "openrouter:deepseek-deepseek-v4-flash-latest-output:global:list",
       "provider": "openrouter",
       "sku": "deepseek-deepseek-v4-flash-latest-output",
-      "price": 0.1439,
+      "price": 0.1399,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
@@ -119,13 +94,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/~deepseek/deepseek-v4-flash-latest",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
     "previous_price": 0.3,
-    "delta_pct": 52.0,
-    "reason": "price moved 52.0% (> 40% limit)"
+    "delta_pct": 53.4,
+    "reason": "price moved 53.4% (> 40% limit)"
   },
   {
     "offer": {
@@ -145,65 +120,13 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-flash-0731",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
     "previous_price": 0.18,
     "delta_pct": 66.7,
     "reason": "price moved 66.7% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-input:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-input",
-      "price": 0.132,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-11-19T13:00:16Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.0825,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:tencent-hy3-output:global:list",
-      "provider": "openrouter",
-      "sku": "tencent-hy3-output",
-      "price": 0.528,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "tencent/hy3",
-        "model_name": "Tencent: Hy3",
-        "context_length": 262144,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/tencent/hy3",
-        "observed_at": "2026-11-19T13:00:16Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.33,
-    "delta_pct": 60.0,
-    "reason": "price moved 60.0% (> 40% limit)"
   },
   {
     "offer": {
@@ -223,7 +146,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/google/gemma-3-27b-it",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
@@ -250,7 +173,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
@@ -277,7 +200,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
@@ -304,7 +227,7 @@
       },
       "provenance": {
         "url": "https://requesty.ai/models",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
@@ -331,7 +254,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
@@ -358,7 +281,7 @@
       },
       "provenance": {
         "url": "https://novita.ai/models",
-        "observed_at": "2026-11-19T13:00:16Z"
+        "observed_at": "2026-11-19T21:30:10Z"
       },
       "fixture": false
     },
