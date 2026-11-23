@@ -1,0 +1,130 @@
+[
+  {
+    "offer": {
+      "id": "vast:h100-sxm-80gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-sxm-80gb",
+      "price": 1.4667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 SXM",
+        "vram_gb": 80,
+        "sample_size": 9,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-11-23T00:49:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.0,
+    "delta_pct": 46.7,
+    "reason": "price moved 46.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:h100-nvl-94gb:global:spot",
+      "provider": "vast",
+      "sku": "h100-nvl-94gb",
+      "price": 0.6667,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H100 NVL",
+        "vram_gb": 94,
+        "sample_size": 7,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-11-23T00:49:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 2.4,
+    "delta_pct": 72.2,
+    "reason": "price moved 72.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:qwen-qwen3.6-35b-a3b-input:global:list",
+      "provider": "openrouter",
+      "sku": "qwen-qwen3.6-35b-a3b-input",
+      "price": 0.05,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "qwen/qwen3.6-35b-a3b",
+        "model_name": "Qwen: Qwen3.6 35B A3B",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/qwen/qwen3.6-35b-a3b",
+        "observed_at": "2026-11-23T00:49:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.1,
+    "delta_pct": 50.0,
+    "reason": "price moved 50.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:openai-gpt-oss-120b-input:global:list",
+      "provider": "openrouter",
+      "sku": "openai-gpt-oss-120b-input",
+      "price": 0.05,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "openai/gpt-oss-120b",
+        "model_name": "OpenAI: gpt-oss-120b",
+        "context_length": 131072,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/openai/gpt-oss-120b",
+        "observed_at": "2026-11-23T00:49:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.09,
+    "delta_pct": 44.4,
+    "reason": "price moved 44.4% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:google-gemma-3-27b-it-output:global:list",
+      "provider": "openrouter",
+      "sku": "google-gemma-3-27b-it-output",
+      "price": 0.16,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "google/gemma-3-27b-it",
+        "model_name": "Google: Gemma 3 27B",
+        "context_length": 131072,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/google/gemma-3-27b-it",
+        "observed_at": "2026-11-23T00:49:36Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.45,
+    "delta_pct": 64.4,
+    "reason": "price moved 64.4% (> 40% limit)"
+  }
+]
