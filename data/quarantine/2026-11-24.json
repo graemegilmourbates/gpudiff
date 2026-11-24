@@ -1,0 +1,260 @@
+[
+  {
+    "offer": {
+      "id": "vast:a100-pcie-80gb:global:spot",
+      "provider": "vast",
+      "sku": "a100-pcie-80gb",
+      "price": 0.176,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "A100 PCIE",
+        "vram_gb": 80,
+        "sample_size": 8,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.302,
+    "delta_pct": 41.7,
+    "reason": "price moved 41.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "vast:l4-24gb:global:spot",
+      "provider": "vast",
+      "sku": "l4-24gb",
+      "price": 0.28,
+      "unit": "usd_per_hour",
+      "pricing_type": "spot",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "L4",
+        "vram_gb": 24,
+        "sample_size": 14,
+        "metric": "p25_min_bid_per_gpu"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.2,
+    "delta_pct": 40.0,
+    "reason": "price moved 40.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:minimax-minimax-m3.1-flash-input:global:list",
+      "provider": "openrouter",
+      "sku": "minimax-minimax-m3.1-flash-input",
+      "price": 0.15,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "minimax/minimax-m3.1-flash",
+        "model_name": "MiniMax: MiniMax M3.1 Flash",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.075,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:minimax-minimax-m3.1-flash-output:global:list",
+      "provider": "openrouter",
+      "sku": "minimax-minimax-m3.1-flash-output",
+      "price": 0.6,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "minimax/minimax-m3.1-flash",
+        "model_name": "MiniMax: MiniMax M3.1 Flash",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.3,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:inclusionai-ling-3.0-flash-input:global:list",
+      "provider": "openrouter",
+      "sku": "inclusionai-ling-3.0-flash-input",
+      "price": 0.06,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "inclusionai/ling-3.0-flash",
+        "model_name": "inclusionAI: Ling 3.0 Flash",
+        "context_length": 131072,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/inclusionai/ling-3.0-flash",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.021,
+    "delta_pct": 185.7,
+    "reason": "price moved 185.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:inclusionai-ling-3.0-flash-output:global:list",
+      "provider": "openrouter",
+      "sku": "inclusionai-ling-3.0-flash-output",
+      "price": 0.18,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "inclusionai/ling-3.0-flash",
+        "model_name": "inclusionAI: Ling 3.0 Flash",
+        "context_length": 131072,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/inclusionai/ling-3.0-flash",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.063,
+    "delta_pct": 185.7,
+    "reason": "price moved 185.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-pro-input:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-pro-input",
+      "price": 1.28,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0423",
+        "context_length": 1048576,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.9,
+    "delta_pct": 42.2,
+    "reason": "price moved 42.2% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:deepseek-deepseek-v4-pro-output:global:list",
+      "provider": "openrouter",
+      "sku": "deepseek-deepseek-v4-pro-output",
+      "price": 2.56,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "deepseek/deepseek-v4-pro",
+        "model_name": "DeepSeek: DeepSeek V4 Pro 0423",
+        "context_length": 1048576,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 1.5,
+    "delta_pct": 70.7,
+    "reason": "price moved 70.7% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:meta-llama-llama-3.1-8b-instruct-input:global:list",
+      "provider": "openrouter",
+      "sku": "meta-llama-llama-3.1-8b-instruct-input",
+      "price": 0.05,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "meta-llama/llama-3.1-8b-instruct",
+        "model_name": "Meta: Llama 3.1 8B Instruct",
+        "context_length": 131072,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/meta-llama/llama-3.1-8b-instruct",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.02,
+    "delta_pct": 150.0,
+    "reason": "price moved 150.0% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:meta-llama-llama-3.1-8b-instruct-output:global:list",
+      "provider": "openrouter",
+      "sku": "meta-llama-llama-3.1-8b-instruct-output",
+      "price": 0.08,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "meta-llama/llama-3.1-8b-instruct",
+        "model_name": "Meta: Llama 3.1 8B Instruct",
+        "context_length": 131072,
+        "direction": "output",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/meta-llama/llama-3.1-8b-instruct",
+        "observed_at": "2026-11-24T05:59:24Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.04,
+    "delta_pct": 100.0,
+    "reason": "price moved 100.0% (> 40% limit)"
+  }
+]
