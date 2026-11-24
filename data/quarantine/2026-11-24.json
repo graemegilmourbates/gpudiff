@@ -1,157 +1,131 @@
 [
   {
     "offer": {
+      "id": "vast:h200-141gb:global:on-demand",
+      "provider": "vast",
+      "sku": "h200-141gb",
+      "price": 5.2637,
+      "unit": "usd_per_hour",
+      "pricing_type": "on_demand",
+      "region": "global",
+      "attrs": {
+        "gpu_model": "H200",
+        "vram_gb": 141,
+        "sample_size": 6,
+        "metric": "p25_per_gpu_dph_verified"
+      },
+      "provenance": {
+        "url": "https://vast.ai/pricing",
+        "observed_at": "2026-11-24T17:39:58Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 3.4284,
+    "delta_pct": 53.5,
+    "reason": "price moved 53.5% (> 40% limit)"
+  },
+  {
+    "offer": {
       "id": "vast:a100-pcie-80gb:global:spot",
       "provider": "vast",
       "sku": "a100-pcie-80gb",
-      "price": 0.176,
+      "price": 0.1333,
       "unit": "usd_per_hour",
       "pricing_type": "spot",
       "region": "global",
       "attrs": {
         "gpu_model": "A100 PCIE",
         "vram_gb": 80,
-        "sample_size": 8,
+        "sample_size": 6,
         "metric": "p25_min_bid_per_gpu"
       },
       "provenance": {
         "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-24T05:59:24Z"
+        "observed_at": "2026-11-24T17:39:58Z"
       },
       "fixture": false
     },
     "previous_price": 0.302,
-    "delta_pct": 41.7,
-    "reason": "price moved 41.7% (> 40% limit)"
+    "delta_pct": 55.9,
+    "reason": "price moved 55.9% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "vast:l4-24gb:global:spot",
-      "provider": "vast",
-      "sku": "l4-24gb",
-      "price": 0.28,
-      "unit": "usd_per_hour",
-      "pricing_type": "spot",
-      "region": "global",
-      "attrs": {
-        "gpu_model": "L4",
-        "vram_gb": 24,
-        "sample_size": 14,
-        "metric": "p25_min_bid_per_gpu"
-      },
-      "provenance": {
-        "url": "https://vast.ai/pricing",
-        "observed_at": "2026-11-24T05:59:24Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.2,
-    "delta_pct": 40.0,
-    "reason": "price moved 40.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:minimax-minimax-m3.1-flash-input:global:list",
+      "id": "openrouter:qwen-qwen3.8-27b-input:global:list",
       "provider": "openrouter",
-      "sku": "minimax-minimax-m3.1-flash-input",
-      "price": 0.15,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "minimax/minimax-m3.1-flash",
-        "model_name": "MiniMax: MiniMax M3.1 Flash",
-        "context_length": 1048576,
-        "direction": "input",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
-        "observed_at": "2026-11-24T05:59:24Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.075,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:minimax-minimax-m3.1-flash-output:global:list",
-      "provider": "openrouter",
-      "sku": "minimax-minimax-m3.1-flash-output",
-      "price": 0.6,
-      "unit": "usd_per_mtok",
-      "pricing_type": "list",
-      "region": "global",
-      "attrs": {
-        "model_id": "minimax/minimax-m3.1-flash",
-        "model_name": "MiniMax: MiniMax M3.1 Flash",
-        "context_length": 1048576,
-        "direction": "output",
-        "metric": "openrouter_list"
-      },
-      "provenance": {
-        "url": "https://openrouter.ai/minimax/minimax-m3.1-flash",
-        "observed_at": "2026-11-24T05:59:24Z"
-      },
-      "fixture": false
-    },
-    "previous_price": 0.3,
-    "delta_pct": 100.0,
-    "reason": "price moved 100.0% (> 40% limit)"
-  },
-  {
-    "offer": {
-      "id": "openrouter:inclusionai-ling-3.0-flash-input:global:list",
-      "provider": "openrouter",
-      "sku": "inclusionai-ling-3.0-flash-input",
+      "sku": "qwen-qwen3.8-27b-input",
       "price": 0.06,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "inclusionai/ling-3.0-flash",
-        "model_name": "inclusionAI: Ling 3.0 Flash",
-        "context_length": 131072,
+        "model_id": "qwen/qwen3.8-27b",
+        "model_name": "Qwen: Qwen3.8 27B",
+        "context_length": 1024000,
         "direction": "input",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/inclusionai/ling-3.0-flash",
-        "observed_at": "2026-11-24T05:59:24Z"
+        "url": "https://openrouter.ai/qwen/qwen3.8-27b",
+        "observed_at": "2026-11-24T17:39:58Z"
       },
       "fixture": false
     },
-    "previous_price": 0.021,
-    "delta_pct": 185.7,
-    "reason": "price moved 185.7% (> 40% limit)"
+    "previous_price": 0.035,
+    "delta_pct": 71.4,
+    "reason": "price moved 71.4% (> 40% limit)"
   },
   {
     "offer": {
-      "id": "openrouter:inclusionai-ling-3.0-flash-output:global:list",
+      "id": "openrouter:tencent-hy3-input:global:list",
       "provider": "openrouter",
-      "sku": "inclusionai-ling-3.0-flash-output",
-      "price": 0.18,
+      "sku": "tencent-hy3-input",
+      "price": 0.0825,
       "unit": "usd_per_mtok",
       "pricing_type": "list",
       "region": "global",
       "attrs": {
-        "model_id": "inclusionai/ling-3.0-flash",
-        "model_name": "inclusionAI: Ling 3.0 Flash",
-        "context_length": 131072,
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
+        "direction": "input",
+        "metric": "openrouter_list"
+      },
+      "provenance": {
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-11-24T17:39:58Z"
+      },
+      "fixture": false
+    },
+    "previous_price": 0.14,
+    "delta_pct": 41.1,
+    "reason": "price moved 41.1% (> 40% limit)"
+  },
+  {
+    "offer": {
+      "id": "openrouter:tencent-hy3-output:global:list",
+      "provider": "openrouter",
+      "sku": "tencent-hy3-output",
+      "price": 0.33,
+      "unit": "usd_per_mtok",
+      "pricing_type": "list",
+      "region": "global",
+      "attrs": {
+        "model_id": "tencent/hy3",
+        "model_name": "Tencent: Hy3",
+        "context_length": 262144,
         "direction": "output",
         "metric": "openrouter_list"
       },
       "provenance": {
-        "url": "https://openrouter.ai/inclusionai/ling-3.0-flash",
-        "observed_at": "2026-11-24T05:59:24Z"
+        "url": "https://openrouter.ai/tencent/hy3",
+        "observed_at": "2026-11-24T17:39:58Z"
       },
       "fixture": false
     },
-    "previous_price": 0.063,
-    "delta_pct": 185.7,
-    "reason": "price moved 185.7% (> 40% limit)"
+    "previous_price": 0.58,
+    "delta_pct": 43.1,
+    "reason": "price moved 43.1% (> 40% limit)"
   },
   {
     "offer": {
@@ -171,7 +145,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-11-24T05:59:24Z"
+        "observed_at": "2026-11-24T17:39:58Z"
       },
       "fixture": false
     },
@@ -197,7 +171,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/deepseek/deepseek-v4-pro",
-        "observed_at": "2026-11-24T05:59:24Z"
+        "observed_at": "2026-11-24T17:39:58Z"
       },
       "fixture": false
     },
@@ -223,7 +197,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.1-8b-instruct",
-        "observed_at": "2026-11-24T05:59:24Z"
+        "observed_at": "2026-11-24T17:39:58Z"
       },
       "fixture": false
     },
@@ -249,7 +223,7 @@
       },
       "provenance": {
         "url": "https://openrouter.ai/meta-llama/llama-3.1-8b-instruct",
-        "observed_at": "2026-11-24T05:59:24Z"
+        "observed_at": "2026-11-24T17:39:58Z"
       },
       "fixture": false
     },
